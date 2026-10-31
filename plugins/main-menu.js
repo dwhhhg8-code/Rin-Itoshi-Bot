@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
 
     const user = global.db.data.users[m.sender] || {}
     const name = await conn.getName(m.sender)
-    const premium = user.premium ? '✅ Sí' : '❌ No'
+    const premium = user.premium ? '✅ نعم' : '❌ لا'
     const limit = user.limit || 0
     const totalreg = Object.keys(global.db.data.users).length
     const groupUserCount = m.isGroup ? participants.length : '-'
@@ -24,7 +24,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
 
     const userId = m.sender.split('@')[0]
     const phone = PhoneNumber('+' + userId)
-    const pais = phone.getRegionCode() || 'Desconocido 🌐'
+    const pais = phone.getRegionCode() || 'غير معروف 🌐'
     
     const perfil = await conn.profilePictureUrl(conn.user.jid, 'image')
       .catch(() => 'https://files.catbox.moe/9i5o9z.jpg')
@@ -58,16 +58,16 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
     }
 
     let tags = {
-      'main': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴍᴀɪɴ` 🍓 ᦡᦡ',
-      'fun': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ғᴜɴ` 🎭 ᦡᦡ',
-      'anime': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴀɴɪᴍᴇ` 🌸',
-      'descargas': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴅᴏᴡɴʟᴏᴀᴅ` 🎧 ᦡᦡ',
-      'grupo': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɢʀᴜᴘᴏs` 🏮 ᦡᦡ',
-      'ia': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɪᴀ` ☁️ ᦡᦡ',
-      'tools': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴛᴏᴏʟs` 🧩 ᦡᦡ',
-      'owner': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴏᴡɴᴇʀ` ⚙️ ᦡᦡ',
-      'jadibot': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ᴊᴀᴅɪ-ʙᴏᴛ` 🍰 ᦡᦡ',
-      'nsfw': '𓂂𓏸 𐅹੭੭  `ᴍᴇɴᴜ ɴsғᴡ` 🍑 ᦡᦡ',
+      'main': '𓂂𓏸 𐅹੭੭  `القائمة الرئيسية` 🍓 ᦡᦡ',
+      'fun': '𓂂𓏸 𐅹੭੭  `قائمة الترفيه` 🎭 ᦡᦡ',
+      'anime': '𓂂𓏸 𐅹੭੭  `قائمة الأنمي` 🌸',
+      'descargas': '𓂂𓏸 𐅹੭੭  `قائمة التنزيلات` 🎧 ᦡᦡ',
+      'grupo': '𓂂𓏸 𐅹੭੭  `قائمة المجموعات` 🏮 ᦡᦡ',
+      'ia': '𓂂𓏸 𐅹੭੭  `قائمة الذكاء` ☁️ ᦡᦡ',
+      'tools': '𓂂𓏸 𐅹੭੭  `قائمة الأدوات` 🧩 ᦡᦡ',
+      'owner': '𓂂𓏸 𐅹੭੭  `قائمة المالك` ⚙️ ᦡᦡ',
+      'jadibot': '𓂂𓏸 𐅹੭੭  `قائمة البوتات الفرعية` 🍰 ᦡᦡ',
+      'nsfw': '𓂂𓏸 𐅹੭੭  `قائمة +18` 🍑 ᦡᦡ',
     }
 
     let commands = Object.values(global.plugins)
@@ -91,22 +91,22 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
     }
 
     const infoUser = `
-ര ׄ ☃️ ׅ  Bienvenid@ a | Rin itoshi 
+ര ׄ ☃️ ׅ  مرحباً بك في | Rin Itoshi 
 ─────────────────────
-🌿 *Usuario:* @${userId}
-🍉 *Premium:* ${premium}
-🌍 *País:* ${pais}
-🎲 *Límite:* ${limit}
-🎋 *Usuarios totales:* ${totalreg}
-☁️ *Grupos activos:* ${groupsCount}
-🚀 *Tiempo activo:* ${uptime}
+🌿 *المستخدم:* @${userId}
+🍉 *مميز:* ${premium}
+🌍 *الدولة:* ${pais}
+🎲 *الحد:* ${limit}
+🎋 *إجمالي المستخدمين:* ${totalreg}
+☁️ *المجموعات النشطة:* ${groupsCount}
+🚀 *مدة التشغيل:* ${uptime}
 ─────────────────────
-🌾 *Bot:* ${(conn.user.jid == global.conn.user.jid ? '🌟 `ʙᴏᴛ ᴏғɪᴄɪᴀʟ`' : '✨ `sᴜʙ ʙᴏᴛ`')}
-🕸️ *Comandos:* ${totalCommands}
-📡 *Fecha:* \`${hora}, ${dia}, ${fechaTxt}\`
+🌾 *البوت:* ${(conn.user.jid == global.conn.user.jid ? '🌟 `البوت الرسمي`' : '✨ `بوت فرعي`')}
+🕸️ *الأوامر:* ${totalCommands}
+📡 *التاريخ:* \`${hora}, ${dia}, ${fechaTxt}\`
 ─────────────────────\n`.trim()
 
-    const cuerpo = infoUser + `\n*🍡 Mᴇɴú ᴅɪsᴘᴏɴɪʙʟᴇ:*
+    const cuerpo = infoUser + `\n*🍡 الأوامر المتاحة:*
 
 ${menuTexto}`.trim()
 
@@ -129,7 +129,7 @@ ${menuTexto}`.trim()
   } catch (e) {
     console.error(e)
     await conn.sendMessage(m.chat, { 
-      text: `✘ Error al enviar el menú: ${e.message}`,
+      text: `✘ خطأ في إرسال القائمة: ${e.message}`,
       mentions: [m.sender] 
     })
   }

@@ -11,12 +11,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let menu = `╔════ ≪ •❈• ≫ ════╗
       👻 𝑴𝑬𝑵𝑼 - 𝑬𝑪𝑶𝑵𝑶𝑴𝑰𝑨 👻
 ╚════ ≪ •❈• ≫ ════╝
-⏰ Hora: *${hora}*
-📅 Fecha: *${fecha}*
+⏰ الوقت: *${hora}*
+📅 التاريخ: *${fecha}*
 🔋 Día: *${dia}*
-👑 Creador: *${creador}*
-⚙️ Prefijo: *${usedPrefix}*
-📡 Comandos: *${comandos}*
+👑 المطوّر: *${creador}*
+⚙️ البادئة: *${usedPrefix}*
+📡 الأوامر: *${comandos}*
 
 ⚔️ ¡Prepárate para la aventura!
 
@@ -69,7 +69,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       caption: menu,
       footer: club,
       buttons: [
-        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 Creador" }, type: 1 },
+        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 المطوّر" }, type: 1 },
         { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 Menú Completo" }, type: 1 }
       ],
       headerType: 4,
@@ -94,7 +94,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply('❌ Error al mostrar el menú RPG.')
+    m.reply('❌ خطأ في عرض قائمة RPG.')
   }
 }
 

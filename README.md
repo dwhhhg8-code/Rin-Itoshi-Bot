@@ -40,36 +40,36 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=✨+Funciones+de+Rin+Itoshi&color=FF0000&color=FF7F00&color=FFFF00&color=00FF00&color=00FFFF&color=0000FF&color=8B00FF"
-    alt="✨ Funciones de Rin Itoshi"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=%D9%85%D9%8A%D8%B2%D8%A7%D8%AA+Rin+Itoshi&color=FF0000&color=FF7F00&color=FFFF00&color=00FF00&color=00FFFF&color=0000FF&color=8B00FF"
+    alt="✨ ميزات Rin Itoshi"
   />
 </p>
 
 <details>
  <summary><b> ☄️ INFO - BOT 👀</b></summary>
 
-* Este proyecto **no está afiliado de ninguna manera** con `WhatsApp`, `Inc. WhatsApp` es una marca registrada de `WhatsApp LLC`, y este bot es un **desarrollo independiente** que **no tiene ninguna relación oficial con la compañía**.
+* هذا المشروع **غير مرتبط بأي شكل** بـ `WhatsApp`، و`Inc. WhatsApp` علامة تجارية مسجلة لـ `WhatsApp LLC`، وهذا البوت **تطوير مستقل** و**ليس له أي علاقة رسمية بالشركة**.
 </details>
 
 <details>
  <summary><b> 🎄 FUNCIONES ⛩️</b></summary>
 
-> ᴮᵒᵗ ᵉⁿ ᵈᵉˢᵃʳʳᵒˡˡᵒ ˢⁱ ᵖʳᵉˢᵉⁿᵗᵃ ᵃˡᵍᵘⁿᵃ ᶠᵃˡˡᵃ ʳᵉᵖᵒʳᵗᵃʳ ᵃˡ ᶜʳᵉᵃᵈᵒʳ ᵖᵃʳᵃ ᵈᵃʳˡᵉ ᵘⁿᵃ ˢᵒˡᵘᶜⁱᵒⁿ ᵒᵖᵗⁱᵐᵃ
+> البوت قيد التطوير، إذا ظهر أي خطأ أبلغ المطوّر لإصلاحه.
 
-- 👥 Interacción con voz y texto
-- 🛡️ Configuración de grupo
+- 👥 تفاعل بالصوت والنص
+- 🛡️ إعدادات المجموعة
 - 🎉 antilink, antilink2, etc
-- 🎀 Bienvenida personalizada
-- 🎮 Juegos, tictactoe, mate, etc
-- 🤖 Chatbot (simsimi)
+- 🎀 ترحيب مخصص
+- 🎮 ألعاب، tictactoe، وغيرها
+- 🤖 روبوت محادثة (simsimi)
 - 🤖 Chatbot (autoresponder)
-- 🎨 Crear sticker de image/video/gif/url
+- 🎨 إنشاء ملصق من صورة/فيديو/gif/رابط
 - 🎄 SubBot (Jadibot)
-- 🔎 Buscador Google
-- 🧙 Juego RPG
-- 🖼️ Personalizar imagen del menú
-- 🎵 Descarga de música y video De YT
-- 🔧 Otros
+- 🔎 بحث جوجل
+- 🧙 لعبة RPG
+- 🖼️ تخصيص صورة القائمة
+- 🎵 تحميل موسيقى وفيديو من يوتيوب
+- 🔧 أخرى
 
 </details>
 
@@ -77,18 +77,18 @@
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=650&lines=%E2%9E%AE%F0%9F%93%B1%20Instalaci%C3%B3n%20por%20termux&color=00E5FF" alt="➮📱 Instalación por termux"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=650&lines=%E2%9E%AE%F0%9F%93%B1%20%D8%A7%D9%84%D8%AA%D8%AB%D8%A8%D9%8A%D8%AA%20%D8%A8%D9%88%D8%A7%D8%B3%D8%B7%D8%A9%20termux&color=00E5FF" alt="➮📱 التثبيت بواسطة termux"
   />
 </p>
 
-### **`✧ Click en la imagen para descargar termux ✧`**
+### **`✧ اضغط على الصورة لتحميل termux ✧`**
 <a
 href="https://www.mediafire.com/file/wkinzgpb0tdx5qh/com.termux_1022.apk/file"><img src="https://qu.ax/finc.jpg" height="125px"></a> 
 
 <details>
- <summary><b>🕸️ Ver comandos de instalación </b></summary>
+ <summary><b>🕸️ عرض أوامر التثبيت </b></summary>
 
-### **🎄🚀 Instalación Rápida 🌛**
+### **🎄🚀 تثبيت سريع 🌛**
 
 ```bash
 termux-setup-storage
@@ -103,7 +103,7 @@ pkg install git nodejs ffmpeg imagemagick yarn -y
 ```
 
 ```bash
-git clone https://github.com/Shadow-nex/Rin-Itoshi-Bot && cd Rin-Itoshi-Bot
+git clone https://github.com/dwhhhg8-code/Rin-Itoshi-Bot && cd Rin-Itoshi-Bot
 ```
 
 ```bash
@@ -118,24 +118,24 @@ npm install
 npm start
 ```
 
-> Si aparece (Y/I/N/O/D/Z) [default=N] ? use la letra "y" + "ENTER" para continuar con la instalación
+> إذا ظهر (Y/I/N/O/D/Z) [default=N] ? اكتب الحرف "y" ثم "ENTER" لمتابعة التثبيت
 
 </details>
 
 ![line](https://github.com/Yuji-XDev/Yuji-XDev/blob/main/shadow'core/line.gif)
 
 <details>
- <summary><b>🫛 Activar en caso de detenerse el Termux </b></summary>
+ <summary><b>🫛 إعادة التشغيل إذا توقف Termux </b></summary>
 
-> Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdida de conexión a Internet, reinicio del dispositivo), sigue estos pasos:
+> إذا توقف البوت بعد التثبيت في Termux (شاشة بيضاء، انقطاع الإنترنت، إعادة تشغيل الجهاز)، اتبع هذه الخطوات:
 
-❒ Abre Termux y navega al directorio del bot:
+❒ افتح Termux وانتقل إلى مجلد البوت:
    
 ```bash
 cd Rin-Itoshi-Bot
 ```
 
-❒ Inicia el bot nuevamente:
+❒ شغّل البوت من جديد:
   
 ```bash
 npm start
@@ -145,23 +145,23 @@ npm start
 ![line](https://github.com/Yuji-XDev/Yuji-XDev/blob/main/shadow'core/line.gif)
 
 <details>
- <summary><b>🍉 Obtener otro código QR en Termux</b></summary>
+ <summary><b>🍉 الحصول على رمز QR جديد في Termux</b></summary>
 
-> Si después de instalar el bot en Termux y iniciar la session del bot (el numero se va a soporte, se cierra la conexión o demorastes al conectar), sigue estos pasos:
+> إذا بعد تشغيل جلسة البوت (الرقم اتقفل، الاتصال انقطع، أو تأخرت في الربط)، اتبع هذه الخطوات:
 
-1. Abre Termux y navega al directorio del bot:
+1. افتح Termux وانتقل إلى مجلد البوت:
 
 ```bash
 cd Rin-Itoshi-Bot
 ```
 
-2. Elimina la carpeta MiniSession:
+2. احذف مجلد Sessions:
 
 ```bash
 rm -rf Sessions
 ```
 
-3. Inicia el bot nuevamente:
+3. شغّل البوت من جديد:
 
 ```bash
 npm start
@@ -171,9 +171,9 @@ npm start
 ![line](https://github.com/Shadow-nex/Shadow-nex/blob/main/shadow'core/line.gif)
 
 <details>
- <summary><b>🎋 Volverte owner del bot</b></summary>
+ <summary><b>🎋 تصبح مالك البوت</b></summary>
 
-> Si después de instalar el bot en Termux y iniciar la session del bot (deseas poner tu número es la lista de owner pon este comando:
+> إذا أردت إضافة رقمك إلى قائمة المالك، استخدم هذا الأمر:
 
 ```bash
 cd Rin-Itoshi-Bot && nano config.js
@@ -183,7 +183,7 @@ cd Rin-Itoshi-Bot && nano config.js
 ![line](https://github.com/Yuji-XDev/Yuji-XDev/blob/main/shadow'core/line.gif)
 
 <details>
- <summary><b>🌿 Actualiza el bot a su última vs</b></summary>
+ <summary><b>🌿 تحديث البوت لآخر إصدار</b></summary>
  
 ```bash
  grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/Yuji-XDev/Rin-Itoshi-Bot/main/update.sh | bash 
@@ -194,21 +194,21 @@ cd Rin-Itoshi-Bot && nano config.js
 
 <p align="center">
   <img 
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=2500&pause=800&center=true&vCenter=true&width=700&lines=%F0%9F%94%A5+Instalaci%C3%B3n+por+cloudshell&color=32CD32" alt="🔥 Instalación por cloudshell"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=26&duration=2500&pause=800&center=true&vCenter=true&width=700&lines=%F0%9F%94%A5+%D8%A7%D9%84%D8%AA%D8%AB%D8%A8%D9%8A%D8%AA+%D8%A8%D9%88%D8%A7%D8%B3%D8%B7%D8%A9+cloudshell&color=32CD32" alt="🔥 التثبيت بواسطة cloudshell"
   />
 </p>
 
 <details>
- <summary><b> 🍁 Ver comandos para Cloud Shell</b></summary>
+ <summary><b> 🍁 عرض أوامر Cloud Shell</b></summary>
 
-[`☘️ Instalar Cloud Shell Clic Aqui`](https://www.mediafire.com/file/bp2l6cci2p30hjv/Cloud+Shell_1.apk/file)
+[`☘️ تثبيت Cloud Shell اضغط هنا`](https://www.mediafire.com/file/bp2l6cci2p30hjv/Cloud+Shell_1.apk/file)
 
 ```bash
 apt update && apt upgrade
 ```
 
 ```bash
-git clone https://github.com/Shadow-nex/Rin-Itoshi-Bot && cd Rin-Itoshi-Bot
+git clone https://github.com/dwhhhg8-code/Rin-Itoshi-Bot && cd Rin-Itoshi-Bot
 ```
 
 ```bash
@@ -219,26 +219,26 @@ yarn install && npm install
 npm start
 ```
 
-💥 ¡Bot listo para usarse! 🥷
+💥 البوت جاهز للاستخدام! 🥷
 </details>
 
 ---
 
-### **`➮ Enlaces útiles`**
+### **`➮ روابط مفيدة`**
 
 <details>
-<summary><b> 🌷 Contáctos</b></summary>
+<summary><b> 🌷 التواصل</b></summary>
 
-* WhatsApp: [`Aquí`](https:/Wa.me/51919199620)
-* Correo: [`Aquí`](blackoficial2025@gmail.com)
+* واتساب: [`هنا`](https:/Wa.me/51919199620)
+* البريد: [`هنا`](blackoficial2025@gmail.com)
 
 </details>
 
 ---
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=📊+Estadísticas+de+Rin+Itoshi&color=FF1493"
-    alt="📊 Estadísticas Rin Itoshi"
+    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=2500&pause=800&center=true&vCenter=true&width=750&lines=📊+%D8%A5%D8%AD%D8%B5%D8%A7%D8%A6%D9%8A%D8%A7%D8%AA+Rin+Itoshi&color=FF1493"
+    alt="📊 إحصائيات Rin Itoshi"
   />
 </p>
 
@@ -251,7 +251,7 @@ npm start
 ---
 
 <div align="center">
-  <h1 align="center">🌱 EDITOR Y PROPIETARIO DEL BOT ⚽</h1>
+  <h1 align="center">🌱 مطوّر ومالك البوت ⚽</h1>
 
 <a href="https://github.com/Shadow-nex"><img src="https://github.com/Shadow-nex.png" width="300" height="300" alt="Yuji-XDev"/></a>
 

@@ -140,7 +140,7 @@ handler.before = async (m, { conn }) => {
     delete conn.anime[m.sender];
 };
 
-handler.command = ["anime", "animedl", "animes"];
+handler.command = ["anime", "animedl"];
 handler.tags = ["download"];
 handler.help = ["animedl"];
 handler.premium = true;

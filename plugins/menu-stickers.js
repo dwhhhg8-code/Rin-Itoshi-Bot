@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
   let imgurl = banner;
   const Menu = `
-╭━━━〔 🌴 *STICKERS MENU* 🌴 〕━━⬣
+╭━━━〔 🌴 *قائمة الملصقات* 🌴 〕━━⬣
 ┃ 𖦹 ⊹ 🎄 𝑪𝒐𝒎𝒂𝒏𝒅𝒐𝒔 𝒑𝒂𝒓𝒂 𝒔𝒕𝒊𝒄𝒌𝒆𝒓𝒔
 ┃
 ┃ ✦ 🍄 #ʙʀᴀᴛ <texto>

@@ -20,21 +20,21 @@ let handler = async (m, { conn }) => {
     let fecha = moment.tz('America/Lima').format('DD/MM/YYYY')
     let hora = moment.tz('America/Lima').format('hh:mm:ss A')
     let dia = moment.tz('America/Lima').locale('es').format('dddd')
-    let nombreUser = m.pushName || 'Usuario'
+    let nombreUser = m.pushName || 'مستخدم'
     let pais = '🇵🇪 Perú'
     let botName = global.bot
 
     const texto = `
 [⚡ Menú nable ⚡]
 
-👤 Usuario: *${nombreUser}*
+👤 المستخدم: *${nombreUser}*
 🤖 Bot: *${botName}*
 🌎 País: ${pais}
-⏰ Hora: *${hora}*
-📅 Fecha: *${fecha}*
-📆 Día: *${dia}*
+⏰ الوقت: *${hora}*
+📅 التاريخ: *${fecha}*
+📆 اليوم: *${dia}*
 
-📜 Menu nable 
+📜 قائمة 
 
 ${listaComandos}
 

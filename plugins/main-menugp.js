@@ -9,11 +9,11 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     let menu = `
 ╭━━━〔 🍂 𝐌𝐄𝐍𝐔 𝐀𝐃𝐌𝐈𝐍 🍂 〕━━━⬣
-┃ ⭐ Hola ${tag} 
-┃ 🌱 Aquí tienes las funciones 
-┃ 🍧 Para gestionar el grupo 💖
-┃ 📅 Fecha: *${fecha}*
-┃ ⏰ Hora: *${hora}*
+┃ ⭐ أهلاً ${tag} 
+┃ 🌱 هذه هي الأوامر 
+┃ 🍧 لإدارة المجموعة 💖
+┃ 📅 التاريخ: *${fecha}*
+┃ ⏰ الوقت: *${hora}*
 ╰━━━━━━━━━━━━━━━━━━━━⬣
 
 ╭─〔 🌷 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎́𝐍 🌷 〕
@@ -125,7 +125,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     await m.react('⚽')
   } catch (e) {
-    await conn.reply(m.chat, '❌ Error mostrando el menú admin.', m)
+    await conn.reply(m.chat, '❌ خطأ في عرض قائمة الإدارة.', m)
     console.error(e)
   }
 }

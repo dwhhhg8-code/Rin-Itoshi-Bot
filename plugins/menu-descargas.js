@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 ${readMore}
 
-╭─⬣「 *Descargas Disponibles* 」
+╭─⬣「 *التنزيلات المتاحة* 」
 │🤗 .cuddle  
 │🖼️ .imagen *<query>*
 │📌 .pinterestdl *<url>*  
@@ -95,8 +95,8 @@ ${channel}
       caption: menu,
       footer: club,
       buttons: [
-        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "⚡ Creador" }, type: 1 },
-        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "☘️ Menu | All" }, type: 1 }
+        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "⚡ المطوّر" }, type: 1 },
+        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "☘️ القائمة | الكل" }, type: 1 }
       ],
       headerType: 4,
       contextInfo: {
@@ -120,7 +120,7 @@ ${channel}
 
   } catch (e) {
     console.error(e)
-    m.reply('❌ Error al mostrar el menú de descargas.')
+    m.reply('❌ خطأ في عرض قائمة التنزيلات.')
   }
 }
 handler.help = ['menudescargas', 'dlmenu']
@@ -174,12 +174,12 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
 〔 *🧁 _ᴍᴇɴᴜ - ᴅᴇsᴄᴀʀɢᴀs_ 🧁* 〕
 ──────────────────────
  
-✎ 🧸 *Usuario:* @${userId}
+✎ 🧸 *المستخدم:* @${userId}
 ✎ 🍓 *País:* ${pais}
-✎ 📡 *Prefijo:* ${usedPrefix}
+✎ 📡 *البادئة:* ${usedPrefix}
 ✎ 💖 *Premium:* ${premium}
 ✎ 🍬 *Límite:* ${limit}
-✎ 🐰 *Usuarios Totales:* ${totalUsers}
+✎ 🐰 *إجمالي المستخدمين:* ${totalUsers}
 ✎ 🪞 *Comandos:* ${comandosTotales}
 ✎ 💫 *Fecha:* ${hora}, ${fecha}, ${diaCapitalizado}
 ──────────────────────
@@ -261,7 +261,7 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
 
   } catch (e) {
     console.error(e)
-    await conn.reply(m.chat, `Error al mostrar el menú de descargas:\n${e.message}`, m, fake)
+    await conn.reply(m.chat, `خطأ في عرض القائمة de descargas:\n${e.message}`, m, fake)
   }
 }
 

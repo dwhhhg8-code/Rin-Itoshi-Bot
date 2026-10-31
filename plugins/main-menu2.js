@@ -13,13 +13,13 @@ let handler = async (m, { conn }) => {
     const text = `
 🛸 𝙍𝙄𝙉 𝙄𝙏𝙊𝙎𝙃𝙄 𝘽𝙊𝙏 - 𝘾𝙊𝙉𝙎𝙊𝙇𝘼 𝘿𝙀 𝘼𝙐𝘿𝙄𝙊𝙎  ⚽
 ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
-⚡ *Usuario:* ${name}  
-🍂 *Registrados:* ${totalreg}  
-🧪 *Comandos activos:* ${totalCommands}  
-🍕 *Uptime:* ${uptime}  
+⚡ *المستخدم:* ${name}  
+🍂 *المسجلون:* ${totalreg}  
+🧪 *الأوامر النشطة:* ${totalCommands}  
+🍕 *مدة التشغيل:* ${uptime}  
   
-🧠 *Accediendo al módulo de sonidos...*  
-📡 *Audios disponibles:*  
+🧠 *جارٍ الدخول إلى وحدة الأصوات...*  
+📡 *الأصوات المتاحة:*  
   
 ╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝘼𝙉𝙄𝙈𝙀 / 𝙍𝘼𝙍𝙊𝙎
 │ ◦ Onichan~
@@ -180,7 +180,7 @@ let handler = async (m, { conn }) => {
 
   } catch (e) {
     console.error(e);
-    conn.reply(m.chat, '❌ Error al mostrar el menú.', m);
+    conn.reply(m.chat, '❌ خطأ في عرض القائمة.', m);
   }
 };
 

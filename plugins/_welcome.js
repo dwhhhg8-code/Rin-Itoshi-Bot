@@ -7,22 +7,22 @@ async function generarBienvenida({ conn, userId, groupMetadata, chat }) {
   const pp = await conn.profilePictureUrl(userId, 'image').catch(() => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
   const fecha = new Date().toLocaleDateString("es-ES", { timeZone: "America/Mexico_City", day: 'numeric', month: 'long', year: 'numeric' })
   const groupSize = groupMetadata.participants.length + 1
-  const desc = groupMetadata.desc?.toString() || 'Sin descripción'
-  const mensaje = (chat.sWelcome || 'Edita con el comando "setwelcome"')
+  const desc = groupMetadata.desc?.toString() || 'لا يوجد وصف'
+  const mensaje = (chat.sWelcome || 'عدّلها بالأمر "setwelcome"')
     .replace(/{usuario}/g, `${username}`)
     .replace(/{grupo}/g, `*${groupMetadata.subject}*`)
     .replace(/{desc}/g, `${desc}`)
 
-  const caption = `👋 ¡Hola, ${username}!
-Bienvenid@ al grupo *_${groupMetadata.subject}_*
+  const caption = `👋 أهلاً ${username}!
+مرحباً بك في المجموعة *_${groupMetadata.subject}_*
 
-🍃 *_Esperamos que disfrutes tu estadía._*
+🍃 *_نتمنى لك إقامة ممتعة._*
 
-🌿 \`𝐈𝐧𝐟𝐨 - 𝐆𝐫𝐨𝐮𝐩:\`
- • ᴍɪᴇᴍʙʀᴏs: ${groupSize}
- • ʜᴏʀᴀ: undefined
- • ғᴇᴄʜᴀ: ${fecha}
- • ᴅᴇsᴄʀɪᴘᴄɪᴏɴ: ${mensaje}`
+🌿 \`معلومات المجموعة:\`
+ • الأعضاء: ${groupSize}
+ • الوقت: undefined
+ • التاريخ: ${fecha}
+ • الوصف: ${mensaje}`
   return { pp, caption, username }
 }
 
@@ -31,20 +31,20 @@ async function generarDespedida({ conn, userId, groupMetadata, chat }) {
   const pp = await conn.profilePictureUrl(userId, 'image').catch(() => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
   const fecha = new Date().toLocaleDateString("es-ES", { timeZone: "America/Mexico_City", day: 'numeric', month: 'long', year: 'numeric' })
   const groupSize = groupMetadata.participants.length - 1
-  const desc = groupMetadata.desc?.toString() || 'Sin descripción'
-  const mensaje = (chat.sBye || 'Edita con el comando "setbye"')
+  const desc = groupMetadata.desc?.toString() || 'لا يوجد وصف'
+  const mensaje = (chat.sBye || 'عدّلها بالأمر "setbye"')
     .replace(/{usuario}/g, `${username}`)
     .replace(/{grupo}/g, `*${groupMetadata.subject}*`)
     .replace(/{desc}/g, `*${desc}*`)
 
-  const caption = `💐 ${username}, ha salido del grupo *"_${groupMetadata.subject}_"*
+  const caption = `💐 ${username} غادر المجموعة *"_${groupMetadata.subject}_"*
 
 🌾 ${mensaje}
 
-📉 \`𝐄𝐬𝐭𝐚𝐝𝐨 𝐀𝐜𝐭𝐮𝐚𝐥:\`
- • ᴍɪᴇᴍʙʀᴏs: ${groupSize}
- • ʜᴏʀᴀ: undefined
- • ғᴇᴄʜᴀ: ${fecha}`
+📉 \`الحالة الحالية:\`
+ • الأعضاء: ${groupSize}
+ • الوقت: undefined
+ • التاريخ: ${fecha}`
   return { pp, caption, username }
 }
 
@@ -70,7 +70,7 @@ handler.before = async function (m, { conn, participants, groupMetadata }) {
 
   const fkontak = {
     key: { participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast', fromMe: false, id: 'Halo' },
-    message: { locationMessage: { name: '🍉 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 - 𝙆𝙖𝙣𝙚𝙠𝙞 𝙈𝘿 📡', jpegThumbnail: thumbBuffer } },
+    message: { locationMessage: { name: '🍉 ترحيب - Rin Itoshi 📡', jpegThumbnail: thumbBuffer } },
     participant: '0@s.whatsapp.net'
   }
 

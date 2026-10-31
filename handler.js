@@ -439,15 +439,15 @@ let usedPrefix
         let userWarns = global.db.data.users[m.sender].warns || 0
         userWarns++
         global.db.data.users[m.sender].warns = userWarns
-        await this.reply(m.chat, `🍭 *Advertencia por toxico ${userWarns}/4*\nEvita usar lenguaje ofensivo.`, m, rcanal)
+        await this.reply(m.chat, `🍭 *تحذير بسبب الألفاظ ${userWarns}/4*\nتجنّب استخدام لغة مسيئة.`, m, rcanal)
     
         if (userWarns >= 4) {
           global.db.data.users[m.sender].warns = 0
           try {
             await this.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-            await this.reply(m.chat, `❌ Usuario expulsado por comportamiento tóxico reiterado.`, m, rcanal)
+            await this.reply(m.chat, `❌ تم طرد المستخدم بسبب تكرار السلوك المسيء.`, m, rcanal)
           } catch (e) {
-            await this.reply(m.chat, `⚠️ No se pudo expulsar al usuario. Verifica si el bot es admin.`, m, rcanal)
+            await this.reply(m.chat, `⚠️ تعذّر طرد المستخدم. تأكد من أن البوت مشرف.`, m, rcanal)
           }
         }
       }
@@ -575,9 +575,9 @@ if (plugin?.warn && !isOwner && !isROwner) {
             global.db.data.users[m.sender].warns = 0
             try {
               await this.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-              await this.reply(m.chat, `🪴 Has sido expulsado por acumulación de advertencias.`, m, rcanal)
+              await this.reply(m.chat, `🪴 تم طردك بسبب تجاوز عدد التحذيرات.`, m, rcanal)
             } catch (err) {
-              await this.reply(m.chat, `⚠️ No se pudo expulsar al usuario. Revisa permisos del bot.`, m, rcanal)
+              await this.reply(m.chat, `⚠️ تعذّر طرد المستخدم. راجع صلاحيات البوت.`, m, rcanal)
             }
             return
           }
@@ -783,25 +783,25 @@ export async function deleteUpdate(message) {
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: ' ׄ 🍃 ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙚𝙡 𝙙𝙚𝙨𝙖𝙧𝙧𝙤𝙡𝙡𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙗𝙤𝙩.',
+    rowner: ' ׄ 🍃 ׅ هذا الأمر متاح فقط لمطوّر البوت.',
     
-    owner: ' ׄ ☃️ ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙚𝙡 𝙥𝙧𝙤𝙥𝙞𝙚𝙩𝙖𝙧𝙞𝙤 𝙙𝙚𝙡 𝙗𝙤𝙩.',
+    owner: ' ׄ ☃️ ׅ هذا الأمر متاح فقط لمالك البوت.',
     
-    mods: ' ׄ 🌿 ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙢𝙤𝙙𝙚𝙧𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.',
+    mods: ' ׄ 🌿 ׅ هذا الأمر متاح فقط لمشرفي البوت.',
     
-    premium: ' ׄ ⭐ ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙪𝙨𝙪𝙖𝙧𝙞𝙤𝙨 𝙥𝙧𝙚𝙢𝙞𝙪𝙢.',
+    premium: ' ׄ ⭐ ׅ هذا الأمر متاح فقط للمستخدمين المميزين.',
     
-    group: ' ׄ 🕸️ ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙚𝙣 𝙘𝙝𝙖𝙩𝙨 𝙥𝙧𝙞𝙫𝙖𝙙𝙤𝙨.',
+    group: ' ׄ 🕸️ ׅ هذا الأمر متاح فقط في الخاص.',
     
-    private: ' ׄ ☁️ ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙚𝙣 𝙜𝙧𝙪𝙥𝙤𝙨.',
+    private: ' ׄ ☁️ ׅ هذا الأمر متاح فقط داخل المجموعات.',
     
-    admin: ' ׄ 🌾 ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙥𝙤𝙧 𝙖𝙙𝙢𝙞𝙣𝙨 𝙙𝙚𝙡 𝙜𝙧𝙪𝙥𝙤.',
+    admin: ' ׄ 🌾 ׅ هذا الأمر متاح فقط لمشرفي المجموعة.',
     
-    botAdmin: ' ׄ 🍉 ׅ 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙨𝙖𝙙𝙤 𝙘𝙪𝙖𝙣𝙙𝙤 𝙚𝙡 𝙗𝙤𝙩 𝙩𝙞𝙚𝙣𝙚 𝙥𝙚𝙧𝙢𝙞𝙨𝙤 𝙙𝙚 𝙖𝙙𝙢𝙞𝙣.',
+    botAdmin: ' ׄ 🍉 ׅ هذا الأمر متاح فقط عندما يملك البوت صلاحية مشرف.',
     
-    unreg: ' ׄ 🎋 ׅ  𝙽𝙾 𝚃𝙴 𝙴𝙽𝙲𝚄𝙴𝙽𝚃𝚁𝙰𝚂 𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙰𝙳𝙾(𝙰)\n𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙰𝚃𝙴 𝙿𝙰𝚁𝙰 𝚄𝚂𝙰𝚁 𝙴𝚂𝚃𝙰 𝙵𝚄𝙽𝙲𝙸𝙾𝙽.\n\n#ʀᴇɢ <ɴᴏᴍʙʀᴇ.ᴇᴅᴀᴅ>\n\n`𝙴𝙹𝙴𝙼𝙿𝙻𝙾:`\n> #reg xD.19', 
+    unreg: ' ׄ 🎋 ׅ  𝙽𝙾 𝚃𝙴 𝙴𝙽𝙲𝚄𝙴𝙽𝚃𝚁𝙰𝚂 𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙰𝙳𝙾(𝙰)\n𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙰𝚃𝙴 𝙿𝙰𝚁𝙰 𝚄𝚂𝙰𝚁 𝙴𝚂𝚃𝙰 𝙵𝚄𝙽𝙲𝙸𝙾𝙽.\n\n#ʀᴇɢ <ɴᴏᴍʙʀᴇ.ᴇᴅᴀᴅ>\n\n`مثال:`\n> #reg xD.19', 
     
-    restrict: ' ׄ 🍃 ׅ  ʀᴇsᴛʀɪɴɢɪᴅᴏ • ʟᴀs ʀᴇsᴛʀɪᴄᴄɪᴏɴᴇs ɴᴏ ᴇsᴛᴀ́ɴ ᴀᴄᴛɪᴠᴀᴅᴀs ᴇɴ ᴇsᴛᴇ ᴄʜᴀᴛ.'
+    restrict: ' ׄ 🍃 ׅ  مقيّد • القيود غير مفعّلة في هذه المحادثة.'
 }[type];
 if (msg) return conn.reply(m.chat, msg, m, rcanalx).then(_ => m.react('✖️'))}
 let file = global.__filename(import.meta.url, true)

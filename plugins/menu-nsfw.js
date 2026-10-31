@@ -22,8 +22,8 @@ const handler = async (m, { conn, usedPrefix }) => {
 
     const str = `
 ╭━〔 🔞 𝙈𝙀𝙉𝙐 +𝟭𝟴 🔞 〕━⬣
-┃ 👋 Hola ${taguser}
-┃ Bienvenido al *Modo Caliente*
+┃ 👋 أهلاً ${taguser}
+┃ مرحباً بك في *الوضع الحار*
 ┃ ${invisible}
 ╰━━━━━━━━━━━━━━━━━━⬣
 
@@ -35,7 +35,7 @@ const handler = async (m, { conn, usedPrefix }) => {
 › ${usedPrefix}rule34search
 
 
-🎥 *Descargas para adultos:*
+🎥 *تنزيلات للبالغين:*
 › ${usedPrefix}xnxxdl
 › ${usedPrefix}xvideosdl
 › ${usedPrefix}pornhubdl
@@ -94,7 +94,7 @@ const handler = async (m, { conn, usedPrefix }) => {
     await conn.sendMessage(m.chat, { react: { text: '🍑', key: m.key } });
 
   } catch (e) {
-    conn.reply(m.chat, `⚠️ Error al enviar el menú.\n\n${e}`, m);
+    conn.reply(m.chat, `⚠️ خطأ في إرسال القائمة.\n\n${e}`, m);
   }
 };
 

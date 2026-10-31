@@ -12,7 +12,7 @@ let handler = async (m, { conn }) => {
                 },
                 interactiveMessage: proto.Message.InteractiveMessage.fromObject({
                     body: proto.Message.InteractiveMessage.Body.create({
-                        text: "╔═════════════════════╗\n║⬩𓊆◦ 𝙼𝙴𝙽𝚄𝚂 - 𝙳𝙸𝚂𝙿𝙾𝙽𝙸𝙱𝙻𝙴𝚂 ◦𓊇⬩\n╚═════════════════════╝\n\n❯l︴• \`menulist\`\n❯l︴• \`menuowner - dev\`\n❯l︴• \`menudescargas - menudl\`\n❯l︴• \`menusticker\`\n❯l︴• \`menusearch - menuse\`\n❯l︴• \`menulogos\`\n❯l︴• \`menunsfw - menu18\`\n❯l︴• \`menugrupo - menugp\`\n❯l︴• \`menuaudios - menu2\`\n❯l︴• \`menurpg\`\n❯l︴• \`menufun\`\n❯l︴• \`menutools\`\n❯l︴• \`menup\`"
+                        text: "╔═════════════════════╗\n║⬩𓊆◦ القوائم المتاحة ◦𓊇⬩\n╚═════════════════════╝\n\n❯l︴• \`menulist\`\n❯l︴• \`menuowner - dev\`\n❯l︴• \`menudescargas - menudl\`\n❯l︴• \`menusticker\`\n❯l︴• \`menusearch - menuse\`\n❯l︴• \`menulogos\`\n❯l︴• \`menunsfw - menu18\`\n❯l︴• \`menugrupo - menugp\`\n❯l︴• \`menuaudios - menu2\`\n❯l︴• \`menurpg\`\n❯l︴• \`menufun\`\n❯l︴• \`menutools\`\n❯l︴• \`menup\`"
                     }),
                     footer: proto.Message.InteractiveMessage.Footer.create({
                         text: "_ʀɪɴ ɪᴛᴏꜱʜɪ ʙᴏᴛ ✨_"
@@ -25,22 +25,22 @@ let handler = async (m, { conn }) => {
                         buttons: [
                             {
                                 "name": "cta_url",
-                                "buttonParamsJson": `{"display_text":"🌐 Página Web","url":"https://github.com/Yuji-XDev"}`
+                                "buttonParamsJson": `{"display_text":"🌐 الموقع","url":"https://github.com/Yuji-XDev"}`
                             },
                             {
                                 "name": "quick_reply",
-                                "buttonParamsJson": `{"display_text":"📜 Lista de comandos","id":".totalfunciones"}`
+                                "buttonParamsJson": `{"display_text":"📜 قائمة الأوامر","id":".totalfunciones"}`
                             },
                             {
                                 "name": "single_select",
                                 "buttonParamsJson": JSON.stringify({
-                                    title: "⚙️ Configuración",
+                                    title: "⚙️ الإعدادات",
                                     sections: [
                                         {
-                                            title: "Opciones",
+                                            title: "الخيارات",
                                             rows: [
-                                                { header: "👤 Perfil", title: "Ver Perfil", id: ".perfil" },
-                                                { header: "⚡ Estado", title: "Mi Estado", id: ".estado" }
+                                                { header: "👤 الملف الشخصي", title: "عرض الملف", id: ".perfil" },
+                                                { header: "⚡ الحالة", title: "حالتي", id: ".estado" }
                                             ]
                                         }
                                     ]
