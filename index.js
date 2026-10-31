@@ -35,7 +35,7 @@ const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
-console.log(chalk.cyan('BOT LISTO ESPERE...🌿\n'))
+console.log(chalk.cyan('البوت جاهز، انتظر...🌿\n'))
 say('RIN ITOSHI BOT', {
 font: 'block',
 align: 'center',
@@ -156,7 +156,7 @@ if (!!phoneNumber) {
 addNumber = phoneNumber.replace(/[^0-9]/g, '')
 } else {
 do {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[ ✿ ]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
+phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[ ✿ ]  من فضلك أدخل رقم واتساب.\n${chalk.bold.magentaBright('---> ')}`)))
 phoneNumber = phoneNumber.replace(/\D/g,'')
 if (!phoneNumber.startsWith('+')) {
 phoneNumber = `+${phoneNumber}`
@@ -166,12 +166,12 @@ addNumber = phoneNumber.replace(/\D/g, '')
 setTimeout(async () => {
 let codeBot = await conn.requestPairingCode(addNumber)
 codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(`[ ✨️ ]  Código:`)), chalk.bold.white(chalk.white(codeBot)))
+console.log(chalk.bold.white(chalk.bgMagenta(`[ ✨️ ]  الكود:`)), chalk.bold.white(chalk.white(codeBot)))
 }, 3000)
 }}}}
 conn.isInit = false
 conn.well = false
-conn.logger.info(`LISTO 🤖\n`)
+conn.logger.info(`جاهز 🤖\n`)
 if (!opts['test']) {
 if (global.db) setInterval(async () => {
 if (global.db.data) await global.db.write()
@@ -191,37 +191,37 @@ global.timestamp.connect = new Date
 if (global.db.data == null) loadDatabase()
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
-console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR`))}
+console.log(chalk.green.bold(`[ ✿ ]  امسح رمز QR هذا`))}
 }
 if (connection === "open") {
 const userJid = jidNormalizedUser(conn.user.id)
-const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
+const userName = conn.user.name || conn.user.verifiedName || "غير معروف"
 await joinChannels(conn)
-console.log(chalk.green.bold(`╭───────────────────────────◉\n│\n│🌺◌*̥₊ 𝙲𝚘𝚗𝚎𝚌𝚝𝚊𝚍𝚘 𝙲𝚘𝚛𝚛𝚎𝚌𝚝𝚊𝚖𝚎𝚗𝚝𝚎.\n│\n╰───────────────────────────◉`))
+console.log(chalk.green.bold(`╭───────────────────────────◉\n│\n│🌺◌*̥₊ تم الاتصال بنجاح.\n│\n╰───────────────────────────◉`))
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
-console.log(chalk.bold.cyanBright(`\n⚠︎ Sin conexión, borra la session principal del Bot, y conectate nuevamente.`))
+console.log(chalk.bold.cyanBright(`\n⚠︎ لا يوجد اتصال، احذف جلسة البوت الرئيسية ثم اتصل من جديد.`))
 } else if (reason === DisconnectReason.connectionClosed) {
-console.log(chalk.bold.magentaBright(`\n♻ Reconectando la conexión del Bot...`))
+console.log(chalk.bold.magentaBright(`\n♻ جارٍ إعادة اتصال البوت...`))
 await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.connectionLost) {
-console.log(chalk.bold.blueBright(`\n⚠︎ Conexión perdida con el servidor, reconectando el Bot...`))
+console.log(chalk.bold.blueBright(`\n⚠︎ فقد الاتصال بالخادم، جارٍ إعادة الاتصال...`))
 await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.connectionReplaced) {
-console.log(chalk.bold.yellowBright(`\nꕥ La conexión del Bot ha sido reemplazada.`))
+console.log(chalk.bold.yellowBright(`\nꕥ تم استبدال اتصال البوت.`))
 } else if (reason === DisconnectReason.loggedOut) {
-console.log(chalk.bold.redBright(`\n⚠︎ Sin conexión, borra la session principal del Bot, y conectate nuevamente.`))
+console.log(chalk.bold.redBright(`\n⚠︎ لا يوجد اتصال، احذف جلسة البوت الرئيسية ثم اتصل من جديد.`))
 await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.restartRequired) {
-console.log(chalk.bold.cyanBright(`\n♻ Conectando el Bot con el servidor...`))
+console.log(chalk.bold.cyanBright(`\n♻ جارٍ ربط البوت بالخادم...`))
 await global.reloadHandler(true).catch(console.error)
 } else if (reason === DisconnectReason.timedOut) {
-console.log(chalk.bold.yellowBright(`\n♻ Conexión agotada, reconectando el Bot...`))
+console.log(chalk.bold.yellowBright(`\n♻ انتهت مهلة الاتصال، جارٍ إعادة الاتصال...`))
 await global.reloadHandler(true).catch(console.error)
 } else {
-console.log(chalk.bold.redBright(`\n⚠︎ Conexión cerrada, conectese nuevamente.`))
+console.log(chalk.bold.redBright(`\n⚠︎ تم إغلاق الاتصال، اتصل من جديد.`))
 }}}
 process.on('uncaughtException', console.error)
 let isInit = true
@@ -358,9 +358,9 @@ const filenames = readdirSync(tmpDir)
 filenames.forEach(file => {
 const filePath = join(tmpDir, file)
 unlinkSync(filePath)})
-console.log(chalk.gray(`→ Archivos de la carpeta TMP eliminados`))
+console.log(chalk.gray(`→ تم حذف ملفات مجلد TMP`))
 } catch {
-console.log(chalk.gray(`→ Los archivos de la carpeta TMP no se pudieron eliminar`));
+console.log(chalk.gray(`→ تعذّر حذف ملفات مجلد TMP`));
 }}, 30 * 1000)
 _quickTest().catch(console.error)
 async function isValidPhoneNumber(number) {

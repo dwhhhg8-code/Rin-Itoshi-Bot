@@ -15,7 +15,7 @@ await conn.reply(m.chat, system, m, rcanal)
 
 handler.help = ['estado']
 handler.tags = ['info']
-handler.command = ['estado', 'status']
+handler.command = ['estado', 'status', 'estadobot']
 
 export default handler
 

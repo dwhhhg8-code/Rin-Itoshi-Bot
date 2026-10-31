@@ -12,19 +12,19 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     let menu = `
 ╭━━━〔 *🔎 𝑴𝑬𝑵𝑼 𝑺𝑬𝑨𝑹𝑪𝑯* 〕━━⬣
-┃ ⏰ 𝗛𝗼𝗿𝗮: *${hora}*
-┃ 📅 𝗙𝗲𝗰𝗵𝗮: *${fecha}*
-┃ 📆 𝗗𝗶́𝗮: *${dia}*
-┃ 👑 𝗖𝗿𝗲𝗮𝗱𝗼𝗿: *${creador}*
-┃ ⚙️ 𝗣𝗿𝗲𝗳𝗶𝗷𝗼: *${usedPrefix}*
-┃ 📂 𝗖𝗼𝗺𝗮𝗻𝗱𝗼𝘀: *${comandos}*
-┃ 🌱 𝗥𝘂𝗻𝘁𝗶𝗺𝗲: *${uptime}*
-┃ 🚀 𝘂𝘀𝗲𝗿 𝗿𝗲𝗴𝘀: *${totalreg}*
+┃ ⏰ الوقت: *${hora}*
+┃ 📅 التاريخ: *${fecha}*
+┃ 📆 اليوم: *${dia}*
+┃ 👑 المطوّر: *${creador}*
+┃ ⚙️ البادئة: *${usedPrefix}*
+┃ 📂 الأوامر: *${comandos}*
+┃ 🌱 مدة التشغيل: *${uptime}*
+┃ 🚀 المسجلون: *${totalreg}*
 ╰━━━〔 *${bot}* 〕━━⬣
 
 ${readMore}
 
-╭─⬣「 *📥 Búsquedas Disponibles* 」
+╭─⬣「 *📥 البحث المتاح* 」
 │ 🔎 .apksearch *<término>*
 │ 🛍️ .playstore *<nombre>*
 │ 🔞 .pornhubsearch
@@ -70,7 +70,7 @@ ${channel}
       caption: menu,
       footer: '⚡ *Powered by* » Sʜᴀᴅᴏᴡ•Core 𝖢𝗅𝗎𝖻 🌱',
       buttons: [
-        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 Creador" }, type: 1 },
+        { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 المطوّر" }, type: 1 },
         { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 Menú Completo" }, type: 1 }
       ],
       headerType: 4,
@@ -95,7 +95,7 @@ ${channel}
 
   } catch (e) {
     console.error(e)
-    m.reply('❌ Error al mostrar el menú de búsquedas.')
+    m.reply('❌ خطأ في عرض قائمة البحث.')
   }
 }
 

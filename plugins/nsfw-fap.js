@@ -49,7 +49,7 @@ if (!db.data.chats[m.chat].nsfw && m.isGroup) {
 
 handler.help = ['fap/paja @tag'];
 handler.tags = ['nsfw'];
-handler.command = ['fap', 'paja'];
+handler.command = ['fap'];
 handler.group = true;
 
 export default handler;

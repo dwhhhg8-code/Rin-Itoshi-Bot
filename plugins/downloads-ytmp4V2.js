@@ -95,7 +95,7 @@ let handler = async (m, { conn, text, args }) => {
 
 handler.help = ['ytmp4v2 *<url>*'];
 handler.tags = ['download'];
-handler.command = ['ytmp4v2', 'playmp4'];
+handler.command = ['ytmp4v2'];
 handler.group = true;
 
 export default handler;

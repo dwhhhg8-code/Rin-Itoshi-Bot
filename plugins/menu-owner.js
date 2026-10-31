@@ -6,22 +6,22 @@ let handler = async (m, { conn, usedPrefix }) => {
     let hora = moment.tz('America/Lima').format('hh:mm:ss A')
     let dia = moment.tz('America/Lima').locale('es').format('dddd')
 
-    let nombreUser = m.pushName || 'Usuario'
+    let nombreUser = m.pushName || 'مستخدم'
     let pais = '🇵🇪 Perú'
     let botName = global.bot || 'Rin Itoshi'
     let club = '🌲 Owner Panel • Shadow•Core 🌲'
 
     let menu = `
-[ꔊꔊꔊ[🍉] _*MENU - OWNER*_ [🍓]ꔊꔊꔊ]    
+[ꔊꔊꔊ[🍉] _*قائمة - المالك*_ [🍓]ꔊꔊꔊ]    
 
-👤 Usuario: *${nombreUser}*
+👤 المستخدم: *${nombreUser}*
 🤖 Bot: *${botName}*
 🌎 País: ${pais}
-⏰ Hora: *${hora}*
-📅 Fecha: *${fecha}*
-📆 Día: *${dia}*
+⏰ الوقت: *${hora}*
+📅 التاريخ: *${fecha}*
+📆 اليوم: *${dia}*
 
-💥 Comandos de moderación y control avanzado para owners 🌼
+💥 أوامر الإشراف والتحكم المتقدم للمالكين 🌼
 
 🛠️  Gestión de Owners:
 𖤓❴ *#α∂∂οωиєя • #∂єℓοωиєя*
@@ -93,7 +93,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply('❌ Error al mostrar el menú OWNER.')
+    m.reply('❌ خطأ في عرض قائمة المالك.')
   }
 }
 

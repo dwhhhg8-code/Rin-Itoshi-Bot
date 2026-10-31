@@ -50,6 +50,6 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.tags = ['sticker']
 handler.help = ['bratvid <texto>']
-handler.command = ['bratvid']
+handler.command = ['bratvid2']
 
 export default handler
