@@ -97,7 +97,7 @@ const handler = async (msg, { conn, args }) => {
     lista.map((u, i) => `${i === 0 ? liderEmoji : "🥷"} ┇ @${u.id.split("@")[0]}`).join("\n");
 
   const resultado = `*🏆 PARTIDA 4v4 — COMPETITIVA*\n\n` +
-                    `🗓️ *Horario de la Sala:*\n${horaMsg}\n\n` +
+                    `🗓️ *الوقتrio de la Sala:*\n${horaMsg}\n\n` +
                     `🎯 *Modalidad:* Clásico\n\n` +
                     `👥 *Equipo Alpha:*\n${listar(teamA)}\n\n` +
                     `📥 *Suplentes:*\n${listar(subs.slice(0, 2), "🧍")}\n\n` +

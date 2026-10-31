@@ -86,11 +86,11 @@ const savetube = {
   },
 
   download: async (link) => {
-    if (!link) return { status: false, code: 400, error: "Falta el enlace de YouTube." };
-    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "URL inválida de YouTube." };
+    if (!link) return { status: false, code: 400, error: "رابط يوتيوب مفقود." };
+    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "رابط يوتيوب غير صالح." };
 
     const id = savetube.youtube(link);
-    if (!id) return { status: false, code: 400, error: "*No se pudo extraer el ID del video.*" };
+    if (!id) return { status: false, code: 400, error: "*تعذّر استخراج معرّف الفيديو.*" };
 
     try {
       const cdnRes = await savetube.getCDN();
@@ -146,17 +146,17 @@ function formatDuration(seconds) {
 }
 
 const handler = async (m, { conn, args }) => {
-  if (!args[0]) return m.reply(`Ingresa una URL de YouTube`);
+  if (!args[0]) return m.reply(`أدخل una URL de YouTube`);
 
   let url = args[0];
-  if (!savetube.isUrl(url)) return m.reply("*Ingresa un link válido de YouTube.*");
+  if (!savetube.isUrl(url)) return m.reply("*أدخل un link صالح de YouTube.*");
 
   try {
     await m.react('🕒');
     let res = await savetube.download(url);
     if (!res.status) {
       await m.react('✖️');
-      return m.reply(` Error: ${res.error}`);
+      return m.reply(` خطأ: ${res.error}`);
     }
 
     const { title, duration, thumbnail, download } = res.result;
@@ -187,7 +187,7 @@ const handler = async (m, { conn, args }) => {
     await m.react('✔️');
   } catch (e) {
     await m.react('✖️');
-    m.reply(`⚠️ La descarga ha fallado, es posible que el archivo sea muy pesado.`);
+    m.reply(`⚠️ La descarga ha fallado, es posible que الملف sea muy pesado.`);
   }
 };
 

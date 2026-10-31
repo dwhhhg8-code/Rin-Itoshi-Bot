@@ -1,15 +1,15 @@
 import axios from 'axios'
 
 let handler = async (m, { usedPrefix, command, conn, text }) => {
-  if (!text) return m.reply('Error! Ingresa un usuario. *Ejemplo:* ${usedPrefix + command} mrbeast');
+  if (!text) return m.reply('خطأ! أدخل un usuario. *Ejemplo:* ${usedPrefix + command} mrbeast');
 
   try {
-    m.reply('⏳ Buscando información...')
+    m.reply('⏳ جارٍ البحث información...')
 
     let ress = await axios.get(`https://api.koboo.my.id/api/stalk/tiktok?username=${text}`)
     let res = ress.data
 
-    if (res.status !== 200) throw 'Error! No se encontró el usuario. Asegúrate de escribirlo correctamente.'
+    if (res.status !== 200) throw 'خطأ! لم يتم العثور على المستخدم. Asegúrate de escribirlo بنجاح.'
 
     let user = res.result.user
     let stats = res.result.stats
@@ -24,7 +24,7 @@ let handler = async (m, { usedPrefix, command, conn, text }) => {
 *◦ ME GUSTAS :* ${stats.heartCount}
 *◦ VIDEOS :* ${stats.videoCount}
 *◦ AMIGOS :* ${stats.friendCount}
-*◦ DESCRIPCIÓN :* ${user.signature || 'Sin descripción'}
+*◦ DESCRIPCIÓN :* ${user.signature || 'لا يوجد وصف'}
 *◦ REGIÓN :* ${user.region || 'Desconocida'}
 *◦ CUENTA PRIVADA :* ${user.privateAccount ? '🔒 Sí' : '🔓 No'}
 *◦ VERIFICADO :* ${user.verified ? '✅ Sí' : '❌ No'}
@@ -40,7 +40,7 @@ let handler = async (m, { usedPrefix, command, conn, text }) => {
     await conn.sendMessage(m.chat, { image: { url: user.avatarLarger }, caption: teks }, { quoted: m })
 
   } catch (err) {
-    m.reply('❌ Error: No se encontró el usuario o la API falló. Intenta nuevamente.')
+    m.reply('❌ خطأ: لم يتم العثور على المستخدم o la API falló. حاول مرة أخرى.')
   }
 }
 

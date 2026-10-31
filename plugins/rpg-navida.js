@@ -32,7 +32,7 @@ var handler = async (m, { conn }) => {
 \`\`\`🎄 ¡Feliz Navidad! ¡Disfruta de tu regalo navideño! 🎁\`\`\`
 
 💸 *${moneda}* : +${coinReward}
-✨ *Experiencia* : +${expReward}
+✨ *الخبرة* : +${expReward}
 🎁 *Regalos Navideños* : +${giftReward}`);
 
     user.christmas = new Date().getTime();

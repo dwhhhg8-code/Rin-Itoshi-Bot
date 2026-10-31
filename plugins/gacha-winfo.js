@@ -8,7 +8,7 @@ async function loadCharacters() {
         const data = await fs.readFile(charactersFilePath, 'utf-8');
         return JSON.parse(data);
     } catch (error) {
-        throw new Error('No se pudo cargar el archivo characters.json.');
+        throw new Error('تعذّر cargar الملف characters.json.');
     }
 }
 
@@ -34,7 +34,7 @@ let handler = async (m, { conn, args }) => {
         const character = characters.find(c => c.name.toLowerCase() === characterName);
 
         if (!character) {
-            await conn.reply(m.chat, `《✧》No se encontró el personaje *${characterName}*.`, m);
+            await conn.reply(m.chat, `《✧》لم يتم العثور على el personaje *${characterName}*.`, m);
             return;
         }
 
@@ -44,11 +44,11 @@ let handler = async (m, { conn, args }) => {
             ? `Reclamado por @${userEntry.userId.split('@')[0]}` 
             : 'Libre';
         
-        const message = `❀ Nombre » *${character.name}*\n⚥ Género » *${character.gender}*\n✰ Valor » *${character.value}*\n♡ Estado » ${statusMessage}\n❖ Fuente » *${character.source}*`;
+        const message = `❀ الاسم » *${character.name}*\n⚥ Género » *${character.gender}*\n✰ Valor » *${character.value}*\n♡ Estado » ${statusMessage}\n❖ Fuente » *${character.source}*`;
 
         await conn.reply(m.chat, message, m, { mentions: [userEntry ? userEntry.userId : null] });
     } catch (error) {
-        await conn.reply(m.chat, `✘ Error al cargar la información del personaje: ${error.message}`, m);
+        await conn.reply(m.chat, `✘ خطأ في cargar المعلومات del personaje: ${error.message}`, m);
     }
 };
 

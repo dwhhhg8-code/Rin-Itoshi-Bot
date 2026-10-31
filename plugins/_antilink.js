@@ -16,16 +16,16 @@ try {
 const linkThisGroup = `https://chat.whatsapp.com/${await conn.groupInviteCode(m.chat)}`
 if (isGroupLink && m.text.includes(linkThisGroup)) return !0
 } catch (error) {
-console.error("[ERROR] No se pudo obtener el código del grupo:", error)
+console.error("[ERROR] تعذّر obtener el código dالمجموعة:", error)
 }}
-await conn.reply(m.chat, `🧪 Se ha eliminado a @${m.sender.split`@`[0]} del grupo por \`Anti-Link\`! No permitimos enlaces de ${isChannelLink ? 'canales' : 'otros grupos'}.`, null, { mentions: [m.sender] })
+await conn.reply(m.chat, `🧪 Se ha eliminado a @${m.sender.split`@`[0]} dالمجموعة por \`Anti-Link\`! No permitimos enlaces de ${isChannelLink ? 'canales' : 'otros grupos'}.`, null, { mentions: [m.sender] })
 if (isBotAdmin) {
 try {
 await conn.sendMessage(m.chat, { delete: m.key })
 await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-console.log(`Usuario ${m.sender} eliminado del grupo ${m.chat}`)
+console.log(`المستخدم ${m.sender} eliminado dالمجموعة ${m.chat}`)
 } catch (error) {
-console.error("No se pudo eliminar el mensaje o expulsar al usuario:", error)
+console.error("تعذّر eliminar el الرسالة o expulsar al usuario:", error)
 }}}
 return !0
 }

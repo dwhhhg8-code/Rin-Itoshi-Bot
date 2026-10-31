@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       const res1 = await fetch(url1)
       if (!res1.ok) throw await res1.text()
       const j1 = await res1.json()
-      if (!j1 || !j1.data || !j1.data.url) throw "No pude obtener la descarga"
+      if (!j1 || !j1.data || !j1.data.url) throw "تعذّر الحصول على التنزيل"
 
       json = {
         title: j1.data.title,
@@ -43,7 +43,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       const resDl = await fetch(`https://api.delirius.store/download/spotifydl?url=${encodeURIComponent(previewUrl)}`)
       if (!resDl.ok) throw await resDl.text()
       const jDl = await resDl.json()
-      if (!jDl || !jDl.data || !jDl.data.url) throw "No pude obtener la descarga"
+      if (!jDl || !jDl.data || !jDl.data.url) throw "تعذّر الحصول على التنزيل"
 
       json = {
         title: jDl.data.title,
@@ -78,7 +78,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         img.resize(300, Jimp.AUTO)
         thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
       } catch (err) {
-        console.log("⚠️ Error al procesar miniatura:", err)
+        console.log("⚠️ خطأ في معالجة miniatura:", err)
       }
     }
 
@@ -118,7 +118,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply("`❌ Error al procesar la descarga de Spotify.`")
+    m.reply("`❌ خطأ في معالجة التنزيل de Spotify.`")
   }
 }
 

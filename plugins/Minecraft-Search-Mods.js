@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args.length) {
-        return conn.reply(m.chat, `🔍 *Por favor escribe un mod a buscar.*\nEjemplo: ${usedPrefix}${command} armas`, m, rcanal);
+        return conn.reply(m.chat, `🔍 *من فضلك escribe un mod a buscar.*\nEjemplo: ${usedPrefix}${command} armas`, m, rcanal);
     }
 
     const query = args.join(' '); 
@@ -13,16 +13,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const data = await response.json();
         
         if (!data || !data.addons || data.addons.length === 0) {
-            return conn.reply(m.chat, `🚫 No se encontraron mods para "${query}".`, m);
+            return conn.reply(m.chat, `🚫 لم يتم العثور على mods para "${query}".`, m);
         }
 
         let txt = '🛠️  R E S U L T A D O S  -  M O D S\n\n';
         
         data.addons.forEach(addon => {
             txt += `✨ *Título*: ${addon.title}\n`;
-            txt += `📜 *Descripción*: ${addon.description}\n`;
+            txt += `📜 *الوصف*: ${addon.description}\n`;
             txt += `🔗 *Enlace*: ${addon.link}\n`;
-            txt += `🖼️ *Imagen*: ${addon.image}\n\n`;
+            txt += `🖼️ *الصورة*: ${addon.image}\n\n`;
         });
 
         await conn.reply(m.chat, txt.trim(), m);
@@ -30,7 +30,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     } catch (error) {
         console.error(error);
         await m.react('✖️');
-        conn.reply(m.chat, '❌ Hubo un error al procesar la solicitud.', m);
+        conn.reply(m.chat, '❌ حدث خطأ أثناء المعالجة.', m);
     }
 };
 

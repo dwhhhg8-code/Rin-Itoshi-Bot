@@ -9,7 +9,7 @@ const handler = async (m, {conn}) => {
   if (m.quoted.id == global.math[id][0].id) {
     const math = global.math[id][1];
     if (m.text == math.result) {
-      conn.reply(m.chat, `Respuesta correcta!!\nHaz ganado: ${math.bonus} XP.`, m);
+      conn.reply(m.chat, `الرد correcta!!\nHaz ganado: ${math.bonus} XP.`, m);
       global.db.data.users[m.sender].exp += math.bonus;
       clearTimeout(global.math[id][3]);
       delete global.math[id];
@@ -18,7 +18,7 @@ const handler = async (m, {conn}) => {
         conn.reply(m.chat, `Se acabaron tus oportunidades\nLa respuesta es: ${math.result}`, m);
         clearTimeout(global.math[id][3]);
         delete global.math[id];
-      } else conn.reply(m.chat, `Respuesta incorrecta!!\nOportunidades disponibles ${global.math[id][2]}`, m);
+      } else conn.reply(m.chat, `الرد incorrecta!!\nOportunidades متاحة ${global.math[id][2]}`, m);
     }
   }
 };

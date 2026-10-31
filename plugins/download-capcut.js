@@ -3,7 +3,7 @@ import cheerio from "cheerio";
 
 const handler = async (m, { conn, usedPrefix, command, text }) => {
     if (!text) {
-        return m.reply(`*🎋 Ingresa un link de CapCut.*\n\n🍄 Ejemplo:\n${usedPrefix + command} https://www.capcut.com/tv2/ZSSCR6UFU/`);
+        return m.reply(`*🎋 أدخل un link de CapCut.*\n\n🍄 Ejemplo:\n${usedPrefix + command} https://www.capcut.com/tv2/ZSSCR6UFU/`);
     }
 
     try {
@@ -12,17 +12,17 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
 
         if (!result) {
             await m.react('❌');
-            return m.reply('*No se pudieron obtener los datos. Asegúrate de que la URL ingresada sea correcta.*');
+            return m.reply('*تعذّر الحصول على البيانات. تأكد من صحة الرابط.*');
         }
 
         const info = `🎬 CAPCUT DOWNLOADER 🎬 
  
 ° 🌴 *Título:* ${result.title}
 ° 👤 *Autor:* ${result.author.name}
-° 📆 *Fecha:* ${result.date}
+° 📆 *التاريخ:* ${result.date}
 ° 👥 *Usos:* ${result.uses}
 ° 🤍 *Likes:* ${result.likes}
-° 🖼 *Thumbnail:* ${result.posterUrl || 'No disponible'}
+° 🖼 *Thumbnail:* ${result.posterUrl || 'غير متاح'}
 ° 📥 *Video URL:* 
  ${result.videoUrl}
         `.trim();
@@ -49,7 +49,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
     } catch (error) {
         console.error(error);
         await m.react('❌');
-        m.reply('*❌ Ocurrió un error al obtener los datos.*');
+        m.reply('*❌ حدث خطأ في جلب البيانات.*');
     }
 };
 
@@ -75,7 +75,7 @@ async function capcutdl(url) {
         const authorAvatar = $('span.lv-avatar-image img').attr('src');
         const authorName = $('span.lv-avatar-image img').attr('alt');
 
-        if (!videoSrc) throw new Error('No se encontró el link del video.');
+        if (!videoSrc) throw new Error('لم يتم العثور على رابط الفيديو.');
 
         return {            
             title,
@@ -90,7 +90,7 @@ async function capcutdl(url) {
             posterUrl: posterSrc || null
         };
     } catch (error) {
-        console.error('Error al obtener los detalles del video:', error.message);
+        console.error('خطأ في جلب تفاصيل الفيديو:', error.message);
         return null;
     }
 }

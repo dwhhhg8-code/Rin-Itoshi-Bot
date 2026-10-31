@@ -207,8 +207,6 @@ if (!('antiImg' in chat))
 chat.antiImg = false
 if (!('reaction' in chat))
 chat.reaction = false
-if (!('nsfw' in chat))
-chat.nsfw = false
 if (!('antifake' in chat))
 chat.antifake = false
 if (!('delete' in chat))
@@ -236,7 +234,6 @@ modoadmin: false,
 antiLink: true,
 antifake: false,
 reaction: false,
-nsfw: false,
 expired: 0, 
 antiLag: false,
 per: [],
@@ -545,7 +542,7 @@ if (!['grupo-unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner
 if (name != 'grupo-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'grupo-delete.js' && chat?.isBanned && !isROwner) return 
 if (user.antispam > 2) return
 if (m.text && user.banned && !isROwner) {
-m.reply(`《✦》Estas baneado/a, no puedes usar comandos en este bot!\n\n${user.bannedReason ? `✰ *Motivo:* ${user.bannedReason}` : '✰ *Motivo:* Sin Especificar'}\n\n> ✧ Si este Bot es cuenta oficial y tiene evidencia que respalde que este mensaje es un error, puedes exponer tu caso con un moderador.`)
+m.reply(`《✦》Estas baneado/a, no puedes usar comandos en este bot!\n\n${user.bannedReason ? `✰ *Motivo:* ${user.bannedReason}` : '✰ *Motivo:* Sin Especificar'}\n\n> ✧ Si este Bot es cuenta oficial y tiene evidencia que respalde que este الرسالة es un error, puedes exponer tu caso con un moderador.`)
 user.antispam++
 return
 }
@@ -569,7 +566,7 @@ if (plugin?.warn && !isOwner && !isROwner) {
           let warns = global.db.data.users[m.sender].warns || 0
           warns++
           global.db.data.users[m.sender].warns = warns
-          await this.reply(m.chat, `⚠️ Advertencia ${warns}/3.`, m, rcanal)
+          await this.reply(m.chat, `⚠️ تحذير ${warns}/3.`, m, rcanal)
   
           if (warns >= 3) {
             global.db.data.users[m.sender].warns = 0
@@ -777,7 +774,7 @@ export async function deleteUpdate(message) {
     await this.copyNForward(chat, msg)
 
   } catch (e) {
-    console.error('❌ Error en antidelete:', e)
+    console.error('❌ خطأ en antidelete:', e)
   }
 }
 
@@ -825,7 +822,7 @@ if (global.conns && global.conns.length > 0 ) {
   
       }
     } catch (e) {
-      console.error('Error recargando handler para', userr?.user?.jid, e)
+      console.error('خطأ recargando handler para', userr?.user?.jid, e)
     }
   }
 }});

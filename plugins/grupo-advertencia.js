@@ -11,7 +11,7 @@ who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text;
   const dReason = 'Sin motivo';
   const msgtext = text || dReason 
   const sdms = msgtext.replace(/@\d+-?\d* /g, '');
-  const warntext = `${emoji} Etiquete a una persona o responda a un mensaje del grupo para advertir al usuario.`;
+  const warntext = `${emoji} Etiquete a una persona o responda a un الرسالة dالمجموعة para advertir al usuario.`;
   if (!who) {
 return m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext) });
   }
@@ -25,7 +25,7 @@ return
 }}
 
   user.warn += 1;
-  await m.reply(`${user.warn == 1 ? `*@${who.split`@`[0]}*` : `*@${who.split`@`[0]}*`} Recibio una advertencia en este grupo!.\nMotivo: ${sdms}\n*Advertencias: ${user.warn}/3*`, null, { mentions: [who] },
+  await m.reply(`${user.warn == 1 ? `*@${who.split`@`[0]}*` : `*@${who.split`@`[0]}*`} Recibio una advertencia en este grupo!.\nMotivo: ${sdms}\n*تحذيرs: ${user.warn}/3*`, null, { mentions: [who] },
   );
   if (user.warn >= 3) {
     user.warn = 0;

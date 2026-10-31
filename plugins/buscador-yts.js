@@ -38,9 +38,9 @@ const fetchAPI = async (url, type) => {
       };
     }
 
-    throw new Error("Error al obtener datos desde StellarWA");
+    throw new Error("خطأ في جلب datos desde StellarWA");
   } catch (e) {
-    console.log("Error en StellarWA:", e.message);
+    console.log("خطأ en StellarWA:", e.message);
     return null;
   }
 };
@@ -67,16 +67,16 @@ function formatSize(bytes) {
 }
 
 const handler = async (m, { conn, text }) => {
-  if (!text?.trim()) return conn.reply(m.chat, "*🎋 Ingresa el nombre de la música a buscar.*", m);
+  if (!text?.trim()) return conn.reply(m.chat, "*🎋 أدخل الاسم de الموسيقى a buscar.*", m);
 
   const search = await yts(text);
-  if (!search.all.length) return conn.reply(m.chat, "No se encontraron resultados.", m);
+  if (!search.all.length) return conn.reply(m.chat, "لا توجد نتائج.", m);
 
   const results = search.all.slice(0, 10);
   videoCache[m.sender] = { results, timestamp: Date.now() };
   await m.react("🕒");
 
-  let messageText = `🌷 Resultados de la búsqueda para *<${text}>*\n\n`;
+  let messageText = `🌷 النتيجةs de la búsqueda para *<${text}>*\n\n`;
   results.forEach((v, i) => {
     messageText += `
 *${i + 1}.*
@@ -90,10 +90,10 @@ const handler = async (m, { conn, text }) => {
   });
 
   messageText += `
-\n🍂 Responde con:
-- \`A <número>\` → Audio
+\n🍂 رُدّ con:
+- \`A <número>\` → الصوت
 - \`V <número>\` → Video
-- \`AD <número>\` → Audio Doc
+- \`AD <número>\` → الصوت Doc
 - \`VD <número>\` → Video Doc`;
 
   const thumb = results[0]?.thumbnail ? (await conn.getFile(results[0].thumbnail))?.data : null;
@@ -102,7 +102,7 @@ const handler = async (m, { conn, text }) => {
     contextInfo: {
       externalAdReply: {
         title: "🍓 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 🎶 𝗦𝗲𝗮𝗿𝗰𝗵 🌤️",
-        body: "Resultados encontrados",
+        body: "النتيجةs encontrados",
         mediaType: 1,
         previewType: 0,
         sourceUrl: results[0]?.url,
@@ -122,9 +122,9 @@ handler.command = ["ytsearch", "yts"];
 handler.group = true;
 handler.register = true;
 
-// 🪷 Descarga según respuesta del usuario
+// 🪷 Descarga según respuesta dالمستخدم
 handler.before = async (m, { conn }) => {
-  if (!m.quoted || !m.quoted.text.includes("Resultados de la búsqueda")) return;
+  if (!m.quoted || !m.quoted.text.includes("النتيجةs de la búsqueda")) return;
 
   const match = m.text.trim().match(/^(A|V|AD|VD)\s*(\d+)$/i);
   if (!match) return;
@@ -148,10 +148,10 @@ handler.before = async (m, { conn }) => {
     const mediaType = type.startsWith("A") ? "audio" : "video";
     const asDocument = type.endsWith("D");
 
-    await conn.reply(m.chat, mediaType === "audio" ? "🎧 Descargando audio..." : "🎬 Descargando video...", m);
+    await conn.reply(m.chat, mediaType === "audio" ? "🎧 جارٍ التنزيل audio..." : "🎬 جارٍ التنزيل video...", m);
 
     const apiData = await fetchAPI(urlVideo, mediaType);
-    if (!apiData) return conn.reply(m.chat, "⚠️ Error al obtener el enlace desde StellarWA.", m);
+    if (!apiData) return conn.reply(m.chat, "⚠️ خطأ في جلب الرابط desde StellarWA.", m);
 
     const sizeBytes = await getSize(apiData.download);
     const fileSizeMB = sizeBytes ? sizeBytes / (1024 * 1024) : null;
@@ -160,7 +160,7 @@ handler.before = async (m, { conn }) => {
       const shortUrl = await shortenURL(apiData.download);
       return conn.reply(
         m.chat,
-        `⚠️ El archivo pesa *${formatSize(sizeBytes)}* y excede el límite de ${MAX_FILE_SIZE_MB}MB.\n\n🔗 Descarga manual: ${shortUrl}`,
+        `⚠️ الملف pesa *${formatSize(sizeBytes)}* y excede el límite de ${MAX_FILE_SIZE_MB}MB.\n\n🔗 تنزيل manual: ${shortUrl}`,
         m
       );
     }
@@ -170,7 +170,7 @@ handler.before = async (m, { conn }) => {
 > 🎤 *Autor:* ${apiData.author}
 > ⏱ *Duración:* ${videoData.timestamp || "?"}
 > 💾 *Tamaño:* ${formatSize(sizeBytes)}
-> 🔗 *Descarga:* ${await shortenURL(apiData.download)}
+> 🔗 *تنزيل:* ${await shortenURL(apiData.download)}
 `;
 
     if (asDocument) {
@@ -216,7 +216,7 @@ handler.before = async (m, { conn }) => {
       );
     }
   } catch (err) {
-    conn.reply(m.chat, `⚠︎ Error: ${err.message}`, m);
+    conn.reply(m.chat, `⚠︎ خطأ: ${err.message}`, m);
   }
 };
 

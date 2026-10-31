@@ -14,13 +14,13 @@ const MinecraftStalk = async (username) => {
             name_history: data.data.player.name_history
         };
     } catch (error) {
-        throw new Error("Jugador no encontrado");
+        throw new Error("Jugador غير موجود");
     }
 };
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) {
-        return conn.reply(m.chat, `🧃 Ingresa un nombre de jugador de Minecraft\n\nEjemplo:\n> *${usedPrefix + command}* hann`, m, rcanal);
+        return conn.reply(m.chat, `🧃 أدخل un nombre de jugador de Minecraft\n\nEjemplo:\n> *${usedPrefix + command}* hann`, m, rcanal);
     }
 
     await m.react('🕓');
@@ -28,12 +28,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const playerData = await MinecraftStalk(args[0]);
 
         let txt = '`乂 M I N E C R A F T - S T A L K`\n\n';
-        txt += ` ✩ *Nombre de usuario*: ${playerData.username}\n`;
+        txt += ` ✩ *الاسم de usuario*: ${playerData.username}\n`;
         txt += ` ✩ *ID*: ${playerData.id}\n`;
         txt += ` ✩ *Raw ID*: ${playerData.raw_id}\n`;
         txt += ` ✩ *Avatar*: ${playerData.avatar}\n`;
         txt += ` ✩ *Textura de la piel*: ${playerData.skin_texture}\n`;
-        txt += ` ✩ *Historial del nombre*: ${playerData.name_history.join(', ')}\n\n`;
+        txt += ` ✩ *Historial dالاسم*: ${playerData.name_history.join(', ')}\n\n`;
         
         let imge = playerData.avatar;
         

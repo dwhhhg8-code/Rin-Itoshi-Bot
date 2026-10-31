@@ -46,7 +46,7 @@ let handler = async (m, { conn, command }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply('❌ Error al obtener el video, onii-chan~ 💔')
+    m.reply('❌ خطأ في جلب el video, onii-chan~ 💔')
   }
 }
 

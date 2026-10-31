@@ -1,10 +1,10 @@
 let handler = async (m, { conn }) => {
   try {
     await conn.updateProfilePicture(conn.user.jid, Buffer.alloc(0));
-    await conn.reply(m.chat, '🗑️ Foto de perfil eliminada correctamente.', m, fake);
+    await conn.reply(m.chat, '🗑️ Foto de perfil eliminada بنجاح.', m, fake);
   } catch (e) {
     console.error(e);
-    await conn.reply(m.chat, '❌ Ocurrió un error al eliminar la foto de perfil.', m);
+    await conn.reply(m.chat, '❌ حدث خطأ al eliminar la foto de perfil.', m);
   }
 };
 

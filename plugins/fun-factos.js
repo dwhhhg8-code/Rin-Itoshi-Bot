@@ -2,7 +2,7 @@ const { generateWAMessageFromContent, proto } = (await import('@whiskeysockets/b
 
 var handler = async (m, { conn, text}) => {
 
-conn.reply(m.chat, `${emoji2} Buscando un facto, espere un momento...`, m)
+conn.reply(m.chat, `${emoji2} جارٍ البحث un facto, espere un momento...`, m)
 
 conn.reply(m.chat, `*┏━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┓*\n\n❥ *"${pickRandom(global.factos)}"*\n\n*┗━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┛*`, m)
 
@@ -47,11 +47,11 @@ global.factos = [
     "Eres la razón por la que las personas no creen en el amor verdadero.",
     "Tu vida es un meme, pero nadie se ríe.",
     "Si fueras una aplicación, serías una que nadie quiere descargar.",
-    "Eres como una sombra: siempre estás ahí, pero no eres bienvenido.",
+    "Eres como una sombra: siempre estás ahí, pero no eres مرحباً بك.",
     "Tu cerebro es como un disco duro lleno: no puede almacenar más.",
     "Eres como un tren descarrilado: solo causan caos.",
     "Si fueras un clima, serías una tormenta: oscuro y destructivo.",
-    "Eres como una cadena de mensajes: nadie te quiere, pero todos te reciben.",
+    "Eres como una cadena de الرسالةs: nadie te quiere, pero todos te reciben.",
     "Tu vida es como un rompecabezas con piezas que nunca encajan.",
     "Si fueras una película, serías una secuela que nadie pidió."
 ];

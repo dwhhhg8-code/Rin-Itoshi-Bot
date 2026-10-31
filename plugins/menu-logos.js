@@ -67,7 +67,7 @@ const handler = async (m, { conn, usedPrefix }) => {
     menutxt += especiales.map(e => `${e.emoji} *${usedPrefix}${e.cmd}*`).join('\n');
 
     menutxt += `\n\n╰━━⊱ *CÓMO USAR* ⊰━━╯\n`;
-    menutxt += `_Escribe el comando seguido del texto que quieres transformar_\n`;
+    menutxt += `_اكتب el comando seguido del texto que quieres transformar_\n`;
     menutxt += `Ejemplo: *${usedPrefix}glitchtext Sukuna Bot*\n\n`;
     menutxt += `⚡ *Tip:* Puedes combinar varios estilos y emojis para hacer tu logo único.\n`;
 
@@ -76,10 +76,10 @@ const handler = async (m, { conn, usedPrefix }) => {
       contextInfo: {
         mentionedJid: [m.sender],
         externalAdReply: {
-          title: "💠 Rin Itoshi - Menú de Logos",
+          title: "💠 FLASH BOT - قائمة الشعارات",
           body: "Dev by Shadow'Core",
           thumbnailUrl: 'https://files.catbox.moe/nmseef.png',
-          sourceUrl: 'https://github.com/the-27/Rin-Itoshi-Bot-MD',
+          sourceUrl: 'https://github.com/the-27/flash-bot-Bot-MD',
           mediaType: 1,
           renderLargerThumbnail: true,
         },
@@ -164,12 +164,12 @@ const handler = async (m, { conn, usedPrefix }) => {
 
     await conn.sendMessage(m.chat, {
       text: menuBase,
-      footer: "💠 Rin Itoshi - Logos & Estilos",
+      footer: "💠 FLASH BOT - Logos & Estilos",
       templateButtons: [
         { quickReplyButton: { displayText: "🔥 Estilos Populares", id: "populares" } },
         { quickReplyButton: { displayText: "🎨 Estilos Creativos", id: "creativos" } },
         { quickReplyButton: { displayText: "🌈 Estilos Especiales", id: "especiales" } },
-        { urlButton: { displayText: "🌐 GitHub", url: "https://github.com/the-27/Rin-Itoshi-Bot" } },
+        { urlButton: { displayText: "🌐 GitHub", url: "https://github.com/the-27/flash-bot-Bot" } },
         { urlButton: { displayText: "✨ Más Estilos", url: "https://ephoto360.com" } },
       ],
       contextInfo: {
@@ -177,7 +177,7 @@ const handler = async (m, { conn, usedPrefix }) => {
           title: "💠 Menú Logos & Estilos",
           body: "Crea tus logos al instante",
           thumbnailUrl: 'https://files.catbox.moe/nmseef.png',
-          sourceUrl: 'https://github.com/the-27/Rin-Itoshi-Bot-MD',
+          sourceUrl: 'https://github.com/the-27/flash-bot-Bot-MD',
           mediaType: 1,
           renderLargerThumbnail: true,
         }

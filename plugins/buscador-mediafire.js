@@ -12,20 +12,20 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let json = await res.json()
 
     if (!json.status || !json.results || json.results.length === 0) {
-      throw `❌ No se encontraron resultados para: *${text}*`
+      throw `❌ لا توجد نتائج para: *${text}*`
     }
 
-    let txt = `╭━━━〔 🔍 *Resultados de MediaFire* 〕━━⬣\n`
-    txt += `┃ ✨ *Búsqueda:* ${text}\n`
-    txt += `┃ 👑 *Creador:* shadow_xyz \n`
+    let txt = `╭━━━〔 🔍 *النتيجةs de MediaFire* 〕━━⬣\n`
+    txt += `┃ ✨ *بحث:* ${text}\n`
+    txt += `┃ 👑 *المطوّر:* shadow_xyz \n`
     txt += `╰━━━━━━━━━━━━━━━━━━⬣\n\n`
 
     json.results.forEach((file, i) => {
-      txt += `📁 *${i + 1}.* ${file.filename || 'Archivo desconocido'}\n`
+      txt += `📁 *${i + 1}.* ${file.filename || 'الملف غير معروف'}\n`
       txt += `┆📦 *Tamaño:* ${file.filesize || 'Desconocido'}\n`
-      txt += `┆🔗 *Link:* ${file.url || 'No disponible'}\n`
-      txt += `┆🌐 *Fuente:* ${file.source_title || 'Sin título'}\n`
-      txt += `┆🔸 *URL Fuente:* ${file.source_url || 'No disponible'}\n`
+      txt += `┆🔗 *Link:* ${file.url || 'غير متاح'}\n`
+      txt += `┆🌐 *Fuente:* ${file.source_title || 'بدون عنوان'}\n`
+      txt += `┆🔸 *URL Fuente:* ${file.source_url || 'غير متاح'}\n`
       txt += `╰━━━━━━━━━━━━⬣\n\n`
     })
 
@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (err) {
     console.error(err)
-    await conn.reply(m.chat, '*Error al consultar la API de MediaFire.*', m)
+    await conn.reply(m.chat, '*خطأ في consultar la API de MediaFire.*', m)
   }
 }
 

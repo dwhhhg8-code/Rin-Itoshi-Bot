@@ -35,7 +35,7 @@ var handler = async (m, { conn }) => {
 
 💸 *${moneda}* : +${coinReward}
 🍬 *Dulces* : +${candyReward}
-✨ *Experiencia* : +${expReward}
+✨ *الخبرة* : +${expReward}
 🎃 *Regalos de Halloween* : +${giftReward}`);
 
     user.halloween = new Date().getTime();

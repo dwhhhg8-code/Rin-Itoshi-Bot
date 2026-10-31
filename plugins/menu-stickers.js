@@ -50,8 +50,8 @@ let handler = async (m, { conn }) => {
         mediaType: 1,
         renderLargerThumbnail: true,
         showAdAttribution: true,
-        mediaUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U',
-        sourceUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+        mediaUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v',
+        sourceUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
       }
     }
   }, { quoted: m });

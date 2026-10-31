@@ -15,7 +15,7 @@ const handler = async (m, { conn }) => {
   ).join('\n')
 
   const result = `
-✅ *Administradores del grupo:*
+✅ *Administradores dالمجموعة:*
 
 ${adminList}
 `.trim()

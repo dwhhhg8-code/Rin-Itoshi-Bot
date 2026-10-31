@@ -80,12 +80,6 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin })
       isEnable = chat.reaction
       break
 
-    case 'nsfw':
-    case 'modohorny':
-      if (m.isGroup && !isAdmin && !isOwner) return global.dfail('admin', m, conn)
-      isEnable = chat.nsfw
-      break
-
     case 'antispam':
     case 'antispam2':
       if (!isOwner) return global.dfail('rowner', m, conn)
@@ -140,7 +134,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin })
       break
 
     default:
-      return conn.reply(m.chat, 'Opción inválida.', m)
+      return conn.reply(m.chat, 'Opción غير صالح.', m)
   }
 
   if (args[0] === 'on' || args[0] === 'enable') {
@@ -154,7 +148,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin })
 ━━━━━━━━━━━━━━━━━━━━━━━
 ﹒⌗﹒🌤️ .˚₊‧  𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐚𝐜𝐢𝐨𝐧 🍂ᯭ⁾  ꤥㅤꤪꤨ
 ━━━━━━━━━━━━━━━━━━━━━━━
-🌿 *Comando:* ${command}
+🌿 *الأمر:* ${command}
 🌾 *Activar:* ${usedPrefix + command} on
 🍉 *Desactivar:* ${usedPrefix + command} off
 ━━━━━━━━━━━━━━━━━━━━━━━
@@ -182,7 +176,7 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin })
 handler.help = [
   'welcome', 'bienvenida', 'antiprivado', 'antiprivate', 'restrict', 'restringir', 'antibot', 'antibots',
   'autoaceptar', 'aceptarauto', 'autorechazar', 'rechazarauto', 'autoresponder', 'autorespond', 'antisubbots',
-  'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'nsfw', 'modohorny', 'antispam', 'antispam2',
+  'antibot2', 'modoadmin', 'soloadmin', 'reaction', 'reaccion', 'antispam', 'antispam2',
   'jadibotmd', 'modejadibot', 'detect', 'avisos', 'antilink', 'audios', 'antiver', 'antiocultar',
   'antilink2', 'antiarabe', 'antifake', 'antivirtuales', 'economy', 'economia'
 ]

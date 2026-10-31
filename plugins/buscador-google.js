@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { text }) => {
   if (!text) {
-    m.reply(`${emoji} Por favor, proporciona el termino de búsqueda que deseas realizar a *Google*.`);
+    m.reply(`${emoji} من فضلك، proporciona el termino de búsqueda que deseas realizar a *Google*.`);
     return;
   }
 
@@ -13,11 +13,11 @@ let handler = async (m, { text }) => {
     const result = await response.json();
 
     if (!result.status) {
-      m.reply('Error al realizar la búsqueda.');
+      m.reply('خطأ في realizar la búsqueda.');
       return;
     }
 
-    let replyMessage = `${emoji2} Resultados de la búsqueda:\n\n`;
+    let replyMessage = `${emoji2} النتيجةs de la búsqueda:\n\n`;
     result.data.slice(0, 1).forEach((item, index) => {
       replyMessage += `☁️ *${index + 1}. ${item.title}*\n`;
       replyMessage += `📰 *${item.description}*\n`;
@@ -28,8 +28,8 @@ m.react('✅')
 
     m.reply(replyMessage);
   } catch (error) {
-    console.error(`${msm} Error al realizar la solicitud a la API:`, error);
-    m.reply(`${msm} Ocurrió un error al obtener los resultados.`);
+    console.error(`${msm} خطأ في realizar la solicitud a la API:`, error);
+    m.reply(`${msm} حدث خطأ al obtener النتائج.`);
   }
 };
 

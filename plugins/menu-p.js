@@ -38,7 +38,7 @@ let handler = async (m, { conn }) => {
 
 ${listaComandos}
 
-💌 Canal oficial: https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U
+💌 Canal oficial: https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v
 `.trim();
 
     await conn.sendMessage(m.chat, {
@@ -53,15 +53,15 @@ ${listaComandos}
           mediaType: 1,
           renderLargerThumbnail: true,
           showAdAttribution: true,
-          mediaUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U',
-          sourceUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+          mediaUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v',
+          sourceUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
         }
       }
     }, { quoted: m });
 
   } catch (err) {
     console.error(err);
-    conn.reply(m.chat, '❌ Hubo un error al cargar el menú.', m);
+    conn.reply(m.chat, '❌ حدث خطأ al cargar el menú.', m);
   }
 };
 

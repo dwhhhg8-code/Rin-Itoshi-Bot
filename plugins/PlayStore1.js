@@ -5,7 +5,7 @@
 import axios from 'axios';
 
 let handler = async (m, { conn, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, '🚩 Ingresa el nombre de la aplicación que deseas buscar.\n\nEjemplo:\n' + `> *${usedPrefix}playstore1* whatsapp`, m, rcanal);
+  if (!text) return conn.reply(m.chat, '🚩 أدخل الاسم de la aplicación que deseas buscar.\n\nEjemplo:\n' + `> *${usedPrefix}playstore1* whatsapp`, m, rcanal);
 
   await m.react('🕓');
 
@@ -28,16 +28,16 @@ let handler = async (m, { conn, text, usedPrefix }) => {
           nombre: nombre || 'Sin nombre',
           desarrollador: desarrollador || 'Sin desarrollador',
           img: 'https://files.catbox.moe/dklg5y.jpg', 
-          calificacion: calificacion || 'Sin calificación',
-          calificacionTexto: calificacionTexto || 'Sin calificación',
+          calificacion: calificacion || 'بدون تقييم',
+          calificacionTexto: calificacionTexto || 'بدون تقييم',
           link_desarrollador: `https://play.google.com/store/apps/developer?id=${desarrollador.split(" ").join('+')}`
         });
       });
 
-      return resultados.length ? resultados.slice(0, Math.min(5, resultados.length)) : { message: 'No se encontraron resultados' };
+      return resultados.length ? resultados.slice(0, Math.min(5, resultados.length)) : { message: 'لا توجد نتائج' };
     } catch (error) {
       console.error(error);
-      throw new Error('Error en la búsqueda de Play Store');
+      throw new Error('خطأ في البحث de Play Store');
     }
   };
 
@@ -45,11 +45,11 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     const resultados = await PlayStore(text);
     if (resultados.message) return m.reply(resultados.message);
 
-    let txt = `*🔎 Resultados de la búsqueda en Play Store para "${text}"*\n\n`;
+    let txt = `*🔎 النتيجةs de la búsqueda en Play Store para "${text}"*\n\n`;
     for (let app of resultados) {
-      txt += `▢ *Nombre:* ${app.nombre}\n`;
+      txt += `▢ *الاسم:* ${app.nombre}\n`;
       txt += `▢ *Desarrollador:* ${app.desarrollador}\n`;
-      txt += `▢ *Calificación:* ${app.calificacionTexto} (${app.calificacion})\n`;
+      txt += `▢ *التقييم:* ${app.calificacionTexto} (${app.calificacion})\n`;
       txt += `▢ *Link:* ${app.link}\n`;
       txt += `▢ *Link del Desarrollador:* ${app.link_desarrollador}\n\n━━━━━━━━━━━━━━━━━━━━━━\n\n`;
     }
@@ -59,7 +59,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
       contextInfo: {
         externalAdReply: {
           title: resultados[0].nombre,
-          body: `Resultados de búsqueda de Play Store - ${text}`,
+          body: `النتيجةs de búsqueda de Play Store - ${text}`,
           thumbnailUrl: 'https://files.catbox.moe/dklg5y.jpg',
           sourceUrl: resultados[0].link,
           mediaType: 1,
@@ -71,7 +71,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     await m.react('✅');
   } catch (error) {
     console.error(error);
-    m.reply('Ocurrió un error durante la búsqueda.');
+    m.reply('حدث خطأ أثناء البحث.');
     await m.react('✖️');
   }
 };

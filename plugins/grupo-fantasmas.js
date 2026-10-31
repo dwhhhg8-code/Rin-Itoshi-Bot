@@ -25,12 +25,12 @@ switch (command) {
 
 case 'fantasmas': 
 if(total == 0) return conn.reply(m.chat, `${emoji} Este grupo es activo, no tiene fantasmas.`, m) 
-m.reply(`${emoji} *Revisión de inactivos*\n\n${emoji2} *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n*📝 NOTA:*\nEsto no es al 100% acertado, el bot inicia el conteo de mensajes a partir de que se active en este número`, null, { mentions: sider }) 
+m.reply(`${emoji} *Revisión de inactivos*\n\n${emoji2} *قائمة fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n*📝 NOTA:*\nEsto no es al 100% acertado, el bot inicia el conteo de الرسالةs a partir de que se active en este número`, null, { mentions: sider }) 
 break
 
 case 'kickfantasmas':  
 if(total == 0) return conn.reply(m.chat, `${emoji} Este grupo es activo no tiene fantasmas.`, m) 
-await m.reply(`${emoji} *Eliminación de inactivos*\n\n${emoji2} *Lista de fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n${msm} _*El bot eliminara a los usuarios de la lista mencionada cada 10 segundos.*_`, null, { mentions: sider }) 
+await m.reply(`${emoji} *Eliminación de inactivos*\n\n${emoji2} *قائمة fantasmas*\n${sider.map(v => '@' + v.replace(/@.+/, '')).join('\n')}\n\n${msm} _*البوت eliminara a los المستخدمون de la lista mencionada cada 10 segundos.*_`, null, { mentions: sider }) 
 await delay(1 * 10000)
 let chat = global.db.data.chats[m.chat]
 chat.welcome = false

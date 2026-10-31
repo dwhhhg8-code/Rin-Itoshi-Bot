@@ -1,5 +1,5 @@
 /*const handler = async (m, { conn }) => {
-  const { welcome, antiPrivate, antiarabe, restrict, antiBot, autoAceptar, autoRechazar, antiBot2, modoadmin, reaction, nsfw, antiSpam, antiLink2, jadibotmd, detect, antiver, audios, antiLink, antifake } = global.db.data.chats[m.chat] || {};
+  const { welcome, antiPrivate, antiarabe, restrict, antiBot, autoAceptar, autoRechazar, antiBot2, modoadmin, reaction, antiSpam, antiLink2, jadibotmd, detect, antiver, audios, antiLink, antifake } = global.db.data.chats[m.chat] || {};
         
   const estado = (valor) => valor ? ' *`Activado`*' : ' *`Desactivado`*';
   const itoshi = `Estado:`;
@@ -14,7 +14,6 @@
 │ ☘️ AntiSub Bots: ${estado(antiBot2)}
 │ ☘️ Modo Admin: ${estado(modoadmin)}
 │ ☘️ Reacción: ${estado(reaction)}
-│ ☘️ NSFW: ${estado(nsfw)}
 │ ☘️ Anti Link2: ${estado(antiLink2)}
 │ ☘️ Avisos / Detect: ${estado(detect)}
 │ ☘️ Antiocultar / Antiver: ${estado(antiver)}
@@ -42,7 +41,7 @@ _*📝 Ejemplo:*_  \`.antilink on\``;
     text,
     contextInfo: {
       externalAdReply: {
-        title: '⚙️ Configuración Rin Itoshi',
+        title: '⚙️ إعدادات FLASH BOT',
         body: 'Gestión Avanzada del Reino',
         thumbnailUrl: 'https://files.catbox.moe/4dple4.jpg',
         mediaType: 1,

@@ -36,12 +36,12 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
 
 let { say } = cfonts
 console.log(chalk.cyan('البوت جاهز، انتظر...🌿\n'))
-say('RIN ITOSHI BOT', {
+say('FLASH BOT', {
 font: 'block',
 align: 'center',
 gradient: ['green', 'white']
 })
-say('Shadow_Core xD', {
+say('haitham', {
 font: 'console',
 align: 'center',
 colors: ['cyan', 'magenta', 'yellow']
@@ -109,7 +109,7 @@ opcion = '1'
 }
 if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
 do {
-opcion = await question(colors("Seleccione una opción:\n") + qrOption("1. Con código QR\n") + textOption("2. Con código de texto de 8 dígitos\n--> "))
+opcion = await question(colors("اختر una opción:\n") + qrOption("1. Con código QR\n") + textOption("2. Con código de texto de 8 dígitos\n--> "))
 if (!/^[1-2]$/.test(opcion)) {
 console.log(chalk.bold.redBright(`No se permiten numeros que no sean 1 o 2, tampoco letras o símbolos especiales.`))
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
@@ -271,7 +271,7 @@ global.rutaJadiBot = join(__dirname, `./${jadi}`)
 if (global.shadowJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
-console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} se creó correctamente.`))
+console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} se creó بنجاح.`))
 } else {
 console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} ya está creada.`)) 
 }

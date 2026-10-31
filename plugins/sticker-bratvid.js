@@ -6,7 +6,7 @@ const fetchStickerVideo = async (text) => {
         params: { text },
         responseType: 'arraybuffer'
     })
-    if (!response.data) throw new Error('Error al obtener el video de la API.')
+    if (!response.data) throw new Error('خطأ في جلب el video de la API.')
     return response.data
 }
 
@@ -15,7 +15,7 @@ let handler = async (m, { conn, text }) => {
         text = m.quoted.text
     } else if (!text) {
         return conn.sendMessage(m.chat, {
-            text: '❀ Por favor, responde a un mensaje o ingresa un texto para crear el Sticker.'
+            text: '❀ من فضلك، رُدّ على الرسالة o ingresa un texto لإنشاء el Sticker.'
         }, { quoted: m })
     }
 
@@ -32,7 +32,7 @@ let handler = async (m, { conn, text }) => {
         }, { quoted: m })
     } catch (e) {
         await conn.sendMessage(m.chat, {
-            text: `⚠︎ Ocurrió un error: ${e.message}`
+            text: `⚠︎ حدث خطأ: ${e.message}`
         }, { quoted: m })
     }
 }

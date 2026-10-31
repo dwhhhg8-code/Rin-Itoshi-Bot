@@ -1,8 +1,8 @@
 global.math = global.math ? global.math : {};
 const handler = async (m, {conn, args, usedPrefix, command}) => {
-  const mat =`${emoji} Por favor, ingresa la dificulta con la que desea jugar.
+  const mat =`${emoji} من فضلك أدخل la dificulta con la que desea jugar.
 
-*Dificultades Disponibles: ${Object.keys(modes).join(' | ')}*
+*Dificultades متاحة: ${Object.keys(modes).join(' | ')}*
 *Ejemplo de uso: ${usedPrefix}mates medium*
 `.trim();
   if (args.length < 1) return await conn.reply(m.chat, mat, m);

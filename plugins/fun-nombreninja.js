@@ -1,6 +1,6 @@
 function handler(m, { text }) {
-if (!text) return conn.reply(m.chat, `${emoji} Por favor, ingresa tu nombre junto al comando.`, m)
-conn.reply(m.chat, `${emoji} Buscando el Nombre, espere un momento...`, m)
+if (!text) return conn.reply(m.chat, `${emoji} من فضلك أدخل tu nombre junto al comando.`, m)
+conn.reply(m.chat, `${emoji} جارٍ البحث el الاسم, espere un momento...`, m)
 let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
 m.reply(teks.replace(/[a-z]/gi, v => {
 return {

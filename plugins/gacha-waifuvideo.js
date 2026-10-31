@@ -8,7 +8,7 @@ async function loadCharacters() {
         const data = await fs.readFile(charactersFilePath, 'utf-8')
         return JSON.parse(data)
     } catch (error) {
-        throw new Error('❀ No se pudo cargar el archivo characters.json.')
+        throw new Error('❀ تعذّر cargar الملف characters.json.')
     }
 }
 
@@ -23,7 +23,7 @@ async function loadHarem() {
 
 let handler = async (m, { conn, command, args }) => {
     if (args.length === 0) {
-        await conn.reply(m.chat, `《✧》Por favor, proporciona el nombre de un personaje.`, m)
+        await conn.reply(m.chat, `《✧》من فضلك، قدّم اسم الشخصية.`, m)
         return
     }
 
@@ -34,17 +34,17 @@ let handler = async (m, { conn, command, args }) => {
         const character = characters.find(c => c.name.toLowerCase() === characterName)
 
         if (!character) {
-            await conn.reply(m.chat, `《✧》No se ha encontrado el personaje *${characterName}*. Asegúrate de que el nombre esté correcto.`, m)
+            await conn.reply(m.chat, `《✧》No se ha encontrado el personaje *${characterName}*. تأكد من الاسم esté correcto.`, m)
             return
         }
 
         if (!character.vid || character.vid.length === 0) {
-            await conn.reply(m.chat, `《✧》No se encontró un video para *${character.name}*.`, m)
+            await conn.reply(m.chat, `《✧》لم يتم العثور على un video para *${character.name}*.`, m)
             return
         }
 
         const randomVideo = character.vid[Math.floor(Math.random() * character.vid.length)]
-        const message = `❀ Nombre » *${character.name}*
+        const message = `❀ الاسم » *${character.name}*
 ⚥ Género » *${character.gender}*
 ❖ Fuente » *${character.source}*`
 
@@ -56,7 +56,7 @@ let handler = async (m, { conn, command, args }) => {
             conn.sendMessage(m.chat, { video: { url: randomVideo }, caption: message }, { quoted: m })
         }
     } catch (error) {
-        await conn.reply(m.chat, `✘ Error al cargar el video del personaje: ${error.message}`, m)
+        await conn.reply(m.chat, `✘ خطأ في cargar el video del personaje: ${error.message}`, m)
     }
 }
 

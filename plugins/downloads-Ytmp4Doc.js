@@ -1,5 +1,5 @@
 // - 𝙲𝙾𝙳𝙸𝙶𝙾 𝙲𝚁𝙴𝙰𝙳𝙾 𝚇 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇 𝚇𝙳 👑
-// - https://github.com/Shadow-nex/
+// - https://github.com/dwhhhg8-code/
 // - 𝙽𝙾 𝙴𝙳𝙸𝚃𝙰𝚁 𝙴𝙻 𝙲𝙾𝙳𝙸𝙶𝙾 
 
 import fetch from 'node-fetch'
@@ -80,11 +80,11 @@ const savetube = {
     return { status: true, code: 200, data: response.data.cdn };
   },
   download: async (link, quality = '720') => {
-    if (!link) return { status: false, code: 400, error: "Falta el enlace de YouTube." };
-    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "URL inválida de YouTube." };
+    if (!link) return { status: false, code: 400, error: "رابط يوتيوب مفقود." };
+    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "رابط يوتيوب غير صالح." };
 
     const id = savetube.youtube(link);
-    if (!id) return { status: false, code: 400, error: "No se pudo extraer el ID del video." };
+    if (!id) return { status: false, code: 400, error: "تعذّر استخراج معرّف الفيديو." };
 
     try {
       const cdnRes = await savetube.getCDN();
@@ -128,7 +128,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   let q = args.join(" ").trim()
   if (!q) {
     return conn.sendMessage(m.chat, {
-      text: `*🧪 Ingresa el nombre del video a descargar.*`,
+      text: `*🧪 أدخل الاسم del video a descargar.*`,
       ...rcanal
     }, { quoted: m })
   }
@@ -154,7 +154,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
     let info = await savetube.download(vid.url, '720')
     if (!info.status) {
-      return conn.sendMessage(m.chat, { text: `⚠️ No se pudo obtener el video de *${vid.title}*.` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `⚠️ تعذّر obtener el video de *${vid.title}*.` }, { quoted: m })
     }
 
     let { result } = info
@@ -164,7 +164,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 > │ ° 🎧 *Título:* ${result.title}
 > │ ° ⏱️ *Duración:* ${vid.duration}
 > │ ° 👤 *Canal:* ${vid.author?.name || "Desconocido"}
-> │ ° 💾 *Calidad:* ${result.quality}P
+> │ ° 💾 *الجودة:* ${result.quality}P
 > │ ° 🔗 *Link:* ${vid.url}
 > └───────────────────
 
@@ -176,7 +176,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       img.resize(300, Jimp.AUTO)
       thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
     } catch (err) {
-      console.log("Error al procesar miniatura:", err)
+      console.log("خطأ في معالجة miniatura:", err)
     }
 
     const Shadow_url = await (await fetch("https://files.catbox.moe/qm569c.jpg")).buffer()
@@ -199,7 +199,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
             priceAmount1000: 100000,
             retailerId: "descarga-premium"
           },
-          businessOwnerJid: "51919199620@s.whatsapp.net"
+          businessOwnerJid: "201125166486@s.whatsapp.net"
         }
       }
     }
@@ -223,8 +223,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }, { quoted: fkontak })
 
   } catch (err) {
-    console.error("[Error en ytmp4doc:]", err)
-    conn.sendMessage(m.chat, { text: `💔 Error: ${err.message}` }, { quoted: m })
+    console.error("[خطأ en ytmp4doc:]", err)
+    conn.sendMessage(m.chat, { text: `💔 خطأ: ${err.message}` }, { quoted: m })
   }
 }
 

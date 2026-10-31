@@ -1,15 +1,15 @@
-// by dv.shadow - https://github.com/Yuji-XDev
+// by haitham - https://github.com/dwhhhg8-code
 
 import { proto } from '@whiskeysockets/baileys';
 import PhoneNumber from 'awesome-phonenumber';
 
 const handler = async (m, { conn }) => {
   const name = 'sһᥲძ᥆ᥕ-᥊ᥡz | ᥆𝖿𝖿іᥴіᥲᥣ';
-  const numCreador = '51919199620';
-  const empresa = 'Rin Itoshi Bot Inc.';
+  const numCreador = '201125166486';
+  const empresa = 'FLASH BOT Inc.';
   const about = '💖 Desarrollador de Rin itoshi Ultra - MD';
-  const correo = 'blackoficial2025@gmail.com';
-  const web = 'https://shadow-xyz.vercel.app/';
+  const correo = 'dwhhhg8@gmail.com';
+  const web = 'https://dwhhhg8-code.vercel.app/';
   const direccion = 'Tokyo, Japón 🇯🇵';
   const fotoPerfil = 'https://qu.ax/ALOZa.jpg';
 

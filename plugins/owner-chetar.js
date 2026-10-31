@@ -33,11 +33,11 @@ let handler = async (m, { conn, text }) => {
     users[who].level = Number.MAX_SAFE_INTEGER;
 
     await m.reply(
-        `☁️ *¡Usuario chetado con éxito!*\n\n` +
+        `☁️ *¡المستخدم chetado بنجاح!*\n\n` +
         `👤 Usuario: @${who.split`@`[0]}\n` +
         `💸 ${moneda}: *${users[who].coin.toLocaleString()}*\n` +
-        `✨ Experiencia: *${users[who].exp.toLocaleString()}*\n` +
-        `🌟 Nivel: *${users[who].level.toLocaleString()}*`,
+        `✨ الخبرة: *${users[who].exp.toLocaleString()}*\n` +
+        `🌟 المستوى: *${users[who].level.toLocaleString()}*`,
         null,
         { mentions: [who] }
     );

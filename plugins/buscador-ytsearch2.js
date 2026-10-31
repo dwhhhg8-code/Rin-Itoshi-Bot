@@ -5,14 +5,14 @@ import baileys from '@whiskeysockets/baileys';
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = baileys;
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`*🏔️ Por favor, ingresa un texto para buscar en YouTube.*\n> *Ejemplo:* ${usedPrefix + command} Bing Bang`);
+  if (!text) return m.reply(`*🏔️ من فضلك أدخل نصاً para buscar en YouTube.*\n> *Ejemplo:* ${usedPrefix + command} Bing Bang`);
   await m.react('🕓');
 
   try {
     const results = await yts(text);
     const videos = results.videos.slice(0, 8);
 
-    if (!videos.length) throw '⚠️ *No se encontraron resultados para tu búsqueda.*';
+    if (!videos.length) throw '⚠️ *لا توجد نتائج لبحثك.*';
 
     async function createImage(url) {
       const { imageMessage } = await generateWAMessageContent(
@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 👁 *Vistas:* ${video.views.toLocaleString()}
 📅 *Publicado:* ${video.ago}
 
-📝 *Descripción:* ${video.description ? video.description.slice(0, 100) + '...' : 'No disponible'}`
+📝 *الوصف:* ${video.description ? video.description.slice(0, 100) + '...' : 'غير متاح'}`
 
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
@@ -101,7 +101,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e);
-    await m.reply('❌ Error en la búsqueda o envío del mensaje.');
+    await m.reply('❌ خطأ في البحث o envío del الرسالة.');
   }
 };
 

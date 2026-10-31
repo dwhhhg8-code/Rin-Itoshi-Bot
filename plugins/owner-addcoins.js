@@ -16,10 +16,10 @@ let handler = async (m, { conn, text }) => {
         who = m.chat;
     }
     
-    if (!who) return m.reply(`${emoji} Por favor, menciona al usuario o cita un mensaje.`);
+    if (!who) return m.reply(`${emoji} من فضلك، menciona al usuario o cita un الرسالة.`);
     
     let txt = text.replace('@' + who.split`@`[0], '').trim();
-    if (!txt) return m.reply(`${emoji} Por favor, ingresa la cantidad que deseas añadir.`);
+    if (!txt) return m.reply(`${emoji} من فضلك أدخل la cantidad que deseas añadir.`);
     if (isNaN(txt)) return m.reply(`${emoji2} sólo números.`);
     
     let dmt = parseInt(txt);
@@ -32,7 +32,7 @@ let handler = async (m, { conn, text }) => {
     let users = global.db.data.users;
     users[who].coin += dmt;
     
-    m.reply(`💸 *Añadido:*
+    m.reply(`💸 *تمت الإضافة:*
 » ${dmt} \n@${who.split('@')[0]}, recibiste ${dmt} 💸`, null, { mentions: [who] });
 };
 

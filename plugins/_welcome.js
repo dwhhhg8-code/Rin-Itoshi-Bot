@@ -70,7 +70,7 @@ handler.before = async function (m, { conn, participants, groupMetadata }) {
 
   const fkontak = {
     key: { participant: '0@s.whatsapp.net', remoteJid: 'status@broadcast', fromMe: false, id: 'Halo' },
-    message: { locationMessage: { name: '🍉 ترحيب - Rin Itoshi 📡', jpegThumbnail: thumbBuffer } },
+    message: { locationMessage: { name: '🍉 ترحيب - FLASH BOT 📡', jpegThumbnail: thumbBuffer } },
     participant: '0@s.whatsapp.net'
   }
 
@@ -81,7 +81,7 @@ handler.before = async function (m, { conn, participants, groupMetadata }) {
       product: {
         productImage: { url: pp },
         productId: '24529689176623820',
-        title: `🌸 Bienvenida/o causa • ${groupSubject}`,
+        title: `🌸 مرحباً بك/o causa • ${groupSubject}`,
         description: caption,
         currencyCode: 'USD',
         priceAmount1000: '100000',

@@ -49,7 +49,7 @@ const handler = async (m, {conn}) => {
   const ar11 = `${['🪚', '⛏️', '🧨', '💣', '🔫', '🔪', '🗡️', '🏹', '🦾', '🥊', '🧹', '🔨', '🛻'].getRandom()}`;
   const ar12 = `${['🪚', '⛏️', '🧨', '💣', '🔫', '🔪', '🗡️', '🏹', '🦾', '🥊', '🧹', '🔨', '🛻'].getRandom()}`;
   const hsl = `
-*✧ Resultados de la caza ${conn.getName(m.sender)} ✧*
+*✧ النتيجةs de la caza ${conn.getName(m.sender)} ✧*
 
  *🐂 ${ar1} ${anti1}*			 *🐃 ${ar7} ${anti7}*
  *🐅 ${ar2} ${anti2}*			 *🐮 ${ar8} ${anti8}*
@@ -71,7 +71,7 @@ const handler = async (m, {conn}) => {
   global.db.data.users[m.sender].ayam += rbrb12;
 
   const time = global.db.data.users[m.sender].lastberburu + 2700000; // 45 Minutos
-  if (new Date - global.db.data.users[m.sender].lastberburu < 2700000) return conn.reply(m.chat, `Por favor descansá un momento para seguir cazando\n\n⫹⫺ Tiempo ${clockString(time - new Date())}\n${wm}`, m);
+  if (new Date - global.db.data.users[m.sender].lastberburu < 2700000) return conn.reply(m.chat, `من فضلك descansá un momento para seguir cazando\n\n⫹⫺ Tiempo ${clockString(time - new Date())}\n${wm}`, m);
 
   setTimeout(() => {
     conn.reply(m.chat, hsl, m);
@@ -86,7 +86,7 @@ const handler = async (m, {conn}) => {
   }, 15000);
 
   setTimeout(() => {
-    conn.reply(m.chat, `@${m.sender.split('@s.whatsapp.net')[0]} *${['Buscando implementos de caza...', 'Alistando todo para la caza!!', 'Estableciendo Lugar de la Caza...', 'PREPARANDO LUGAR DE CAZA!!'].getRandom()}*`, m, m.mentionedJid ? {mentions: [m.sender]} : {});
+    conn.reply(m.chat, `@${m.sender.split('@s.whatsapp.net')[0]} *${['جارٍ البحث implementos de caza...', 'Alistando todo para la caza!!', 'Estableciendo Lugar de la Caza...', 'PREPARANDO LUGAR DE CAZA!!'].getRandom()}*`, m, m.mentionedJid ? {mentions: [m.sender]} : {});
   }, 0);
   user.lastberburu = new Date * 1;
 };

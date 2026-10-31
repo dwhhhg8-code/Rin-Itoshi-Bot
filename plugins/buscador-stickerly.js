@@ -6,7 +6,7 @@ const { generateWAMessageContent, generateWAMessageFromContent, proto } = bailey
 const STICKERLY_API = "https://delirius-apiofc.vercel.app/search/stickerly";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`*🌸 Ingresa un texto para buscar en Stickerly.*\n> *Ejemplo:* ${usedPrefix + command} Alya San`);
+  if (!text) return m.reply(`*🌸 أدخل un texto para buscar en Stickerly.*\n> *Ejemplo:* ${usedPrefix + command} Alya San`);
   await m.react('🕓');
 
   try {
@@ -33,10 +33,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
-          text: `🍃 *Nombre:* ${pack.name}\n👤 *Autor:* ${pack.author}\n🧩 *Stickers:* ${pack.sticker_count}\n👀 *Vistas:* ${pack.view_count}\n📤 *Exportados:* ${pack.export_count}`
+          text: `🍃 *الاسم:* ${pack.name}\n👤 *Autor:* ${pack.author}\n🧩 *Stickers:* ${pack.sticker_count}\n👀 *Vistas:* ${pack.view_count}\n📤 *Exportados:* ${pack.export_count}`
         }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
-          text: '® ʀɪɴ ɪᴛᴏsʜɪ ʙᴏᴛ | © sʜᴀᴅᴏᴡ.xʏᴢ'
+          text: '® ʀɪɴ ɪᴛᴏsʜɪ ʙᴏᴛ | © 𝖍𝖆𝖎𝖙𝖍𝖆𝖒'
         }),
         header: proto.Message.InteractiveMessage.Header.fromObject({
           title: '',
@@ -67,7 +67,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
           },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: proto.Message.InteractiveMessage.Body.create({
-              text: `*🌸 Resultados de:* \`${text}\`\n> Mostrando: ${results.length} packs encontrados`
+              text: `*🌸 النتيجةs de:* \`${text}\`\n> Mostrando: ${results.length} packs encontrados`
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '_Stickerly - Search_'
@@ -88,7 +88,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e);
-    await m.reply('❌ Error en la búsqueda o envío del mensaje.');
+    await m.reply('❌ خطأ في البحث o envío del الرسالة.');
   }
 };
 

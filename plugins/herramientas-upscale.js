@@ -46,14 +46,14 @@ async function upscale(imageUrl, resolution = '1080p', enhance = true) {
 }
 const handler = async (m, { conn, usedPrefix, command }) => {
   if (!m.quoted || !m.quoted.mimetype?.includes('image'))
-    return m.reply(`📸 *Responde a una imagen* con el comando *${usedPrefix + command}* para mejorarla.`)
+    return m.reply(`📸 *رُدّ a una imagen* con el comando *${usedPrefix + command}* para mejorarla.`)
 
   try {
     const q = m.quoted || m
     const media = await q.download()
     const imageUrl = await uploadImage(media)
 
-    m.reply('⏳ Procesando imagen en resolución *12K* con mejora aplicada...')
+    m.reply('⏳ جارٍ المعالجة imagen en resolución *12K* con mejora aplicada...')
 
     const result = await upscale(imageUrl, '12k', true)
 
@@ -61,14 +61,14 @@ const handler = async (m, { conn, usedPrefix, command }) => {
       m.chat,
       result.url,
       result.filename || 'upscaled.jpg',
-      `✅ Imagen mejorada con éxito:
+      `✅ الصورة mejorada بنجاح:
 📤 Resolución: *${result.resolution_from}* → *${result.resolution_to}*
 📦 Tamaño: *${result.size_before}* → *${result.size_after}*
 ✨ Mejora aplicada: *${result.enhanced ? 'Sí' : 'No'}*`,
       m
     )
   } catch (err) {
-    m.reply('❌ Error al mejorar la imagen:\n' + err.message)
+    m.reply('❌ خطأ في mejorar الصورة:\n' + err.message)
   }
 }
 

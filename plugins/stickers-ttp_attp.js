@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
         if (m.quoted && m.quoted.text) {
             text = m.quoted.text
         } else {
-            return m.reply(`❀ Por Favor, Ingresa Un Texto Para Realizar Tu Sticker.`)
+            return m.reply(`❀ Por Favor, أدخل Un النص Para Realizar Tu Sticker.`)
         }
     }
 

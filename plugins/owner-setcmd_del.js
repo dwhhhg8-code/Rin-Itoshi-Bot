@@ -5,7 +5,7 @@ const handler = async (m, {conn, usedPrefix, text, command}) => {
   const sticker = global.db.data.sticker;
   if (sticker[hash] && sticker[hash].locked) throw `${emoji} Solo el *owner* puede realizar la eliminacion.`;
   delete sticker[hash];
-  m.reply(`${emoji} El texto/comando asignado al sticker/imagen fue eliminado de la base de datos correctamente.`);
+  m.reply(`${emoji} النص/comando asignado al sticker/imagen fue eliminado de la base de datos بنجاح.`);
 };
 handler.command = ['delcmd'];
 handler.rowner = true;

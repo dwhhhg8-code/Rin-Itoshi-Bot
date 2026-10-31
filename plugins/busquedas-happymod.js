@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const api = "https://dark-core-api.vercel.app/api/search/happymod?key=api&text=";
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, '☃️ Ingresa el texto de lo que quieres buscar en Happymod.\n\nEjemplo:\n' + `> *${usedPrefix + command}* minecraft`, m, rcanal);
+  if (!text) return conn.reply(m.chat, '☃️ أدخل النص de lo que quieres buscar en Happymod.\n\nEjemplo:\n' + `> *${usedPrefix + command}* minecraft`, m, rcanal);
   await m.react('🕓');
 
   try {
@@ -12,7 +12,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     let json = await res.json();
 
     if (!json.success) {
-      return conn.reply(m.chat, 'No se encontraron resultados para tu búsqueda.', m);
+      return conn.reply(m.chat, 'لا توجد نتائج لبحثك.', m);
     }
 
     let txt = '`乂  H A P P Y M O D  -  B Ú S Q U E`';
@@ -22,10 +22,10 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       txt += `\n\n`;
       txt += `  *» Nro* : ${i + 1}\n`;
       txt += `  *» Titulo* : ${result.name}\n`;
-      txt += `  *» Calificación* : ${result.stars}\n`;
+      txt += `  *» التقييم* : ${result.stars}\n`;
       txt += `  *» Enlace* : ${result.link}\n`;
-      txt += `  *» Descripción* : ${result.description}\n`;
-      txt += `  *» Imagen* : ${result.image}\n`;
+      txt += `  *» الوصف* : ${result.description}\n`;
+      txt += `  *» الصورة* : ${result.image}\n`;
     }
 
     await conn.reply(m.chat, txt, m, rcanal);

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const handler = async (m, { conn, args }) => {
     if (!args[0]) {
-        await conn.reply(m.chat, `${emoji} Por favor, proporciona una descripción para generar la imagen.`, m);
+        await conn.reply(m.chat, `${emoji} من فضلك، proporciona una descripción para generar الصورة.`, m);
         return;
     }
 
@@ -18,8 +18,8 @@ const handler = async (m, { conn, args }) => {
 
         await conn.sendMessage(m.chat, { image: Buffer.from(response.data) }, { quoted: m });
     } catch (error) {
-        console.error('Error al generar la imagen:', error);
-        await conn.reply(m.chat, `${msm} No se pudo generar la imagen, intenta nuevamente mas tarde.`, m);
+        console.error('خطأ في generar الصورة:', error);
+        await conn.reply(m.chat, `${msm} تعذّر generar الصورة, intenta nuevamente mas tarde.`, m);
     }
 };
 

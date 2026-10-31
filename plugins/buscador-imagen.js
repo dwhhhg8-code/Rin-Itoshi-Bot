@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 const handler = async (m, { conn, text, usedPrefix }) => {
-if (!text) return conn.reply(m.chat, `${emoji} Por favor, ingrese un texto para buscar una Imagen.`, m)
+if (!text) return conn.reply(m.chat, `${emoji} من فضلك أدخل نصاً para buscar una الصورة.`, m)
 try {
 await m.react('🕒')
 const res = await getGoogleImageSearch(text)
 const urls = await res.getAll()
-if (urls.length < 2) return conn.reply(m.chat, '✧ No se encontraron suficientes imágenes para un álbum.', m)
+if (urls.length < 2) return conn.reply(m.chat, '✧ لم يتم العثور على suficientes imágenes para un álbum.', m)
 const medias = urls.slice(0, 10).map(url => ({ type: 'image', data: { url } }))
-const caption = `✔️ Resultados de búsqueda para: ${text}`
+const caption = `✔️ النتيجةs de búsqueda para: ${text}`
 await conn.sendSylphy(m.chat, medias, { caption, quoted: m })
 await m.react('✔️')
 } catch (error) {

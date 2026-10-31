@@ -15,7 +15,7 @@ let handler = async (m, { conn }) => {
 
     if (!json || json.code !== 0 || !json.data) {
       await m.react('❌')
-      return conn.reply(m.chat, 'No se pudo obtener el video, intenta nuevamente.', m)
+      return conn.reply(m.chat, 'تعذّر obtener el video, intenta nuevamente.', m)
     }
 
     const data = json.data
@@ -25,7 +25,7 @@ let handler = async (m, { conn }) => {
       comment_count, share_count, download_count, author, images, create_time
     } = data
 
-    const info = `🍉 *Título:* ${title || 'Sin título'}
+    const info = `🍉 *Título:* ${title || 'بدون عنوان'}
 🎋 *ID:* ${id || '-'}
 🌎 *Región:* ${region || '-'}
 👤 *Autor:* ${author?.nickname || '-'} (@${author?.unique_id || '-'})
@@ -63,7 +63,7 @@ let handler = async (m, { conn }) => {
   } catch (err) {
     console.error(err)
     await m.react('❌')
-    conn.reply(m.chat, '❌ Ocurrió un error al procesar el video de TikTok.', m)
+    conn.reply(m.chat, '❌ حدث خطأ al procesar el video de TikTok.', m)
   }
 }
 

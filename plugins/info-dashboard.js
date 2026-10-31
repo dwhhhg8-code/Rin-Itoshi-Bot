@@ -9,7 +9,7 @@ let handler = async (m, { conn, command }) => {
 
         stats = stats.sort((a, b) => b.total - a.total).slice(0, 10)
 
-        let txt = `╭━━━〔 *Top Comandos* 〕━━━╮\n\n`
+        let txt = `╭━━━〔 *Top الأوامر* 〕━━━╮\n\n`
         txt += stats.map(({ name, total }, i) => 
             `*${i + 1}.* ${name}\n   ➥ Usos: *${total}*`).join('\n\n')
         txt += `\n\n╰━━━━━━━━━━━━━━━━━━━━╯`
@@ -22,11 +22,11 @@ let handler = async (m, { conn, command }) => {
         let registeredUsers = Object.values(global.db.data.users).filter(user => user.registered).length
 
         let txt = `
-╭━━〔 *Estadísticas de Usuarios* 〕━━╮
+╭━━〔 *Estadísticas de المستخدمs* 〕━━╮
 ┃
 ┃➤ ⚽ *Registrados:* ${registeredUsers}
 ┃➤ 🧪 *No Registrados:* ${totalUsers - registeredUsers}
-┃➤ ⛅ *Total de Usuarios:* ${totalUsers}
+┃➤ ⛅ *الإجمالي de المستخدمs:* ${totalUsers}
 ┃
 ╰═══◉◉◉═════❖`.trim()
 

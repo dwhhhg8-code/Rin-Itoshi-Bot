@@ -3,7 +3,7 @@ import yts from 'yt-search'
 import Jimp from 'jimp'
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
-  if (!text) return m.reply(`*✎ Ingresa un título o link de YouTube*`)
+  if (!text) return m.reply(`*✎ أدخل عنواناً أو رابط يوتيوب*`)
 
   try {
     let url = ''
@@ -14,7 +14,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
       title = text.replace(args[0], "").trim()
     } else {
       let search = await yts(text)
-      if (!search.videos.length) return m.reply('❌ No encontré resultados.')
+      if (!search.videos.length) return m.reply('❌ لم أجد نتائج.')
       let vid = search.videos[0]
       url = vid.url
       title = vid.title
@@ -22,13 +22,13 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
     if (args[1]) {
       let quality = args[1].replace(/p/i, "")
-      await m.reply(`*📥 Descargando video en calidad ${quality}p, espera un momento...*`)
+      await m.reply(`*📥 جارٍ التنزيل video en calidad ${quality}p, انتظر un momento...*`)
 
       let api = `https://api.sylphy.xyz/download/ytmp4v2?url=${encodeURIComponent(url)}&q=${quality}&apikey=sylphy_2962`
       let res = await fetch(api)
       let json = await res.json()
 
-      if (!json.status || !json.result?.dl_url) throw new Error("No se pudo descargar el video")
+      if (!json.status || !json.result?.dl_url) throw new Error("تعذّر descargar el video")
 
       let { result } = json
 
@@ -38,29 +38,29 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
         img.resize(300, Jimp.AUTO)
         thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
       } catch (err) {
-        console.log("Error al procesar miniatura:", err)
+        console.log("خطأ في معالجة miniatura:", err)
       }
 
       return await conn.sendMessage(m.chat, {
         document: { url: result.dl_url },
         caption: `\`\`\`✦ Título: ${result.title}
-✦ Calidad: ${result.format}\`\`\``,
+✦ الجودة: ${result.format}\`\`\``,
         mimetype: 'video/mp4',
         fileName: `${result.title || 'video'}.mp4`,
         ...(thumb ? { jpegThumbnail: thumb } : {})
       }, { quoted: m })
     }
 
-    await m.reply('*🌱 Buscando información del video...*')
+    await m.reply('*🌱 جارٍ البحث información del video...*')
 
     let search = await yts(url)
     let video = search.videos[0]
-    if (!video) return m.reply('No se encontró info del video.')
+    if (!video) return m.reply('لم يتم العثور على معلومات الفيديو.')
 
     let likes = video.likes ? video.likes.toLocaleString() : 'N/A'
-    let desc = video.description ? video.description.slice(0, 200) + "..." : 'Sin descripción'
+    let desc = video.description ? video.description.slice(0, 200) + "..." : 'لا يوجد وصف'
 
-    let caption = `*✨ Información del video:*\n\n` +
+    let caption = `*✨ معلومات del video:*\n\n` +
     `\`\`\`✦ Título: ${video.title}\n` +
     `✦ Duración: ${video.timestamp}\n` +
     `✦ Vistas: ${video.views.toLocaleString()}\n` +
@@ -68,7 +68,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     `✦ Subido: ${video.ago}\n` +
     `✦ Canal: ${video.author.name}\n` +
     `✦ Link: ${video.url}\`\`\`\n\n` +
-    `*📝 Descripción:* ${desc}`
+    `*📝 الوصف:* ${desc}`
 
     let buttons = [
       { buttonId: `${usedPrefix + command} ${url} 360`, buttonText: { displayText: "📹 360p" }, type: 1 },
@@ -82,21 +82,21 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
       img.resize(300, Jimp.AUTO)
       thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
     } catch (err) {
-      console.log("Error al procesar miniatura:", err)
+      console.log("خطأ في معالجة miniatura:", err)
     }
 
     await conn.sendMessage(m.chat, {
       image: { url: video.thumbnail },
       ...(thumb ? { jpegThumbnail: thumb } : {}),
       caption,
-      footer: " Elige la calidad con los botones o escribe el comando con calidad",
+      footer: " اختر الجودة بالأزرار أو اكتب الأمر مع الجودة",
       buttons,
       headerType: 4
     }, { quoted: m })
 
   } catch (e) {
     console.error(e)
-    m.reply('⚠️ Error al procesar la solicitud.')
+    m.reply('⚠️ خطأ في معالجة la solicitud.')
   }
 }
 

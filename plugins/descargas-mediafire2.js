@@ -3,16 +3,16 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, text }) => {
   const user = global.db.data.users[m.sender] || {}
 
-  if (!text) return m.reply(`*${emojis} Por favor, ingresa un link de Mediafire.*`)
+  if (!text) return m.reply(`*${emojis} من فضلك أدخل un link de Mediafire.*`)
 
   await conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } })
   await conn.sendMessage(m.chat, {
-    text: '🄸 🄽 🄸 🄲 🄸 🄰 🄽 🄳 🄾 • 🄳🄴🅂🄲🄰🅁🄶🄰\n> *Procesando descarga, por favor espere... ⏳*',
+    text: '🄸 🄽 🄸 🄲 🄸 🄰 🄽 🄳 🄾 • 🄳🄴🅂🄲🄰🅁🄶🄰\n> *جارٍ المعالجة descarga, por favor espere... ⏳*',
     mentions: [m.sender],
     contextInfo: {
       externalAdReply: {
-        title: '📦 Rin Itoshi • Mediafire Downloader',
-        body: 'Obteniendo datos del archivo...',
+        title: '📦 FLASH BOT • Mediafire Downloader',
+        body: 'Obteniendo datos dالملف...',
         thumbnailUrl: global.logo,
         sourceUrl: '',
         mediaType: 1,
@@ -36,22 +36,22 @@ let handler = async (m, { conn, text }) => {
 
       let info = `乂  *MEDIAFIRE - DESCARGA EXITOSA*  乂
 
-📦 *Nombre:* ${d.fileName}
+📦 *الاسم:* ${d.fileName}
 📁 *Tamaño:* ${d.fileSize}
-🗓️ *Fecha de subida:* ${d.uploadDate}
+🗓️ *التاريخ de subida:* ${d.uploadDate}
 🧩 *Tipo:* ${d.fileType}
 💻 *Compatibilidad:* ${d.compatibility}
 📂 *Extensión:* ${d.fileExtension}
 
-📝 *Descripción:* ${d.description}
+📝 *الوصف:* ${d.description}
 
 🔗 *Enlace de descarga directa:*
 ${d.downloadLink}
 
-🌐 *Información Meta:*
+🌐 *معلومات Meta:*
 • URL: ${meta.url || 'N/A'}
 • Título: ${meta.title || 'N/A'}
-• Imagen: ${meta.image || 'N/A'}
+• الصورة: ${meta.image || 'N/A'}
 • App ID: ${meta.app_id || 'N/A'}
 `
 
@@ -64,7 +64,7 @@ ${d.downloadLink}
     let json2 = await res2.json()
 
     if (!json2.status || !json2.data?.dl)
-      throw new Error('No se pudo obtener el archivo desde ninguna API.')
+      throw new Error('تعذّر obtener الملف desde ninguna API.')
 
     let { title, peso, fecha, tipo, dl } = json2.data
 
@@ -74,12 +74,12 @@ ${d.downloadLink}
       title,
       `乂  *MEDIAFIRE - DESCARGA EXITOSA*  乂
 
-📦 *Nombre:* ${title}
+📦 *الاسم:* ${title}
 📁 *Tamaño:* ${peso}
-🗓️ *Fecha:* ${fecha}
+🗓️ *التاريخ:* ${fecha}
 🧩 *Tipo:* ${tipo}
 
-✅ Archivo descargado correctamente.
+✅ الملف descargado بنجاح.
 🔗 *Enlace directo:* ${dl}`,
       m
     )
@@ -87,7 +87,7 @@ ${d.downloadLink}
 
   } catch (e) {
     console.error(e)
-    m.reply(`*Error al procesar la descarga:*\n${e.message}`)
+    m.reply(`*خطأ في معالجة التنزيل:*\n${e.message}`)
     await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
   }
 }

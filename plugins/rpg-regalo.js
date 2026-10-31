@@ -11,7 +11,7 @@ const handler = async (m, { conn }) => {
   const timeRemaining = user.lastclaim + tenDaysInMillis - now;
 
   if (timeRemaining > 0) {
-    return conn.reply(m.chat, `*🕒 Ya reclamaste tu recompensa de Rin Itoshi 🌷!*\n\n⌛ Vuelve en: *${msToTime(timeRemaining)}*`, m);
+    return conn.reply(m.chat, `*🕒 Ya reclamaste tu recompensa de FLASH BOT 🌷!*\n\n⌛ Vuelve en: *${msToTime(timeRemaining)}*`, m);
   }
 
   user.coin += 500;

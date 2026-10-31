@@ -27,11 +27,9 @@ ${readMore}
 ╭─⬣「 *📥 البحث المتاح* 」
 │ 🔎 .apksearch *<término>*
 │ 🛍️ .playstore *<nombre>*
-│ 🔞 .pornhubsearch
 │ 🎵 .soundcloudsearch *<texto>*
 │ 🎶 .spotifysearch *<texto>*
 │ 🎥 .tiktoksearch *<txt>*
-│ 🍑 .xnxxsearch *<query>*
 │ 📺 .ytsearch2 *<text>*
 │ 📲 .fdroidsearch *<término>*
 │ 🎬 .movie *<término>*
@@ -62,7 +60,7 @@ ${readMore}
 
 ${channel}
 
-「 ⚽𐚁 ֹ ִ Rin Itoshi - Official ୧ ֹ ִ⚽ 」
+「 ⚽𐚁 ֹ ִ FLASH BOT - Official ୧ ֹ ִ⚽ 」
     `.trim()
 
     await conn.sendMessage(m.chat, {
@@ -71,7 +69,7 @@ ${channel}
       footer: '⚡ *Powered by* » Sʜᴀᴅᴏᴡ•Core 𝖢𝗅𝗎𝖻 🌱',
       buttons: [
         { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 المطوّر" }, type: 1 },
-        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 Menú Completo" }, type: 1 }
+        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 القائمة الكاملة" }, type: 1 }
       ],
       headerType: 4,
       contextInfo: {
@@ -83,7 +81,7 @@ ${channel}
           newsletterName: channelRD.name
         },
         externalAdReply: {
-          title: '💨 Rin Itoshi - Menú Search 💎',
+          title: '💨 FLASH BOT - Menú Search 💎',
           body: '⟡ 𝐂𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐞𝐬𝐩𝐞𝐜𝐢𝐚𝐥𝐞𝐬 𝐩𝐚𝐫𝐚 𝐛𝐮𝐬𝐜𝐚𝐫 𝐢𝐧𝐟𝐨𝐫𝐦𝐚𝐜𝐢𝐨́𝐧, 𝐚𝐮𝐝𝐢𝐨𝐬, 𝐯𝐢𝐝𝐞𝐨𝐬 𝐲 𝐦𝐮𝐜𝐡𝐨 𝐦𝐚́𝐬 𝐞𝐧 𝐥𝐢́𝐧𝐞𝐚 🌍.',
           thumbnailUrl: 'https://files.catbox.moe/us0m4f.jpg',
           sourceUrl: redes,

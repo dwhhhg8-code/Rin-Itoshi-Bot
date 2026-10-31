@@ -19,7 +19,7 @@ let handler = async (m, { conn, text }) => {
     if (searchResults.length === 0) {
       return await conn.sendMessage(
         m.chat,
-        { text: "🌹 No hay respuesta de Wikipedia." },
+        { text: "🌹 لا يوجد رد من ويكيبيديا." },
         { quoted: m }
       );
     }
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text }) => {
 
     let message = '`乂  W I K I  -  B U S C A R`\n\n';
     message += `  ✩   *Título* : ${articleTitle}\n`;
-    message += `  ✩   *Descripción* :\n${articleContent}\n`;
+    message += `  ✩   *الوصف* :\n${articleContent}\n`;
     message += `  ✩   *Link* : [${articleTitle}](${articleUrl})\n\n`;
     message += `> 🔥 Powered by black`;
 
@@ -46,7 +46,7 @@ let handler = async (m, { conn, text }) => {
     await m.react('🔍');
 
   } catch (error) {
-    console.error("Error fetching from Wikipedia:", error);
+    console.error("خطأ fetching from Wikipedia:", error);
     await conn.sendMessage(
       m.chat,
       { text: "Error." },

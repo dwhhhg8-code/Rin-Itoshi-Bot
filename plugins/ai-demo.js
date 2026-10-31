@@ -42,7 +42,7 @@ async function chatGpt(query) {
         return res.map((a) => a.choices[0].delta.content).join("");
 
     } catch (error) {
-        console.error("Error parsing JSON:", error);
+        console.error("خطأ parsing JSON:", error);
         return 404;
     }
 }

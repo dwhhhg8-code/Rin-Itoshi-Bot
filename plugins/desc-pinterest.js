@@ -41,7 +41,7 @@ const pindl = {
             }
             return null;
         } catch (error) {
-            return { error: "Error al obtener los datos del video" };
+            return { error: "خطأ في جلب البيانات del video" };
         }
     },
 
@@ -76,7 +76,7 @@ const pindl = {
             }
             return null;
         } catch (error) {
-            return { error: "Error al obtener los datos de la imagen" };
+            return { error: "خطأ في جلب البيانات de الصورة" };
         }
     },
 
@@ -110,7 +110,7 @@ const pindl = {
             }
             return null;
         } catch (error) {
-            return { error: "Error al obtener los datos del GIF" };
+            return { error: "خطأ في جلب البيانات del GIF" };
         }
     },
 
@@ -122,7 +122,7 @@ const pindl = {
         if (result) return result;
 
         result = await pindl.gif(urlPin);
-        return result || { error: "No se encontró ningún medio" };
+        return result || { error: "لم يتم العثور على ningún medio" };
     },
 };
 
@@ -148,11 +148,11 @@ const handler = async (m, { conn, text }) => {
         const maxSize = 10 * 1024 * 1024; // 10 MB
 
         if (result.type === "video") {
-            caption += `「✦」 *Información Video*\n\n> ✐ Título » ${result.name || "N/A"}\n> 🜸 Link » ${result.contentUrl}\n`;
+            caption += `「✦」 *معلومات Video*\n\n> ✐ Título » ${result.name || "N/A"}\n> 🜸 Link » ${result.contentUrl}\n`;
 
             const size = await getFileSize(result.contentUrl);
             if (size > maxSize) {
-                caption += `\n⚠️ El video es muy pesado para enviar. Usa el enlace.`;
+                caption += `\n⚠️ الفيديو es muy pesado para enviar. Usa الرابط.`;
                 await conn.sendMessage(m.chat, { text: caption }, { quoted: m });
             } else {
                 await conn.sendMessage(m.chat, {
@@ -162,18 +162,18 @@ const handler = async (m, { conn, text }) => {
             }
 
         } else if (result.type === "image") {
-            caption += `「✦」 *Información Imagen*\n\n> ✐ Título » ${result.headline || "N/A"}\n> 🜸 Link » ${result.image}`;
+            caption += `「✦」 *معلومات الصورة*\n\n> ✐ Título » ${result.headline || "N/A"}\n> 🜸 Link » ${result.image}`;
             await conn.sendMessage(m.chat, {
                 image: { url: result.image },
                 caption
             }, { quoted: m });
 
         } else if (result.type === "gif") {
-            caption += `「✦」 *Información Gif*\n\n> ✐ Título » ${result.headline || "N/A"}\n> 🜸 Link » ${result.gif}\n`;
+            caption += `「✦」 *معلومات Gif*\n\n> ✐ Título » ${result.headline || "N/A"}\n> 🜸 Link » ${result.gif}\n`;
 
             const size = await getFileSize(result.gif);
             if (size > maxSize) {
-                caption += `\n⚠️ El GIF es muy pesado para enviar. Usa el enlace.`;
+                caption += `\n⚠️ El GIF es muy pesado para enviar. Usa الرابط.`;
                 await conn.sendMessage(m.chat, { text: caption }, { quoted: m });
             } else {
                 await conn.sendMessage(m.chat, {

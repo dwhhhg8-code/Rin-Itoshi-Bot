@@ -3,13 +3,13 @@ import fetch from "node-fetch"
 let handler = async (m, { conn, usedPrefix }) => {
   const imgurl = icono;
 
-  let frase = "No hay datos disponibles uwu~"; 
+  let frase = "No hay datos متاحة uwu~"; 
   try {
     let res = await fetch("https://zenquotes.io/api/random"); 
     let json = await res.json();
     frase = `"${json[0].q}" — ${json[0].a}`;
   } catch (e) {
-    console.log("Error cargando frase:", e);
+    console.log("خطأ cargando frase:", e);
   }
 
   const texto = `
@@ -70,8 +70,8 @@ ${'```'}
         mediaType: 1,
         renderLargerThumbnail: false,
         showAdAttribution: true,
-        mediaUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U',
-        sourceUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+        mediaUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v',
+        sourceUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
       }
     }
   }, { quoted: m });

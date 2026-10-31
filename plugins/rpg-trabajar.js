@@ -5,7 +5,7 @@ let user = global.db.data.users[m.sender]
 let tiempo = 5 * 60
 if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempo * 1000) {
 const tiempo2 = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempo * 1000 - Date.now()) / 1000))
-conn.reply(m.chat, `${emoji3} Debes esperar *${tiempo2}* para usar *#w* de nuevo.`, m)
+conn.reply(m.chat, `${emoji3} Debes انتظرr *${tiempo2}* para usar *#w* de nuevo.`, m)
 return
 }
 let rsl = Math.floor(Math.random() * 500)
@@ -56,7 +56,7 @@ const trabajo = [
    "Alguien vino y representó una obra de teatro. Por mirar te dieron",
    "Compraste y vendiste artículos y ganaste",
    "Trabajas en el restaurante de la abuela como cocinera y ganas",
-   "Trabajas 10 minutos en un Pizza Hut local. Ganaste",
+   "Trabajas 10 minutos en un Pizza Hut local. فزت",
    "Trabajas como escritor(a) de galletas de la fortuna y ganas",
    "Revisas tu bolso y decides vender algunos artículos inútiles que no necesitas. Resulta que toda esa basura valía",
    "Desarrollas juegos para ganarte la vida y ganas",
@@ -65,7 +65,7 @@ const trabajo = [
    "¡Trabajó lo mejor que pudo en una imprenta que estaba contratando y ganó su bien merecido!",
    "Trabajas como podador de arbustos y ganas",
    "Trabajas como actor de voz para Bob Esponja y te las arreglaste para ganar",
-   "Estabas cultivando y Ganaste",
+   "Estabas cultivando y فزت",
    "Trabajas como constructor de castillos de arena y ganas",
    "Trabajas como artista callejera y ganas",
    "¡Hiciste trabajo social por una buena causa! por tu buena causa Recibiste",

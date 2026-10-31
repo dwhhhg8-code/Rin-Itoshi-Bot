@@ -12,7 +12,7 @@ async function handler(m, { conn, args, usedPrefix, command }) {
   const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : args[1] ? (args[1].replace(/[@ .+-]/g, '') + '@s.whatsapp.net') : '';
   
   if (!who) return conn.sendMessage(m.chat, {text: `${emoji2} Debes regalar al menos 100 ${moneda}*`, mentions: [m.sender]}, {quoted: m});
-  if (!(who in global.db.data.users)) return conn.sendMessage(m.chat, {text: `${emoji2} El usuario ${who} no está en la base de datos.`, mentions: [m.sender]}, {quoted: m});
+  if (!(who in global.db.data.users)) return conn.sendMessage(m.chat, {text: `${emoji2} المستخدم ${who} no está en la base de datos.`, mentions: [m.sender]}, {quoted: m});
   if (user[bankType] * 1 < count) return conn.sendMessage(m.chat, {text: `${emoji2} No tienes suficientes ${moneda} en el banco para transferir.`, mentions: [m.sender]}, {quoted: m});
   
   user[bankType] -= count * 1;

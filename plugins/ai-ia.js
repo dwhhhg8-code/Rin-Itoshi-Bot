@@ -21,8 +21,8 @@ async function queryDelirius(text, username) {
             return `${error} No se obtuvo respuesta de la IA.`
         }
     } catch (err) {
-        console.error('Error al consultar Delirius API:', err)
-        return `${error} Ocurrió un error al procesar tu solicitud.`
+        console.error('خطأ في consultar Delirius API:', err)
+        return `${error} حدث خطأ al procesar tu solicitud.`
     }
 }
 
@@ -30,10 +30,10 @@ let handler = async (m, { conn, text }) => {
     const username = conn.getName(m.sender)
 
     if (!text) {
-        return conn.reply(m.chat, `${emoji} Ingrese una petición para que el ChatGPT lo responda.`, m)
+        return conn.reply(m.chat, `${emoji} أدخل una petición para que el ChatGPT lo responda.`, m)
     }
 
-    await conn.sendMessage(m.chat, { text: `${rwait} Procesando tu petición...` }, { quoted: m })
+    await conn.sendMessage(m.chat, { text: `${rwait} جارٍ المعالجة tu petición...` }, { quoted: m })
 
     const response = await queryDelirius(text, username)
     await conn.sendMessage(m.chat, { text: response }, { quoted: m })

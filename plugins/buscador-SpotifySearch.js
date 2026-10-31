@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = (await import('@whiskeysockets/baileys')).default
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply('*`🎋 Ingresa el texto de lo que quieres buscar en Spotify`*');
+  if (!text) return m.reply('*`🎋 أدخل النص de lo que quieres buscar en Spotify`*');
   await m.react('🕓');
 
   try {
@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
       push.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
-          text: `> ◦ *Título:* ${track.title}\n> ◦ *Artistas:* ${track.artist}\n> ° *ID:* ${track.id}\n> ◦ *Duración:* ${track.duration}\n> ° *Álbum:* ${track.album}\n> ◦ *Popularidad:* ${track.popularity}\n> ◦ *Fecha:* ${track.publish}\n> ° *Link:* ${track.url}`
+          text: `> ◦ *Título:* ${track.title}\n> ◦ *Artistas:* ${track.artist}\n> ° *ID:* ${track.id}\n> ◦ *Duración:* ${track.duration}\n> ° *Álbum:* ${track.album}\n> ◦ *Popularidad:* ${track.popularity}\n> ◦ *التاريخ:* ${track.publish}\n> ° *Link:* ${track.url}`
         }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
           text: ''
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             {
               "name": "cta_copy",
               "buttonParamsJson": JSON.stringify({
-                display_text: "🎧 ¡Descargar Audio! 🎧",
+                display_text: "🎧 ¡تنزيلr الصوت! 🎧",
                 id: "123456789",
                 copy_code: `.music ${track.url}`
               })
@@ -71,7 +71,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
           },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: proto.Message.InteractiveMessage.Body.create({
-              text: '*`🔍 Resultados de:`* ' + text
+              text: '*`🔍 النتيجةs de:`* ' + text
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '_`S P - S E A R C H`_'
@@ -89,7 +89,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
   } catch (error) {
     console.error(error);
-    m.reply('❌ Error al buscar en Spotify, intenta más tarde.');
+    m.reply('❌ خطأ في buscar en Spotify, intenta لاحقاً.');
   }
 }
 

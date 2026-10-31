@@ -1,7 +1,7 @@
 const handler = async (m, {conn}) => {
   global.prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']');
   //await m.reply(`✅️ *Prefijo Restablecido Con Éxito!*`);
-  conn.fakeReply(m.chat, `${emoji} *Prefijo Restablecido Con Éxito!*`, '0@s.whatsapp.net', '✨ PREFIJO RESTABLECIDO ✨')
+  conn.fakeReply(m.chat, `${emoji} *البادئة Restablecido Con Éxito!*`, '0@s.whatsapp.net', '✨ PREFIJO RESTABLECIDO ✨')
 };
 handler.help = ['resetprefix'];
 handler.tags = ['owner'];

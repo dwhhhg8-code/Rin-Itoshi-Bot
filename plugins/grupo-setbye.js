@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text, isRowner }) => {
-  if (!text) return m.reply(`${emoji} Por favor, proporciona un mensaje de despedida para el bot.\n> Ejemplo: #setbye adios user`);
+  if (!text) return m.reply(`${emoji} من فضلك، proporciona un الرسالة de despedida para el bot.\n> Ejemplo: #setbye adios user`);
 
   global.welcom2 = text.trim();
   

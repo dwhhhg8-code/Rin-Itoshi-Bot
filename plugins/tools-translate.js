@@ -1,7 +1,7 @@
 import translate from '@vitalets/google-translate-api';
 import fetch from 'node-fetch';
 const handler = async (m, {args, usedPrefix, command}) => {
-  const msg = `${emoji} Por favor, ingresé el (idioma) (texto) para traducirlo.`;
+  const msg = `${emoji} من فضلك، ingresé el (idioma) (texto) para traducirlo.`;
   if (!args || !args[0]) return m.reply(msg);
   let lang = args[0];
   let text = args.slice(1).join(' ');
@@ -23,7 +23,7 @@ const handler = async (m, {args, usedPrefix, command}) => {
       const result2 = loll.result.translated;
       await conn.reply(m.chat, result2, m);
     } catch {
-      await m.reply(`${msm} Ocurrió un error.`);
+      await m.reply(`${msm} حدث خطأ.`);
     }
   }
 };

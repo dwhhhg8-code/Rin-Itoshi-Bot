@@ -9,7 +9,7 @@ var handler = async (m, { conn }) => {
     const pluginsDir = './plugins'
     const files = fs.readdirSync(pluginsDir).filter(file => file.endsWith('.js'))
 
-    let response = `📂 *Revisión de Syntax Errors:* ⚡\n\n`
+    let response = `📂 *Revisión de Syntax خطأs:* ⚡\n\n`
     let hasErrors = false
 
     for (const file of files) {
@@ -35,8 +35,8 @@ var handler = async (m, { conn }) => {
           })
           .join('\n')
 
-        response += `🚩 *Error en:* ${file}\n`
-        response += `> ● Mensaje: ${error.message}\n`
+        response += `🚩 *خطأ en:* ${file}\n`
+        response += `> ● الرسالة: ${error.message}\n`
         response += `> ● Línea: ${errorLine}, Columna: ${errorColumn}\n`
         response += `> ● Vista previa:\n\`\`\`js\n${codePreview}\n\`\`\`\n\n`
       }
@@ -53,7 +53,7 @@ var handler = async (m, { conn }) => {
   } catch (err) {
     await m.react('✖️') 
     console.error(err)
-    conn.reply(m.chat, '🚩 *Ocurrió un fallo al verificar los plugins.*', m)
+    conn.reply(m.chat, '🚩 *حدث خطأ أثناء التحقق من البلجنات.*', m)
   }
 }
 

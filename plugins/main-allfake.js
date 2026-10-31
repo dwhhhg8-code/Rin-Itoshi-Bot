@@ -24,10 +24,10 @@ responseType: 'arraybuffer'
 })
 return res.data
 } catch (e) {
-console.log(`Error : ${e}`)
+console.log(`خطأ : ${e}`)
 }}
   
-global.creador = 'wa.me/51919199620'
+global.creador = 'wa.me/201125166486'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.namechannel = '𓇟 ︶𓇟 ✦💖 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 • 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 🌷✦ ︶𓇟 ︶𓇟'
 global.namechannel2 = '࿙ִ࿙ ͡ྌ᳝֟፝ྌ🌾 𝓡𝓲𝓷 𝓘𝓽𝓸𝓼𝓱𝓲 🎋ྌ᳝֟፝ྌ͡ ࿚ִ࿚'
@@ -37,8 +37,8 @@ global.listo = '🎋 ᴀǫᴜɪ ᴛɪᴇɴᴇs ᴄᴀᴜsᴀ'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745522645448.jpeg')
 
 global.canalIdM = [
-  "120363422142340004@newsletter",
-  "120363422142340004@newsletter"
+  "120363410090342500@newsletter",
+  "120363410090342500@newsletter"
 ]
 global.canalNombreM = [
   "Bot de mrd",
@@ -71,15 +71,15 @@ global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5, emoji6].getRandom()
 //global.user2 = m.pushName || 'Anónimo';
 //global.verifyaleatorio = ['registrar', 'reg', 'verificar', 'verify', 'register'].getRandom();
 
-global.wait = '🎋 Espera un momento, soy lento...';
-global.waitt = '🍧 Espera un momento, soy lento...';
-global.waittt = '🌷 Espera un momento, soy lento...';
-global.waitttt = '🌿 Espera un momento, soy lento...';
+global.wait = '🎋 انتظر لحظة, soy lento...';
+global.waitt = '🍧 انتظر لحظة, soy lento...';
+global.waittt = '🌷 انتظر لحظة, soy lento...';
+global.waitttt = '🌿 انتظر لحظة, soy lento...';
 
-var canal = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'  
-var comunidad = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-var git = 'https://github.com/Yuji-XDev'
-var github = 'https://github.com/Yuji-XDev/Rin-Itoshi-Bot'
+var canal = 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'  
+var comunidad = 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
+var git = 'https://github.com/dwhhhg8-code'
+var github = 'https://github.com/dwhhhg8-code/flash-bot'
 let correo = 'blackoficial2025@gmail.com'
 global.redes = [canal, comunidad, git, github, correo].getRandom()
 
@@ -102,10 +102,10 @@ global.readMore = more.repeat(850)
 
 global.packsticker = `༺══•◈•══༻
 🍓.ೃ࿔*:･༓☾
-✿ Usuario: ${nombre}
+✿ المستخدم: ${nombre}
 ✿ Bot: ${botname}
-✿ Fecha: ${fecha}
-✿ Hora: ${tiempo}
+✿ التاريخ: ${fecha}
+✿ الوقت: ${tiempo}
 ☽༓･*:࿔ೃ.🎋
 ༺══•◈•══༻`;
 global.packsticker2 = `${dev}`
@@ -118,9 +118,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 async function getRandomIcon() {
   const urls = [
     'https://files.catbox.moe/ceotf9.jpg',
-    'https://files.catbox.moe/fft2hr.jpg',
+    'https://i.pinimg.com/originals/9d/6c/4e/9d6c4eeb7898079652b7f2c2e5c65632.jpg',
     'https://files.catbox.moe/i97oje.jpg',
-    'https://files.catbox.moe/js2plu.jpg',
+    'https://i.pinimg.com/originals/9d/6c/4e/9d6c4eeb7898079652b7f2c2e5c65632.jpg',
     'https://shadow-xyz.vercel.app/img/shadow.jpg',
     'https://shadow-xyz.vercel.app/img/shadow1.jpg',
     'https://shadow-xyz.vercel.app/img/shadow10.jpg',

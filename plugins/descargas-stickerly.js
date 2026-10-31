@@ -5,22 +5,22 @@ const API_STICKERLY = "https://delirius-apiofc.vercel.app/download/stickerly"
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    return m.reply(`🍧 Ingresa la URL de un pack de *Stickerly*.\n\n🌱 Ejemplo:\n> ${usedPrefix + command} https://sticker.ly/s/4I2FC0`)
+    return m.reply(`🍧 أدخل la URL de un pack de *Stickerly*.\n\n🌱 Ejemplo:\n> ${usedPrefix + command} https://sticker.ly/s/4I2FC0`)
   }
 
   try {
     let url = `${API_STICKERLY}?url=${encodeURIComponent(args[0])}`
     let res = await fetch(url)
-    if (!res.ok) throw new Error(`❌ Error al conectar con la API (${res.status})`)
+    if (!res.ok) throw new Error(`❌ خطأ في conectar con la API (${res.status})`)
     let json = await res.json()
 
     if (!json.status || !json.data || !json.data.stickers) {
-      throw "⚠️ No se pudo obtener el pack. Verifica el enlace."
+      throw "⚠️ تعذّر obtener el pack. Verifica الرابط."
     }
 
     let data = json.data
 
-    let info = `✨ *Nombre:* ${data.name}
+    let info = `✨ *الاسم:* ${data.name}
 👤 *Autor:* ${data.author}
 📦 *Stickers:* ${data.total}
 👀 *Vistas:* ${data.viewCount}
@@ -28,7 +28,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 🎭 *Animado:* ${data.isAnimated ? "Sí" : "No"}
 🔗 *Pack:* ${data.url}
 
-👥 *Usuario:* ${data.username}
+👥 *المستخدم:* ${data.username}
 👤 *Followers:* ${data.followers}
     `.trim()
 
@@ -53,7 +53,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         let stiker = await sticker(buffer, false, global.packsticker, global.packsticker2)
         await conn.sendFile(m.chat, stiker, "sticker.webp", "", m, { asSticker: true })
       } catch (e) {
-        console.log("⚠️ Error en un sticker:", e)
+        console.log("⚠️ خطأ en un sticker:", e)
       }
     }
 
@@ -61,7 +61,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply("❌ Error al descargar los stickers del pack.")
+    m.reply("❌ خطأ في تنزيل los stickers del pack.")
   }
 }
 

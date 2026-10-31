@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
-if (!args[0]) throw `${emoji} Ingrese un texto para iniciar la escuesta.\n\n>📌 Ejemplo : *${usedPrefix + command}* texto|texto2...`
+if (!args[0]) throw `${emoji} أدخل un texto para iniciar la escuesta.\n\n>📌 Ejemplo : *${usedPrefix + command}* texto|texto2...`
 if (!text.includes('|')) throw  `${emoji2} Separe las encuestas con *|* \n\n> 📌 Ejemplo : *${usedPrefix + command}* texto|texto2...`
 let a = []
 let b = text.split('|')

@@ -1,5 +1,5 @@
 // - 𝙲𝙾𝙳𝙸𝙶𝙾 𝙲𝚁𝙴𝙰𝙳𝙾 𝚇 𝚂𝙷𝙰𝙳𝙾𝚆-𝙽𝙴𝚇 𝚇𝙳 👑
-// - https://github.com/Shadow-nex/
+// - https://github.com/dwhhhg8-code/
 // - 𝙽𝙾 𝙴𝙳𝙸𝚃𝙰𝚁 𝙴𝙻 𝙲𝙾𝙳𝙸𝙶𝙾 
 
 import fetch from 'node-fetch'
@@ -80,11 +80,11 @@ const savetube = {
     return { status: true, code: 200, data: response.data.cdn };
   },
   download: async (link) => {
-    if (!link) return { status: false, code: 400, error: "Falta el enlace de YouTube." };
-    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "URL inválida de YouTube." };
+    if (!link) return { status: false, code: 400, error: "رابط يوتيوب مفقود." };
+    if (!savetube.isUrl(link)) return { status: false, code: 400, error: "رابط يوتيوب غير صالح." };
 
     const id = savetube.youtube(link);
-    if (!id) return { status: false, code: 400, error: "No se pudo extraer el ID del video." };
+    if (!id) return { status: false, code: 400, error: "تعذّر استخراج معرّف الفيديو." };
 
     try {
       const cdnRes = await savetube.getCDN();
@@ -137,8 +137,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🎶 *¡𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝙽𝙳𝙾 𝚃𝚄 𝙰𝚄𝙳𝙸𝙾!*
 ╰─────────────────────────────❀
 
-> 🍓 *Por favor espera un momento...*
-> 🌙 *Esto puede tardar según el tamaño del archivo.*
+> 🍓 *من فضلك انتظر un momento...*
+> 🌙 *Esto puede tardar según el tamaño dالملف.*
 
 ˚₊· ͟͟͞͞➳❥ 📊 *Progreso:*  
     [▓▓▓▓▓▓▓░░░] 70%
@@ -159,7 +159,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     // 📥 Descargar con SAVETUBE
     let info = await savetube.download(vid.url)
     if (!info.status) {
-      return conn.sendMessage(m.chat, { text: `🌿 No se pudo obtener el audio de *${vid.title}*.` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `🌿 تعذّر obtener el audio de *${vid.title}*.` }, { quoted: m })
     }
 
     let { result } = info
@@ -169,11 +169,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 │ ° 📌 *Título:* ${result.title}
 │ ° ⏱️ *Duración:* ${vid.duration}
 │ ° 👽 *Canal:* ${vid.author?.name || "Desconocido"}
-│ ° 🍧 *Calidad:* ${result.quality}p
+│ ° 🍧 *الجودة:* ${result.quality}p
 │ ° 🏔️ *Link:* ${vid.url}
 ╰───────────────⬣
 
-૮₍｡˃ ᵕ ˂ ｡₎ა 🚀 *¡Descarga Completa con exito!*
+૮₍｡˃ ᵕ ˂ ｡₎ა 🚀 *¡تنزيل Completa con exito!*
 
 > ☁️ яιи ιтσsнι вσт | 𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 𝚂𝙷𝙰𝙳𝙾𝚆-𝚇𝚈𝚉`.trim()
 
@@ -183,7 +183,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       img.resize(300, Jimp.AUTO)
       thumb = await img.getBufferAsync(Jimp.MIME_JPEG)
     } catch (err) {
-      console.log("⚠️ Error al procesar miniatura:", err)
+      console.log("⚠️ خطأ في معالجة miniatura:", err)
     }
 
     const Shadow_url = await (await fetch("https://files.catbox.moe/qm569c.jpg")).buffer()
@@ -206,7 +206,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
             priceAmount1000: 100000,
             retailerId: "descarga-premium"
           },
-          businessOwnerJid: "51919199620@s.whatsapp.net"
+          businessOwnerJid: "201125166486@s.whatsapp.net"
         }
       }
     }
@@ -231,8 +231,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }, { quoted: fkontak })
 
   } catch (err) {
-    console.error("[Error en ytmp3doc]", err)
-    conn.sendMessage(m.chat, { text: `Error: ${err.message}` }, { quoted: m })
+    console.error("[خطأ en ytmp3doc]", err)
+    conn.sendMessage(m.chat, { text: `خطأ: ${err.message}` }, { quoted: m })
   }
 }
 

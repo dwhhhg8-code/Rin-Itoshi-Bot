@@ -2,13 +2,13 @@ let { downloadContentFromMessage } = (await import('@whiskeysockets/baileys'))
 
 let handler = async (m, { conn, usedPrefix }) => {
 let quoted = m.quoted
-if (!quoted) return conn.reply(m.chat, `❀ Por favor, responde a un mensaje de una sola vez "ViewOnce" para ver su contenido.`, m)
+if (!quoted) return conn.reply(m.chat, `❀ من فضلك، رُدّ على الرسالة مرة واحدة "ViewOnce" لعرض محتواه.`, m)
 try {
 await m.react('🕒')
 let viewOnceMessage = quoted.viewOnce ? quoted : quoted.mediaMessage?.imageMessage || quoted.mediaMessage?.videoMessage || quoted.mediaMessage?.audioMessage
 let messageType = viewOnceMessage.mimetype || quoted.mtype
 let stream = await downloadContentFromMessage(viewOnceMessage, messageType.split('/')[0])    
-if (!stream) return conn.reply(m.chat, `ꕥ No se pudo descargar el contenido.`, m)  
+if (!stream) return conn.reply(m.chat, `ꕥ تعذّر descargar el contenido.`, m)  
 let buffer = Buffer.from([])
 for await (const chunk of stream) {
 buffer = Buffer.concat([buffer, chunk])

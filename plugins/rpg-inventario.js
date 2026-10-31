@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
 
     if (!(who in global.db.data.users)) {
-        return conn.reply(m.chat, `${emoji} El usuario no se encuentra en mi base de Datos.`, m);
+        return conn.reply(m.chat, `${emoji} المستخدم no se encuentra en mi base de Datos.`, m);
     }
     
     let img = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745557972839.jpeg';
@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix }) => {
                `┋ 🏅 *Oro:* ${user.gold || 0}\n` + 
                `┋ 🕋 *Carbón:* ${user.coal || 0}\n` +  
                `┋ 🪨 *Piedra:* ${user.stone || 0}\n` +  
-               `┋ ✨ *Experiencia:* ${user.exp || 0}\n` + 
+               `┋ ✨ *الخبرة:* ${user.exp || 0}\n` + 
                `┋ ❤️ *Salud:* ${user.health || 100}\n` + 
                `┋ 💎 *Diamantes:* ${user.diamond || 0}\n` +   
                `┋ 🍬 *Dulces:* ${user.candies || 0}\n` + 
@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix }) => {
                `┋ 🎟️ *Tokens:* ${user.joincount || 0}\n` +  
                `┋ ⚜️ *Premium:* ${premium}\n` + 
                `┋ ⏳ *Última Aventura:* ${user.lastAdventure ? moment(user.lastAdventure).fromNow() : 'Nunca'}\n` + 
-               `┋ 📅 *Fecha:* ${new Date().toLocaleString('id-ID')}\n` +
+               `┋ 📅 *التاريخ:* ${new Date().toLocaleString('id-ID')}\n` +
                `╰━━━━━━━━━━━━⬣`;
 
     await conn.sendFile(m.chat, img, 'yuki.jpg', text, fkontak);

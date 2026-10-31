@@ -23,14 +23,14 @@ break
 }}}
 
 if (filesDeleted === 0) {
-await conn.reply(m.chat, `${emoji2} No se encontró ningún archivo que incluya la ID del chat.`, m)
+await conn.reply(m.chat, `${emoji2} لم يتم العثور على ningún archivo que incluya la ID del chat.`, m)
 } else {
 await conn.reply(m.chat, `${emoji2} Se eliminaron ${filesDeleted} archivos de sesión.`, m)
 conn.reply(m.chat, `${emoji} ¡Hola! ¿logras verme?`, m)
 }
 } catch (err) {
-console.error('Error al leer la carpeta o los archivos de sesión:', err)
-await conn.reply(m.chat, `${emoji} Hola Soy ${botname} Sigue El Canal y apoyanos porfavor.\n\n> ${channel}`, m)
+console.error('خطأ في leer la carpeta o ملفات الجلسة:', err)
+await conn.reply(m.chat, `${emoji} أهلاً Soy ${botname} Sigue El Canal y apoyanos porfavor.\n\n> ${channel}`, m)
 }
 
 }

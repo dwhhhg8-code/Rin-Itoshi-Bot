@@ -16,7 +16,7 @@ let txt = args.join(' ')
 
 if (/webp|image|video/g.test(mime) && q.download) {
 if (/video/.test(mime) && (q.msg || q).seconds > 16)
-return conn.reply(m.chat, '✧ El video no puede durar más de *15 segundos*', m)
+return conn.reply(m.chat, '✧ الفيديو no puede durar más de *15 segundos*', m)
 let buffer = await q.download()
 await m.react('🕓')
 
@@ -28,7 +28,7 @@ stiker = buffer
 } else {
 return conn.reply(m.chat, '❀ 𝑹𝒆𝒔𝒑𝒐𝒏𝒅𝒂 𝑨 𝒖𝒏𝒂 𝑰𝒎𝒂𝒈𝒆𝒏 𝒐 𝑽𝒊𝒅𝒆𝒐 𝒑𝒂𝒓𝒂 𝑪𝒓𝒆𝒂𝒓 𝒆𝒍 𝑺𝒕𝒊𝒄𝒌𝒆𝒓.', m, rcanal)
 }} catch (e) {
-await conn.reply(m.chat, '⚠︎ Ocurrió un Error: ' + e.message, m)
+await conn.reply(m.chat, '⚠︎ حدث خطأ: ' + e.message, m)
 await m.react('✖️')
 } finally {
 if (stiker) {

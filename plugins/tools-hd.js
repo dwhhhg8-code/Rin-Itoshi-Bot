@@ -7,12 +7,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   if (!/image\/(jpe?g|png)/i.test(mime)) {
     await conn.sendMessage(m.chat, { react: { text: '❗', key: m.key } })
-    return m.reply(`🍄 Por favor, envie una imagen o responda a la imagen utilizando el comando.`)
+    return m.reply(`🍄 من فضلك، envie صورة أو رُدّ على صورة باستخدام الأمر.`)
   }
 
   try {
     await conn.sendMessage(m.chat, { react: { text: '⏳', key: m.key } })
-    conn.reply(m.chat, `*✧ Mejorando la calidad de la imagen....*`, m, rcanal)  
+    conn.reply(m.chat, `*✧ تحسين جودة الصورة....*`, m, rcanal)  
     const media = await quoted.download()
     const ext = mime.split('/')[1]
     const filename = `upscaled_${Date.now()}.${ext}`
@@ -44,13 +44,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     await conn.sendMessage(m.chat, {
       image: resultBuffer,
-      caption: `☆ *𝙰𝚀𝚄𝙸 𝚃𝙸𝙴𝙽𝙴𝚂 𝚃𝚄 𝙸𝙼𝙰𝙶𝙴𝙽 𝙴𝙽 𝙷𝙳* 🍂\n> © ʀɪɴ ɪᴛᴏsʜɪ | ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ °`.trim()
+      caption: `☆ *𝙰𝚀𝚄𝙸 𝚃𝙸𝙴𝙽𝙴𝚂 𝚃𝚄 𝙸𝙼𝙰𝙶𝙴𝙽 𝙴𝙽 𝙷𝙳* 🍂\n> © ʀɪɴ ɪᴛᴏsʜɪ | ʙʏ 𝖍𝖆𝖎𝖙𝖍𝖆𝖒 °`.trim()
     }, { quoted: m })
 
     await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
   } catch (err) {
     await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
-    m.reply(`❌ Ocurrio un error:\n${err.message || err}`)
+    m.reply(`❌ حدث خطأ:\n${err.message || err}`)
   }
 }
 

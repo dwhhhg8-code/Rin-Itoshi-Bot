@@ -3,18 +3,18 @@ import fetch from 'node-fetch'
 import Jimp from 'jimp'
 
 var handler = async (m, { conn, usedPrefix, command, text }) => {
-  if (!text) return conn.reply(m.chat, `🕸️ Por favor, ingrese el nombre de la apk para descargarlo.`, m, rcanal)
+  if (!text) return conn.reply(m.chat, `🕸️ من فضلك أدخل الاسم de la apk para descargarlo.`, m, rcanal)
 
   try {
     await m.react('🕒')
 
     let searchA = await search(text)
-    if (!searchA.length) return conn.reply(m.chat, `⚠️ No se encontró ninguna app con ese nombre.`, m)
+    if (!searchA.length) return conn.reply(m.chat, `⚠️ لم يتم العثور على ninguna app con ese nombre.`, m)
 
     let data5 = await download(searchA[0].id)
 
     let txt = `*乂  APTOIDE - DESCARGAS 乂*\n\n`
-    txt += `≡ Nombre : ${data5.name}\n`
+    txt += `≡ الاسم : ${data5.name}\n`
     txt += `≡ Package : ${data5.package}\n`
     txt += `≡ Update : ${data5.lastup}\n`
     txt += `≡ Peso :  ${data5.size}`
@@ -22,7 +22,7 @@ var handler = async (m, { conn, usedPrefix, command, text }) => {
     await conn.sendFile(m.chat, data5.icon, 'thumbnail.jpg', txt, m, null, rcanal)
 
     if (data5.size.includes('GB') || parseFloat(data5.size.replace(' MB', '')) > 999) {
-      return await conn.reply(m.chat, `ꕥ El archivo es demasiado pesado.`, m)
+      return await conn.reply(m.chat, `ꕥ الملف es demasiado pesado.`, m)
     }
 
     let thumbnail = null
@@ -31,7 +31,7 @@ var handler = async (m, { conn, usedPrefix, command, text }) => {
       img.resize(300, Jimp.AUTO)
       thumbnail = await img.getBufferAsync(Jimp.MIME_JPEG)
     } catch (err) {
-      console.log('⚠️ Error al crear miniatura:', err)
+      console.log('⚠️ خطأ في crear miniatura:', err)
     }
 
     await conn.sendMessage(

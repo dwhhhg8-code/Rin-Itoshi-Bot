@@ -1,5 +1,5 @@
 // ✦ ᴄᴏᴅɪɢᴏ ᴄʀᴇᴀᴅᴏ ᴘᴏʀ DVShadow ⚡
-// ✦ ᴘᴀʀᴀ Rin Itoshi ⚽
+// ✦ ᴘᴀʀᴀ FLASH BOT ⚽
 
 const handler = async (m, { conn, args, participants, isAdmin, isOwner, usedPrefix, command }) => {
   if (usedPrefix.toLowerCase() === 'a') return;
@@ -12,7 +12,7 @@ const handler = async (m, { conn, args, participants, isAdmin, isOwner, usedPref
   const customEmoji = global.db.data.chats[m.chat]?.customEmoji || '🌿';
   await m.react(customEmoji);
 
-  const mensaje = args.length ? args.join(' ') : '✨ *Sin mensaje adicional.*';
+  const mensaje = args.length ? args.join(' ') : '✨ *Sin الرسالة adicional.*';
   const grupo = await conn.getName(m.chat);
   const mencionados = participants.map(p => p.id);
 
@@ -48,7 +48,7 @@ const handler = async (m, { conn, args, participants, isAdmin, isOwner, usedPref
   }, { quoted: m });
 };
 
-handler.help = ['todos *<mensaje>*'];
+handler.help = ['todos *<الرسالة>*'];
 handler.tags = ['grupo'];
 handler.command = ['todos', 'invocar', 'tagall', 'marcar', 'llamar'];
 handler.admin = true;

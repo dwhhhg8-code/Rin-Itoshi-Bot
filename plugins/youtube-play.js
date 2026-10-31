@@ -2,13 +2,13 @@
 import fetch from 'node-fetch';
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) return conn.reply(m.chat, `*🍧 Ingresa un título para buscar en YouTube.*`, m, fake);
+    if (!args[0]) return conn.reply(m.chat, `*🍧 أدخل un título para buscar en YouTube.*`, m, fake);
 
     await m.react('🕓');
     try {
         let searchResults = await searchVideos(args.join(" "));
 
-        if (!searchResults.length) throw new Error('*✖️ No se encontraron resultados.*');
+        if (!searchResults.length) throw new Error('*✖️ لا توجد نتائج.*');
 
         let video = searchResults[0];
         let thumbnail = await (await fetch(video.miniatura)).buffer();
@@ -60,7 +60,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
     } catch (e) {
         console.error(e);
         await m.react('✖️');
-        conn.reply(m.chat, '*Video no encontrado en Youtube.*', m);
+        conn.reply(m.chat, '*Video غير موجود en Youtube.*', m);
     }
 };
 
@@ -77,9 +77,9 @@ async function searchVideos(query) {
             url: video.url,
             miniatura: video.thumbnail,
             canal: video.author.name,
-            publicado: video.ago || 'No disponible',
-            vistas: video.views?.toLocaleString() || 'No disponible',
-            duracion: video.duration.timestamp || 'No disponible'
+            publicado: video.ago || 'غير متاح',
+            vistas: video.views?.toLocaleString() || 'غير متاح',
+            duracion: video.duration.timestamp || 'غير متاح'
         }));
     } catch (error) {
         console.error('*Error en yt-search:*', error.message);

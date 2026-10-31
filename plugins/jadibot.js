@@ -57,7 +57,7 @@ const handler = async (m, { conn, command, usedPrefix, participants }) => {
             retailerId: "SubBots",
             productImageCount: 1
           },
-          businessOwnerJid: "51919199620@s.whatsapp.net"
+          businessOwnerJid: "201125166486@s.whatsapp.net"
         }
       }
     }
@@ -91,7 +91,7 @@ const handler = async (m, { conn, command, usedPrefix, participants }) => {
 \`\`\`    ۪〫〫𝆬✿〫𝆬 ᮫ᨗ۫ 𝐒𝐎𝐂𝐊𝐄𝐓𝐒 𝐎𝐍𝐋𝐈𝐍𝐄   ּּ籭᮫꫶ֹּּ࣭ٜ〫۫𝆬𝆬ᨗ࠭࠭𝆬ᨗ \`\`\`
 \`\`\`   ֶ֮⏝ ٌ۪͝ ⏝ֶ֮⋃ ֶ֮ ⋃⏝ ٌ۪͝ ⏝ֶ֮ \`\`\`
 
-*「 ✦ 」 Lista de bots activos*
+*「 ✦ 」 قائمة bots activos*
 
 ❀ Principal: *1*
 ✿ Subs: *${users.length - 1}*

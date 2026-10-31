@@ -3,16 +3,16 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
 try {
-let res = await fetch('https://api.github.com/repos/Yuji-XDev/Rin-Itoshi-Bot')
+let res = await fetch('https://api.github.com/repos/dwhhhg8-code/flash-bot')
 
-if (!res.ok) throw new Error('Error al obtener datos del repositorio')
+if (!res.ok) throw new Error('خطأ في جلب datos del repositorio')
 let json = await res.json()
 
 let txt = `⼢ ⃘𐇽.    𝗦𝗖𝗥𝗜𝗣𝗧  •  𝗜𝗡𝗙𝗢  ଘ(੭*ˊᵕˋ)੭\n`
-txt += `> ❐ *Nombre:* ${json.name}\n`
+txt += `> ❐ *الاسم:* ${json.name}\n`
 txt += `> ✿ *Visitas:* ${json.watchers_count}\n`
 txt += `> 𔓕 *Peso:* ${(json.size / 1024).toFixed(2)} MB\n`
-txt += `> ❀ *Actualizado:* ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`
+txt += `> ❀ *تم التحديث:* ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`
 txt += `> ✰ *Url:* ${json.html_url}\n`
 txt += `> ✦ *Forks:* ${json.forks_count}\n`
 txt += `> ⬣ *Stars:* ${json.stargazers_count}\n`
@@ -21,7 +21,7 @@ txt += `> *${dev}*`
 await conn.sendMessage(m.chat, {text: txt, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: channelRD.name, newsletterJid: channelRD.id, }, externalAdReply: { title: packname, body: dev, thumbnailUrl: 'https://files.catbox.moe/3bmdrm.jpg', sourceUrl: redes, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: m})
 
 } catch {
-await conn.reply(m.chat, `${msm} Ocurrió un error.`, m)
+await conn.reply(m.chat, `${msm} حدث خطأ.`, m)
 await m.react(error)
 }}
 
@@ -39,11 +39,11 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn }) => {
   try {
 
-    const res = await fetch('https://api.github.com/repos/Yuji-XDev/Rin-Itoshi-Bot');
+    const res = await fetch('https://api.github.com/repos/dwhhhg8-code/flash-bot');
     const data = await res.json();
 
     if (!data || !data.name) {
-      return m.reply('No se pudo obtener información del repositorio.');
+      return m.reply('تعذّر الحصول على معلومات المستودع.');
     }
 
     const txt = `⼢ ⃘𐇽.    𝗦𝗖𝗥𝗜𝗣𝗧  •  𝗜𝗡𝗙𝗢  ଘ(੭*ˊᵕˋ)੭
@@ -51,7 +51,7 @@ let handler = async (m, { conn }) => {
 > ❐ 𝗡𝗼𝗺𝗯𝗿𝗲: ${data.name}
 > ✦ 𝗙𝘂𝗹𝗹 𝗡𝗮𝗺𝗲: ${data.full_name}
 > ✰ 𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝗰𝗶𝗼́𝗻: ${data.description || 'No hay descripción'}
-> ✿ 𝗣𝗿𝗶𝘃𝗮𝗰𝗮𝗱: ${data.private ? 'Privado' : 'Público'}
+> ✿ 𝗣𝗿𝗶𝘃𝗮𝗰𝗮𝗱: ${data.private ? 'Privado' : 'عام'}
 > ❐ 𝗢𝘄𝗻𝗲𝗿: ${data.owner.login} ✛
 > ✦ 𝗢𝘄𝗻𝗲𝗿 ID: ${data.owner.id} ✜
 > ✰ 𝗣𝗮́𝗴𝗶𝗻𝗮 𝗣𝗲𝗿𝘀𝗼𝗻𝗮𝗹: ${data.owner.html_url} ✞
@@ -97,7 +97,7 @@ let handler = async (m, { conn }) => {
 
   } catch (err) {
     console.error(err);
-    m.reply('Ocurrió un error al consultar el repositorio.');
+    m.reply('حدث خطأ al consultar المستودع.');
   }
 };
 

@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args }) => {
-  if (!m.quoted) return conn.reply(m.chat, '*🌱 Responde a un mensaje para reenviarlo.*', m)
+  if (!m.quoted) return conn.reply(m.chat, '*🌱 رُدّ على رسالة para reenviarlo.*', m)
 
   let q = m.quoted ? m.quoted : m
   let msg = await m.getQuotedObj()

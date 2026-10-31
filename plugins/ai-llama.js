@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-    if (!text) return conn.reply(m.chat, `${emoji} Ingrese un texto para hablar con Llama AI.`, m)
+    if (!text) return conn.reply(m.chat, `${emoji} أدخل un texto para hablar con Llama AI.`, m)
     try {
         let api = await fetch(`https://delirius-apiofc.vercel.app/ia/llamaia?query=${text}`)
         let json = await api.json()

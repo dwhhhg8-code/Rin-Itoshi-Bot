@@ -24,7 +24,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     } else if (m.quoted) {
         str = `\`${name2}\` *hola* \`${name || who}\` *como te encuentras hoy?.*`;
     } else {
-        str = `\`${name2}\` *saluda a todos los integrantes del grupo, como se encuentran?*`.trim();
+        str = `\`${name2}\` *saluda a todos los integrantes dالمجموعة, como se encuentran?*`.trim();
     }
     
     if (m.isGroup) {

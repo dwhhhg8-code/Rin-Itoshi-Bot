@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!res.ok) throw await res.text();
     let json = await res.json();
 
-    if (!json.status || !json.data) throw " No se encontró información del usuario.";
+    if (!json.status || !json.data) throw " لم يتم العثور على معلومات المستخدم.";
 
     let user = json.data;
     let bioLinks = (user.bio_links && user.bio_links.length > 0) 
@@ -21,13 +21,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let caption = `
 ╭━━━〔 *Instagram Stalk* 〕━━⬣
-┆ 👤 *Usuario:* ${user.username}
-┆ 📛 *Nombre:* ${user.full_name || "-"}
+┆ 👤 *المستخدم:* ${user.username}
+┆ 📛 *الاسم:* ${user.full_name || "-"}
 ┆ 📝 *Bio:* ${user.biography || "-"}
 ┆ 🔗 *Perfil:* https://instagram.com/${user.username}
 ┆ 🌍 *Bio Links:* 
 ${bioLinks}
-┆ 🏷️ *Cuenta:* ${user.is_private ? "Privada 🔒" : "Pública 🌐"}
+┆ 🏷️ *Cuenta:* ${user.is_private ? "خاصة 🔒" : "عامة 🌐"}
 ┆ 🏢 *Business:* ${user.is_business_account ? "Sí" : "No"}
 ┆ ☑️ *Verificado:* ${user.is_verified ? "Sí" : "No"}
 ┆ 👥 *Seguidores:* ${user.followers_count.toLocaleString()}
@@ -50,7 +50,7 @@ ${bioLinks}
 ❤️ Likes: ${post.like_count || 0}
 💬 Comentarios: ${post.comment_count || 0}
 👀 Vistas: ${post.view_count || 0}
-⏰ Fecha: ${new Date(post.timestamp * 1000).toLocaleString()}
+⏰ التاريخ: ${new Date(post.timestamp * 1000).toLocaleString()}
 `;
 
         if (post.is_video && post.video_url) {
@@ -69,7 +69,7 @@ ${bioLinks}
 
   } catch (e) {
     console.error(e);
-    m.reply("Error al obtener información del usuario.");
+    m.reply("خطأ في جلب información dالمستخدم.");
   }
 };
 

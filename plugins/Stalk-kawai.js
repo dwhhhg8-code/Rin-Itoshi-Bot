@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
-    return conn.reply(m.chat, `🧇 Por favor, ingrese un nombre de usuario para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* Vegeta_Sola`, m);
+    return conn.reply(m.chat, `🧇 من فضلك أدخل un nombre de usuario para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* Vegeta_Sola`, m);
   }
 
   await m.react('🕓');
@@ -12,15 +12,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!json.status || !json.resultado) {
       await m.react('✖️');
-      return await conn.reply(m.chat, '❌ No se encontraron resultados para esta búsqueda.', m);
+      return await conn.reply(m.chat, '❌ لا توجد نتائج لهذا البحث.', m);
     }
 
     const user = json.resultado;
     let txt = `📌 *K W A I  -  S T A L K*\n\n`;
-    txt += `👤 *Nombre:* ${user.nome}\n`;
-    txt += `🔖 *Usuario:* ${user.nome_usuario}\n`;
+    txt += `👤 *الاسم:* ${user.nome}\n`;
+    txt += `🔖 *المستخدم:* ${user.nome_usuario}\n`;
     txt += `📅 *Cuenta creada:* ${new Date(user.data_criacao).toLocaleDateString('es-ES')}\n`;
-    txt += `📜 *Bio:* ${user.bio || 'Sin descripción'}\n`;
+    txt += `📜 *Bio:* ${user.bio || 'لا يوجد وصف'}\n`;
     txt += `👥 *Seguidores:* ${user.seguidores.toLocaleString()}\n`;
     txt += `🔄 *Siguiendo:* ${user.seguindo.toLocaleString()}\n`;
     txt += `❤️ *Me gusta totales:* ${user.curtidas.toLocaleString()}\n`;
@@ -31,7 +31,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     user.videos.forEach((video, index) => {
       txt += `📽️ *Video ${index + 1}*\n`;
       txt += `📌 *Título:* ${video.titulo}\n`;
-      txt += `📝 *Descripción:* ${video.descricao || 'Sin descripción'}\n`;
+      txt += `📝 *الوصف:* ${video.descricao || 'لا يوجد وصف'}\n`;
       txt += `⏳ *Duración:* ${video.duracao.replace('PT', '').toLowerCase()}\n`;
       txt += `❤️ *Likes:* ${video.curtidas.toLocaleString()}\n`;
       txt += `💬 *Comentarios:* ${video.comentarios.toLocaleString()}\n`;
@@ -44,7 +44,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (error) {
     console.error(error);
     await m.react('✖️');
-    await conn.reply(m.chat, '⚠️ Hubo un error al procesar la solicitud. Intenta de nuevo más tarde.', m);
+    await conn.reply(m.chat, '⚠️ حدث خطأ أثناء المعالجة. حاول مرة أخرى لاحقاً.', m);
   }
 };
 

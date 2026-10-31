@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, args }) => {
         if (sizeB > 200 * 1024 * 1024) {
           return conn.reply(
             m.chat,
-            `La aplicación pesa demasiado para usuarios gratis.\n\nPeso: ${sizeMB}\n\n Hazte premium para descargar hasta 500MB.`,
+            `La aplicación pesa demasiado para المستخدمون gratis.\n\nPeso: ${sizeMB}\n\n Hazte premium para descargar hasta 500MB.`,
             m
           );
         }
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, args }) => {
         let cap = `
 ◜ ApkPure - Download ◞
 
-≡ 📱 *Nombre:* ${name}
+≡ 📱 *الاسم:* ${name}
 ≡ 📦 *Package:* ${base}
 ≡ ⚖️ *Peso:* ${sizeMB}
 ≡ 🔗 *Link:* ${args[0]}
@@ -51,7 +51,7 @@ let handler = async (m, { conn, text, args }) => {
 
         m.react('☑️');
       } catch (err) {
-        return conn.reply(m.chat, 'Error al obtener info de la app.\n\n' + err, m);
+        return conn.reply(m.chat, 'خطأ في جلب info de التطبيق.\n\n' + err, m);
       }
     } 
 
@@ -77,7 +77,7 @@ let handler = async (m, { conn, text, args }) => {
       m.react('☑️');
     }
   } catch (err) {
-    return conn.reply(m.chat, 'Error en la ejecución.\n\n' + err, m);
+    return conn.reply(m.chat, 'خطأ en la ejecución.\n\n' + err, m);
   }
 };
 

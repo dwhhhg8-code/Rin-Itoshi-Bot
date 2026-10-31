@@ -11,8 +11,8 @@ let handler = async function (m, { conn, groupMetadata }) {
                    '👤 Miembro'
 
     return [
-      `┏━〔 👥 Usuario #${index + 1} 〕━┓`,
-      `┃ 🌱 *Nombre:* ${username}`,
+      `┏━〔 👥 المستخدم #${index + 1} 〕━┓`,
+      `┃ 🌱 *الاسم:* ${username}`,
       `┃ ☘️ *JID:* ${jid}`,
       `┃ 🎖️ *Rol:* ${estado}`,
       `┗━━━━━━━━━━━━━━━━━━━┛`
@@ -26,8 +26,8 @@ let handler = async function (m, { conn, groupMetadata }) {
   const totalMiembros = participantes.length - totalAdmins
 
   const mensajeFinal = `┏━━〔 📋 *Participantes del Grupo* 〕━━┓
-┃ 🌱 *Nombre del grupo:* ${groupMetadata.subject}
-┃ 🔢 *Total de miembros:* ${participantes.length}
+┃ 🌱 *الاسم dالمجموعة:* ${groupMetadata.subject}
+┃ 🔢 *الإجمالي de miembros:* ${participantes.length}
 ┃ 👑 *Admins:* ${totalAdmins}
 ┃ 👤 *Miembros:* ${totalMiembros}
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛

@@ -16,7 +16,7 @@ const getDiskSpace = () => {
         const [ , size, used, available, usePercent ] = stdout.trim().split(/\s+/);
         return { size, used, available, usePercent };
     } catch (error) {
-        console.error('✧ Error al obtener el espacio en disco:', error);
+        console.error('✧ خطأ في جلب el espacio en disco:', error);
         return null;
     }
 };
@@ -46,7 +46,7 @@ const handler = async (m, { conn }) => {
 ╭━━〔 ⚙️ *ESTADO DEL HOST* 〕━━⬣
 │ ✧ 🌐 *Host:* ${hostname}
 │ ✧ 🧬 *Sistema:* ${platform} (${arch})
-│ ✧ 🔋 *RAM Total:* ${formatBytes(totalMem)}
+│ ✧ 🔋 *RAM الإجمالي:* ${formatBytes(totalMem)}
 │ ✧ ✨ *RAM Libre:* ${formatBytes(freeMem)}
 │ ✧ ⚡ *RAM Usada:* ${formatBytes(usedMem)}
 │ ✧ ⏳ *Tiempo Activo:* ${muptime}
@@ -54,18 +54,18 @@ const handler = async (m, { conn }) => {
 
 ╭━━〔 🪄 *MEMORIA NODE.JS* 〕━━⬣
 │ ✧ 📦 *RSS:* ${formatBytes(nodeUsage.rss)}
-│ ✧ 🧠 *Heap Total:* ${formatBytes(nodeUsage.heapTotal)}
+│ ✧ 🧠 *Heap الإجمالي:* ${formatBytes(nodeUsage.heapTotal)}
 │ ✧ 💎 *Heap Usado:* ${formatBytes(nodeUsage.heapUsed)}
 │ ✧ 📂 *Externa:* ${formatBytes(nodeUsage.external)}
 │ ✧ 🎯 *Buffers:* ${formatBytes(nodeUsage.arrayBuffers)}
 ╰━━━━━━━━━━━━━━━━━━⬣
 
 ${diskSpace ? `╭━━━〔 💽 *DISCO DURO* 〕━━━⬣
-│ ✧ 📀 *Total:* ${diskSpace.size}
+│ ✧ 📀 *الإجمالي:* ${diskSpace.size}
 │ ✧ 📊 *Usado:* ${diskSpace.used}
 │ ✧ 🌌 *Libre:* ${diskSpace.available}
 │ ✧ 🔮 *Uso:* ${diskSpace.usePercent}
-╰━━━━━━━━━━━━━━━━━━⬣` : '🚫 *No se pudo obtener el espacio en disco.*'}`;
+╰━━━━━━━━━━━━━━━━━━⬣` : '🚫 *تعذّر obtener el espacio en disco.*'}`;
 
     await conn.sendMessage(m.chat, {
         text: message,
@@ -77,7 +77,7 @@ ${diskSpace ? `╭━━━〔 💽 *DISCO DURO* 〕━━━⬣
                 thumbnailUrl: 'https://files.catbox.moe/vs2uvc.jpg',
                 mediaType: 1,
                 renderLargerThumbnail: false,
-                sourceUrl: 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+                sourceUrl: 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
             }
         }
     }, { quoted: m });

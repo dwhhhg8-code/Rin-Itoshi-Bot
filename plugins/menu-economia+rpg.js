@@ -29,7 +29,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ┃📦 #cofre → Abre un cofre misterioso
 ┃🏦 #depositar → Deposita dinero al banco
 ┃🧭 #explorar → Descubre nuevas zonas
-┃⚔️ #gremio → Información de tu gremio
+┃⚔️ #gremio → معلومات de tu gremio
 ┃🎃 #halloween → Evento de Halloween
 ┃❤️ #heal → Recupera tu vida
 ┃🎒 #inventario → Mira tus objetos
@@ -61,7 +61,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 📢 *Canal Oficial:*  
 🔗 ${channel}  
-「 ⚽𐚁 ֹ ִ Rin Itoshi - Official ୧ ֹ ִ⚽ 」
+「 ⚽𐚁 ֹ ִ FLASH BOT - Official ୧ ֹ ִ⚽ 」
     `.trim()
 
     await conn.sendMessage(m.chat, {
@@ -70,7 +70,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       footer: club,
       buttons: [
         { buttonId: `${usedPrefix}owner`, buttonText: { displayText: "👑 المطوّر" }, type: 1 },
-        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 Menú Completo" }, type: 1 }
+        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 القائمة الكاملة" }, type: 1 }
       ],
       headerType: 4,
       contextInfo: {
@@ -82,7 +82,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
           newsletterName: channelRD.name
         },
         externalAdReply: {
-          title: '👻 Rin Itoshi - Menú RPG',
+          title: '👻 FLASH BOT - قائمة RPG',
           body: '🎮 ᴄʀᴇᴀ ᴛᴜ ᴀᴠᴇɴᴛᴜʀᴀ, ʀᴇᴄᴏɢᴇ ʀᴇᴄᴜʀsᴏs, ɢᴀɴᴀ ᴏʀᴏ ʏ ᴅᴏᴍɪɴᴀ ᴇʟ ᴍᴜɴᴅᴏ ʀᴘɢ ⚔️',
           thumbnailUrl: 'https://files.catbox.moe/us0m4f.jpg',
           sourceUrl: redes,

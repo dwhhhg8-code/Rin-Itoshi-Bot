@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let regex = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
 let handler = async (m, { args, usedPrefix, command }) => {
   if (!args[0]) {
-    return conn.reply(m.chat, `${emoji} Por favor, ingresa la URL de un repositorio de GitHub que deseas descargar.`, m)
+    return conn.reply(m.chat, `${emoji} من فضلك أدخل la URL de un repositorio de GitHub que deseas descargar.`, m)
   }
   if (!regex.test(args[0])) {
     return conn.reply(m.chat, `${emoji2} Verifica que la *URL* sea de GitHub`, m).then(_ => m.react(error))
@@ -24,10 +24,10 @@ let handler = async (m, { args, usedPrefix, command }) => {
     let type = zipResponse.headers.get('content-type')
     let img = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745610598914.jpeg'
     let txt = `*乂  G I T H U B  -  D O W N L O A D*\n\n`
-       txt += `✩  *Nombre* : ${sanitizedRepo}\n`
+       txt += `✩  *الاسم* : ${sanitizedRepo}\n`
        txt += `✩  *Repositorio* : ${user}/${sanitizedRepo}\n`
-       txt += `✩  *Creador* : ${repoData.owner.login}\n`
-       txt += `✩  *Descripción* : ${repoData.description || 'Sin descripción disponible'}\n`
+       txt += `✩  *المطوّر* : ${repoData.owner.login}\n`
+       txt += `✩  *الوصف* : ${repoData.description || 'لا يوجد وصف متاح'}\n`
        txt += `✩  *Url* : ${args[0]}\n\n`
        txt += `> ${dev}`
 

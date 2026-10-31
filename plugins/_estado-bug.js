@@ -3,7 +3,7 @@ import fs from 'fs'
 let solicitudes = {}
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`🌸 Ingresa el número de la persona.\n\nEjemplo:\n*${usedPrefix + command} 51987XXXX*`)
+  if (!text) return m.reply(`🌸 أدخل el número de la persona.\n\nEjemplo:\n*${usedPrefix + command} 51987XXXX*`)
 
   let number = text.replace(/\D/g, '') + '@s.whatsapp.net'
 
@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   await conn.sendMessage(number, {
     text: `🌷 *Hola!* Alguien quiere descargar tus *estados de WhatsApp*.\n\n¿Deseas compartirlos?`,
     buttons: [
-      { buttonId: "estado_si", buttonText: { displayText: "✅ Sí, permitir" }, type: 1 },
+      { buttonId: "estado_si", buttonText: { displayText: "✅ نعم، اسمح" }, type: 1 },
       { buttonId: "estado_no", buttonText: { displayText: "❌ No, rechazar" }, type: 1 }
     ],
     headerType: 1
@@ -35,7 +35,7 @@ handler.before = async function (m, { conn }) {
       let stories = await conn.fetchStatus(number)
 
       if (!stories || !stories.status || !stories.status.length) {
-        await conn.sendMessage(chatDestino, { text: "😿 El usuario no tiene estados disponibles." })
+        await conn.sendMessage(chatDestino, { text: "😿 المستخدم لا يملك حالات متاحة." })
       } else {
         for (let st of stories.status) {
           if (!st.mimetype) continue
@@ -45,16 +45,16 @@ handler.before = async function (m, { conn }) {
             await conn.sendMessage(chatDestino, { video: st.media, caption: "🎥 Estado descargado." })
           }
         }
-        await conn.sendMessage(chatDestino, { text: "✅ *Descarga completada con éxito.*" })
+        await conn.sendMessage(chatDestino, { text: "✅ *تنزيل بنجاح.*" })
       }
     } catch (e) {
       console.error(e)
-      await conn.sendMessage(chatDestino, { text: "❌ Error al intentar descargar los estados." })
+      await conn.sendMessage(chatDestino, { text: "❌ خطأ في intentar descargar الحالات." })
     }
     delete solicitudes[number]
 
   } else if (selectedId === "estado_no") {
-    await conn.sendMessage(chatDestino, { text: "🚫 El usuario rechazó compartir sus estados." })
+    await conn.sendMessage(chatDestino, { text: "🚫 المستخدم رفض مشاركة حالاته." })
     delete solicitudes[number]
   }
 }

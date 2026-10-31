@@ -29,9 +29,9 @@ handler.before = async function (m, { conn }) {
   const description = `
 ✔ *ANTI VER UNA VEZ* ✔
 
-✦ *No ocultes:* ${type === 'imageMessage' ? '`Imagen` 📸' : type === 'videoMessage' ? '`Vídeo` 📹' : '`Mensaje de voz` 🔊'}
+✦ *No ocultes:* ${type === 'imageMessage' ? '`الصورة` 📸' : type === 'videoMessage' ? '`الفيديو` 📹' : '`الرسالة de voz` 🔊'}
 - 🍬 *Usuario:* @${m.sender.split('@')[0]}
-${msg[type]?.caption ? `- *Texto:* ${msg[type].caption}` : ''}
+${msg[type]?.caption ? `- *النص:* ${msg[type].caption}` : ''}
 - 📦 *Tamaño:* ${fileSize}
   `.trim()
 

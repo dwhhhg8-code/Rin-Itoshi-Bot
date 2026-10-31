@@ -3,17 +3,17 @@ let users = {};
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let [eleccion, cantidad] = text.split(' ');
     if (!eleccion || !cantidad) {
-        return m.reply(`${emoji} Por favor, elige cara o cruz y una cantidad de ${moneda} para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
+        return m.reply(`${emoji} من فضلك، elige cara o cruz y una cantidad de ${moneda} para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
     }
 
     eleccion = eleccion.toLowerCase();
     cantidad = parseInt(cantidad);
     if (eleccion !== 'cara' && eleccion !== 'cruz') {
-        return m.reply(`${emoji2} Elección no válida. Por favor, elige cara o cruz.\nEjemplo: *${usedPrefix + command} cara*`);
+        return m.reply(`${emoji2} Elección غير صالح. من فضلك، elige cara o cruz.\nEjemplo: *${usedPrefix + command} cara*`);
     }
 
     if (isNaN(cantidad) || cantidad <= 0) {
-        return m.reply(`${emoji2} Cantidad no válida. Por favor, elige una cantidad de ${moneda} para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
+        return m.reply(`${emoji2} Cantidad غير صالح. من فضلك، elige una cantidad de ${moneda} para apostar.\nEjemplo: *${usedPrefix + command} cara 50*`);
     }
 
     let userId = m.sender;

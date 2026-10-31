@@ -4,14 +4,14 @@ let handler = async (m, { conn }) => {
 let user = global.db.data.users[m.sender];
 let img = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Contenido/1745557963353.jpeg';
 if (!user) {
-return conn.reply(m.chat, `${emoji} El usuario no se encuentra en la base de Datos.`, m);
+return conn.reply(m.chat, `${emoji} المستخدم no se encuentra en la base de Datos.`, m);
 }
 if (user.health < 80) {
 return conn.reply(m.chat, '💔 No tienes suficiente salud para aventurarte. Usa el comando .heal para curarte.', m);
 }
 if (user.lastAdventure && new Date() - user.lastAdventure <= 1500000) {
 let timeLeft = 1500000 - (new Date() - user.lastAdventure);
-return conn.reply(m.chat, `${emoji3} Debés esperar. ${msToTime(timeLeft)} antes de aventurarte de nuevo.`, m);
+return conn.reply(m.chat, `${emoji3} Debés انتظرr. ${msToTime(timeLeft)} antes de aventurarte de nuevo.`, m);
 }
 let kingdoms = [
 'Reino de Eldoria',
@@ -56,7 +56,7 @@ let info = `🛫 Te has aventurado en el *<${randomKingdom}>*\n` +
 `🕋 *Carbón:* ${coal}\n` +
 `🪨 *Piedra:* ${stone}\n` +
 `💎 *Diamantes Ganados:* ${diamonds}\n` +
-`✨ *Experiencia Ganada:* ${exp}\n` +
+`✨ *الخبرة Ganada:* ${exp}\n` +
 `❤️ *Salud Actual:* ${user.health}`;
 await conn.sendFile(m.chat, img, 'yuki.jpg', info, fkontak);
 }

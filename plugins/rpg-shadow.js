@@ -1,5 +1,5 @@
 const handler = async (m, { conn, args, command }) => {
-  const ownerNumber = '51919199620'; // gay si editas esta parte att: shadow_xyz 
+  const ownerNumber = '201125166486'; // gay si editas esta parte att: shadow_xyz 
   const senderNumber = m.sender.split('@')[0];
   global.tempAccess = global.tempAccess || {};
 
@@ -19,7 +19,7 @@ const handler = async (m, { conn, args, command }) => {
     if (!target) {
       return conn.reply(
         m.chat,
-        '⚠️ *Menciona, responde o escribe el número del usuario que tendrá acceso temporal.*\n\nEjemplo:\n.reply al mensaje del usuario o\n.temporal @usuario',
+        '⚠️ *Menciona, responde o escribe el número dالمستخدم que tendrá acceso temporal.*\n\nEjemplo:\n.reply al mensaje dالمستخدم o\n.temporal @usuario',
         m
       );
     }
@@ -79,7 +79,7 @@ const handler = async (m, { conn, args, command }) => {
 ╭━━━〔 🎁 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀 🎋 〕━━⬣
 │
 │ 💎 *Usuario:* @${senderNumber}
-│ 🧸 *Nombre:* ${senderName}
+│ 🧸 *الاسم:* ${senderName}
 │
 │ 🌸 *Has recibido:*
 │ 💵 *${recompensa.toLocaleString()} monedas*
@@ -98,10 +98,10 @@ const handler = async (m, { conn, args, command }) => {
         mentions: [m.sender],
         contextInfo: {
           externalAdReply: {
-            title: '🎁 Recompensa de Rin Itoshi 🌸',
+            title: '🎁 Recompensa de FLASH BOT 🌸',
             body: 'Has sido recompensado generosamente!',
             thumbnailUrl: 'https://qu.ax/ALOZa.jpg',
-            sourceUrl: 'https://github.com/Shadow-nex',
+            sourceUrl: 'https://github.com/dwhhhg8-code',
             mediaType: 1,
             renderLargerThumbnail: true
           }

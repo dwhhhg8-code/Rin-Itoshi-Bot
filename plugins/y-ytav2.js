@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text || !/^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//i.test(text)) {
-    return m.reply('❌ *Envía una URL válida de YouTube.*');
+    return m.reply('❌ *أرسل رابط يوتيوب صالح.*');
   }
 
   await m.react('⏱️');
@@ -27,7 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         };
       }
     } catch (e) {
-      console.error('Error en ytmp3:', e);
+      console.error('خطأ en ytmp3:', e);
     }
     
     if (!info) {
@@ -47,7 +47,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     }
 
-    if (!info) throw '❌ No se pudo obtener la información del audio.';
+    if (!info) throw '❌ تعذّر obtener المعلومات del audio.';
 
     let sizeStr = 'Desconocido';
     try {
@@ -66,7 +66,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         sizeStr = formatBytes(bytes);
       }
     } catch (e) {
-      console.error('Error al obtener el tamaño del archivo:', e);
+      console.error('خطأ في جلب el tamaño dالملف:', e);
     }
 /*    
     await conn.sendMessage(m.chat, {
@@ -98,7 +98,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (err) {
     console.error(err);
-    await m.reply('❌ *No se pudo obtener el MP3.* Intenta con otro enlace.');
+    await m.reply('❌ *تعذّر obtener el MP3.* Intenta con otro enlace.');
     await m.react('❌');
   }
 };

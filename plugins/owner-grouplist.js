@@ -13,14 +13,14 @@ try {
     const participantStatus = isParticipant ? '👤 Participante' : '❌ Ex participante';
     const totalParticipants = participants.length;
     txt += `*◉ Grupo ${i + 1}*
-    *➤ Nombre:* ${await conn.getName(jid)}
+    *➤ الاسم:* ${await conn.getName(jid)}
     *➤ ID:* ${jid}
     *➤ Admin:* ${isBotAdmin ? '✔ Sí' : '❌ No'}
     *➤ Estado:* ${participantStatus}
-    *➤ Total de Participantes:* ${totalParticipants}
-    *➤ Link:* ${isBotAdmin ? `https://chat.whatsapp.com/${await conn.groupInviteCode(jid) || '--- (Error) ---'}` : '--- (No admin) ---'}\n\n`;
+    *➤ الإجمالي de Participantes:* ${totalParticipants}
+    *➤ Link:* ${isBotAdmin ? `https://chat.whatsapp.com/${await conn.groupInviteCode(jid) || '--- (خطأ) ---'}` : '--- (No admin) ---'}\n\n`;
   }
-  m.reply(`*Lista de grupos del Bot* 🤖\n\n*—◉ Total de grupos:* ${totalGroups}\n\n${txt}`.trim());
+  m.reply(`*قائمة grupos del Bot* 🤖\n\n*—◉ الإجمالي de grupos:* ${totalGroups}\n\n${txt}`.trim());
 } catch {
   const groups = Object.entries(conn.chats).filter(([jid, chat]) => jid.endsWith('@g.us') && chat.isChats);
   const totalGroups = groups.length;
@@ -34,14 +34,14 @@ try {
     const participantStatus = isParticipant ? '👤 Participante' : '❌ Ex participante';
     const totalParticipants = participants.length;    
     txt += `*◉ Grupo ${i + 1}*
-    *➤ Nombre:* ${await conn.getName(jid)}
+    *➤ الاسم:* ${await conn.getName(jid)}
     *➤ ID:* ${jid}
     *➤ Admin:* ${isBotAdmin ? '✔ Sí' : '❌ No'}
     *➤ Estado:* ${participantStatus}
-    *➤ Total de Participantes:* ${totalParticipants}
-    *➤ Link:* ${isBotAdmin ? '--- (Error) ---' : '--- (No admin) ---'}\n\n`;
+    *➤ الإجمالي de Participantes:* ${totalParticipants}
+    *➤ Link:* ${isBotAdmin ? '--- (خطأ) ---' : '--- (No admin) ---'}\n\n`;
   }
-  m.reply(`*Lista de grupos del Bot* 👾\n\n*—◉ Total de grupos:* ${totalGroups}\n\n${txt}`.trim());
+  m.reply(`*قائمة grupos del Bot* 👾\n\n*—◉ الإجمالي de grupos:* ${totalGroups}\n\n${txt}`.trim());
  }    
 };
 handler.help = ['groups', 'grouplist'];

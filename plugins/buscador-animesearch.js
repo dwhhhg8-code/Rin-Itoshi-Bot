@@ -30,19 +30,19 @@ const searchAnime = async (query) => {
 
         return results;
     } catch (error) {
-        console.error('Error al buscar el anime:', error.message);
-        return { error: 'No se pudieron obtener los resultados' };
+        console.error('خطأ في buscar el anime:', error.message);
+        return { error: 'تعذّر الحصول على النتائج' };
     }
 };
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
     if (!args[0]) {
-        return conn.reply(m.chat, `${emoji} Por favor, ingresa el nombre de un anime para buscar.`, m);
+        return conn.reply(m.chat, `${emoji} من فضلك أدخل الاسم de un anime para buscar.`, m);
     }
 
     const results = await searchAnime(args[0]);
     if (results.length === 0) {
-        return conn.reply(m.chat, `${emoji2} No se encontraron resultados.`, m);
+        return conn.reply(m.chat, `${emoji2} لا توجد نتائج.`, m);
     }
 
     const messages = [];
@@ -54,13 +54,13 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
             [],
             [[`${url}`]],
             [],
-            [{ title: `Selecciona para obtener la información del anime.`, rows: [
-                { title: name, description: 'Click para obtener información detallada del anime.', rowId: `${usedPrefix}animeinfo ${url}` }
+            [{ title: `اختر للحصول على معلومات الأنمي.`, rows: [
+                { title: name, description: 'انقر للحصول على معلومات مفصلة عن الأنمي.', rowId: `${usedPrefix}animeinfo ${url}` }
             ]}]
         ]);
     }
 
-    await conn.sendCarousel(m.chat, '', `\`\`\`🍭 ¡Hola! A continuación te muestro la lista de animes encontrados.\`\`\``, "", messages, m);
+    await conn.sendCarousel(m.chat, '', `\`\`\`🍭 ¡أهلاً! A continuación te muestro la lista de animes encontrados.\`\`\``, "", messages, m);
 }
 
 handler.help = ['animes', 'animesearch', 'animess'];

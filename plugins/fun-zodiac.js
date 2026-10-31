@@ -1,8 +1,8 @@
 let handler = (m, { usedPrefix, command, text }) => {
-if (!text) return conn.reply(m.chat, `${emoji} Por favor, ingresa tu fecha de nacimiento de esta manera.\n> Ejemplo: ${usedPrefix + command} 2007 06 01`, m)
+if (!text) return conn.reply(m.chat, `${emoji} من فضلك أدخل tu fecha de nacimiento de esta manera.\n> Ejemplo: ${usedPrefix + command} 2007 06 01`, m)
 
     const date = new Date(text)
-    if (date == 'Fecha invalida, prueba con el siguiente formato AAAA MM DD Ejemplo: 2003 02 07 ') throw date
+    if (date == 'التاريخ invalida, prueba con el siguiente formato AAAA MM DD Ejemplo: 2003 02 07 ') throw date
     const d = new Date()
     const [tahun, bulan, tanggal] = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
     const birth = [date.getFullYear(), date.getMonth() + 1, date.getDate()]
@@ -15,7 +15,7 @@ if (!text) return conn.reply(m.chat, `${emoji} Por favor, ingresa tu fecha de na
     const cekusia = bulan === birth[1] && tanggal === birth[2] ? `${age} - Feliz cumpleaños ☁️` : age
 
     const teks = `
-Fecha de nacimiento: : ${birth.join('-')}
+التاريخ de nacimiento: : ${birth.join('-')}
 Proximo cumpleaños : ${birthday.join('-')}
 Edad : ${cekusia}
 Signo zodical : ${zodiac}

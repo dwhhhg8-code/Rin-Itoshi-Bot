@@ -8,7 +8,7 @@ let senderName = conn.getName(senderId)
 let tiempo = 5 * 60
 if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempo * 1000) {
 let tiempo2 = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempo * 1000 - Date.now()) / 1000))
-m.reply(`${emoji3} Debes esperar *${tiempo2}* para usar *#slut* de nuevo.`)
+m.reply(`${emoji3} Debes انتظرr *${tiempo2}* para usar *#slut* de nuevo.`)
 return
 }
 cooldowns[m.sender] = Date.now()

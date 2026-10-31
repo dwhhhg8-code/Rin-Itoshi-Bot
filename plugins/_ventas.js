@@ -5,7 +5,7 @@ let suscripciones = global.suscripciones || (global.suscripciones = {})
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0] || !args[1]) {
     return m.reply(`✘ Uso incorrecto.\n\n🌷 Ejemplo:\n*${usedPrefix + command} enlace 3d*  
-\n📚 Unidades válidas:
+\n📚 Unidades صالحs:
 m = minutos | h = horas | d = días | w = semanas`)
   }
 
@@ -13,18 +13,18 @@ m = minutos | h = horas | d = días | w = semanas`)
   let tiempoStr = args[1].toLowerCase()
 
   if (!enlace.startsWith('https://chat.whatsapp.com/')) {
-    return m.reply('✘ Enlace no válido. Debe empezar con *https://chat.whatsapp.com/*')
+    return m.reply('✘ Enlace غير صالح. Debe empezar con *https://chat.whatsapp.com/*')
   }
   
   let codigoGrupo = enlace.split('https://chat.whatsapp.com/')[1]?.trim()
-  if (!codigoGrupo) return m.reply('✘ Código de invitación no válido.')
+  if (!codigoGrupo) return m.reply('✘ Código de invitación غير صالح.')
 
   let tiempoMs = 0
   let cantidad = parseInt(tiempoStr)
   let unidad = tiempoStr.replace(cantidad, '').trim()
 
   if (isNaN(cantidad) || cantidad < 1) {
-    return m.reply('✘ Ingresa un número válido (ejemplo: 10m, 5h, 2d, 1w).')
+    return m.reply('✘ أدخل un número صالح (ejemplo: 10m, 5h, 2d, 1w).')
   }
 
   switch (unidad) {
@@ -33,15 +33,15 @@ m = minutos | h = horas | d = días | w = semanas`)
     case 'd': tiempoMs = cantidad * 24 * 60 * 60 * 1000; break
     case 'w': tiempoMs = cantidad * 7 * 24 * 60 * 60 * 1000; break
     default:
-      return m.reply('✘ Unidad de tiempo no válida.\nUsa: m = minutos, h = horas, d = días, w = semanas.')
+      return m.reply('✘ Unidad de tiempo غير صالح.\nUsa: m = minutos, h = horas, d = días, w = semanas.')
   }
 
-  await m.reply('⏳ *Uniéndome al grupo, espera unos segundos...*')
+  await m.reply('⏳ *Uniéndome al grupo, انتظر unos segundos...*')
 
   try {
 
     let groupId = await conn.groupAcceptInvite(codigoGrupo).catch(e => null)
-    if (!groupId) throw new Error('No se pudo unir. Verifica que el enlace no esté vencido o el grupo lleno.')
+    if (!groupId) throw new Error('تعذّر unir. Verifica que الرابط no esté vencido o المجموعة lleno.')
 
     let groupMetadata = await conn.groupMetadata(groupId)
     let groupName = groupMetadata.subject
@@ -62,7 +62,7 @@ m = minutos | h = horas | d = días | w = semanas`)
       contextInfo: {
         externalAdReply: {
           title: `🌸 ʀɪɴ ɪᴛᴏsʜɪ ʙᴏᴛ - Suscripción activa`,
-          body: `El bot permanecerá en este grupo durante ${tiempoTexto}.`,
+          body: `البوت permanecerá en este grupo durante ${tiempoTexto}.`,
           thumbnailUrl: pfp,
           sourceUrl: global.redes || 'https://whatsapp.com',
           mediaType: 1,
@@ -79,17 +79,17 @@ m = minutos | h = horas | d = días | w = semanas`)
     if (suscripciones[groupId]) clearTimeout(suscripciones[groupId])
     suscripciones[groupId] = setTimeout(async () => {
       try {
-        await conn.sendMessage(groupId, { text: '⏰ *El tiempo de suscripción ha finalizado. ¡Adiós grupo!* 🌸' })
+        await conn.sendMessage(groupId, { text: '⏰ *الوقت de suscripción ha finalizado. ¡Adiós grupo!* 🌸' })
         await conn.groupLeave(groupId)
         delete suscripciones[groupId]
       } catch (err) {
-        console.error(`Error al salir del grupo: ${err.message}`)
+        console.error(`خطأ في salir dالمجموعة: ${err.message}`)
       }
     }, tiempoMs)
 
   } catch (e) {
     console.error(e)
-    return m.reply(`❌ *Error al unirse al grupo:*\n${e.message || 'No se pudo procesar la solicitud.'}`)
+    return m.reply(`❌ *خطأ في unirse al grupo:*\n${e.message || 'تعذّر procesar la solicitud.'}`)
   }
 }
 

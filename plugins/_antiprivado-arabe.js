@@ -22,7 +22,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
 ┃ perteneciente a un país restringido.
 ┃ 
 ┃ 💨 Por seguridad este bot solo está 
-┃ disponible para ciertos países.
+┃ متاح para ciertos países.
 ╰━━━━━━━━━━━━━━━━━━⬣
     `.trim();
 

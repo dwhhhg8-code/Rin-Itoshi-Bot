@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     const casado = pareja
       ? (global.db.data.users[pareja]?.name || await getSafeName(conn, pareja))
       : 'Nadie'
-    const description = user.description || 'Sin descripción :v'
+    const description = user.description || 'لا يوجد وصف :v'
 
     const exp = user.exp || 0
     const nivel = user.level || 0
@@ -82,7 +82,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
 ╰━━━━━━━━━━━━━━━━━━━━━━━╯
 
 🌟 *Identidad Estelar:* @${userId.split('@')[0]}
-🌙 *Nombre Arcano:* *${name}*
+🌙 *الاسم Arcano:* *${name}*
 🌀 *Esencia Vital:* _${description}_
 
 ╭─〔 ⚙️ CONFIGURACIÓN ESPIRITUAL 〕
@@ -95,13 +95,13 @@ let handler = async (m, { conn, args, usedPrefix }) => {
 ╰══✦
 
 ╭─〔 ✦ RECURSOS CÓSMICOS ✦ 〕
-│ 🪙 *Monedas:* ${coin.toLocaleString()}
+│ 🪙 *العملات:* ${coin.toLocaleString()}
 │ 🏦 *Banco:* ${bank.toLocaleString()}
-│ 🌷 *Nivel Dimensional:* ${nivel}
+│ 🌷 *المستوى Dimensional:* ${nivel}
 │ 🌿 *Exp Cósmica:* ${exp.toLocaleString()}
 │ 🌀 *Progreso:* ${progreso}
 │ 📈 *Puesto:* #${rank}
-│ 🛡️ *Rango:* ${user.role || 'Sin Rango'}
+│ 🛡️ *الرتبة:* ${user.role || 'Sin الرتبة'}
 │ 🔮 *Premium:* ${premium ? `🟢 Activo (*${isLeft}*)` : '🔴 Inactivo'}
 ╰══✦
 
@@ -109,7 +109,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
 │ ꕥ *Harem:* ${haremCount}
 │ ♤ *Valor total:* ${haremValue.toLocaleString()}
 │ ❒ *Coins totales:* ${totalCoins.toLocaleString()}
-│ ❒ *Comandos usados:* ${user.commands || 0}
+│ ❒ *الأوامر usados:* ${user.commands || 0}
 ╰══✦
 
 🌌 〘 _"El cosmos refleja tu esencia."_ 〙

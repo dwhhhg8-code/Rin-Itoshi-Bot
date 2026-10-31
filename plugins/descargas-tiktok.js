@@ -2,14 +2,14 @@ import fetch from 'node-fetch';
 
 var handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    return conn.reply(m.chat, `*🌸✨ Onichan~ debes poner un link de TikTok uwu 💖*`, m, fake);
+    return conn.reply(m.chat, `*🌸✨ Onichan~ debes poner رابط TikTok uwu 💖*`, m, fake);
   }
 
   try {
     const tiktokData = await tiktokdl(args[0]);
 
     if (!tiktokData || !tiktokData.status || !tiktokData.data) {
-      return conn.reply(m.chat, "❌ Uff... No pude traer tu video onichan 😿", m);
+      return conn.reply(m.chat, "❌ Uff... تعذّر جلب الفيديو onichan 😿", m);
     }
 
     const thumbRes = await fetch('https://qu.ax/QvZCV.jpg');
@@ -40,7 +40,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
         videoURL,
         "tiktok.mp4",
         `╭━━━〔 🩵 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎́𝐍 𝐃𝐄𝐋 𝐕𝐈𝐃𝐄𝐎 🩵 〕━━⬣
-│ 🍧 *Título:* \`${data.title || 'Sin descripción uwu'}\`
+│ 🍧 *Título:* \`${data.title || 'لا يوجد وصف'}\`
 │
 │ ╭─❏ ＥＳＴＡＤＯ ❏
 │ │ 🍂 *Autor:* ${data.author?.nickname || 'Desconocido'} (${data.author?.username || 'N/A'})
@@ -54,7 +54,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
 │ │ 💬 *Comentarios:* ${data.comment || '0'}
 │ │ 👀 *Vistas:* ${data.repro || '0'}
 │ │ 📤 *Compartido:* ${data.share || '0'}
-│ │ 📥 *Descargas:* ${data.download || '0'}
+│ │ 📥 *تنزيلs:* ${data.download || '0'}
 │ ╰───────────────⬣
 │
 │ ╭─❏ ＭＵＳＩＣＡ ❏
@@ -80,7 +80,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
       return conn.reply(m.chat, "❌ No pude descargarlo nya~ 😿", m);
     }
   } catch (error1) {
-    return conn.reply(m.chat, `❌ Error inesperado: ${error1.message}`, m);
+    return conn.reply(m.chat, `❌ خطأ inانتظرdo: ${error1.message}`, m);
   }
 };
 

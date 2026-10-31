@@ -18,7 +18,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         if (stats.isFile()) unlinkSync(file)
       }
     } catch (e) {
-      console.error(`No se pudo borrar ${file}:`, e.message)
+      console.error(`تعذّر borrar ${file}:`, e.message)
     }
   })
 }

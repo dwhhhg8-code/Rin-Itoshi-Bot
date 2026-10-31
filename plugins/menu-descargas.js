@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let comandos = Object.keys(global.plugins).length
     let readMore = String.fromCharCode(8206).repeat(4001)
     
-    let channel = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
+    let channel = 'https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v'
     let club = '⚡ *Powered by* » Sʜᴀᴅᴏᴡ•Core 𝖢𝗅𝗎𝖻 ⚡'
     let menu = `
 ╭━━━〔 *📥 𝘔𝘌𝘕𝘜 𝘋𝘌𝘚𝘊𝘈𝘙𝘎𝘈𝘚* 〕━━⬣
@@ -56,9 +56,7 @@ ${readMore}
 │🎲 .tiktok *<link>*  
 │🎞️ .tiktokhd <url>  
 │🎲 .tiktok2 *<url>*  
-│🐦 .twitter *<url>*
-│🔞 .xnxxdl  
-│🔞 .xvideosdl  
+│🐦 .twitter *<url>*    
 │🎶 .audio z<yt_link>*
 │🎞️ .video *<yt_link>*
 │🎶 .ytmp3 *<link>*  
@@ -87,7 +85,7 @@ ${readMore}
 
 ${channel}
 
-「 ⚽𐚁 ֹ ִ Rin Itoshi - Official ୧ ֹ ִ⚽ᩚ꤬ᰍ 」
+「 ⚽𐚁 ֹ ִ FLASH BOT - Official ୧ ֹ ִ⚽ᩚ꤬ᰍ 」
     `.trim()
 
     await conn.sendMessage(m.chat, {
@@ -108,7 +106,7 @@ ${channel}
           newsletterName: channelRD.name
         },
         externalAdReply: {
-          title: '⚡ Rin Itoshi - 🌱 Menu Descargas',
+          title: '⚡ FLASH BOT - 🌱 Menu تنزيلs',
           body: '🎧 ᴅᴇsᴄᴀʀɢᴀ ᴄᴏɴᴛᴇɴɪᴅᴏ ᴅᴇ ʟᴀs ᴘʀɪɴᴄɪᴘᴀʟᴇs ʀᴇᴅᴇs: ʏᴏᴜᴛᴜʙᴇ, ғᴀᴄᴇʙᴏᴏᴋ, sᴘᴏᴛɪғʏ, ɪɢ, ᴇᴛᴄ.',
           thumbnailUrl: 'https://files.catbox.moe/us0m4f.jpg',
           sourceUrl: redes,
@@ -159,7 +157,7 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
     const pais = phone.getRegionCode() ? phone.getRegionCode() : 'Desconocido 🌍'
 
     const channel = 'https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U'
-    const owner = 'https://wa.me/51919199620'
+    const owner = 'https://wa.me/201125166486'
     const ig = 'https://www.instagram.com/shadow_xyz9?igsh=aWFtNTIwczlhNnQ4'
     const logo = 'https://shadow-xyz.vercel.app/img/shadow13.jpg'
 
@@ -227,7 +225,7 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
           message: {
             interactiveMessage: {
               body: { text: menu },
-              footer: { text: '🍓 Rin Itoshi-MD | Menu Descargas' },
+              footer: { text: '🍓 FLASH BOT | قائمة التنزيلات' },
               header: {
                 title: '✨ Bienvenid@ soy?, ʀɪɴ ɪᴛᴏsʜɪ',
                 subtitle: '',
@@ -244,8 +242,8 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
                   newsletterName: '𝖱in Itoshi : 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝖿𝗂𝖼𝗂𝖺𝗅'
                 },
                 externalAdReply: {
-                  title: '🍓 Rin Itoshi - MD',
-                  body: '✨ Descarga tus archivos favoritos.',
+                  title: '🍓 FLASH BOT - MD',
+                  body: '✨ نزّل ملفاتك المفضلة.',
                   thumbnailUrl: logo,
                   mediaType: 1,
                   renderLargerThumbnail: true,

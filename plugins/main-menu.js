@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
       .catch(() => 'https://files.catbox.moe/9i5o9z.jpg')
 
     const channelRD = { 
-      id: '120363422142340004@newsletter', 
+      id: '120363410090342500@newsletter', 
       name: '𝖱in Itoshi : 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 𝖮𝖿𝗂𝖼𝗂𝖺𝗅'
     }
 
@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
           newsletterName: channelRD.name
         },
         externalAdReply: {
-          title: '🍒 Rin Itoshi-𝖬𝖣',
+          title: '🍒 FLASH BOT-𝖬𝖣',
           body: '✨ Dev: Shadow_xyz ☃️',
           mediaUrl: null,
           description: null,
@@ -67,7 +67,6 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
       'tools': '𓂂𓏸 𐅹੭੭  `قائمة الأدوات` 🧩 ᦡᦡ',
       'owner': '𓂂𓏸 𐅹੭੭  `قائمة المالك` ⚙️ ᦡᦡ',
       'jadibot': '𓂂𓏸 𐅹੭੭  `قائمة البوتات الفرعية` 🍰 ᦡᦡ',
-      'nsfw': '𓂂𓏸 𐅹੭੭  `قائمة +18` 🍑 ᦡᦡ',
     }
 
     let commands = Object.values(global.plugins)
@@ -91,7 +90,7 @@ let handler = async (m, { conn, usedPrefix, __dirname, participants }) => {
     }
 
     const infoUser = `
-ര ׄ ☃️ ׅ  مرحباً بك في | Rin Itoshi 
+ര ׄ ☃️ ׅ  مرحباً بك في | FLASH BOT 
 ─────────────────────
 🌿 *المستخدم:* @${userId}
 🍉 *مميز:* ${premium}

@@ -3,12 +3,12 @@ import fetch from "node-fetch";
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
     return m.reply(
-      `🌾 Ingresa el nombre de un template de *CapCut*.\n\n🌿 Ejemplo:\n> ${usedPrefix + command} DJ netizen rahmatahalu`
+      `🌾 أدخل الاسم de un template de *CapCut*.\n\n🌿 Ejemplo:\n> ${usedPrefix + command} DJ netizen rahmatahalu`
     );
   }
 
   try {
-    await m.reply("🎋 Buscando videos en *CapCut*...");
+    await m.reply("🎋 جارٍ البحث videos en *CapCut*...");
 
     let res = await fetch(
       `https://api.vreden.my.id/api/v1/search/capcut?query=${encodeURIComponent(text)}`
@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let json = await res.json();
 
     if (!json.status || !json.result || !json.result.search_data?.length) {
-      return m.reply("No encontré resultados en CapCut.");
+      return m.reply("لم أجد نتائج في CapCut.");
     }
 
     let resultados = json.result.search_data;
@@ -29,15 +29,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 ┃ ✦ *Short:* ${r.short_title || "N/A"}
 ┃ ⏳ *Duración:* ${(r.duration_ms / 1000).toFixed(0)}s
 ┃ 👤 *Autor:* ${r.author.full_name} (@${r.author.username})
-┃ 🌤️ *Bio:* ${r.author.description || "Sin descripción"}
+┃ 🌤️ *Bio:* ${r.author.description || "لا يوجد وصف"}
 ┃ 📊 *Estadísticas:*
 ┃ ❤ Likes: ${r.statistics.like}
 ┃ ⭐ Favoritos: ${r.statistics.favorite}
 ┃ ▶ Reproducciones: ${r.statistics.play}
 ┃ ⚽ Usos: ${r.statistics.usage}
 ┃ 🍂 Comentarios: ${r.statistics.comment}
-┃ 📥 *Descarga:*
-┃ 🌷 Calidad: ${r.download.definition} - ${r.download.video_quality}
+┃ 📥 *تنزيل:*
+┃ 🌷 الجودة: ${r.download.definition} - ${r.download.video_quality}
 ┃ 🎋 Bitrate: ${r.download.bitrate}bps
 ╰━━━━━━━━━━━━━━━━━━⬣`;
 
@@ -50,7 +50,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
   } catch (e) {
     console.error(e);
-    m.reply("❌ Error al buscar el template de CapCut.");
+    m.reply("❌ خطأ في buscar قالب CapCut.");
   }
 };
 

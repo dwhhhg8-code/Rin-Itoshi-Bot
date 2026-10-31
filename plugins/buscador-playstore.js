@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 
 const handler = async (m, { conn, args }) => {
   if (!args[0]) {
-    return conn.reply(m.chat, '🤖 Por favor, proporciona el nombre de la aplicación que deseas buscar.\nEjemplo: .playstore WhatsApp', m);
+    return conn.reply(m.chat, '🤖 من فضلك، proporciona الاسم de la aplicación que deseas buscar.\nEjemplo: .playstore WhatsApp', m);
   }
 
   const query = args.join(' ');
@@ -16,22 +16,22 @@ const handler = async (m, { conn, args }) => {
     const data = await response.json();
 
     if (!data || !data.result || data.result.length === 0) {
-      return conn.reply(m.chat, '❌ No se encontraron aplicaciones. Intenta con otro nombre.', m);
+      return conn.reply(m.chat, '❌ لم يتم العثور على aplicaciones. Intenta con otro nombre.', m);
     }
 
-    let results = `📱 *Resultados de la búsqueda en Play Store para:* ${query}\n\n`;
+    let results = `📱 *النتيجةs de la búsqueda en Play Store para:* ${query}\n\n`;
     data.result.forEach((app, index) => {
-      results += `🔗 [Enlace ${index + 1}](${app.link || 'Enlace no disponible'})\n`;
+      results += `🔗 [Enlace ${index + 1}](${app.link || 'Enlace غير متاح'})\n`;
     });
 
     await conn.reply(m.chat, results.trim(), m);
     await m.react('✅');
 
   } catch (error) {
-    console.error('Error al realizar la búsqueda:', error);
+    console.error('خطأ في realizar la búsqueda:', error);
     await m.react('❌'); 
 
-    conn.reply(m.chat, `❌ Ocurrió un error al realizar la búsqueda: ${error.message}`, m);
+    conn.reply(m.chat, `❌ حدث خطأ al realizar la búsqueda: ${error.message}`, m);
   }
 };
 

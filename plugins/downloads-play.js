@@ -6,7 +6,7 @@ import axios from "axios"
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text?.trim())
-      return conn.reply(m.chat, `*🍃 Por favor, ingresa el nombre o enlace del video.*`, m, rcanal)
+      return conn.reply(m.chat, `*🍃 من فضلك أدخل اسم أو رابط الفيديو.*`, m, rcanal)
 
     await m.react('🔎')
 
@@ -19,7 +19,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       ? allItems.find(v => v.videoId === videoMatch[1]) || allItems[0]
       : allItems[0]
 
-    if (!result) throw 'No se encontraron resultados.'
+    if (!result) throw 'لا توجد نتائج.'
 
     const { title = 'Desconocido', thumbnail, timestamp = 'N/A', views, ago = 'N/A', url = query, author = {} } = result
     const vistas = formatViews(views)
@@ -70,7 +70,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       await m.react('🎧');
 
       const audio = await savetube.download(url, "audio");
-      if (!audio?.status) throw `Error al obtener el audio: ${audio?.error || 'Desconocido'}`;
+      if (!audio?.status) throw `خطأ في جلب el audio: ${audio?.error || 'Desconocido'}`;
 
       await conn.sendMessage(
         m.chat,
@@ -89,7 +89,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       await m.react('🎬');
 
       const video = await getVid(url);
-      if (!video?.url) throw 'No se pudo obtener el video.';
+      if (!video?.url) throw 'تعذّر obtener el video.';
 
       await conn.sendMessage(
         m.chat,
@@ -110,7 +110,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     console.error(e);
     const msg = typeof e === 'string'
       ? e
-      : `⚠️ Ocurrió un error inesperado.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e?.message || JSON.stringify(e)}`;
+      : `⚠️ حدث خطأ inانتظرdo.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e?.message || JSON.stringify(e)}`;
     return conn.reply(m.chat, msg, m);
   }
 };
@@ -143,7 +143,7 @@ async function fetchFromApis(apis) {
       const link = extractor(res);
       if (link) return { url: link, api };
     } catch (err) {
-      console.log(`Error en API ${api}:`, err?.message || err);
+      console.log(`خطأ en API ${api}:`, err?.message || err);
     }
     await new Promise(resolve => setTimeout(resolve, 500));
   }
@@ -213,7 +213,7 @@ const savetube = {
   },
   download: async (link) => {
     const id = savetube.youtube(link);
-    if (!id) return { status: false, error: "No se pudo obtener ID del video" };
+    if (!id) return { status: false, error: "تعذّر obtener ID del video" };
     try {
       const cdnRes = await savetube.getCDN();
       if (!cdnRes.status) return cdnRes;
@@ -231,7 +231,7 @@ const savetube = {
       });
 
       if (!dl.data?.data?.downloadUrl)
-        return { status: false, error: "No se pudo obtener link de descarga" };
+        return { status: false, error: "تعذّر obtener link de descarga" };
 
       return { status: true, result: { download: dl.data.data.downloadUrl, title: decrypted.title } };
     } catch (err) {
@@ -241,7 +241,7 @@ const savetube = {
 };
 
 function formatViews(views) {
-  if (views === undefined || views === null) return "No disponible";
+  if (views === undefined || views === null) return "غير متاح";
   if (views >= 1_000_000_000) return `${(views / 1_000_000_000).toFixed(1)}B`;
   if (views >= 1_000_000) return `${(views / 1_000_000).toFixed(1)}M`;
   if (views >= 1_000) return `${(views / 1_000).toFixed(1)}K`;

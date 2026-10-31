@@ -6,7 +6,7 @@ const SpotifyAlbumInfo = async (albumUrl) => {
         const data = response.data;
 
         if (!data.status || !data.data) {
-            throw new Error("Álbum no encontrado o datos no disponibles");
+            throw new Error("Álbum غير موجود o datos غير متاحs");
         }
 
         const album = data.data;
@@ -32,7 +32,7 @@ const SpotifyAlbumInfo = async (albumUrl) => {
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (!args[0]) {
-        return conn.reply(m.chat, `🍬 Por favor, ingresa el enlace del álbum de Spotify.\n\nEjemplo:\n> *${usedPrefix + command}* https://open.spotify.com/album/22DL6IRGNYNenKej7aw8pO`, m, rcanal);
+        return conn.reply(m.chat, `🍬 من فضلك أدخل الرابط del álbum de Spotify.\n\nEjemplo:\n> *${usedPrefix + command}* https://open.spotify.com/album/22DL6IRGNYNenKej7aw8pO`, m, rcanal);
     }
 
     const albumUrl = args[0];
@@ -42,9 +42,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         const albumData = await SpotifyAlbumInfo(albumUrl);
         
         let txt = '`S P O T I F Y  -  A L B U M`\n\n';
-        txt += ` ✩ *Nombre del álbum*: ${albumData.albumName}\n`;
-        txt += ` ✩ *Fecha de lanzamiento*: ${albumData.releaseDate}\n`;
-        txt += ` ✩ *Total de pistas*: ${albumData.totalTracks}\n`;
+        txt += ` ✩ *الاسم del álbum*: ${albumData.albumName}\n`;
+        txt += ` ✩ *التاريخ de lanzamiento*: ${albumData.releaseDate}\n`;
+        txt += ` ✩ *الإجمالي de pistas*: ${albumData.totalTracks}\n`;
         txt += ` ✩ *Portada del álbum*: ${albumData.image}\n\n`;
         
         albumData.tracks.forEach((track, index) => {

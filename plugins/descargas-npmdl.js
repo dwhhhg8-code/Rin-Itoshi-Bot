@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 import fs from 'fs';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`${emoji} Por favor, ingresa el nombre de un paquete de NPMJs y versión (opcional).`);
+  if (!text) return m.reply(`${emoji} من فضلك أدخل الاسم de un paquete de NPMJs y versión (opcional).`);
 
   async function npmdownloader(pkg, pkgver) {
     try {
@@ -30,14 +30,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         document: data,
         mimetype: "application/zip",
         fileName: fileName,
-        caption: `- \`Nombre\`: ${fileName}\n- \`Version\`: ${pkgver}\n- \`Link\`: ${Link}`
+        caption: `- \`الاسم\`: ${fileName}\n- \`Version\`: ${pkgver}\n- \`Link\`: ${Link}`
       }, {
         quoted: m
       });
 
       await fs.promises.unlink(filePath);
     } catch (err) {
-      console.error(`Error: ${err}`);
+      console.error(`خطأ: ${err}`);
     }
   }
 

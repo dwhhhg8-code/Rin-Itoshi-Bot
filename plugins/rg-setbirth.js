@@ -9,7 +9,7 @@ if (user.birth) {
 return conn.reply(m.chat, `${emoji2} Ya tienes una fecha establecida, si quieres borrar la fecha actual usa:\n> » ${usedPrefix}delbirth`, m);
 }
 
-if (!text) return conn.reply(m.chat, `${emoji} Debes ingresar una fecha válida para tu cumpleaños.\n\n> ✐ Ejemplo » *${usedPrefix + command} 01/01/2000* (dia/mes/año)`, m);
+if (!text) return conn.reply(m.chat, `${emoji} Debes ingresar una fecha صالح para tu cumpleaños.\n\n> ✐ Ejemplo » *${usedPrefix + command} 01/01/2000* (dia/mes/año)`, m);
 
 function validarFechaNacimiento(text) {
 const opcionesFecha = [
@@ -29,7 +29,7 @@ return text;
 
 let birth = validarFechaNacimiento(text);
 if (!birth) {
-return conn.reply(m.chat, `${emoji2} Recuerda elegir una fecha de nacimiento válida.\n> Ejemplo: ${usedPrefix + command} 01/12/2024`, m);
+return conn.reply(m.chat, `${emoji2} Recuerda elegir una fecha de nacimiento صالح.\n> Ejemplo: ${usedPrefix + command} 01/12/2024`, m);
 }
 
 user.birth = birth;

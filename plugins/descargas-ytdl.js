@@ -9,7 +9,7 @@ const gokuAPI = "https://gokublack.xyz/download/ytmp4";
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text || !text.trim()) {
-      return conn.reply(m.chat, `🌸 Onichan~ debes poner el comando más un enlace de YouTube uwu 💕\n\nEjemplo:\n*${usedPrefix + command} https://youtu.be/xxxx*`, m, rcanal);
+      return conn.reply(m.chat, `🌸 Onichan~ debes poner el comando más رابط de YouTube uwu 💕\n\nEjemplo:\n*${usedPrefix + command} https://youtu.be/xxxx*`, m, rcanal);
     }
 
     const search = await yts(text);
@@ -29,7 +29,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 ┃ 🔗 *Enlace:* ${url}  
 ┃  
 ┃ ⏳ Estoy preparando tu descarga nya~ 💖  
-╰─⟦ 🌈 Espera un momentito uwu ⟧`;
+╰─⟦ 🌈 انتظر un momentito uwu ⟧`;
 
     await conn.sendFile(m.chat, thumb, 'rin.jpg', infoMessage, m);
 
@@ -58,12 +58,12 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         }, { quoted: m });
 
       } catch (err) {
-        return m.reply("❌ No se pudo descargar el audio nya~ 😿");
+        return m.reply("❌ تعذّر descargar el audio nya~ 😿");
       }
     }
 
     else if (command === 'video') {
-      await m.reply("⏳ Buscando la mejor fuente de descarga... 🎥✨");
+      await m.reply("⏳ جارٍ البحث la mejor fuente de descarga... 🎥✨");
 
       let success = false;
       let videoUrl = null;
@@ -76,7 +76,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           success = true;
         }
       } catch (e) {
-        console.error("Error en Sylphy:", e.message);
+        console.error("خطأ en Sylphy:", e.message);
       }
 
       if (!success) {
@@ -88,7 +88,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
             success = true;
           }
         } catch (e) {
-          console.error("Error en Goku:", e.message);
+          console.error("خطأ en Goku:", e.message);
         }
       }
 
@@ -114,12 +114,12 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
           }
         }, { quoted: m });
       } else {
-        return m.reply("❌ No se pudo descargar el video nya~ 😿");
+        return m.reply("❌ تعذّر descargar el video nya~ 😿");
       }
     }
 
   } catch (error) {
-    return m.reply(`❌ Error: ${error.message}`);
+    return m.reply(`❌ خطأ: ${error.message}`);
   }
 };
 

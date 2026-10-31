@@ -57,13 +57,13 @@ function handler(m, { text, usedPrefix, command }) {
       return `*${n}* ➤ ${convertido}`
     }).join("\n")
 
-    return m.reply(`✨ 𝗘𝗟𝗜𝗝𝗘 𝗨𝗡 𝗘𝗦𝗧𝗜𝗟𝗢 𝗗𝗘 𝗟𝗘𝗧𝗥𝗔 ✨\n\nUsa:\n${usedPrefix + command} <número> <texto>\n\nEjemplo:\n${usedPrefix + command} 5 Hola Mundo soy Rin itoshi\n\nLista de estilos:\n\n${lista}`)
+    return m.reply(`✨ 𝗘𝗟𝗜𝗝𝗘 𝗨𝗡 𝗘𝗦𝗧𝗜𝗟𝗢 𝗗𝗘 𝗟𝗘𝗧𝗥𝗔 ✨\n\nUsa:\n${usedPrefix + command} <número> <texto>\n\nEjemplo:\n${usedPrefix + command} 5 أهلاً Mundo soy Rin itoshi\n\nقائمة estilos:\n\n${lista}`)
   }
 
   let [num, ...txt] = text.split(' ')
   num = parseInt(num)
   let frase = txt.join(' ')
-  if (!estilos[num]) return m.reply(`⚠️ Estilo no encontrado. Usa un número entre 1 y ${Object.keys(estilos).length}.`)
+  if (!estilos[num]) return m.reply(`⚠️ Estilo غير موجود. Usa un número entre 1 y ${Object.keys(estilos).length}.`)
 
   let convertido = frase.replace(/[a-z]/gi, v => estilos[num][v.toLowerCase()] || v)
   m.reply(convertido)

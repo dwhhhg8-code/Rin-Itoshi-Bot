@@ -10,7 +10,7 @@ try {
 const resSimi = await simitalk(text);
 conn.sendMessage(m.chat, { text: resSimi.resultado.simsimi }, { quoted: m });
 } catch {
-throw `${msm} Ocurrió un error.`;
+throw `${msm} حدث خطأ.`;
 }};
 
 handler.help = ['simi', 'bot'];
@@ -33,5 +33,5 @@ try {
 const response2 = await axios.get(`https://anbusec.xyz/api/v1/simitalk?apikey=${apikeyyy}&ask=${ask}&lc=${language}`);
 return { status: true, resultado: { simsimi: response2.data.message }};       
 } catch (error2) {
-return { status: false, resultado: { msg: "Todas las API's fallarón. Inténtalo de nuevo más tarde.", error: error2.message }};
+return { status: false, resultado: { msg: "Todas las API's fallarón. حاول مرة أخرى لاحقاً.", error: error2.message }};
 }}}

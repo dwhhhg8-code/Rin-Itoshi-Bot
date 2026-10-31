@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     const buttons = [
         {
             buttonId: `.messi`,
-            buttonText: { displayText: "⚽ Ver más" },
+            buttonText: { displayText: "⚽ عرض المزيد" },
             type: 1
         }
     ];

@@ -4,8 +4,8 @@ import moment from 'moment-timezone'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
 
-  let logo = 'https://files.catbox.moe/fft2hr.jpg'
-  let img = 'https://files.catbox.moe/fft2hr.jpg'
+  let logo = 'https://i.pinimg.com/originals/9d/6c/4e/9d6c4eeb7898079652b7f2c2e5c65632.jpg'
+  let img = 'https://i.pinimg.com/originals/9d/6c/4e/9d6c4eeb7898079652b7f2c2e5c65632.jpg'
 
   // ✦✦✦✦ REGLAS DEL BOT ✦✦✦✦
   if (['botreglas', 'reglasdelbot', 'reglasbot', 'reglas'].includes(command)) {
@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ▤ ✘ No llamar al bot innecesariamente.
 ▤ ✘ No hacer spam o comandos repetitivos.
 ▤ ✘ No añadir a grupos sin autorización.
-▤ ✘ No faltar el respeto al sistema ni a los admins.
+▤ ✘ No مفقودr el respeto al sistema ni a los admins.
 ▤ ✘ Contacta al creador en caso de errores o dudas.
 =================================
 
@@ -34,13 +34,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 =================================
    ❖ 💠 *𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐁𝐎𝐓* 💠 ❖
-🧑‍💻 *Creador:* Shadow.xyz
-🤖 *Nombre:* Rin Itoshi
+🧑‍💻 *Creador:* 𝖍𝖆𝖎𝖙𝖍𝖆𝖒
+🤖 *Nombre:* FLASH BOT
 📦 *Versión:* 2.2.5
 📊 *Usuarios registrados:* ${userCount}
 💬 *Chats activos:* ${chats} (${groups} grupos)
 ⏱️ *Tiempo activo:* ${muptime}
-📅 *Fecha:* ${moment.tz('America/Lima').format('DD/MM/YYYY HH:mm')}
+📅 *التاريخ:* ${moment.tz('America/Lima').format('DD/MM/YYYY HH:mm')}
 
 =================================
    ❖ ⭐ *𝐑𝐄𝐂𝐎𝐌𝐄𝐍𝐃𝐀𝐂𝐈𝐎𝐍* ⭐ ❖
@@ -70,16 +70,16 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ==============================
 
 🏷️ *Nombre:* ${groupInfo.subject}
-👑 *Creador:* ${creador}
+👑 *المطوّر:* ${creador}
 👥 *Miembros:* ${groupInfo.participants.length}
 🛡️ *Admins:*
 ${admins}
 📅 *Creado el:* ${fechaCreacion}
 
-📝 *Descripción:*
-${groupInfo.desc?.trim() || 'No hay reglas establecidas en la descripción del grupo.'}
+📝 *الوصف:*
+${groupInfo.desc?.trim() || 'No hay reglas establecidas en la descripción dالمجموعة.'}
 
-> © ʀɪɴ ɪᴛᴏsʜɪ ʙᴏᴛ | ☆ ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ`.trim();
+> © ʀɪɴ ɪᴛᴏsʜɪ ʙᴏᴛ | ☆ ʙʏ 𝖍𝖆𝖎𝖙𝖍𝖆𝖒`.trim();
 
       await conn.sendMessage(m.chat, { image: { url: url || img }, caption: texto, mentions: conn.parseMention(texto) }, { quoted: m })
 
@@ -87,7 +87,7 @@ ${groupInfo.desc?.trim() || 'No hay reglas establecidas en la descripción del g
 
     } catch (e) {
       console.error(e);
-      await conn.reply(m.chat, '❌ No se pudieron obtener las reglas del grupo. Asegúrate de usar este comando en un grupo válido.', m);
+      await conn.reply(m.chat, '❌ No se pudieron obtener las reglas dالمجموعة. Asegúrate de usar este comando en un grupo صالح.', m);
     }
   }
 };

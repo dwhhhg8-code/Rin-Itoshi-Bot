@@ -4,7 +4,7 @@ import baileys from '@whiskeysockets/baileys'
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = baileys
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`${emojis} Ingresa un texto. Ejemplo: .pinterest anime`)
+  if (!text) return m.reply(`${emojis} أدخل un texto. Ejemplo: .pinterest anime`)
   await m.react('🕓')
   await conn.sendMessage(m.chat, {
     text: `🍉 ʙᴜsᴄᴀɴᴅᴏ ʀᴇsᴜʟᴛᴀᴅᴏs ૮₍｡˃ ᵕ ˂ ｡₎ა 🫛`,
@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let res = await fetch(`https://api.stellarwa.xyz/search/pinterest?query=${encodeURIComponent(text)}&apikey=Diamond`)
     let json = await res.json()
 
-    if (!json.status || !json.data?.length) throw 'No se encontraron resultados en Pinterest.'
+    if (!json.status || !json.data?.length) throw 'لا توجد نتائج en Pinterest.'
 
     let results = json.data.slice(0, 15)
 
@@ -35,12 +35,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         body: proto.Message.InteractiveMessage.Body.fromObject({
           text:  `> *❏ \`Título:\`* ${item.title || '-'}\n` +
                 `> *➭ \`ID:\`* ${item.id}\n` +
-                `> *⍟ \`Usuario:\`* ${item.username}\n` +
-                `> *♧ \`Nombre:\`* ${item.full_name}\n` +
+                `> *⍟ \`المستخدم:\`* ${item.username}\n` +
+                `> *♧ \`الاسم:\`* ${item.full_name}\n` +
                 `> *✿ \`Seguidores:\`* ${item.followers}\n` +
                 `> *✬ \`Likes:\`* ${item.likes}\n` +
-                `> *✧ \`Fecha:\`* ${item.created}\n` +
-                `> *✎ \`Descripción:\`* ${item.description || 'Sin descripción'}`
+                `> *✧ \`التاريخ:\`* ${item.created}\n` +
+                `> *✎ \`الوصف:\`* ${item.description || 'لا يوجد وصف'}`
         }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
           text: club
@@ -55,7 +55,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             {
               name: 'cta_url',
               buttonParamsJson: JSON.stringify({
-                display_text: "🔗 Ver Imagen HD",
+                display_text: "🔗 Ver الصورة HD",
                 url: item.hd,
                 merchant_url: item.hd
               })
@@ -82,7 +82,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
           },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: proto.Message.InteractiveMessage.Body.create({
-              text: `*🎋 Resultados de Pinterest para:* \`${text}\`\n> 🍏 Mostrando: ${results.length} resultados`
+              text: `*🎋 النتيجةs de Pinterest para:* \`${text}\`\n> 🍏 Mostrando: ${results.length} resultados`
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
               text: '_Pinterest - Search_'
@@ -103,7 +103,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    await m.reply('Error en la búsqueda o envío del mensaje.', null, { ...rcanal })
+    await m.reply('خطأ في البحث o envío del الرسالة.', null, { ...rcanal })
   }
 }
 
@@ -203,7 +203,7 @@ const pins = async (judul) => {
 };
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return conn.reply(m.chat, `${emojis} Ingresa un texto. Ejemplo: .pinterest anime`, m, fake);
+  if (!text) return conn.reply(m.chat, `${emojis} أدخل un texto. Ejemplo: .pinterest anime`, m, fake);
     await conn.sendMessage(m.chat, {
       text: `🍉 ʙᴜsᴄᴀɴᴅᴏ ʀᴇsᴜʟᴛᴀᴅᴏs ૮₍｡˃ ᵕ ˂ ｡₎ა 🫛`,
       ...await rcanal()
@@ -213,7 +213,7 @@ let handler = async (m, { conn, text }) => {
   try {
     m.react('✨️');
     const results = await pins(text);
-    if (!results || results.length === 0) return conn.reply(m.chat, `No se encontraron resultados para "${text}".`, m, fake);
+    if (!results || results.length === 0) return conn.reply(m.chat, `لا توجد نتائج para "${text}".`, m, fake);
 
     const maxImages = Math.min(results.length, 15);
     const medias = [];
@@ -233,7 +233,7 @@ let handler = async (m, { conn, text }) => {
     await conn.sendMessage(m.chat, { react: { text: '☘️', key: m.key } });
 
   } catch (error) {
-    conn.reply(m.chat, 'Error al obtener imágenes de Pinterest.', m, fake);
+    conn.reply(m.chat, 'خطأ في جلب صور Pinterest.', m, fake);
   }
 };
 
@@ -255,7 +255,7 @@ const rcanal = async () => {
       },
       externalAdReply: {
         title: "𐔌 . ⋮ 𝗕 𝗨 𝗦 𝗖 𝗔 𝗡 𝗗 𝗢 .ᐟ ֹ ₊ ꒱",
-        body: "Buscando en Pinterest...",
+        body: "جارٍ البحث في Pinterest...",
         mediaUrl: null,
         description: null,
         previewType: "PHOTO",

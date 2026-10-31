@@ -16,10 +16,10 @@ const handler = async (m, { conn, text }) => {
         who = m.chat;
     }
     
-    if (!who) return m.reply(`${emoji} Por favor, menciona al usuario o cita un mensaje.`);
+    if (!who) return m.reply(`${emoji} من فضلك، menciona al usuario o cita un الرسالة.`);
 
     const txt = text.replace('@' + who.split`@`[0], '').trim();
-    if (!txt) return m.reply(`${emoji} Ingresa la cantidad de experiencia (XP) que deseas añadir.`);
+    if (!txt) return m.reply(`${emoji} أدخل la cantidad de experiencia (XP) que deseas añadir.`);
     if (isNaN(txt)) return m.reply(`${emoji2} Solo números son permitidos.`);
     
     const xp = parseInt(txt);
@@ -32,7 +32,7 @@ const handler = async (m, { conn, text }) => {
     const users = global.db.data.users;
     users[who].exp += xp;
     
-    m.reply(`✨ XP Añadido: *${xp}* \n@${who.split('@')[0]}, recibiste ${xp} XP`, null, { mentions: [who] });
+    m.reply(`✨ XP تمت الإضافة: *${xp}* \n@${who.split('@')[0]}, recibiste ${xp} XP`, null, { mentions: [who] });
 };
 
 handler.command = ['añadirxp', 'addexp'];

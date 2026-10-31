@@ -25,7 +25,7 @@ let handler = async (m, { conn, text }) => {
         }
     }
 
-    console.log(`Usuario procesado: ${who}`); // Para depuración
+    console.log(`المستخدم procesado: ${who}`); // Para depuración
 
     if (!global.db) global.db = {};
     if (!global.db.data) global.db.data = {};
@@ -33,7 +33,7 @@ let handler = async (m, { conn, text }) => {
 
     let users = global.db.data.users;
 
-    if (!users[who]) throw `${emoji2} El usuario no tiene datos para deschetar.`;
+    if (!users[who]) throw `${emoji2} المستخدم no tiene datos para deschetar.`;
 
     users[who].coin = 0;
     users[who].exp = 0;
@@ -47,16 +47,16 @@ let handler = async (m, { conn, text }) => {
                 await subbot.sendMessage(m.chat, { text: `/deschetar ${who.split`@`[0]}` });
             }
         } catch (error) {
-            console.log(`${msm} Error al deschetar al usuario: ${error.message}`);
+            console.log(`${msm} خطأ في deschetar al usuario: ${error.message}`);
         }
     }
 
     await m.reply(
-        `☁️ *¡Usuario descheteado con éxito!*\n\n` +
+        `☁️ *¡المستخدم descheteado بنجاح!*\n\n` +
         `👤 Usuario: @${who.split`@`[0]}\n` +
         `💸 ${moneda}: *0*\n` +
-        `✨ Experiencia: *0*\n` +
-        `🌟 Nivel: *0*`,
+        `✨ الخبرة: *0*\n` +
+        `🌟 المستوى: *0*`,
         null,
         { mentions: [who] }
     );

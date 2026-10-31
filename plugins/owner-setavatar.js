@@ -7,7 +7,7 @@ import { fileTypeFromBuffer } from "file-type";
 
 let handler = async (m, { conn, isRowner }) => {
 
-  if (!m.quoted || !/image/.test(m.quoted.mimetype)) return m.reply(`${emoji} Por favor, responde a una imagen con el comando *setcatalogo* para actualizar la foto del catalogo.`);
+  if (!m.quoted || !/image/.test(m.quoted.mimetype)) return m.reply(`${emoji} من فضلك، رُدّ علىa imagen con el comando *setcatalogo* para actualizar la foto del catalogo.`);
 
   try {
 
@@ -15,16 +15,16 @@ let handler = async (m, { conn, isRowner }) => {
     let link = await catbox(media);
     
     if (!isImageValid(media)) {
-      return m.reply(`${emoji2} El archivo enviado no es una imagen válida.`);
+      return m.reply(`${emoji2} الملف enviado no es una imagen صالح.`);
     }
 
     global.avatar = `${link}`;  
 
-    await conn.sendFile(m.chat, media, 'avatar.jpg', `${emoji} Imagen actualizada.`, m);
+    await conn.sendFile(m.chat, media, 'avatar.jpg', `${emoji} الصورة actualizada.`, m);
 
   } catch (error) {
     console.error(error);
-    m.reply(`${msm} Hubo un error al intentar cambiar la Imagen.`);
+    m.reply(`${msm} حدث خطأ al intentar cambiar la الصورة.`);
   }
 };
 

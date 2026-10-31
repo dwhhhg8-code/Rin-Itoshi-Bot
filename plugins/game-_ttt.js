@@ -26,10 +26,10 @@ export async function before(m) {
     }
     if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
       m.reply({
-        '-3': 'El juego ha terminado',
-        '-2': 'Inválido',
-        '-1': 'Posición inválida',
-        '0': 'Posición inválida',
+        '-3': 'El juego ha أنهِdo',
+        '-2': 'Inصالح',
+        '-1': 'موضع غير صالح',
+        '0': 'موضع غير صالح',
       }[ok]);
       return !0;
     }
@@ -68,7 +68,7 @@ export async function before(m) {
         ${arr.slice(3, 6).join('')}
         ${arr.slice(6).join('')}
 
-${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} Ganaste 🥳, Te llevas +4999 XP` : isTie ? 'El juego termino en empate 😐' : `Turno de @${room.game.currentTurn.split('@')[0]}`}
+${isWin ? `@${(isSurrender ? room.game.currentTurn : room.game.winner).split('@')[0]} فزت 🥳, Te llevas +4999 XP` : isTie ? 'El juego termino en empate 😐' : `Turno de @${room.game.currentTurn.split('@')[0]}`}
 `.trim();
     const users = global.db.data.users;
     if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat) {

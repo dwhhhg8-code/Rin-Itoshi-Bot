@@ -43,7 +43,7 @@ let handler = async (m, { conn }) => {
 ╰───────────────⬣
 
 ╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝙏𝙍𝙊𝙇 / 𝘿𝙄𝙑𝙀𝙍𝙏𝙄𝘿𝙊𝙎
-│ ◦ Me Anda Buscando Anonymous
+│ ◦ جارٍ البحث عن Anonymous
 │ ◦ Se Estan Riendiendo De Mi
 │ ◦ Elmo Sabe Donde Vives
 │ ◦ Diagnosticado Con Gay
@@ -104,11 +104,11 @@ let handler = async (m, { conn }) => {
 │ ◦ Motivacion
 ╰───────────────⬣
 
-╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝘿𝙀 𝙎𝘼𝙇𝙐𝘿𝙊 / 𝘾𝙊𝙍𝙏𝙀𝙎
+╭─⧉ مقاطع الترحيب
 │ ◦ Buenos Días
 │ ◦ Buenas Noches
 │ ◦ Bueno Si
-│ ◦ Bienvenido Wey
+│ ◦ مرحباً بك
 │ ◦ Q Onda
 │ ◦ Entrada
 │ ◦ Donde Esta
@@ -116,52 +116,44 @@ let handler = async (m, { conn }) => {
 │ ◦ Hablame
 ╰───────────────⬣
 
-╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝘾𝙊𝙉 𝙋𝙀𝙍𝙎𝙊𝙉𝘼𝙅𝙀𝙎
+╭─⧉ مقاطع شخصيات
 │ ◦ Gaspi Y La Minita
 │ ◦ El Pepe
 │ ◦ El Toxico
-│ ◦ Goku Pervertido
-│ ◦ Hora De Sexo
-│ ◦ Gemidos
 │ ◦ In Your Area
 │ ◦ Amongos
 ╰───────────────⬣
 
-╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝘿𝙀 𝙀𝙑𝙀𝙉𝙏𝙊𝙎 / 𝘿𝙄́𝘼𝙎
+╭─⧉ مقاطع مناسبات
 │ ◦ Es Viernes
 │ ◦ Feriado
 │ ◦ Feliz Navidad
 ╰───────────────⬣
 
-╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝘼𝘿𝙄𝙊́𝙎 / 𝘿𝙀𝙎𝙋𝙀𝘿𝙄𝘿𝘼
+╭─⧉ مقاطع وداع
 │ ◦ Me Voy
 │ ◦ Lo Paltimos
 │ ◦ Me Olvide
 │ ◦ Juicioso
 ╰───────────────⬣
 
-╭─⧉ 𝘼𝙐𝘿𝙄𝙊𝙎 𝙋𝙄𝘾𝘼𝙍𝙊𝙎 / 𝙃𝙀𝙉𝙏𝘼𝙄
-│ ◦ Audio Hentai
-│ ◦ Gemidos
-│ ◦ Hora De Sexo
-╰───────────────⬣
 
   
-🔁 *¿No ves tu favorito?*  
+🔁 *لا ترى المفضل لديك؟*  
 
-💬 _Tip: puedes escribir solo el nombre para que se reproduzca._  
-🕹️ _Ejemplo:_ \`Tunometecabrasaramambiche\`  
+💬 _ملاحظة: اكتب الاسم فقط ليتم تشغيله._  
+🕹️ _مثال:_ \`Tunometecabrasaramambiche\`  
   
 ───────────── ░▒▓█  
-📡 *RIN ITOSHI SYSTEM READY*
+📡 *FLASH BOT جاهز*
 `.trim();
 
     await conn.sendMessage(m.chat, {
       text,
       contextInfo: {
         externalAdReply: {
-          title: "🎧 MENÚ DE AUDIOS - RIN ITOSHI BOT ⚡",
-          body: "Escribe el nombre del audio para reproducirlo automáticamente.",
+          title: "🎧 MENÚ DE AUDIOS - FLASH BOT ⚡",
+          body: "اكتب اسم الصوت لتشغيله تلقائياً.",
           thumbnailUrl: banner,
           sourceUrl: redes,
           mediaType: 1,

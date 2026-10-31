@@ -33,10 +33,10 @@ intentos < 2 ? "_|_" : " |",
 return dibujo.slice(0, intentosMaximos - intentos).join("\n")
 }
 
-function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
+function juegoأنهِdo(sender, mensaje, palabra, letrasAdivinadas, intentos) {
     if (intentos === 0) {
         gam.delete(sender);
-        return `❌ ¡Perdiste! La palabra correcta era: ${palabra}\n\n${mostrarAhorcado(intentos)}`;
+        return `❌ ¡خسرت! La palabra correcta era: ${palabra}\n\n${mostrarAhorcado(intentos)}`;
     } else if (!mensaje.includes("_")) {
         let expGanada = Math.floor(Math.random() * 300); //fáciles
         if (palabra.length >= 8) {
@@ -44,7 +44,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
         }
         global.db.data.users[sender].exp += expGanada;
         gam.delete(sender);
-        return `¡Que pro Ganaste 🥳! Adivinaste la palabra "${palabra}".\n\n*Has ganado:* ${expGanada} Exp.`;
+        return `¡Que pro فزت 🥳! Adivinaste la palabra "${palabra}".\n\n*Has ganado:* ${expGanada} Exp.`;
     } else {
         return `${mostrarAhorcado(intentos)}\n\n${mensaje}`;
     }
@@ -53,7 +53,7 @@ function juegoTerminado(sender, mensaje, palabra, letrasAdivinadas, intentos) {
 let handler = async (m, { conn }) => {
 let users = global.db.data.users[m.sender]
 if (gam.has(m.sender)) {
-return conn.reply(m.chat, "Ya tienes un juego en curso. ¡Termina ese primero!", m)
+return conn.reply(m.chat, "لديك لعبة جارية. أنهها أولاً!", m)
 }
 let palabra = elegirPalabraAleatoria()
 let letrasAdivinadas = []
@@ -78,8 +78,8 @@ intentos--
 }
 }
 let mensaje = ocultarPalabra(palabra, letrasAdivinadas)
-let respuesta = juegoTerminado(m.sender, mensaje, palabra, letrasAdivinadas, intentos)
-if (respuesta.includes("¡Perdiste!") || respuesta.includes("¡Ganaste!")) {
+let respuesta = juegoأنهِdo(m.sender, mensaje, palabra, letrasAdivinadas, intentos)
+if (respuesta.includes("¡خسرت!") || respuesta.includes("¡فزت!")) {
 conn.reply(m.chat, respuesta, m)
 } else {
 gam.set(m.sender, { palabra, letrasAdivinadas, intentos })
@@ -87,7 +87,7 @@ conn.reply(m.chat, respuesta + `\n\nIntentos restantes: ${intentos}`, m)
 }
 } else {
 let mensaje = ocultarPalabra(palabra, letrasAdivinadas);
-let respuesta = juegoTerminado(m.sender, mensaje, palabra, letrasAdivinadas, intentos)
+let respuesta = juegoأنهِdo(m.sender, mensaje, palabra, letrasAdivinadas, intentos)
 conn.reply(m.chat, respuesta, m)
 gam.delete(m.sender)
 }

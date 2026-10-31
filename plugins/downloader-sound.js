@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`🎧 *Ingresa un enlace válido de SoundCloud.*`)
+  if (!text) return m.reply(`🎧 *أدخل رابط صالح de SoundCloud.*`)
 
   await m.react('🎶')
 
@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     })
 
     const json = await res.json()
-    if (!json.status || !json.data) throw '❌ No se pudo obtener el audio.'
+    if (!json.status || !json.data) throw '❌ تعذّر obtener el audio.'
 
     const { title, url, thumbnail, user } = json.data
 
@@ -45,7 +45,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (err) {
     console.error(err)
-    await m.reply(' *Error al descargar el audio.*\nVerifica el enlace o inténtalo más tarde.')
+    await m.reply(' *خطأ في تنزيل el audio.*\nVerifica الرابط o inténtalo لاحقاً.')
   }
 }
 

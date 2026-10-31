@@ -11,29 +11,29 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     if (isNaN(episode) || episode <= 0) {
-      return m.reply('⚠️ El número de episodio debe ser válido y mayor que 0.');
+      return m.reply('⚠️ El número de episodio debe ser صالح y mayor que 0.');
     }
 
     const apiUrl = `https://animeflvapi.vercel.app/download/anime/${animeId}/${episode}`;
     const response = await fetch(apiUrl);
-    if (!response.ok) throw new Error('⚠️ Error al obtener datos de la API');
+    if (!response.ok) throw new Error('⚠️ خطأ في جلب datos de la API');
 
     const { servers } = await response.json();
-    if (!servers || !servers[0]) throw new Error('⚠️ No se encontraron servidores disponibles');
+    if (!servers || !servers[0]) throw new Error('⚠️ لم يتم العثور على servidores متاحة');
 
     const megaServer = servers[0].find(server => server.server === 'mega');
-    if (!megaServer || !megaServer.url) throw new Error('⚠️ No se encontró el enlace de MEGA');
+    if (!megaServer || !megaServer.url) throw new Error('⚠️ لم يتم العثور على الرابط de MEGA');
 
     const file = File.fromURL(megaServer.url);
     await file.loadAttributes();
 
     if (file.size >= 300 * 1024 * 1024) {
-      return m.reply('🚫 El archivo es demasiado grande (máximo 300MB)');
+      return m.reply('🚫 الملف es demasiado grande (máximo 300MB)');
     }
 
-    await m.reply('*⏳ Descargando episodio, por favor espera...*');
+    await m.reply('*⏳ جارٍ التنزيل episodio, por favor انتظر...*');
 
-/*await conn.loadingMsg(m.chat, '🌸 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙉𝘿𝙊 𝘼𝙉𝙄𝙈𝙀 🌸\n\n⏳ Espere un momento, descargando desde MEGA...', `✅ Enviando archivo`, [
+/*await conn.loadingMsg(m.chat, '🌸 𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙉𝘿𝙊 𝘼𝙉𝙄𝙈𝙀 🌸\n\n⏳ Espere un momento, descargando desde MEGA...', `✅ جارٍ الإرسال archivo`, [
       "▰▱▱▱▱ ᴄᴀʀɢᴀɴᴅᴏ...",
       "▰▰▱▱▱ ᴄᴀʀɢᴀɴᴅᴏ...",
       "▰▰▰▱▱ ᴄᴀʀɢᴀɴᴅᴏ...",
@@ -42,15 +42,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     ], m);*/
 
     const caption = `
-╭─═☆彡〔 Rin Itoshi 彡〕☆═─╮
+╭─═☆彡〔 FLASH BOT 彡〕☆═─╮
 │  (•̀ᴗ•́)و💥 ¡Anime listo para ti!
 │━━━━━━━━━━━━━━━━━━━━━━━
 │🎬 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐚: AnimeFLV 🌐
 │📁 𝐓í𝐭𝐮𝐥𝐨: ${animeId} Ep. ${episode}
 │📦 𝐓𝐚𝐦𝐚ñ𝐨: ${formatBytes(file.size)}
 │
-│💫 Disfruta tu episodio, ¡Rin Itoshi te cubre la maratón! 🍿✨
-╰─═☆彡〔 Rin Itoshi Anime DL 〕☆═─╯
+│💫 Disfruta tu episodio, ¡FLASH BOT te cubre la maratón! 🍿✨
+╰─═☆彡〔 FLASH BOT Anime DL 〕☆═─╯
 `;
 
     const dataBuffer = await file.downloadBuffer();
@@ -72,7 +72,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (error) {
     console.error(error);
-    return m.reply(`❌ Error: ${error.message}`);
+    return m.reply(`❌ خطأ: ${error.message}`);
   }
 }
 

@@ -1,7 +1,7 @@
 const handler = async (m, {conn, text}) => {
 const [nomor, pesan, jumlah] = text.split('|');
 
-if (!nomor) return conn.reply(m.chat, `${emoji} Por favor, ingrese un número para realizar spam.`, m);
+if (!nomor) return conn.reply(m.chat, `${emoji} من فضلك أدخل un número para realizar spam.`, m);
 
 if (!pesan) return conn.reply(m.chat, `${emoji} Uso Correcto:\n\n> ${emoji2} #spamwa numero|texto|cantidad`, m);
 
@@ -12,7 +12,7 @@ const fixedJumlah = jumlah ? jumlah * 1 : 10;
 
 if (fixedJumlah > 999) return conn.reply(m.chat, `${emoji3} Minimo 50 Caracteres.`, m);
 
-await conn.reply(m.chat, `${emoji4} Se envió con éxito el spam.`, m);
+await conn.reply(m.chat, `${emoji4} Se envió بنجاح el spam.`, m);
 for (let i = fixedJumlah; i > 1; i--) {
 if (i !== 0) conn.reply(fixedNumber, pesan.trim(), null);
 }

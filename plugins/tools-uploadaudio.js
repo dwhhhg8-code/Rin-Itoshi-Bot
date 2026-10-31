@@ -11,10 +11,10 @@ let handler = async (m, { conn }) => {
   try {
     const q = m.quoted ? m.quoted : m
     const mime = (q.msg || q).mimetype || ''
-    if (!mime) return m.reply('🌧️ *Responde a un archivo o media para subirlo.*')
+    if (!mime) return m.reply('🌧️ *رُدّ a un archivo o media para subirlo.*')
 
     const media = await q.download()
-    if (!media) return m.reply('⛅ *Error al descargar el archivo.*')
+    if (!media) return m.reply('⛅ *خطأ في تنزيل الملف.*')
 
     const uploads = []
 
@@ -27,9 +27,9 @@ let handler = async (m, { conn }) => {
     const up3 = await uploaderCloudCom(media).catch(() => null)
     if (up3) uploads.push({ name: '🌐 CloudImages', url: up3 })
 
-    if (uploads.length === 0) throw '⛈️ *No se pudo subir a ningún servidor. Intenta de nuevo más tarde.*'
+    if (uploads.length === 0) throw '⛈️ *تعذّر subir a ningún servidor. حاول مرة أخرى لاحقاً.*'
 
-    let texto = `☁️ *Resultado de la Subida*\n*━━━━━━━━━━━━━━━━━━━━*\n\n`
+    let texto = `☁️ *النتيجة de la Subida*\n*━━━━━━━━━━━━━━━━━━━━*\n\n`
     for (const up of uploads) {
       texto += `*${up.name}*\n🔗 ${up.url}\n\n`
     }
@@ -49,7 +49,7 @@ let handler = async (m, { conn }) => {
 
   } catch (e) {
     await conn.sendMessage(m.chat, {
-      text: typeof e === 'string' ? e : '⛈️ *Ocurrió un error inesperado durante la subida.*',
+      text: typeof e === 'string' ? e : '⛈️ *حدث خطأ inانتظرdo durante la subida.*',
       quoted: m
     })
   } finally {
@@ -82,10 +82,10 @@ async function uploadTo(url, buffer) {
     const json = await res.json()
     await unlink(tempPath).catch(() => null)
 
-    if (json?.status !== 'success' || !json?.data?.url) throw new Error('Error al subir el archivo.')
+    if (json?.status !== 'success' || !json?.data?.url) throw new Error('خطأ في subir الملف.')
     return json.data.url
   } catch (err) {
-    console.error(`Error subiendo a (${url}):`, err)
+    console.error(`خطأ subiendo a (${url}):`, err)
     await unlink(tempPath).catch(() => null)
     return null
   }

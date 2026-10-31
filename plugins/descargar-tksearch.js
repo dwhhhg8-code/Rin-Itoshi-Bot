@@ -15,7 +15,7 @@ const tiktokHandler = async (m, { conn, command, args, usedPrefix }) => {
         if (!query) {
             return conn.reply(
                 m.chat,
-                `❌ \`\`\`Escribe lo que quieres buscar\`\`\`\n\`Ejemplo:\`\n> ${usedPrefix}tksearch Videos Graciosos `,
+                `❌ \`\`\`اكتب lo que quieres buscar\`\`\`\n\`Ejemplo:\`\n> ${usedPrefix}tksearch Videos Graciosos `,
                 m
             );
         }
@@ -29,7 +29,7 @@ const tiktokHandler = async (m, { conn, command, args, usedPrefix }) => {
             const data = await response.json();
 
             if (!data.meta || !data.meta.length) {
-                return conn.reply(m.chat, '❌ No se encontraron videos', m);
+                return conn.reply(m.chat, '❌ لم يتم العثور على videos', m);
             }
 
             session.videos = data.meta;
@@ -38,13 +38,13 @@ const tiktokHandler = async (m, { conn, command, args, usedPrefix }) => {
             return await sendVideoWithButtons(session, m, conn, usedPrefix);
         } catch (error) {
             console.error(error);
-            return conn.reply(m.chat, '❌ Error al buscar videos', m);
+            return conn.reply(m.chat, '❌ خطأ في buscar videos', m);
         }
     }
 
     if (command === 'tkseguir') {
         if (!session.videos.length) {
-            return conn.reply(m.chat, '❌ Primero usa .tksearch para buscar videos', m);
+            return conn.reply(m.chat, '❌ استخدم أولاً .tksearch para buscar videos', m);
         }
 
         if (session.currentIndex + 1 >= session.videos.length) {
@@ -87,7 +87,7 @@ async function sendVideoWithButtons(session, m, conn, usedPrefix) {
         );
     } catch (error) {
         console.error(error);
-        conn.reply(m.chat, '❌ Error al enviar el video', m);
+        conn.reply(m.chat, '❌ خطأ في إرسال el video', m);
     }
 }
 

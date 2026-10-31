@@ -6,7 +6,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (command === 'setmeta') {
         const packParts = text.split(/[\u2022|]/).map(part => part.trim());
         if (packParts.length < 2) {
-            return m.reply(`${emoji} Por favor, escribe el pack y el autor que deseas usar por defecto para tus stickers.\n> Ejemplo: *${usedPrefix + command} ${global.botname} • By Shadow*`);
+            return m.reply(`${emoji} من فضلك، escribe el pack y el autor que deseas usar افتراضياً para tus stickers.\n> Ejemplo: *${usedPrefix + command} ${global.botname} • By Shadow*`);
         }
 
         const packText1 = packParts[0];
@@ -27,7 +27,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 
         await global.db.write();
 
-        return m.reply(`${emoji4} Se actualizo el pack y autor por defecto para tus stickers.`);
+        return m.reply(`${emoji4} Se actualizo el pack y autor افتراضياً para tus stickers.`);
     }
 
     if (command === 'delmeta') {
@@ -41,7 +41,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 
         await global.db.write();
 
-        return m.reply(`${emoji} Se restablecio el pack y autor por defecto para tus stickers.`);
+        return m.reply(`${emoji} Se restablecio el pack y autor افتراضياً para tus stickers.`);
     }
 };
 
@@ -57,7 +57,7 @@ export default handler;
 try {
 const metaParts = text.split(/\s/).map(part => part.trim())
 if (metaParts.length < 2) {
-return m.reply(`🚀 Escribe el pack y el autor que deseas usar por defecto para tus stickers\n> Ejemplo: *${usedPrefix + command} Star Author*`)
+return m.reply(`🚀 اكتب el pack y el autor que deseas usar افتراضياً para tus stickers\n> Ejemplo: *${usedPrefix + command} Star Author*`)
 }
 const packName = metaParts[0]
 const authorName = metaParts[1]
@@ -68,9 +68,9 @@ const { packstickers, packstickers2 } = global.db.data.users[m.sender]
 packstickers = packName
 packstickers2 = authorName
 await global.db.write()
-return m.reply(`✨ ¡Tus metadatos de stickers han sido actualizados con éxito! Pack: ${packName} | Autor: ${authorName}`)
+return m.reply(`✨ ¡Tus metadatos de stickers han sido actualizados بنجاح! Pack: ${packName} | Autor: ${authorName}`)
 } catch (e) {
-await m.reply(`🚨 Ocurrió un problema al actualizar los ajustes: ${e}`)
+await m.reply(`🚨 حدث خطأ أثناء تحديث الإعدادات: ${e}`)
 }}
 
 handler.help = ['setmeta']

@@ -12,7 +12,7 @@ var handler = async (m, { usedPrefix, command }) => {
 
         const files = fs.readdirSync(pluginsDir).filter(file => file.endsWith('.js'))
 
-        let response = `💨 *Revisión de Syntax Errors:*\n\n`
+        let response = `💨 *Revisión de Syntax خطأs:*\n\n`
         let hasErrors = false
 
         for (const file of files) {
@@ -25,7 +25,7 @@ var handler = async (m, { usedPrefix, command }) => {
                 const errorLineMatch = stackLines[0].match(/:(\d+):\d+/) 
                 const errorLine = errorLineMatch ? errorLineMatch[1] : 'Desconocido'
 
-                response += `⚠︎ *Error en:* ${file}\n\n> ● Mensaje: ${error.message}\n> ● Número de línea: ${errorLine}\n\n`
+                response += `⚠︎ *خطأ en:* ${file}\n\n> ● الرسالة: ${error.message}\n> ● الرقم de línea: ${errorLine}\n\n`
             }
         }
 
@@ -37,7 +37,7 @@ var handler = async (m, { usedPrefix, command }) => {
         await m.react('✅')
     } catch (err) {
         await m.react('✖️') 
-        await conn.reply(m.chat, `⚠︎ Ocurrió un error: ${err.message}`, m)
+        await conn.reply(m.chat, `⚠︎ حدث خطأ: ${err.message}`, m)
     }
 }
 

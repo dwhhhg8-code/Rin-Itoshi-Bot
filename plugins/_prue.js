@@ -6,7 +6,7 @@ const handler = async (m, { conn }) => {
   const match = m.text?.match(youtubeRegex)
   if (!match) return
 
-  // 🛡️ Evita activarse si el mensaje tiene más texto además del link
+  // 🛡️ Evita activarse si الرسالة tiene más texto además dالرابط
   if (m.text.trim() !== match[0]) return
 
   await m.react('🕸️')
@@ -17,7 +17,7 @@ const handler = async (m, { conn }) => {
 
   if (!video) {
     await m.react('❌')
-    return conn.reply(m.chat, '⚠️ No se encontró el video en YouTube.', m)
+    return conn.reply(m.chat, '⚠️ لم يتم العثور على el video en YouTube.', m)
   }
 
   const media = await prepareWAMessageMedia(
@@ -78,13 +78,13 @@ const handler = async (m, { conn }) => {
                   },
                   {
                     header: '𝐘𝐎𝐔𝐓𝐔𝐁𝐄 • 𝐘𝐓𝐀',
-                    title: '✿ ⚡ Descarga rápida de audio',
+                    title: '✿ ⚡ تنزيل سريع للصوت',
                     description: `✎ Duración: ${video.timestamp}`,
                     id: `/yta ${video.url}`
                   },
                   {
                     header: '𝐘𝐎𝐔𝐓𝐔𝐁𝐄 • 𝐘𝐓𝐕',
-                    title: '✿ ⚡ Descarga rápida de video',
+                    title: '✿ ⚡ تنزيل سريع للفيديو',
                     description: `✎ Duración: ${video.timestamp}`,
                     id: `/ytv ${video.url}`
                   }

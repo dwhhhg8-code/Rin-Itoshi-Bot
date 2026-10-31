@@ -3,7 +3,7 @@ import sharp from 'sharp'
 
 let handler = async (m, { conn, text }) => {
   if (!text && !m.quoted) {
-    return m.reply("✨ Pásame una URL de imagen o responde a una imagen.\nEjemplo:\n.miniatura https://ejemplo.com/imagen.jpg\nO responde a una foto con: .miniatura")
+    return m.reply("✨ Pásame una URL de imagen o رُدّ علىa imagen.\nEjemplo:\n.miniatura https://ejemplo.com/imagen.jpg\nO رُدّ علىa foto con: .miniatura")
   }
 
   try {
@@ -11,12 +11,12 @@ let handler = async (m, { conn, text }) => {
 
     if (text) {
       const res = await fetch(text)
-      if (!res.ok) throw new Error("No se pudo descargar la imagen desde la URL")
+      if (!res.ok) throw new Error("تعذّر descargar الصورة desde la URL")
       buffer = await res.buffer()
     } else if (m.quoted && /image/.test(m.quoted.mtype)) {
       buffer = await (await m.quoted.download())
     } else {
-      throw new Error("No se detectó una imagen válida")
+      throw new Error("No se detectó una imagen صالح")
     }
 
     let quality = 80
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply("❌ Error al procesar la imagen.")
+    m.reply("❌ خطأ في معالجة الصورة.")
   }
 }
 

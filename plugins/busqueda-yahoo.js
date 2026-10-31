@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, '🌹 Ingresa el nombre que deseas buscar en Yahoo.\n\nEjemplo:\n' + `> *${usedPrefix + command}* Chaewon`, m, rcanal);
+  if (!text) return conn.reply(m.chat, '🌹 أدخل الاسم que deseas buscar en Yahoo.\n\nEjemplo:\n' + `> *${usedPrefix + command}* Chaewon`, m, rcanal);
   await m.react('🕓');
 
   try {
@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     let json = await res.json();
 
     if (!json.data || json.data.length === 0) {
-      return conn.reply(m.chat, 'No se encontraron resultados para tu búsqueda.', m);
+      return conn.reply(m.chat, 'لا توجد نتائج لبحثك.', m);
     }
 
     let txt = '`乂  Y A H O O  -  B Ú S Q U E`';
@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       txt += `  *» Nro* : ${i + 1}\n`;
       txt += `  *» Título* : ${search.title}\n`;
       txt += `  *» Enlace* : ${search.link}\n`;
-      txt += `  *» Descripción* : ${search.description}\n`;
+      txt += `  *» الوصف* : ${search.description}\n`;
     }
 
     await conn.reply(m.chat, txt, m, rcanal);

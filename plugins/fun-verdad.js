@@ -14,11 +14,11 @@ let handler = async (m, { conn }) => {
     externalAdReply: {
       showAdAttribution: true,
       title: "𝑅𝐼𝑁 𝐼𝑇𝑂𝑆𝐻𝐼 𝑀𝐷 𝐵𝑌 𝐷𝐸𝑉.𝑆𝐻𝐴𝐷𝑂𝑊",
-      body: "🌴 sigue el canal para mas novedades.",
+      body: "🌴 تابع القناة لمزيد من الجديد.",
       mediaType: 1,
       previewType: "PHOTO",
       thumbnailUrl: avatar,
-      sourceUrl: "https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U"
+      sourceUrl: "https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v"
     }
   }
 
@@ -127,7 +127,7 @@ global.verdad = [
   '¿Qué es lo primero que harías si te despertaras como alguien del sexo opuesto?',
   '¿Haz resolvido todos tus problemas?',
   '¿Alguna vez dudaste de tu sexualidad?',
-  '¿Cuál es la razón más absurda por la que haz terminado una relación?',
+  '¿Cuál es la razón más absurda por la que haz أنهِdo una relación?',
   '¿Cuál es el peor hábito que tienes?',
   '¿Cuál crees que es tu mejor característica?',
   '¿Cuál crees que es tu peor característica?',

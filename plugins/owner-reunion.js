@@ -1,9 +1,9 @@
 let handler = async(m, { conn, command, text }) => {
-  if (!text) return m.reply(`${emoji} Por favor, ingresa el motivo de la reunión.`)
-  if (text.length < 10) return m.reply(`${emoji2} Por favor, ingresa al menos 10 caracteres.`)
+  if (!text) return m.reply(`${emoji} من فضلك أدخل el motivo de la reunión.`)
+  if (text.length < 10) return m.reply(`${emoji2} من فضلك أدخل al menos 10 caracteres.`)
   
   let texto = `${emoji2} El Owner @${m.sender.split`@`[0]} ha empezado una reunión. Entra lo más pronto al grupo de staff...\n*➪ Motivo: ${text}*`
-  m.reply(`${emoji} Enviando mensaje de reunión a todos los owners.`)
+  m.reply(`${emoji} جارٍ الإرسال الرسالة de reunión a todos los owners.`)
   
   let mentions = [m.sender]
   

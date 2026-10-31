@@ -10,7 +10,7 @@ let handler = async (m, { conn }) => {
 
   } catch (e) {
     console.error(e);
-    m.reply("Error al enviar la imagen.");
+    m.reply("خطأ في إرسال الصورة.");
   }
 };
 

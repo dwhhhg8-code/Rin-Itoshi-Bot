@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
-    return conn.reply(m.chat, `🍬 Por favor, ingrese un nombre de usuario de Telegram para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* JoseXrl15k`, m, rcanal);
+    return conn.reply(m.chat, `🍬 من فضلك أدخل un nombre de usuario de Telegram para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* JoseXrl15k`, m, rcanal);
   }
 
   await m.react('🕓');
@@ -12,14 +12,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!json.status || !json.data) {
       await m.react('✖️');
-      return await conn.reply(m.chat, '❌ No se encontraron resultados para esta búsqueda.', m);
+      return await conn.reply(m.chat, '❌ لا توجد نتائج لهذا البحث.', m);
     }
 
     const user = json.data;
     let txt = `📌 *T E L E G R A M - S T A L K*\n\n`;
-    txt += `👤 *Nombre:* ${user.name}\n`;
-    txt += `🔖 *Usuario:* ${user.username}\n`;
-    txt += `📜 *Descripción:* ${user.description || 'Sin descripción'}\n`;
+    txt += `👤 *الاسم:* ${user.name}\n`;
+    txt += `🔖 *المستخدم:* ${user.username}\n`;
+    txt += `📜 *الوصف:* ${user.description || 'لا يوجد وصف'}\n`;
     txt += `🔗 *Perfil:* ${user.profile}\n\n`;
 
     await conn.sendMessage(m.chat, { image: { url: user.profile }, caption: txt }, { quoted: m });
@@ -27,7 +27,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (error) {
     console.error(error);
     await m.react('✖️');
-    await conn.reply(m.chat, '⚠️ Hubo un error al procesar la solicitud. Intenta de nuevo más tarde.', m);
+    await conn.reply(m.chat, '⚠️ حدث خطأ أثناء المعالجة. حاول مرة أخرى لاحقاً.', m);
   }
 };
 

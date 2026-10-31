@@ -4,11 +4,11 @@ import axios from 'axios';
 let handler = async (m, { conn, text, usedPrefix, command, args }) => {
   try {
     if (!text) {
-      return conn.reply(m.chat, `🚫 *Por favor, ingresa la URL del vídeo de YouTube.*`, m);
+      return conn.reply(m.chat, `🚫 *من فضلك أدخل la URL del vídeo de YouTube.*`, m);
     }
 
     if (!/^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i.test(args[0])) {
-      return m.reply(`⚠️ *Enlace inválido. Asegúrate de colocar un enlace válido de YouTube.*`);
+      return m.reply(`⚠️ *Enlace غير صالح. Asegúrate de colocar رابط صالح de YouTube.*`);
     }
 
     m.react('🕒');
@@ -25,7 +25,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
   } catch (e) {
     console.error(e);
-    m.reply(`❌ *Ocurrió un error al procesar tu solicitud:*\n\n${e.message}`);
+    m.reply(`❌ *حدث خطأ al procesar tu solicitud:*\n\n${e.message}`);
   }
 };
 
@@ -50,7 +50,7 @@ async function ytdl(url) {
   const initial = await fetch(`https://d.ymcdn.org/api/v1/init?p=y&23=1llum1n471&_=${Math.random()}`, { headers });
   const init = await initial.json();
   const id = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*v=))([\w-]+)/)?.[1];
-  if (!id) throw new Error('No se pudo extraer el ID del video.');
+  if (!id) throw new Error('تعذّر استخراج معرّف الفيديو.');
 
   const convertURL = init.convertURL + `&v=${id}&f=mp4&_=${Math.random()}`;
   const convert = await (await fetch(convertURL, { headers })).json();
@@ -74,7 +74,7 @@ async function getSize(url) {
     const contentLength = response.headers['content-length'];
     return contentLength ? parseInt(contentLength, 10) : null;
   } catch (e) {
-    console.error("Error al obtener el tamaño:", e.message);
+    console.error("خطأ في جلب el tamaño:", e.message);
     return null;
   }
 }

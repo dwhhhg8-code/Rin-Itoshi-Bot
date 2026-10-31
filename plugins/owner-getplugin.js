@@ -9,11 +9,11 @@ const handler = async (m, { conn, isROwner, usedPrefix, command, text }) => {
   const ar1 = ar.map((v) => v.replace('.js', ''));
   
   if (!text) {
-    return conn.reply(m.chat, `${emoji} Ingrese el nombre de algún plugin (archivo) existente*\n\n*—◉ Ejemplo*\n*◉ ${usedPrefix + command}* info-infobot\n\n*—◉ Lista de plugins (archivos) existentes:*\n*◉* ${ar1.map((v) => ' ' + v).join`\n*◉*`}`, m);
+    return conn.reply(m.chat, `${emoji} أدخل الاسم de algún plugin (archivo) existente*\n\n*—◉ Ejemplo*\n*◉ ${usedPrefix + command}* info-infobot\n\n*—◉ قائمة plugins (archivos) existentes:*\n*◉* ${ar1.map((v) => ' ' + v).join`\n*◉*`}`, m);
   }
 
   if (!ar1.includes(text)) {
-    return conn.reply(m.chat, `${emoji2} No se encontró ningún plugin (archivo) llamado "${text}", ingrese alguno existente*\n\n*==================================*\n\n*—◉ Lista de plugins (archivos) existentes:*\n*◉* ${ar1.map((v) => ' ' + v).join`\n*◉*`}`, m);
+    return conn.reply(m.chat, `${emoji2} لم يتم العثور على ningún plugin (archivo) llamado "${text}", ingrese alguno existente*\n\n*==================================*\n\n*—◉ Lista de plugins (archivos) existentes:*\n*◉* ${ar1.map((v) => ' ' + v).join`\n*◉*`}`, m);
   }
   
   let o;

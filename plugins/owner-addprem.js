@@ -3,7 +3,7 @@ const handler = async (m, { conn, command, text }) => {
   if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
   else who = m.chat
 
-  if (!who) return m.reply('❀ Por favor, mencióna o cita el mensaje de algún usuario.')
+  if (!who) return m.reply('❀ من فضلك، mencióna o cita el الرسالة de algún usuario.')
 
   const user = global.db.data.users[who]
   const now = Date.now()
@@ -15,7 +15,7 @@ const handler = async (m, { conn, command, text }) => {
         const args = text.split(' ').filter(arg => arg)
         let tiempo = 0
 
-        if (args.length < 2) return m.reply('✧ Envía un tiempo válido\n> Ejemplo (1h, 2d, 3s, 4m).')
+        if (args.length < 2) return m.reply('✧ أرسل وقتاً صالحاً\n> Ejemplo (1h, 2d, 3s, 4m).')
 
         if (args[1] === 'h') {
           tiempo = 3600000 * parseInt(args[0])
@@ -26,7 +26,7 @@ const handler = async (m, { conn, command, text }) => {
         } else if (args[1] === 'm') {
           tiempo = 2592000000 * parseInt(args[0])
         } else {
-          return m.reply(`✧ Tiempo inválido. Opciones disponibles:\n\n° *h :* Horas\n° *d :* Días\n° *s :* Semanas\n° *m :* Meses\n\n✦ Ejemplo:\n${command} 1 h ---> 1 hora premium.\n${command} 1 d ---> 1 día premium.\n${command} 1 s ---> 1 semana premium.\n${command} 1 m ---> 1 mes premium.`)
+          return m.reply(`✧ Tiempo غير صالح. Opciones متاحة:\n\n° *h :* الوقتs\n° *d :* Días\n° *s :* Semanas\n° *m :* Meses\n\n✦ Ejemplo:\n${command} 1 h ---> 1 hora premium.\n${command} 1 d ---> 1 día premium.\n${command} 1 s ---> 1 semana premium.\n${command} 1 m ---> 1 mes premium.`)
         }
 
         if (now < user.premiumTime) user.premiumTime += tiempo
@@ -39,14 +39,14 @@ const handler = async (m, { conn, command, text }) => {
 
       case 'delprem':
       case 'delpremium':
-        if (user.premiumTime === 0) throw `✧ El usuario no es usuario premium.`
+        if (user.premiumTime === 0) throw `✧ المستخدم no es usuario premium.`
         user.premiumTime = 0
         user.premium = false
         m.reply(`❀ @${who.split`@`[0]} ya no es usuario premium.`, null, { mentions: [who] })
         break
 
       default:
-        m.reply(`✧ El comando *${command}* no es válido.`)
+        m.reply(`✧ الأمر *${command}* no es صالح.`)
     }
   } catch (error) {
     m.reply(error);

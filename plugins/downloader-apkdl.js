@@ -10,18 +10,18 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
       const response = await fetch(`https://delirius-apiofc.vercel.app/download/apk?query=${encodeURIComponent(text)}`);
       const data = await response.json();
-      if (!data.status || !data.data) throw new Error("No se encontró la aplicación.");
+      if (!data.status || !data.data) throw new Error("لم يتم العثور على la aplicación.");
 
       const app = data.data;
       apkSession.set(m.chat, { app });
 
-      let description = `🍧 *Nombre:* ${app.name}
+      let description = `🍧 *الاسم:* ${app.name}
 🌱 *Desarrollador:* ${app.developer}
 📦 *Paquete:* ${app.id}
 ⚙️ *Tamaño:* ${app.size}
 ⭐ *Rating:* ${app.stats?.rating?.average || "N/A"} (${app.stats?.rating?.total || 0} votos)
 📅 *Publicado:* ${app.publish}
-⚽ *Descargas:* ${app.stats?.downloads?.toLocaleString() || "N/A"}
+⚽ *تنزيلs:* ${app.stats?.downloads?.toLocaleString() || "N/A"}
 🏪 *Tienda:* ${app.store?.name || "Desconocida"}`;
 
       const buttons = [
@@ -46,12 +46,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       );
 
     } catch (error) {
-      console.error("Error:", error);
+      console.error("خطأ:", error);
       await m.react('❌');
 
       await conn.sendMessage(
         m.chat,
-        { text: `❌ Ocurrió un error: ${error.message || "Error desconocido"}` },
+        { text: `❌ حدث خطأ: ${error.message || "خطأ غير معروف"}` },
         { quoted: m }
       );
     }
@@ -100,12 +100,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       await m.react('☑️');
 
     } catch (err) {
-      console.error("Error en descarga:", err);
+      console.error("خطأ en descarga:", err);
       await m.react('❌'); 
 
       await conn.sendMessage(
         m.chat,
-        { text: `No se pudo descargar el archivo.` },
+        { text: `تعذّر descargar الملف.` },
         { quoted: m }
       );
     }
@@ -117,7 +117,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     return conn.sendMessage(
       m.chat,
       {
-        text: `❗ Ingresa un término de búsqueda.\n\n💚 Ejemplo:\n${usedPrefix}apk2 WhatsApp`
+        text: `❗ أدخل un término de búsqueda.\n\n💚 Ejemplo:\n${usedPrefix}apk2 WhatsApp`
       },
       { quoted: m }
     );

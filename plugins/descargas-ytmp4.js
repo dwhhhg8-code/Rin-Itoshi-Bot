@@ -13,22 +13,22 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text?.trim()) {
       return conn.reply(
         m.chat,
-        `🎋 *Ingresa el enlace del video de YouTube que deseas descargar.*\n\nEjemplo:\n${usedPrefix + command} https://youtu.be/HWjCStB6k4o`,
+        `🎋 *أدخل الرابط del video de YouTube que deseas descargar.*\n\nEjemplo:\n${usedPrefix + command} https://youtu.be/HWjCStB6k4o`,
         m
       )
     }
 
     await m.react('🕒')
-    await conn.reply(m.chat, '*_🍃 Descargando video uwu_*', m, rcanal)
+    await conn.reply(m.chat, '*_🍃 جارٍ التنزيل video uwu_*', m, rcanal)
 
     const apiUrl = `https://api.vreden.my.id/api/v1/download/youtube/video?url=${encodeURIComponent(text)}&quality=360`
     const response = await fetch(apiUrl)
-    if (!response.ok) throw `Error en la API.`
+    if (!response.ok) throw `خطأ في الـ API.`
     const data = await response.json()
 
     const meta = data?.result?.metadata
     const down = data?.result?.download
-    if (!down?.url) throw `No se pudo obtener el enlace de descarga.`
+    if (!down?.url) throw `تعذّر obtener رابط التنزيل.`
 
     const head = await fetch(down.url, { method: "HEAD" })
     const size = head.headers.get("content-length")
@@ -42,10 +42,10 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 🕒 *Duración:* ${meta.duration?.timestamp || "Desconocida"}
 👁 *Vistas:* ${meta.views?.toLocaleString() || "?"}
 📆 *Publicado:* ${meta.ago}
-🎚 *Calidad:* ${down.quality}p
+🎚 *الجودة:* ${down.quality}p
 💾 *Tamaño:* ${formatSize(size)}
 ────────────────────
-✨ *Descarga Completa...*`
+✨ *تنزيل Completa...*`
 
     await conn.sendMessage(m.chat, {
       video: { url: down.url },
@@ -59,7 +59,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    conn.reply(m.chat, `*Ocurrió un error:*\n${e}`, m)
+    conn.reply(m.chat, `*حدث خطأ:*\n${e}`, m)
   }
 }
 

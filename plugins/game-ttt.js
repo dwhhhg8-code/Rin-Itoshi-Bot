@@ -8,7 +8,7 @@ const handler = async (m, {conn, usedPrefix, command, text}) => {
   }
 
   if (!text) {
-    return m.reply(`${emoji} Se requiere poner el nombre de la sala de juego\n\n*—◉ Ejemplo*\n*◉ ${usedPrefix + command} nueva sala*`, m.chat);
+    return m.reply(`${emoji} Se requiere poner الاسم de la sala de juego\n\n*—◉ Ejemplo*\n*◉ ${usedPrefix + command} nueva sala*`, m.chat);
   }
 
   let room = Object.values(conn.game).find((room) => room.state === 'WAITING' && (text ? room.name === text : true));
@@ -61,7 +61,7 @@ Turno de @${room.game.currentTurn.split('@')[0]}
     };
 
     const imgplay = `https://cope-cdnmed.agilecontent.com/resources/jpg/8/9/1590140413198.jpg`;
-    conn.reply(m.chat, `*🕹 TRES EN RAYA 🎮*\n\n◉ Esperando al segundo jugador\n◉ Para borrar o salirse de la partida use el comando *${usedPrefix}delttt*\n\n◉ Para unirse a la partida escriba: (${usedPrefix + command} ${text})`, m);
+    conn.reply(m.chat, `*🕹 TRES EN RAYA 🎮*\n\n◉ انتظرndo al segundo jugador\n◉ Para borrar o salirse de la partida use el comando *${usedPrefix}delttt*\n\n◉ Para unirse a la partida escriba: (${usedPrefix + command} ${text})`, m);
     conn.game[room.id] = room;
   }
 };

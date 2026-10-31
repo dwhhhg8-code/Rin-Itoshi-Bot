@@ -18,10 +18,10 @@ var handler = async (m, { conn, text }) => {
         who = m.chat;
     }
 
-    if (!who) return conn.reply(m.chat, `${emoji} Por favor, ingrese el tag de algún usuario o responda a un mensaje.`, m);
+    if (!who) return conn.reply(m.chat, `${emoji} من فضلك أدخل el tag de algún usuario o responda a un الرسالة.`, m);
 
     if (!userName) {
-        userName = text || 'Usuario desconocido';
+        userName = text || 'المستخدم غير معروف';
     }
 
     let start = `🧑‍💻 *Iniciando doxeo*...`;
@@ -51,9 +51,9 @@ var handler = async (m, { conn, text }) => {
 📅 ${new Date().toLocaleDateString()}
 ⏰ ${new Date().toLocaleTimeString()}
 
-📢 Resultados:
+📢 النتيجةs:
 
-*Nombre:* ${userName}
+*الاسم:* ${userName}
 *Ip:* 92.28.211.234
 *N:* 43 7462
 *W:* 12.4893

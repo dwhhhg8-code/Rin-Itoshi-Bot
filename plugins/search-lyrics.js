@@ -1,14 +1,14 @@
 import fetch from "node-fetch";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`✧ Ingresa el nombre de una canción para buscar su letra.\n\n🎋 Ejemplo:\n» *${usedPrefix + command} Nose*`);
+  if (!text) return m.reply(`✧ أدخل الاسم de una canción para buscar su letra.\n\n🎋 Ejemplo:\n» *${usedPrefix + command} Nose*`);
 
   try {
     const apiUrl = `https://api.stellarwa.xyz/tools/lyrics?query=${encodeURIComponent(text)}&apikey=Shadow-xyz`;
     const res = await fetch(apiUrl);
     const json = await res.json();
 
-    if (!json.status || !json.data) return m.reply("❌ No se encontraron letras para esa canción.");
+    if (!json.status || !json.data) return m.reply("❌ لا توجد كلمات لهذه الأغنية.");
 
     const { title, artist, album, lyrics, dl } = json.data;
 
@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 ┃ 🎵 *Título:* ${title}
 ┃ 👤 *Artista:* ${artist}
 ┃ 💿 *Álbum:* ${album.title}
-┃ 🔗 *Audio:* ${dl ? "Disponible" : "No disponible"}
+┃ 🔗 *الصوت:* ${dl ? "Disponible" : "غير متاح"}
 ╰━━━⬣
 
 🩵 *Letra:*
@@ -48,7 +48,7 @@ ${lyrics.substring(0, 4000)}${lyrics.length > 4000 ? "\n\n… (letra recortada)"
 
   } catch (e) {
     console.error(e);
-    m.reply("⚠️ Ocurrió un error al obtener las letras. Intenta nuevamente.");
+    m.reply("⚠️ حدث خطأ في جلب الكلمات. حاول مرة أخرى.");
   }
 };
 

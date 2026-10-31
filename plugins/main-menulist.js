@@ -1,5 +1,5 @@
 // ☘️ Código hecho por DEV.𝘚𝘏𝘈𝘋𝘖𝘞 XD
-// - https://github.com/Yuji-XDev
+// - https://github.com/dwhhhg8-code
 // - Dejen créditos aunque sea gracias.
 // - 𝘙𝘐𝘕 𝘐𝘛𝘖𝘚𝘏𝘐 BOT MD ⚽ https://m.tiktok.com/v/7560444047366704391.html?u_code=e8m64l84g44cg3&preview_pb=0&sharer_language=en&_d=0&share_item_id=7560444047366704391&source=h5_m&timestamp=1760746465&user_id=7253045313384334342&sec_user_id=MS4wLjABAAAAXaVEBaCBj1qEEYtbVjfPDwncA5_AXQwXh256aq4RAPZHB51Tv9uFh25bgsgSPIGX&social_share_type=0&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7485003379945522950&share_link_id=9482a8ca-8fe2-4e94-abbb-371d061fa647&share_app_id=1233&ugbiz_name=MAIN&link_reflow_popup_iteration_sharer=%7B%22click_empty_to_play%22%3A1%2C%22dynamic_cover%22%3A1%2C%22follow_to_play_duration%22%3A-1.0%2C%22profile_clickable%22%3A1%7D&enable_checksum=1
 
@@ -24,7 +24,7 @@ const handler = async (m, { conn, usedPrefix }) => {
     const taguser = '@' + (m.sender.pushname ? m.sender.pushname : m.sender.split('@s.whatsapp.net')[0])
 
     const menutxt = `⿻̟֟፝݊͜⃝⁩⚽꫶⃝꙰⿻͜𝐑𝐈𝐍͜ 𝐈͜𝐓𝐎𝐒༙͜ᝲ𝐇𝐈🍧⃟─̶̲̲̲̲̲̲̲̲̲֟፝͠
-  🍨⃟≛⃝🫐๋⭑sʜᴀᴅᴏᴡ.xʏᴢ ⊹༙ᝲ🧪𝆺𝅥𝆹𝅥𝆬! 	✰ :
+  🍨⃟≛⃝🫐๋⭑𝖍𝖆𝖎𝖙𝖍𝖆𝖒 ⊹༙ᝲ🧪𝆺𝅥𝆹𝅥𝆬! 	✰ :
 
 ┌───────────
 │□╭┄◦ৎ ˖ ࣪⊹ 𝐈𝐍𝐅𝐎 ~ 𝐁𝐎𝐓 ✧⃟ᰳᰬᰶ
@@ -34,7 +34,7 @@ const handler = async (m, { conn, usedPrefix }) => {
 │□┊≡ 💾 𝚅𝚂: *2.2.5*
 │□┊≡ 👥 𝚄𝚂𝙴𝚁𝚂: *${totalUsers}*
 │□┊≡ 🧰 𝙲𝙾𝙼𝙰𝙽𝙳𝙾𝚂: *${totalCommands}*
-│□┊≡ 🔐 𝙼𝙾𝙳𝙾: *Privado*
+│□┊≡ 🔐 𝙼𝙾𝙳𝙾: *خاص*
 │□┊≡ 📚 𝙻𝙸𝙱𝚁𝙴𝚁𝙸𝙰: *Baileys-MD*
 │□┊≡ ⏱️ 𝚁𝚄𝙽𝚃𝙸𝙼𝙴: *${uptime}*
 │□┊≡
@@ -48,7 +48,7 @@ const handler = async (m, { conn, usedPrefix }) => {
 │❏┊≡ 💸 𝙼𝙾𝚃𝙾𝙺𝙾 𝙿𝙾𝙸𝙽𝚃𝚂: *${user.coin || 0}*
 │❏┊≡ 📊 𝙽𝙸𝚅𝙴𝙻: *${user.level || 0}*
 │❏┊≡ ⚡ 𝙴𝚇𝙿: *${user.exp || 0}*
-│❏┊≡ 👑 𝚁𝙰𝙽𝙶𝙾: ${user.role || 'Sin Rango'}
+│❏┊≡ 👑 𝚁𝙰𝙽𝙶𝙾: ${user.role || 'Sin الرتبة'}
 │❏┊≡
 │❏╰┄┄┄┄┄◦
 └────────────
@@ -127,11 +127,6 @@ const handler = async (m, { conn, usedPrefix }) => {
             id: `${usedPrefix}menugp` 
           },
           { 
-            title: "⪛ 🔞 Mᴇɴᴜ [ 𝗡𝗦𝗙𝗪 ] ⪜", 
-            description: "🔞✨⊹ 𝐀𝐜𝐜𝐞𝐬𝐨 𝐚 𝐥𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐍𝐒𝐅𝐖, 𝐬𝐨𝐥𝐨 𝐩𝐚𝐫𝐚 𝐚𝐝𝐮𝐥𝐭𝐨𝐬 🍑💦⊹",
-            id: `${usedPrefix}menu18` 
-          },
-          { 
             title: "⪛ 💖 Mᴇɴᴜ [ 𝗟𝗢𝗚𝗢𝗧𝗜𝗣𝗢𝗦 ] ⪜", 
             description: "🐥 ᴍᴇɴᴜ ʟᴏɢᴏᴛɪᴘᴏs ", 
             id: `${usedPrefix}menulogos` 
@@ -143,7 +138,7 @@ const handler = async (m, { conn, usedPrefix }) => {
           },
           { 
             title: "⪛  ⭐ 𝙼𝚎𝚗𝚞𝚜 ] ⪜", 
-            description: "ver lista de menus disponibles 🍂", 
+            description: "ver lista de menus متاحة 🍂", 
             id: `${usedPrefix}menus` 
           }
         ]
@@ -171,7 +166,7 @@ const handler = async (m, { conn, usedPrefix }) => {
       mimetype: 'image/PNG',
       caption: menutxt,
       jpegThumbnail: thumb2,
-      footer: '© ʀɪɴ ɪᴛᴏsʜɪ ᴜʟᴛʀᴀ ʙᴏᴛ | ° ʙʏ sʜᴀᴅᴏᴡ.xʏᴢ',
+      footer: '© ʀɪɴ ɪᴛᴏsʜɪ ᴜʟᴛʀᴀ ʙᴏᴛ | ° ʙʏ 𝖍𝖆𝖎𝖙𝖍𝖆𝖒',
       buttons: [
         ...buttons,
         {
@@ -193,7 +188,7 @@ const handler = async (m, { conn, usedPrefix }) => {
         forwardedNewsletterMessageInfo: {
           newsletterJid: '120363401008003732@newsletter',
           serverMessageId: 100,
-          newsletterName: '⚽𐚁 ֹ ִ Rin Itoshi - Official ୧ ֹ ִ⚽ᩚ꤬ᰍ'
+          newsletterName: '⚽𐚁 ֹ ִ FLASH BOT - Official ୧ ֹ ִ⚽ᩚ꤬ᰍ'
         },
         isForwarded: true,
         forwardingScore: 999,

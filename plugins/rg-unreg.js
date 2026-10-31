@@ -28,8 +28,8 @@ let handler = async (m, { conn, text }) => {
     mentions: [m.sender],
     contextInfo: {
       externalAdReply: {
-        title: `⚡ Registro eliminado correctamente ${emojis}`,
-        body: `🧪 Nombre: ${nombre} • Edad: ${edad} años`,
+        title: `⚡ Registro eliminado بنجاح ${emojis}`,
+        body: `🧪 الاسم: ${nombre} • Edad: ${edad} años`,
         thumbnailUrl: pp,
         mediaType: 1,
         renderLargerThumbnail: true,

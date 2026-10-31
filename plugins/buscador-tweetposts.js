@@ -5,10 +5,10 @@ import axios from 'axios';
 const { proto, generateWAMessageFromContent, generateWAMessageContent } = (await import('@whiskeysockets/baileys')).default;
 
 let handler = async (m, { conn, text }) => {
-if (!text) { return conn.reply(m.chat, `${emoji} Por favor, ingresa el texto de Lo que quieres buscar en Twitter.`, m); }
+if (!text) { return conn.reply(m.chat, `${emoji} من فضلك أدخل el texto de Lo que quieres buscar en Twitter.`, m); }
 
 await message.react(rwait)
-conn.reply(message.chat, `${emoji} Descargando Su Video, espere un momento...`, message)
+conn.reply(message.chat, `${emoji} جارٍ التنزيل Su Video, espere un momento...`, message)
 
 async function createImage(url) {
 const { imageMessage } = await generateWAMessageContent({image: { url }}, { upload: conn.waUploadToServer });
@@ -48,7 +48,7 @@ const msg = generateWAMessageFromContent(m.chat, {viewOnceMessage: {
 message: {
 messageContextInfo: {deviceListMetadata: {},deviceListMetadataVersion: 4},
 interactiveMessage: proto.Message.InteractiveMessage.create({
-body: proto.Message.InteractiveMessage.Body.create({text: `${emoji} Resultado de : ${text}\n⪛✰ Tweetposts - Busquedas ✰⪜`}),
+body: proto.Message.InteractiveMessage.Body.create({text: `${emoji} النتيجة de : ${text}\n⪛✰ Tweetposts - Busquedas ✰⪜`}),
 footer: proto.Message.InteractiveMessage.Footer.create({text: null}),
 header: proto.Message.InteractiveMessage.Header.create({hasMediaAttachment: false}),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.create({cards: mini})

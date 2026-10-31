@@ -9,7 +9,7 @@ let handler = async (m, { conn }) => {
   let mime = (q.msg || q).mimetype || ''
   
   if (!mime.startsWith('image/')) {
-    return m.reply(`${emoji} Por favor, responda a una *Imagen.*`)
+    return m.reply(`${emoji} من فضلك، responda a una *الصورة.*`)
   }
   await m.react('🕓')
 

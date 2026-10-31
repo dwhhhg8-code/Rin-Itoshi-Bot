@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const handler = async (m, { text, conn, args }) => {
   if (!args[0]) {
-    return conn.reply(m.chat, '🍓 Por favor, ingresa un enlace de Kwai.', m, rcanal);
+    return conn.reply(m.chat, '🍓 من فضلك أدخل رابط de Kwai.', m, rcanal);
   }
 
   const kwaiUrl = args[0];
@@ -12,12 +12,12 @@ const handler = async (m, { text, conn, args }) => {
     await m.react('🍟');
     res = await axios.get(`https://api.nexfuture.com.br/api/downloads/kwai/dl?url=${kwaiUrl}`);
   } catch (e) {
-    return conn.reply(m.chat, 'Error al obtener datos. Verifica el enlace.', m);
+    return conn.reply(m.chat, 'خطأ في جلب datos. Verifica الرابط.', m);
   }
 
   const result = res.data;
   if (!result.status) {
-    return conn.reply(m.chat, 'No se encontraron resultados o hubo un error.', m);
+    return conn.reply(m.chat, 'لا توجد نتائج أو حدث خطأ.', m);
   }
 
   const videoTitle = result.resultado.titulo;
@@ -27,12 +27,12 @@ const handler = async (m, { text, conn, args }) => {
   const thumbnailUrl = result.resultado.thumbnail;
 
   if (!videoUrl) {
-    return conn.reply(m.chat, 'No se encontró un enlace de video válido.', m);
+    return conn.reply(m.chat, 'لم يتم العثور على رابط فيديو صالح.', m);
   }
 
   const caption = `
 *🎥 Título:* ${videoTitle}
-*Descripción:* ${videoDescription}
+*الوصف:* ${videoDescription}
 *Creado por:* ${videoCreator}
 *Publicado:* ${new Date(result.resultado.publicado).toLocaleString()}
   `.trim();
@@ -47,7 +47,7 @@ const handler = async (m, { text, conn, args }) => {
     } catch (e) {
       if (attempt === maxRetries) {
         await m.react('❌');
-        return conn.reply(m.chat, 'Error al enviar el video después de varios intentos.', m);
+        return conn.reply(m.chat, 'خطأ في إرسال الفيديو بعد عدة محاولات.', m);
       }
       await new Promise(resolve => setTimeout(resolve, 1000));
     }

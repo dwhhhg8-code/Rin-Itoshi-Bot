@@ -2,7 +2,7 @@ const ro = 3000;
 const handler = async (m, {conn, usedPrefix, command}) => {
   const time = global.db.data.users[m.sender].lastrob + 7200000;
   if (new Date - global.db.data.users[m.sender].lastrob < 7200000) {
-  conn.reply(m.chat, `${emoji3} Debes esperar ${msToTime(time - new Date())} para usar #robxp de nuevo.`, m);
+  conn.reply(m.chat, `${emoji3} Debes انتظرr ${msToTime(time - new Date())} para usar #robxp de nuevo.`, m);
   return;
   }
   let who;
@@ -13,7 +13,7 @@ const handler = async (m, {conn, usedPrefix, command}) => {
   return;
     };
   if (!(who in global.db.data.users)) { 
-  conn.reply(m.chat, `${emoji2} El usuario no se encuentra en mi base de datos.`, m)
+  conn.reply(m.chat, `${emoji2} المستخدم no se encuentra en mi base de datos.`, m)
 return;
   }
   const users = global.db.data.users[who];
@@ -39,5 +39,5 @@ function msToTime(duration) {
   hours = (hours < 10) ? '0' + hours : hours;
   minutes = (minutes < 10) ? '0' + minutes : minutes;
   seconds = (seconds < 10) ? '0' + seconds : seconds;
-  return hours + ' Hora(s) ' + minutes + ' Minuto(s)';
+  return hours + ' الوقت(s) ' + minutes + ' Minuto(s)';
 }

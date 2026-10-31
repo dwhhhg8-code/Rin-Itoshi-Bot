@@ -6,31 +6,31 @@ const handler = async (m, { conn, command, usedPrefix, text, groupMetadata }) =>
 const value = text ? text.trim() : ''
 const chat = global.db.data.chats[m.chat]
 if (command === 'setgp') {
-return m.reply(`✦ Ingresa la categoría que deseas modificar para tu grupo.\n\n🜸 Categorías disponibles:\n• ${usedPrefix}gpname <nuevo nombre>\n> Cambia el nombre del grupo\n• ${usedPrefix}gpdesc <nueva descripción>\n> Modifica la descripción del grupo\n• ${usedPrefix}gpbanner <imagen>\n> Establece una nueva imagen para el grupo (responde a una imagen)\n• ${usedPrefix}setwelcome <mensaje>\n> Configura el mensaje de bienvenida para nuevos miembros\n• ${usedPrefix}setbye <mensaje>\n> Establece el mensaje de despedida al salir un usuario\n• ${usedPrefix}testwelcome\n> Simula el mensaje de bienvenida\n• ${usedPrefix}testbye\n> Simula el mensaje de despedida`)
+return m.reply(`✦ أدخل la categoría que deseas modificar para tu grupo.\n\n🜸 Categorías متاحة:\n• ${usedPrefix}gpname <nuevo nombre>\n> Cambia الاسم dالمجموعة\n• ${usedPrefix}gpdesc <nueva descripción>\n> Modifica la descripción dالمجموعة\n• ${usedPrefix}gpbanner <imagen>\n> Establece una nueva imagen para المجموعة (رُدّ علىa imagen)\n• ${usedPrefix}setwelcome <الرسالة>\n> Configura el الرسالة de bienvenida para nuevos miembros\n• ${usedPrefix}setbye <الرسالة>\n> Establece el الرسالة de despedida al salir un usuario\n• ${usedPrefix}testwelcome\n> Simula el الرسالة de bienvenida\n• ${usedPrefix}testbye\n> Simula el الرسالة de despedida`)
 }
 try {
 switch (command) {
 case 'setwelcome': {
-if (!value) return m.reply(`ꕥ Debes enviar un mensaje para establecerlo como mensaje de bienvenida.\n> Puedes usar {usuario} para mencionar al usuario, {grupo} para mencionar el nombre del grupo y {desc} para mencionar la descripción del grupo.\n\n✐ Ejemplo: ${usedPrefix}setwelcome Bienvenido {usuario} a {grupo}!`)
+if (!value) return m.reply(`ꕥ Debes enviar un الرسالة para establecerlo como الرسالة de bienvenida.\n> Puedes usar {usuario} para mencionar al usuario, {grupo} para mencionar الاسم dالمجموعة y {desc} para mencionar la descripción dالمجموعة.\n\n✐ Ejemplo: ${usedPrefix}setwelcome مرحباً بك {usuario} a {grupo}!`)
 chat.sWelcome = value
-m.reply(`ꕥ Has establecido el mensaje de bienvenida correctamente.\n> Puedes usar ${usedPrefix}testwelcome para ver cómo se verá el mensaje de bienvenida.`)
+m.reply(`ꕥ Has establecido el الرسالة de bienvenida بنجاح.\n> Puedes usar ${usedPrefix}testwelcome para ver cómo se verá el الرسالة de bienvenida.`)
 break
 }
 case 'setbye': {
-if (!value) return m.reply(`ꕥ Debes enviar un mensaje para establecerlo como mensaje de despedida.\n> Puedes usar {usuario}, {grupo} y {desc} como variables dinámicas.\n\n✐ Ejemplo: ${usedPrefix}setbye Adiós {usuario}, te extrañaremos en {grupo}!`)
+if (!value) return m.reply(`ꕥ Debes enviar un الرسالة para establecerlo como الرسالة de despedida.\n> Puedes usar {usuario}, {grupo} y {desc} como variables dinámicas.\n\n✐ Ejemplo: ${usedPrefix}setbye Adiós {usuario}, te extrañaremos en {grupo}!`)
 chat.sBye = value
-m.reply(`ꕥ Has establecido el mensaje de despedida correctamente.\n> Puedes usar ${usedPrefix}testbye para ver cómo se verá el mensaje de despedida.`)
+m.reply(`ꕥ Has establecido el الرسالة de despedida بنجاح.\n> Puedes usar ${usedPrefix}testbye para ver cómo se verá el الرسالة de despedida.`)
 break
 }
 case 'testwelcome': {
-if (!chat.sWelcome) return m.reply('⚠︎ No hay mensaje de bienvenida configurado.')
+if (!chat.sWelcome) return m.reply('⚠︎ No hay الرسالة de bienvenida configurado.')
 const { pp: ppWel, caption: captionWel, mentions: mentionsWel } = await generarBienvenida({ conn, userId: m.sender, groupMetadata, chat })
 await conn.sendMessage(m.chat, { image: { url: ppWel }, caption: captionWel, mentions: mentionsWel }, { quoted: m })
 try { fs.unlinkSync(ppWel) } catch {}
 break
 }
 case 'testbye': {
-if (!chat.sBye) return m.reply('⚠︎ No hay mensaje de despedida configurado.')
+if (!chat.sBye) return m.reply('⚠︎ No hay الرسالة de despedida configurado.')
 const { pp: ppBye, caption: captionBye, mentions: mentionsBye } = await generarDespedida({ conn, userId: m.sender, groupMetadata, chat })
 await conn.sendMessage(m.chat, { image: { url: ppBye }, caption: captionBye, mentions: mentionsWel }, { quoted: m })
 try { fs.unlinkSync(ppBye) } catch {}

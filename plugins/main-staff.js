@@ -2,9 +2,9 @@ let handler = async (m, { conn, command, usedPrefix }) => {
   let img = './src/catalogo.jpg'
   let staff = ` 🌷⃢🌟⃞𝑬𝒒𝒖𝒊𝒑𝒐 𝒅𝒆 𝑨𝒚𝒖𝒅𝒂𝒏𝒕𝒆𝒔🌟⃞🌷⃢
 
-╭━➤🏜️ 𝑹𝒊𝒏 𝑰𝒕𝒐𝒔𝒉𝒊 𝑩𝒐𝒕 𝑴𝑫 ︵ٜ⊹۬︵
+╭━➤🏜️ 𝙁𝙇𝘼𝙎𝙃 𝘽𝙊𝙏 𝑴𝑫 ︵ٜ⊹۬︵
 ┃👑 𝑫𝒖𝒆𝒏̃𝒐: ${global.creador || 'No definido'}
-┃🤖 𝑩𝒐𝒕: ${global.botname || 'Rin Itoshi'}
+┃🤖 𝑩𝒐𝒕: ${global.botname || 'FLASH BOT'}
 ┃📦 𝑽𝒆𝒓𝒔𝒊ó𝒏: ${global.vs || '1.0.0'}
 ┃📚 𝑳𝒊𝒃𝒓𝒆𝒓í𝒂: ${global.libreria || 'Baileys'} (${global.baileys || 'multi-device'})
 ╰━━━━━━━━━━━━━━━━━━━━━
@@ -13,7 +13,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 ┃⚽ 𝑵𝒐𝒎𝒃𝒓𝒆: ${global.etiqueta || 'Yuji'}𖣘
 ┃🎈 𝑹𝒐𝒍: Developer
 ┃🔗 𝑵ú𝒎𝒆𝒓𝒐: wa.me/qr/5B6AGA5YNOUZI1
-┃🧬 𝑮𝒊𝒕𝑯𝒖𝒃: https://github.com/Yuji-XDev
+┃🧬 𝑮𝒊𝒕𝑯𝒖𝒃: https://github.com/dwhhhg8-code
 ╰━━━━━━━━━━━━━━━━━━━━━
 
 ╭━➤👥 𝑪𝒐𝒍𝒂𝒃𝒐𝒓𝒂𝒅𝒐𝒓𝒆𝒔 ︵ٜ⊹۬︵

@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text)
     return conn.reply(
       m.chat,
-      `🌿 *Ingresa un texto para buscar en TikTok.*\n\n📌 Ejemplo:\n> ${usedPrefix + command} edits de Kaiser`,
+      `🌿 *أدخل un texto para buscar en TikTok.*\n\n📌 Ejemplo:\n> ${usedPrefix + command} edits de Kaiser`,
       m,
       rcanal
     );
@@ -38,14 +38,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const data = res.data;
 
     if (!data?.status || !data?.result?.data?.length)
-      throw new Error("❌ No se encontraron resultados en TikTok.");
+      throw new Error("❌ لا توجد نتائج en TikTok.");
 
     let results = data.result.data.slice(0, 6);
     let cards = [];
 
     for (let v of results) {
-      let info = `🎬 *Título:* ${v.title || "Sin título"}
-👤 *Creador:* ${v.creator || "Desconocido"}
+      let info = `🎬 *Título:* ${v.title || "بدون عنوان"}
+👤 *المطوّر:* ${v.creator || "Desconocido"}
 🌎 *Región:* ${v.region || "N/A"}
 🕒 *Duración:* ${v.duration || 0} segundos
 📅 *Publicado:* ${v.create_time || "N/A"}
@@ -54,10 +54,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 ❤️ *Likes:* ${v.likes?.toLocaleString() || 0}
 💬 *Comentarios:* ${v.comments?.toLocaleString() || 0}
 🔁 *Compartidos:* ${v.share?.toLocaleString() || 0}
-⬇️ *Descargas:* ${v.download?.toLocaleString() || 0}
+⬇️ *تنزيلs:* ${v.download?.toLocaleString() || 0}
 
-🎵 *Audio:* ${v.music ? v.music.split("/").pop() : "Sin información"}
-🔗 *Enlace:* ${v.url || "No disponible"}`;
+🎵 *الصوت:* ${v.music ? v.music.split("/").pop() : "Sin información"}
+🔗 *Enlace:* ${v.url || "غير متاح"}`;
 
       let videoMsg = await createVideoMessage(v.nowm);
       if (!videoMsg) continue;
@@ -96,7 +96,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     if (cards.length === 0)
-      throw new Error("⚠️ No se pudo procesar ningún video.");
+      throw new Error("⚠️ تعذّر procesar ningún video.");
 
     const msg = generateWAMessageFromContent(
       m.chat,
@@ -106,10 +106,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
             interactiveMessage: proto.Message.InteractiveMessage.fromObject({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `🌺 *Resultados de TikTok para:* ${text}`,
+                text: `🌺 *النتيجةs de TikTok para:* ${text}`,
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "🌿 Rin Itoshi Bot ✨",
+                text: "🌿 FLASH BOT ✨",
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 hasMediaAttachment: false,
@@ -130,7 +130,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     console.error(e);
     conn.reply(
       m.chat,
-      `*Error al buscar en TikTok:*\n${e.message}`,
+      `*خطأ في buscar en TikTok:*\n${e.message}`,
       m
     );
   }

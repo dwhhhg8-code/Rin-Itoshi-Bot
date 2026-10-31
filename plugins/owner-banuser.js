@@ -9,7 +9,7 @@ var handler = async (m, { conn, text, usedPrefix, command }) => {
         number = isNaN(text) ? text.split`@`[1] : text
         user = conn.user.jid.split`@`[0] + '@s.whatsapp.net'
         bot = conn.user.jid.split`@`[0]
-        bant = `❀ Por favor, etiqueta o escrive el número del usuario al que quieres banear del Bot.`
+        bant = `❀ من فضلك، etiqueta o escrive el número dالمستخدم al que quieres banear del Bot.`
         const nn = conn.getName(m.sender)
         if (!text && !m.quoted) return conn.reply(m.chat, bant, m, { mentions: [user] })
         
@@ -41,11 +41,11 @@ var handler = async (m, { conn, text, usedPrefix, command }) => {
 
         users[user].banned = true
         usr = m.sender.split('@')[0]
-        await conn.reply(m.chat, `❀ Usuario baneado con éxito.`, m, { mentions: [user] })
+        await conn.reply(m.chat, `❀ المستخدم baneado بنجاح.`, m, { mentions: [user] })
         let nametag = conn.getName(user)
-        await conn.reply(`${suittag}@s.whatsapp.net`, `❀ El usuario *${nametag}* ha sido Baneado por *${nn}*.`, m)
+        await conn.reply(`${suittag}@s.whatsapp.net`, `❀ المستخدم *${nametag}* ha sido Baneado por *${nn}*.`, m)
     } catch (e) {
-        await conn.reply(m.chat, `⚠︎ Ocurrió un error.`, m)
+        await conn.reply(m.chat, `⚠︎ حدث خطأ.`, m)
     }
 }
 

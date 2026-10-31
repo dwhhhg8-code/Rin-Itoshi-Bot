@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) {
-    return conn.reply(m.chat, `🌸 Ingresa el UID del jugador.\n\nEjemplo:\n${usedPrefix + command} 12183392680`, m);
+    return conn.reply(m.chat, `🌸 أدخل el UID del jugador.\n\nEjemplo:\n${usedPrefix + command} 12183392680`, m);
   }
 
   try {
@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let json = await res.json();
 
     if (!json.status || !json.result) {
-      return conn.reply(m.chat, `❌ No se encontró información del jugador con UID: *${uid}*`, m);
+      return conn.reply(m.chat, `❌ لم يتم العثور على معلومات del jugador con UID: *${uid}*`, m);
     }
 
     let result = json.result;
@@ -26,8 +26,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     let txt = `
 ╭━━━〔 *STALK FREE FIRE* 〕━━⬣
 │🌟 *UID:* ${player.uid}
-│👤 *Nombre:* ${player.name || "Desconocido"}
-│⚡ *Nivel:* ${player.level} (Exp: ${player.exp})
+│👤 *الاسم:* ${player.name || "Desconocido"}
+│⚡ *المستوى:* ${player.level} (Exp: ${player.exp})
 │🌍 *Región:* ${player.region}
 │🎭 *Avatar ID:* ${player.avatar_id}
 │🖼 *Banner ID:* ${player.banner_id}
@@ -48,7 +48,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       contextInfo: {
         externalAdReply: {
           title: `Free Fire Stalk`,
-          body: `UID: ${player.uid} • Nivel ${player.level}`,
+          body: `UID: ${player.uid} • المستوى ${player.level}`,
           thumbnailUrl: player.banner_image,
           sourceUrl: `https://ff.garena.com/`
         }
@@ -57,7 +57,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e);
-    conn.reply(m.chat, `❌ Error al obtener datos.`, m);
+    conn.reply(m.chat, `❌ خطأ في جلب datos.`, m);
   }
 };
 

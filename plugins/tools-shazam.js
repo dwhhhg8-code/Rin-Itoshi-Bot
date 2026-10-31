@@ -1,5 +1,5 @@
 /*// - codigo creado x ShadowCore 🎋
-// - https://github.com/Yuji-XDev
+// - https://github.com/dwhhhg8-code
 // - https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U
 // - no quitar creditos xD
 import acrcloud from 'acrcloud'
@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!/video|audio/.test(mime)) {
       return conn.reply(
         m.chat,
-        `✔️ *Usa el comando así:*\n\n 🌤️ Etiqueta un audio o video corto con: *${usedPrefix + command}* para intentar reconocer la canción.`,
+        `✔️ *Usa el comando así:*\n\n 🌤️ Etiqueta un audio o video corto con: *${usedPrefix + command}* para intentar reconocer الأغنية.`,
         m
       )
     }
@@ -30,15 +30,15 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }, { quoted: m })
 
     const buffer = await q.download()
-    if (!buffer) throw 'No se pudo descargar el archivo. Intenta nuevamente.'
+    if (!buffer) throw 'تعذّر تنزيل الملف. حاول مرة أخرى.'
 
     const result = await acr.identify(buffer)
     const { status, metadata } = result
 
-    if (status.code !== 0) throw status.msg || 'No se pudo identificar la canción.'
+    if (status.code !== 0) throw status.msg || 'تعذّر التعرّف على الأغنية.'
 
     const music = metadata.music?.[0]
-    if (!music) throw 'No se encontró información de la canción.'
+    if (!music) throw 'لم يتم العثور على معلومات الأغنية.'
 
     const title = music.title || 'Desconocido'
     const artist = music.artists?.map(v => v.name).join(', ') || 'Desconocido'
@@ -62,7 +62,7 @@ ${video ? `┃ 🔎 *Encontrado en YouTube:*
 ┃ ⏱ 𝐃𝐮𝐫𝐚𝐜𝐢𝐨𝐧: ${video.timestamp}
 ┃ 👁 𝐕𝐢𝐬𝐭𝐚𝐬: ${video.views.toLocaleString()}
 ┃ 📺 𝐂𝐚𝐧𝐚𝐥: ${video.author.name}
-┃ 🔗 𝐋𝐢𝐧𝐤: ${video.url}` : 'No se encontró en YouTube'}
+┃ 🔗 𝐋𝐢𝐧𝐤: ${video.url}` : 'لم يتم العثور على en YouTube'}
 ╰━━━━━━━━━━━━━━⬣
 `.trim()
 
@@ -86,7 +86,7 @@ ${video ? `┃ 🔎 *Encontrado en YouTube:*
 
   } catch (e) {
     console.error(e)
-    conn.reply(m.chat, `> Error al identificar la música:\n${e}`, m)
+    conn.reply(m.chat, `> خطأ في التعرّف على الموسيقى:\n${e}`, m)
   }
 }
 
@@ -99,7 +99,7 @@ export default handler
 */
 
 // - codigo creado x ShadowCore 🎋
-// - https://github.com/Yuji-XDev
+// - https://github.com/dwhhhg8-code
 // - https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U
 // - no quitar creditos xD
 import acrcloud from 'acrcloud'
@@ -123,7 +123,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (!/audio|video/.test(mime) && !/audioMessage|videoMessage/.test(mtype)) {
       return conn.reply(
         m.chat,
-        `✔️ *Usa el comando así:*\n\nEtiqueta un audio o video corto con: *${usedPrefix + command}* para intentar reconocer la canción.`,
+        `✔️ *Usa el comando así:*\n\nEtiqueta un audio o video corto con: *${usedPrefix + command}* para intentar reconocer الأغنية.`,
         m
       )
     }
@@ -131,15 +131,15 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     await m.react('🕓')
 
     const buffer = await q.download?.()
-    if (!buffer) throw '❌ No se pudo descargar el archivo. Intenta nuevamente.'
+    if (!buffer) throw '❌ تعذّر descargar الملف. حاول مرة أخرى.'
 
     const result = await acr.identify(buffer)
     const { status, metadata } = result
 
-    if (status.code !== 0) throw status.msg || 'No se pudo identificar la canción.'
+    if (status.code !== 0) throw status.msg || 'تعذّر identificar الأغنية.'
 
     const music = metadata.music?.[0]
-    if (!music) throw 'No se encontró información de la canción.'
+    if (!music) throw 'لم يتم العثور على معلومات الأغنية.'
 
     const title = music.title || 'Desconocido'
     const artist = music.artists?.map(v => v.name).join(', ') || 'Desconocido'
@@ -188,7 +188,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                   {
                     name: "cta_copy",
                     buttonParamsJson: JSON.stringify({
-                      display_text: "🎵 Descargar Audio",
+                      display_text: "🎵 تنزيلr الصوت",
                       id: "ytmp3",
                       copy_code: `.ytmp3 ${video.url}`
                     })
@@ -196,7 +196,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                   {
                     name: "cta_copy",
                     buttonParamsJson: JSON.stringify({
-                      display_text: "📹 Descargar Video",
+                      display_text: "📹 تنزيلr Video",
                       id: "ytmp4",
                       copy_code: `.ytmp4 ${video.url}`
                     })
@@ -225,7 +225,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e)
-    conn.reply(m.chat, `> ❌ Error al identificar la música:\n${e}`, m)
+    conn.reply(m.chat, `> ❌ خطأ في identificar الموسيقى:\n${e}`, m)
   }
 }
 

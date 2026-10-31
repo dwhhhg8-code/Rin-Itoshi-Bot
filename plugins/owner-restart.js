@@ -2,7 +2,7 @@ let handler = async (m, { conn, usedPrefix, command, isROwner }) => {
 if (!isROwner) return
 try {
 await m.react('🕒')
-m.reply(`❀ Reiniciando a ${botname} જ⁀➴\n> ► Espera hasta que el *Socket* se reinicie.`)
+m.reply(`❀ Reiniciando a ${botname} જ⁀➴\n> ► انتظر hasta que el *Socket* se reinicie.`)
 await m.react('✔️')
 setTimeout(() => {
 if (process.send) {

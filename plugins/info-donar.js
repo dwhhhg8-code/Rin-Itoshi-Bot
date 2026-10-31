@@ -4,20 +4,20 @@ let handler = async (m, { conn }) => {
   try {
     const user = global.db.data.users[m.sender] || {}
     let media = 'https://files.catbox.moe/ur3ocy.jpg'
-    let titulo = `🎁 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 - 𝐀𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐢𝐚`
-    let descripcion = `Apoya al proyecto y contribuye para mantener activo el bot 💖`
+    let titulo = `🎁 𝙁𝙇𝘼𝙎𝙃 𝘽𝙊𝙏 - 𝐀𝐬𝐢𝐬𝐭𝐞𝐧𝐜𝐢𝐚`
+    let descripcion = `ادعم المشروع وساهم في إبقاء البوت نشطاً 💖`
     let link = 'https://paypal.me/shadowCore877'
-    let git = 'https://github.com/Shadow-nex/Rin-Itoshi-Bot'
+    let git = 'https://github.com/dwhhhg8-code/flash-bot'
     
     let texto = `
-╭━━━〔 🌸 𝐃𝐨𝐧𝐚𝐜𝐢𝐨𝐧 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 🌸 〕
+╭━━━〔 🌸 𝐃𝐨𝐧𝐚𝐜𝐢𝐨𝐧 𝙁𝙇𝘼𝙎𝙃 𝘽𝙊𝙏 🌸 〕
 ┃ 💎 *${user.name || 'Usuario'}*, gracias por usar el bot.
 ┃ 🩷 Tu apoyo mantiene vivo este proyecto.
 ┃ 🌐 Puedes donar desde PayPal:
 ┃ 💰 ${link}
 ╰━━━━━━━━━━━━━━━━━━⬣
 
-> Recuerda dejar tu ⭐  en repositorio oficial de Rin Itoshi Bot 🙂
+> Recuerda dejar tu ⭐  en repositorio oficial de FLASH BOT 🙂
 > ${git}
 `
 
@@ -40,7 +40,7 @@ let handler = async (m, { conn }) => {
     
   } catch (e) {
     console.error(e)
-    m.reply('Hubo un error al enviar el mensaje de donación.')
+    m.reply('حدث خطأ al enviar el الرسالة de donación.')
   }
 }
 

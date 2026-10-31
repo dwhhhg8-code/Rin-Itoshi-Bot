@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
-    return conn.reply(m.chat, `🍬 Por favor, ingrese un nombre de canal o usuario para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* mahimking11`, m, rcanal);
+    return conn.reply(m.chat, `🍬 من فضلك أدخل un nombre de canal o usuario para buscar.\n\nEjemplo:\n> *${usedPrefix + command}* mahimking11`, m, rcanal);
   }
 
   await m.react('🕓');
@@ -12,15 +12,15 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!json.status || !json.data) {
       await m.react('✖️');
-      return await conn.reply(m.chat, '❌ No se encontraron resultados para este canal.', m);
+      return await conn.reply(m.chat, '❌ لا توجد نتائج para este canal.', m);
     }
 
     const user = json.data;
     let txt = `📌 *DETALLES DEL CANAL*\n\n`;
-    txt += `👤 *Usuario:* ${user.username}\n`;
+    txt += `👤 *المستخدم:* ${user.username}\n`;
     txt += `🔖 *Suscriptores:* ${user.subscriber_count}\n`;
-    txt += `📅 *Total de videos:* ${user.video_count}\n`;
-    txt += `📜 *Descripción:* ${user.description || 'Sin descripción'}\n`;
+    txt += `📅 *الإجمالي de videos:* ${user.video_count}\n`;
+    txt += `📜 *الوصف:* ${user.description || 'لا يوجد وصف'}\n`;
     txt += `🔗 *Canal:* ${user.channel}\n\n`;
 
     txt += `🎬 *Últimos videos:*\n\n`;
@@ -38,7 +38,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (error) {
     console.error(error);
     await m.react('✖️');
-    await conn.reply(m.chat, '⚠️ Hubo un error al procesar la solicitud. Intenta de nuevo más tarde.', m);
+    await conn.reply(m.chat, '⚠️ حدث خطأ أثناء المعالجة. حاول مرة أخرى لاحقاً.', m);
   }
 };
 

@@ -1,6 +1,6 @@
 import Presence from '@whiskeysockets/baileys';
 const handler = async (m, {conn, args, text}) => {
-  if (!text) throw `${emoji} Por favor, ingresé el nuevo nombre qué desea ponerle al grupo.`;
+  if (!text) throw `${emoji} من فضلك، ingresé el nuevo nombre qué desea ponerle al grupo.`;
   try {
     const text = args.join` `;
     if (!args || !args[0]) {
@@ -8,7 +8,7 @@ const handler = async (m, {conn, args, text}) => {
       conn.groupUpdateSubject(m.chat, text);
     }
   } catch (e) {
-    throw `${msm} Ocurrió un error.`;
+    throw `${msm} حدث خطأ.`;
   }
 };
 handler.help = ['gruponame <text>'];

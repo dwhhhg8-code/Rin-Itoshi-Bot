@@ -24,12 +24,12 @@ let handler = async (m, { conn, command }) => {
     if (!who)
       return conn.reply(
         m.chat,
-        "*✿ Por favor menciona un sub-bot para establecerlo como primario.*",
+        "*✿ من فضلك menciona un sub-bot para establecerlo como primario.*",
         m
       )
 
     if (!activeBots.includes(who))
-      return conn.reply(m.chat, "✿ El usuario mencionado no es un sub-bot activo.", m)
+      return conn.reply(m.chat, "✿ المستخدم mencionado no es un sub-bot activo.", m)
 
     if (chat.primaryBot === who)
       return conn.reply(
@@ -43,12 +43,12 @@ let handler = async (m, { conn, command }) => {
       chat.primaryBot = who
       conn.reply(
         m.chat,
-        `✿ Se ha establecido a @${who.split`@`[0]} como bot primario del grupo.`,
+        `✿ Se ha establecido a @${who.split`@`[0]} como bot primario dالمجموعة.`,
         m,
         { mentions: [who] }
       )
     } catch (e) {
-      conn.reply(m.chat, "Error al establecer el bot primario.", m)
+      conn.reply(m.chat, "خطأ في establecer el bot primario.", m)
       console.error(e)
     }
   }
@@ -71,7 +71,7 @@ let handler = async (m, { conn, command }) => {
         { mentions: [prev] }
       )
     } catch (e) {
-      conn.reply(m.chat, "❌ Error al eliminar el bot primario.", m)
+      conn.reply(m.chat, "❌ خطأ في eliminar el bot primario.", m)
       console.error(e)
     }
   }

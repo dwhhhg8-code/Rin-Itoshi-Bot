@@ -21,7 +21,7 @@ let handler = async (message, { conn, text }) => {
             if (index >= 5) break;
             cards.push({
                 body: proto.Message.InteractiveMessage.Body.fromObject({
-                    text: `Imagen ${index + 1}: ${response.data.data[index].title}`
+                    text: `الصورة ${index + 1}: ${response.data.data[index].title}`
                 }),
                 footer: proto.Message.InteractiveMessage.Footer.fromObject({
                     text: '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ȷ᥆sᥱ ᥊rᥣ'
@@ -67,7 +67,7 @@ let handler = async (message, { conn, text }) => {
         await conn.relayMessage(message.chat, carouselMessage.message, { messageId: carouselMessage.key.id });
     } catch (error) {
         console.error(error);
-        conn.reply(message.chat, `Error al buscar imágenes de coches.`, message);
+        conn.reply(message.chat, `خطأ في buscar imágenes de coches.`, message);
     }
 };
 

@@ -45,7 +45,7 @@ export async function before(m, { conn }) {
     if (chat?.isBanned) {
       const avisoDesactivado = `╭─⭑༺ 🔒 𝐁𝐎𝐓 𝐃𝐄𝐒𝐀𝐂𝐓𝐈𝐕𝐀𝐃𝐎 ༻⭑─╮
 │ ✖️  *${bot}* está en *modo inactivo*.  
-│ 💬  Los comandos están *bloqueados*.  
+│ 💬  الأوامر están *bloqueados*.  
 │ 👑  Solo un *administrador* puede  
 │      volver a *activarlo*.  
 │  
@@ -83,8 +83,8 @@ export async function before(m, { conn }) {
 
   //await m.react('💔');
   const mensajesNoEncontrado = [
-    `> ⌗ El comando *"${command}"* no se reconoce.
-> ⌗ Menú disponible: *${usedPrefix}menu*`,
+    `> ⌗ الأمر *"${command}"* no se reconoce.
+> ⌗ Menú متاح: *${usedPrefix}menu*`,
 
     `✧ *"${command}"* no forma parte del sistema.
  ✧ Consulta: *${usedPrefix}menu*`,
@@ -92,14 +92,14 @@ export async function before(m, { conn }) {
     `❐ *"${command}"* no está registrado.
 ❐ Usa *${usedPrefix}menu* para ver opciones.`,
 
-    `🍧 El comando *"${command}"* no existe.
+    `🍧 الأمر *"${command}"* no existe.
 🌤️ Consulta el menú: *${usedPrefix}menu*`,
 
-    `🍏 *"${command}"* no está disponible.
+    `🍏 *"${command}"* no está متاح.
 🌿 Menú: *${usedPrefix}menu*`,
 
-    `🎊 Comando: *"${command}"* inválido.
-🎋 Usa: *${usedPrefix}menu* para ver todos los comandos disponibles.`
+    `🎊 الأمر: *"${command}"* غير صالح.
+🎋 Usa: *${usedPrefix}menu* para ver todos los comandos متاحة.`
   ];
 
   const texto = mensajesNoEncontrado[Math.floor(Math.random() * mensajesNoEncontrado.length)];
@@ -117,7 +117,7 @@ export async function before(m, { conn }) {
         newsletterName: channelRD.name
       },
       externalAdReply: {
-        title: ' 🎃 𝙍𝙞𝙣 𝙄𝙩𝙤𝙨𝙝𝙞 𝘽𝙤𝙩 𝙐𝙡𝙩𝙧𝙖 🍧',
+        title: ' 🎃 𝙁𝙇𝘼𝙎𝙃 𝘽𝙊𝙏 𝙐𝙡𝙩𝙧𝙖 🍧',
         body: '',
         thumbnailUrl: thumb,
         sourceUrl: '',

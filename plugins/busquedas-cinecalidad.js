@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, '✨ Ingresa el texto de lo que quieres buscar en Cinecalidad.\n\nEjemplo:\n' + `> *${usedPrefix + command}* navidad`, m, rcanal);
+  if (!text) return conn.reply(m.chat, '✨ أدخل النص de lo que quieres buscar en Cinecalidad.\n\nEjemplo:\n' + `> *${usedPrefix + command}* navidad`, m, rcanal);
   await m.react('🕓');
 
   try {
@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     let json = await res.json();
 
     if (!json.data || json.data.length === 0) {
-      return conn.reply(m.chat, 'No se encontraron resultados para tu búsqueda.', m);
+      return conn.reply(m.chat, 'لا توجد نتائج لبحثك.', m);
     }
 
     let txt = '`乂  C I N E C A L I D A D  -  B Ú S Q U E`';

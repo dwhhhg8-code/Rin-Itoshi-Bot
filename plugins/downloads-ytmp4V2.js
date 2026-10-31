@@ -5,14 +5,14 @@ import yts from "yt-search";
 
 let handler = async (m, { conn, text, args }) => {
   try {
-    if (!text) return conn.reply(m.chat, `🌷 *Por favor, ingresa la URL del vídeo de YouTube.*`, m);
+    if (!text) return conn.reply(m.chat, `🌷 *من فضلك أدخل la URL del vídeo de YouTube.*`, m);
 
     await conn.sendMessage(m.chat, {
-      text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🫛 *¡Descargando tu video!*`
+      text: `૮₍｡˃ ᵕ ˂ ｡₎ა 🫛 *¡جارٍ التنزيل tu video!*`
     }, { quoted: m });
 
     if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)/.test(args[0])) {
-      return conn.reply(m.chat, `*Enlace inválido.* Por favor, ingresa una URL válida de YouTube.`, m);
+      return conn.reply(m.chat, `*Enlace غير صالح.* من فضلك أدخل رابط يوتيوب صالح.`, m);
     }
 
     await conn.sendMessage(m.chat, { react: { text: '⌛', key: m.key } });
@@ -74,7 +74,7 @@ let handler = async (m, { conn, text, args }) => {
         contextInfo: {
           externalAdReply: {
             title: meta.title,
-            body: '✅ Descarga completa',
+            body: '✅ تنزيل completa',
             mediaUrl: args[0],
             sourceUrl: args[0],
             thumbnailUrl: meta.image,
@@ -89,7 +89,7 @@ let handler = async (m, { conn, text, args }) => {
 
   } catch (e) {
     console.error(e);
-    m.reply(`❌ *Ocurrió un error:*\n> ${e.message}`);
+    m.reply(`❌ *حدث خطأ:*\n> ${e.message}`);
   }
 };
 
@@ -151,7 +151,7 @@ async function getSize(url) {
     const length = res.headers['content-length'];
     return length ? parseInt(length, 10) : null;
   } catch (err) {
-    console.error('😢 Error al obtener tamaño del archivo:', err.message);
+    console.error('😢 خطأ في جلب tamaño dالملف:', err.message);
     return null;
   }
 }

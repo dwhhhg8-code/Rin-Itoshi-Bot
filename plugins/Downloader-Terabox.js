@@ -5,11 +5,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 await m.react('🕓')
   try {
     const result = await terabox(text);
-    if (!result.length) return m.reply('ingresa un url válido.');
+    if (!result.length) return m.reply('ingresa un url صالح.');
 
     for (let i = 0; i < result.length; i++) {
       const { fileName, type, thumb, url } = result[i];
-      const caption = `📄 *Nombre File:* ${fileName}\n📂 *Formato:* ${type}`;
+      const caption = `📄 *الاسم File:* ${fileName}\n📂 *Formato:* ${type}`;
 
       await m.react('✅')      
       await conn.sendFile(m.chat, url, fileName, caption, m, false, {
@@ -18,7 +18,7 @@ await m.react('🕓')
     }
   } catch (err) {
     console.error(err);
-    m.reply('error al descargar el archivo.');
+    m.reply('error al descargar الملف.');
   }
 };
 handler.help = ["terabox *<url>*"];

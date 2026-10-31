@@ -2,7 +2,7 @@ const { generateWAMessageFromContent, proto } = (await import('@whiskeysockets/b
 
 var handler = async (m, { conn, text}) => {
 
-conn.reply(m.chat, `${emoji2} Buscando una frase, espere un momento...`, m)
+conn.reply(m.chat, `${emoji2} جارٍ البحث una frase, espere un momento...`, m)
 
 conn.reply(m.chat, `*┏━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┓*\n\n❥ *"${pickRandom(global.frases)}"*\n\n*┗━_͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡⚘-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡_͜͡━┛*`, m)
 
@@ -29,10 +29,10 @@ global.frases = [
     "Lo que haces hoy puede mejorar todos tus mañanas (Ralph Marston)",
     "Cáete siete veces y levántate ocho (Proverbio japonés)",
     "Nada sucede hasta que algo se mueve (Albert Einstein)",
-    "La felicidad está escondida en la sala de espera de la felicidad (Eduard Punset)",
+    "La felicidad está escondida en la sala de انتظر de la felicidad (Eduard Punset)",
     "El verdadero buscador crece y aprende, y descubre que siempre es el principal responsable de lo que sucede (Jorge Bucay)",
-    "La vida comienza al final de la zona de confort (Neale Donald Walsch)",
-    "La confianza en sí mismo es el primer secreto del éxito (Ralph Waldo Emerson)",
+    "الحياة تبدأ عند نهاية منطقة الراحة (Neale Donald Walsch)",
+    "الثقة بالنفس أول أسرار النجاح (Ralph Waldo Emerson)",
     "No hay camino para la paz, la paz es el camino. (Mahatma Gandhi)",
     "La vida es lo que pasa mientras estás ocupado haciendo otros planes. (John Lennon)",
     "La vida es un 10% lo que me ocurre y un 90% cómo reacciono a ello. (Charles R. Swindoll)",
@@ -51,7 +51,7 @@ global.frases = [
     "La vida es una comedia escrita por un dramaturgo que es un poco sordo.",
     "Hazlo o no lo hagas, pero no lo intentes.",
     "La felicidad no es un destino, es una forma de viajar. (Margaret Lee Runbeck)",
-    "El tiempo vuela, pero yo soy el piloto.",
+    "الوقت vuela, pero yo soy el piloto.",
     "No soy vago, estoy en modo de ahorro de energía.",
     "La vida es como montar en bicicleta. Para mantener el equilibrio, debes seguir adelante. (Albert Einstein)",
     "Nunca discutas con un tonto, te arrastrará a su nivel y te ganará por experiencia.",

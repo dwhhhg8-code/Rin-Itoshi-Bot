@@ -1,5 +1,5 @@
 const handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, `❀ Por favor, mensiona a un Usuario para comprobar su test.`, m);
+  if (!text) return conn.reply(m.chat, `❀ من فضلك، mensiona a un المستخدم para comprobar su test.`, m);
   const percentages = (500).getRandom();
   let emoji = '';
   let description = '';
@@ -79,12 +79,12 @@ const handler = async (m, { conn, command, text, usedPrefix }) => {
       }
       break;
       default:
-      m.reply(`🍭 Comando inválido.`);
+      m.reply(`🍭 الأمر غير صالح.`);
   }
   const responses = [
     "El universo ha hablado.",
-    "Los científicos lo confirman.",
-    "¡Sorpresa!"
+    "العلماء يؤكدون ذلك.",
+    "¡مفاجأة!"
   ];
   const response = responses[Math.floor(Math.random() * responses.length)];
   const cal = `💫 *CALCULADORA*
@@ -100,7 +100,7 @@ var hawemod = [
 "《 ██████████▒▒》80%",
 "《 ████████████》100%"
 ]
-   let { key } = await conn.sendMessage(m.chat, {text: `🤍 ¡Calculando Porcentaje!`, mentions: conn.parseMention(cal)}, {quoted: fkontak})
+   let { key } = await conn.sendMessage(m.chat, {text: `🤍 ¡حساب النسبة المئوية!`, mentions: conn.parseMention(cal)}, {quoted: fkontak})
  for (let i = 0; i < hawemod.length; i++) {
    await new Promise(resolve => setTimeout(resolve, 1000)); 
    await conn.sendMessage(m.chat, {text: hawemod[i], edit: key, mentions: conn.parseMention(cal)}, {quoted: fkontak}); 

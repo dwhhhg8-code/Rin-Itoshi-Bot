@@ -15,7 +15,7 @@ let img = 'https://raw.githubusercontent.com/The-King-Destroy/Adiciones/main/Con
 let time = user.lastmiming + 600000;
 
 if (new Date() - user.lastmiming < 600000) {
-return conn.reply(m.chat, `${emoji3} Debes esperar ${msToTime(time - new Date())} para volver a minar.`, m);
+return conn.reply(m.chat, `${emoji3} Debes انتظرr ${msToTime(time - new Date())} para volver a minar.`, m);
 }
 
 let hasil = Math.floor(Math.random() * 1000);

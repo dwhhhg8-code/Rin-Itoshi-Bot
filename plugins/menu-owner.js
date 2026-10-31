@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 
     let nombreUser = m.pushName || 'مستخدم'
     let pais = '🇵🇪 Perú'
-    let botName = global.bot || 'Rin Itoshi'
+    let botName = global.bot || 'FLASH BOT'
     let club = '🌲 Owner Panel • Shadow•Core 🌲'
 
     let menu = `
@@ -33,9 +33,9 @@ let handler = async (m, { conn, usedPrefix }) => {
 𖤓❴ *#ϐαϲκυρ • #ϲορια*
 > ✦ Crea un respaldo de seguridad de la DB del bot.
 
-📢  Mensajes globales:
+📢  الرسالةs globales:
 𖤓❴ *#ϐϲgϲ*
-> ✦ Envía un mensaje a todos los grupos donde está el bot.
+> ✦ أرسل un الرسالة a todos los grupos donde está el bot.
 
 🧹  Limpieza y mantenimiento:
 𖤓❴ *#ϲℓєαиƒιℓєѕ*
@@ -55,11 +55,11 @@ let handler = async (m, { conn, usedPrefix }) => {
 
 ⚙️  Administración automática y seguridad:
 𖤓❴ *#αυτοα∂мιи*
-> ✦ El bot dará admin automáticamente si corresponde.
+> ✦ البوت dará admin automáticamente si corresponde.
 𖤓❴ *#ϐℓοϲκ • #υнϐℓοϲк*
 > ✦ Bloquea o desbloquea un número del bot.
 𖤓❴ *#ℓιѕτϐαн • #ϐαнℓιѕτ*
-> ✦ Lista de usuarios y chats baneados.
+> ✦ قائمة المستخدمون y chats baneados.
 
 🖼️  Configuración visual:
 𖤓❴ *#ѕєτιмαgє • #ѕєτρƒρ*
@@ -77,7 +77,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 𖤓❴ *#яєιиιϲιαя • #яєѕταяτ*
 > ✦ Reinicia el servidor del bot.
 𖤓❴ *#яєυнιοн • #мєєτιиg*
-> ✦ Envía aviso de reunión a los owners.
+> ✦ أرسل aviso de reunión a los owners.
 `.trim()
 
     await conn.sendMessage(m.chat, {
@@ -85,8 +85,8 @@ let handler = async (m, { conn, usedPrefix }) => {
       caption: menu,
       footer: club,
       buttons: [
-        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 Menú Principal" }, type: 1 },
-        { buttonId: `${usedPrefix}rpg`, buttonText: { displayText: "🎮 Menú RPG" }, type: 1 }
+        { buttonId: `${usedPrefix}menu`, buttonText: { displayText: "📜 القائمة الرئيسية" }, type: 1 },
+        { buttonId: `${usedPrefix}rpg`, buttonText: { displayText: "🎮 قائمة RPG" }, type: 1 }
       ],
       headerType: 4
     }, { quoted: m })

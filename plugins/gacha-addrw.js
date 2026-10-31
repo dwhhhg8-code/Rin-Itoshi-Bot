@@ -8,13 +8,13 @@ const handler = async (m, { text, usedPrefix, command, conn }) => {
     const args = text.split(',').map(arg => arg.trim())
 
     if (args.length < 7) {
-        return m.reply(`❀ Por favor ingresé la info del personaje.\n✧ Ejemplo: ${usedPrefix}${command} <Nombre del personaje>, <Género>, <Valor>, <Origen>, <Enlace de imagen 1>, <Enlace de imagen 2>, <Enlace de imagen 3>\n\n> Nota: los links deben estar en catbox.moe o en qu.ax si se usa qu.ax se debe configurar como permanente.`)
+        return m.reply(`❀ من فضلك ingresé la info del personaje.\n✧ Ejemplo: ${usedPrefix}${command} <الاسم del personaje>, <Género>, <Valor>, <Origen>, <Enlace de imagen 1>, <Enlace de imagen 2>, <Enlace de imagen 3>\n\n> Nota: los links deben estar en catbox.moe o en qu.ax si se usa qu.ax se debe configurar como permanente.`)
     }
 
     const [name, gender, value, source, img1, img2, img3] = args
 
     if (!img1.startsWith('http') || !img2.startsWith('http') || !img3.startsWith('http')) {
-        return m.reply('✧ Por favor, proporciona enlaces válidos para las imágenes.')
+        return m.reply('✧ من فضلك، proporciona enlaces صالحs para الصور.')
     }
 
     const characterData = {

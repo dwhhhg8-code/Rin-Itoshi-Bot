@@ -24,7 +24,7 @@ let txtBotAdminCh = '\n\n> *Verifique que el Bot sea admin en el canal, de lo co
 
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 async function reportError(e) {
-await m.reply(`${msm} Ocurrió un error.`)
+await m.reply(`${msm} حدث خطأ.`)
 console.log(e)
 }
 let thumb = icons
@@ -33,35 +33,35 @@ let pp, ch, q, mime, buffer, media, inviteUrlch, imageBuffer
 switch (true) {     
 case isCommand1:
 let inviteCode
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el enlace de grupo/comunidad o canal.`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل الرابط de grupo/comunidad o canal.`, m)
 const MetadataGroupInfo = async (res, isInviteInfo = false) => {
 let nameCommunity = "no pertenece a ninguna Comunidad"
-let groupPicture = "No se pudo obtener"
+let groupPicture = "تعذّر obtener"
 
 if (res.linkedParent) {
 let linkedGroupMeta = await conn.groupMetadata(res.linkedParent).catch(e => { return null })
-nameCommunity = linkedGroupMeta ? "\n" + ("`Nombre:` " + linkedGroupMeta.subject || "") : nameCommunity
+nameCommunity = linkedGroupMeta ? "\n" + ("`الاسم:` " + linkedGroupMeta.subject || "") : nameCommunity
 }
 pp = await conn.profilePictureUrl(res.id, 'image').catch(e => { return null })
 inviteCode = await conn.groupInviteCode(m.chat).catch(e => { return null })
 const formatParticipants = (participants) =>
 participants && participants.length > 0
 ? participants.map((user, i) => `${i + 1}. @${user.id?.split("@")[0]}${user.admin === "superadmin" ? " (superadmin)" : user.admin === "admin" ? " (admin)" : ""}`).join("\n")
-: "No encontrado"
-let caption = `🆔 *Identificador del grupo:*\n${res.id || "No encontrado"}\n\n` +
-`👑 *Creado por:*\n${res.owner ? `@${res.owner?.split("@")[0]}` : "No encontrado"} ${res.creation ? `el ${formatDate(res.creation)}` : "(Fecha no encontrada)"}\n\n` +
-`🏷️ *Nombre:*\n${res.subject || "No encontrado"}\n\n` +
-`✏️ *Nombre cambiado por:*\n${res.subjectOwner ? `@${res.subjectOwner?.split("@")[0]}` : "No encontrado"} ${res.subjectTime ? `el ${formatDate(res.subjectTime)}` : "(Fecha no encontrada)"}\n\n` +
-`📄 *Descripción:*\n${res.desc || "No encontrado"}\n\n` +
-`📝 *Descripción cambiado por:*\n${res.descOwner ? `@${res.descOwner?.split("@")[0]}` : "No encontrado"}\n\n` +
-`🗃️ *Id de la descripción:*\n${res.descId || "No encontrado"}\n\n` +
-`🖼️ *Imagen del grupo:*\n${pp ? pp : groupPicture}\n\n` +
-`💫 *Autor:*\n${res.author || "No encontrado"}\n\n` +
-`🎫 *Código de invitación:*\n${res.inviteCode || inviteCode || "No disponible"}\n\n` +
+: "غير موجود"
+let caption = `🆔 *Identificador dالمجموعة:*\n${res.id || "غير موجود"}\n\n` +
+`👑 *Creado por:*\n${res.owner ? `@${res.owner?.split("@")[0]}` : "غير موجود"} ${res.creation ? `el ${formatDate(res.creation)}` : "(التاريخ غير موجودة)"}\n\n` +
+`🏷️ *الاسم:*\n${res.subject || "غير موجود"}\n\n` +
+`✏️ *الاسم cambiado por:*\n${res.subjectOwner ? `@${res.subjectOwner?.split("@")[0]}` : "غير موجود"} ${res.subjectTime ? `el ${formatDate(res.subjectTime)}` : "(التاريخ غير موجودة)"}\n\n` +
+`📄 *الوصف:*\n${res.desc || "غير موجود"}\n\n` +
+`📝 *الوصف cambiado por:*\n${res.descOwner ? `@${res.descOwner?.split("@")[0]}` : "غير موجود"}\n\n` +
+`🗃️ *Id de la descripción:*\n${res.descId || "غير موجود"}\n\n` +
+`🖼️ *الصورة dالمجموعة:*\n${pp ? pp : groupPicture}\n\n` +
+`💫 *Autor:*\n${res.author || "غير موجود"}\n\n` +
+`🎫 *Código de invitación:*\n${res.inviteCode || inviteCode || "غير متاح"}\n\n` +
 `⌛ *Duración:*\n${res.ephemeralDuration !== undefined ? `${res.ephemeralDuration} segundos` : "Desconocido"}\n\n` +
-`🛃 *Admins:*\n` + (res.participants && res.participants.length > 0 ? res.participants.filter(user => user.admin === "admin" || user.admin === "superadmin").map((user, i) => `${i + 1}. @${user.id?.split("@")[0]}${user.admin === "superadmin" ? " (superadmin)" : " (admin)"}`).join("\n") : "No encontrado") + `\n\n` +
-`🔰 *Usuarios en total:*\n${res.size || "Cantidad no encontrada"}\n\n` +
-`✨ *Información avanzada* ✨\n\n🔎 *Comunidad vinculada al grupo:*\n${res.isCommunity ? "Este grupo es un chat de avisos" : `${res.linkedParent ? "`Id:` " + res.linkedParent : "Este grupo"} ${nameCommunity}`}\n\n` +
+`🛃 *Admins:*\n` + (res.participants && res.participants.length > 0 ? res.participants.filter(user => user.admin === "admin" || user.admin === "superadmin").map((user, i) => `${i + 1}. @${user.id?.split("@")[0]}${user.admin === "superadmin" ? " (superadmin)" : " (admin)"}`).join("\n") : "غير موجود") + `\n\n` +
+`🔰 *المستخدمs en total:*\n${res.size || "Cantidad غير موجودة"}\n\n` +
+`✨ *معلومات avanzada* ✨\n\n🔎 *Comunidad vinculada al grupo:*\n${res.isCommunity ? "هذه المجموعة مخصصة للإشعارات" : `${res.linkedParent ? "`Id:` " + res.linkedParent : "Este grupo"} ${nameCommunity}`}\n\n` +
 `⚠️ *Restricciones:* ${res.restrict ? "✅" : "❌"}\n` +
 `📢 *Anuncios:* ${res.announce ? "✅" : "❌"}\n` +
 `🏘️ *¿Es comunidad?:* ${res.isCommunity ? "✅" : "❌"}\n` +
@@ -74,27 +74,27 @@ return caption.trim()
 const inviteGroupInfo = async (groupData) => {
 const { id, subject, subjectOwner, subjectTime, size, creation, owner, desc, descId, linkedParent, restrict, announce, isCommunity, isCommunityAnnounce, joinApprovalMode, memberAddMode, ephemeralDuration } = groupData
 let nameCommunity = "no pertenece a ninguna Comunidad"
-let groupPicture = "No se pudo obtener"
+let groupPicture = "تعذّر obtener"
 if (linkedParent) {
 let linkedGroupMeta = await conn.groupMetadata(linkedParent).catch(e => { return null })
-nameCommunity = linkedGroupMeta ? "\n" + ("`Nombre:` " + linkedGroupMeta.subject || "") : nameCommunity
+nameCommunity = linkedGroupMeta ? "\n" + ("`الاسم:` " + linkedGroupMeta.subject || "") : nameCommunity
 }
 pp = await conn.profilePictureUrl(id, 'image').catch(e => { return null })
 const formatParticipants = (participants) =>
 participants && participants.length > 0
 ? participants.map((user, i) => `${i + 1}. @${user.id?.split("@")[0]}${user.admin === "superadmin" ? " (superadmin)" : user.admin === "admin" ? " (admin)" : ""}`).join("\n")
-: "No encontrado"
+: "غير موجود"
 
-let caption = `🆔 *Identificador del grupo:*\n${id || "No encontrado"}\n\n` +
-`👑 *Creado por:*\n${owner ? `@${owner?.split("@")[0]}` : "No encontrado"} ${creation ? `el ${formatDate(creation)}` : "(Fecha no encontrada)"}\n\n` +
-`🏷️ *Nombre:*\n${subject || "No encontrado"}\n\n` +
-`✏️ *Nombre cambiado por:*\n${subjectOwner ? `@${subjectOwner?.split("@")[0]}` : "No encontrado"} ${subjectTime ? `el ${formatDate(subjectTime)}` : "(Fecha no encontrada)"}\n\n` +
-`📄 *Descripción:*\n${desc || "No encontrada"}\n\n` +
-`💠 *ID de la descripción:*\n${descId || "No encontrado"}\n\n` +
-`🖼️ *Imagen del grupo:*\n${pp ? pp : groupPicture}\n\n` +
+let caption = `🆔 *Identificador dالمجموعة:*\n${id || "غير موجود"}\n\n` +
+`👑 *Creado por:*\n${owner ? `@${owner?.split("@")[0]}` : "غير موجود"} ${creation ? `el ${formatDate(creation)}` : "(التاريخ غير موجودة)"}\n\n` +
+`🏷️ *الاسم:*\n${subject || "غير موجود"}\n\n` +
+`✏️ *الاسم cambiado por:*\n${subjectOwner ? `@${subjectOwner?.split("@")[0]}` : "غير موجود"} ${subjectTime ? `el ${formatDate(subjectTime)}` : "(التاريخ غير موجودة)"}\n\n` +
+`📄 *الوصف:*\n${desc || "No encontrada"}\n\n` +
+`💠 *ID de la descripción:*\n${descId || "غير موجود"}\n\n` +
+`🖼️ *الصورة dالمجموعة:*\n${pp ? pp : groupPicture}\n\n` +
 `🏆 *Miembros destacados:*\n${formatParticipants(groupData.participants)}\n\n` +
-`👥 *Destacados total:*\n${size || "Cantidad no encontrada"}\n\n` +
-`✨ *Información avanzada* ✨\n\n🔎 *Comunidad vinculada al grupo:*\n${isCommunity ? "Este grupo es un chat de avisos" : `${linkedParent ? "`Id:` " + linkedParent : "Este grupo"} ${nameCommunity}`}\n\n` +
+`👥 *Destacados total:*\n${size || "Cantidad غير موجودة"}\n\n` +
+`✨ *معلومات avanzada* ✨\n\n🔎 *Comunidad vinculada al grupo:*\n${isCommunity ? "هذه المجموعة مخصصة للإشعارات" : `${linkedParent ? "`Id:` " + linkedParent : "Este grupo"} ${nameCommunity}`}\n\n` +
 `📢 *Anuncios:* ${announce ? "✅ Si" : "❌ No"}\n` +
 `🏘️ *¿Es comunidad?:* ${isCommunity ? "✅ Si" : "❌ No"}\n` +
 `📯 *¿Es anuncio de comunidad?:* ${isCommunityAnnounce ? "✅" : "❌"}\n` +
@@ -105,20 +105,20 @@ return caption.trim()
 let info
 try {
 let res = text ? null : await conn.groupMetadata(m.chat)
-info = await MetadataGroupInfo(res) // Si el bot esta en el grupo
-console.log('Método de metadatos')
+info = await MetadataGroupInfo(res) // Si el bot esta en المجموعة
+console.log('طريقة البيانات الوصفية')
 } catch {
 const inviteUrl = text?.match(/(?:https:\/\/)?(?:www\.)?(?:chat\.|wa\.)?whatsapp\.com\/(?:invite\/|joinchat\/)?([0-9A-Za-z]{22,24})/i)?.[1]
-//if (!inviteUrl &&) return await conn.reply(m.chat, "*Verifique que sea un enlace de grupo o comunidad de WhatsApp.*", m)
+//if (!inviteUrl &&) return await conn.reply(m.chat, "*تأكد من أنه رابط مجموعة أو مجتمع واتساب.*", m)
 let inviteInfo
 if (inviteUrl) {
 try {
 inviteInfo = await conn.groupGetInviteInfo(inviteUrl)
 info = await inviteGroupInfo(inviteInfo) // Para cualquier enlace de grupo/comunidad
 console.log(info)
-console.log(`${emoji3} Método de enlace.`)    
+console.log(`${emoji3} طريقة de enlace.`)    
 } catch (e) {
-m.reply(`${emoji2} Grupo no encontrado.`)
+m.reply(`${emoji2} Grupo غير موجود.`)
 return
 }}}
 if (info) {
@@ -136,11 +136,11 @@ renderLargerThumbnail: false
 } else {
 // Manejo de enlaces de canales
 let newsletterInfo
-if (!channelUrl) return await conn.reply(m.chat, `${emoji2} Verifique que sea un enlace de canal de WhatsApp.`, m)
+if (!channelUrl) return await conn.reply(m.chat, `${emoji2} Verifique que sea رابط de canal de WhatsApp.`, m)
 if (channelUrl) {
 try {
 newsletterInfo = await conn.newsletterMetadata("invite", channelUrl).catch(e => { return null })
-if (!newsletterInfo) return await conn.reply(m.chat, `${emoji2} No se encontró información del canal. Verifique que el enlace sea correcto.`, m)       
+if (!newsletterInfo) return await conn.reply(m.chat, `${emoji2} لم يتم العثور على معلومات del canal. Verifique que الرابط sea correcto.`, m)       
 let caption = `*Inspector de enlaces de Canales*\n\n` + processObject(newsletterInfo, "", newsletterInfo?.preview)
 if (newsletterInfo?.preview) {
 pp = getUrlFromDirectPath(newsletterInfo.preview)
@@ -169,7 +169,7 @@ break
 case isCommand2:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp que quiere que el bot siga.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp que quiere que el bot siga.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -178,7 +178,7 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterFollow(ch)
-await conn.reply(m.chat, `${emoji} El bot ya ha empezado a seguir el canal *${chtitle}*.`, m) 
+await conn.reply(m.chat, `${emoji} البوت ya ha empezado a seguir el canal *${chtitle}*.`, m) 
 } catch (e) {
 reportError(e)
 }
@@ -188,7 +188,7 @@ break
 case isCommand3:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp que quiere que el bot deje de seguir.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp que quiere que el bot deje de seguir.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -197,7 +197,7 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUnfollow(ch)
-await conn.reply(m.chat, `${emoji} El bot ha dejado de seguir el canal *${chtitle}*.`, m) 
+await conn.reply(m.chat, `${emoji} البوت ha dejado de seguir el canal *${chtitle}*.`, m) 
 } catch (e) {
 reportError(e)
 }
@@ -207,7 +207,7 @@ break
 case isCommand4:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp que quiere que el bot silencie las actualizaciones.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp que quiere que el bot silencie las actualizaciones.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -216,7 +216,7 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterMute(ch)
-await conn.reply(m.chat, `${botname} ha silenciado las notificaciones para el canal *${chtitle}* con éxito.`, m) 
+await conn.reply(m.chat, `${botname} ha silenciado las notificaciones para el canal *${chtitle}* بنجاح.`, m) 
 } catch (e) {
 reportError(e)
 }
@@ -226,7 +226,7 @@ break
 case isCommand5:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp que quiere que el bot active las actualizaciones.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect* enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp que quiere que el bot active las actualizaciones.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect* enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -235,16 +235,16 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUnmute(ch)
-await conn.reply(m.chat, `${botname} ha dejado de silenciar las notificaciones para el canal *${chtitle}* con éxito.`, m) 
+await conn.reply(m.chat, `${botname} ha dejado de silenciar las notificaciones para el canal *${chtitle}* بنجاح.`, m) 
 } catch (e) {
 reportError(e)
 }
 break
 
-// Modificar la imagen del canal
+// Modificar الصورة del canal
 case isCommand6:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp respondiendo a una imagen jpg/jpeg/png o agregue un enlace de imagen\n
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp respondiendo a una imagen jpg/jpeg/png o agregue رابط de imagen\n
 Respondiendo a una imagen
 *${usedPrefix + command}* 12345@newsletter
 
@@ -263,17 +263,17 @@ media = await q.download()
 return await conn.reply(m.chat, `*Responda a una imagen jpg/png.*`, m)
 }} else { 
 const imageUrlRegex = /(https?:\/\/[^\s]+?\.(?:jpe?g|png))/
-if (!match2 && !text.match(imageUrlRegex)) return await conn.reply(m.chat, `*Agregué el enlace jpg/png después del ID del canal.*`, m)
+if (!match2 && !text.match(imageUrlRegex)) return await conn.reply(m.chat, `*Agregué الرابط jpg/png después del ID del canal.*`, m)
 try {
 const response = await axios.get(match2 ? match2 : text.match(imageUrlRegex), { responseType: 'arraybuffer' })
 imageBuffer = Buffer.from(response.data, 'binary')
 } catch (error) {
-return await conn.reply(m.chat, `${msm} Error al descargar la imagen de la URL proporcionada.`, m)
+return await conn.reply(m.chat, `${msm} خطأ في تنزيل الصورة de la URL proporcionada.`, m)
 }
 media = imageBuffer
 }
 if (text.includes("@newsletter")) {
-if(!match1) return await conn.reply(m.chat, `${emoji2} No se encontró el ID del canal.`, m)
+if(!match1) return await conn.reply(m.chat, `${emoji2} لم يتم العثور على el ID del canal.`, m)
 ch = match1
 } else {
 ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).catch(e => null)
@@ -281,8 +281,8 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdatePicture(ch, media)
-// await conn.reply(m.chat, `${emoji} El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, m) 
-await conn.sendMessage(ch, { text: `${emoji} ${botname} ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+// await conn.reply(m.chat, `${emoji} El bot ha cambiando الصورة del canal *${chtitle}* بنجاح.`, m) 
+await conn.sendMessage(ch, { text: `${emoji} ${botname} ha cambiando الصورة del canal *${chtitle}* بنجاح.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🍬 𝙽𝚞𝚎𝚟𝚊 𝚏𝚘𝚝𝚘 𝚙𝚊𝚛𝚊 𝚙𝚎𝚛𝚏𝚒𝚕 𝚍𝚎𝚕 𝚌𝚊𝚗𝚊𝚕.',
@@ -297,11 +297,11 @@ reportError(e)
 }
 break
 
-// Eliminar la imagen del canal
+// Eliminar الصورة del canal
 case isCommand7:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp que quiere que el bot elimine la imagen del canal.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp que quiere que el bot elimine الصورة del canal.\n\nPuede obtener el ID usando el comando:\n${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -310,8 +310,8 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterRemovePicture(ch)
-// await conn.reply(m.chat, `🍦 El bot ha eliminado la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🍬 ${botname} ha eliminado la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+// await conn.reply(m.chat, `🍦 El bot ha eliminado الصورة del canal *${chtitle}* بنجاح.`, m, rcanal) 
+await conn.sendMessage(ch, { text: `🍬 ${botname} ha eliminado الصورة del canal *${chtitle}* بنجاح.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🍦 𝙵𝚘𝚝𝚘 𝚍𝚎 𝚙𝚎𝚛𝚏𝚕 𝚍𝚎𝚕 𝚌𝚊𝚗𝚊𝚕 𝚎𝚕𝚒𝚖𝚒𝚗𝚊𝚍𝚊.',
@@ -330,7 +330,7 @@ break
 case isCommand8:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp para que el bot reciba notificaciones en tiempo real.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp para que el bot reciba notificaciones en tiempo real.\n\nPuede obtener el ID usando el comando:\n*${usedPrefix}superinspect enlace${txtBotAdminCh}`, m)
 if (text.includes("@newsletter")) {
 ch = text
 } else {
@@ -339,7 +339,7 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.subscribeNewsletterUpdates(ch)
-await conn.reply(m.chat, `${emoji} El bot recibirá notificaciones del canal *${chtitle}*`, m) 
+await conn.reply(m.chat, `${emoji} البوت recibirá notificaciones del canal *${chtitle}*`, m) 
 } catch (e) {
 reportError(e)
 }
@@ -349,15 +349,15 @@ break
 case isCommand9:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
 ch
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp seguido de un espacio y la opción del modo de reacciones para el canal.
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp seguido de un espacio y la opción del modo de reacciones para el canal.
 
 *Modo de reacciones:*
 > Use solo el número de la opción.
 
 *Opciones:*
 \`\`\`[1]\`\`\` Reacción con cualquier emoji.
-\`\`\`[2]\`\`\` Reacción con emojis predeterminados.
-\`\`\`[3]\`\`\` Ninguna reacción.
+\`\`\`[2]\`\`\` Reacción con emojis predeأنهِdos.
+\`\`\`[3]\`\`\` لا يوجد reacción.
 
 *Ejemplo de uso:*
 *${usedPrefix + command}* 12345@newsletter 1
@@ -380,14 +380,14 @@ case 3:
 mode = 'NONE'
 break
 default:
-return await conn.reply(m.chat, `${emoji2} Modo de reacción no válida.\n
+return await conn.reply(m.chat, `${emoji2} Modo de reacción غير صالح.\n
 *Modo de reacciones:*
 > Use solo el número de la opción.
 
 *Opciones:*
 \`\`\`[1]\`\`\` Reacción con cualquier emoji.
-\`\`\`[2]\`\`\` Reacción con emojis predeterminados.
-\`\`\`[3]\`\`\` Ninguna reacción.
+\`\`\`[2]\`\`\` Reacción con emojis predeأنهِdos.
+\`\`\`[3]\`\`\` لا يوجد reacción.
 
 Ejemplo de uso:
 *${usedPrefix + command}* 12345@newsletter 1`, m)
@@ -421,7 +421,7 @@ break
 // Modificar nombre del canal
 case isCommand10:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp para que el bot modifique el nombre del canal.*\n\n
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp para que el bot modifique الاسم del canal.*\n\n
 *Parámetros de uso:
 *${usedPrefix + command}* \`id\` \`nombre\` 
 
@@ -438,8 +438,8 @@ ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).c
 try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdateName(ch, name)
-// await conn.reply(m.chat, `${emoji} El bot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, m) 
-await conn.sendMessage(ch, { text: `${emoji} ${botname} ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
+// await conn.reply(m.chat, `${emoji} El bot ha cambiado الاسم del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, m) 
+await conn.sendMessage(ch, { text: `${emoji} ${botname} ha cambiado الاسم del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐂𝐈𝐎́𝐍 🔔 】",
 body: '🍧 𝚄𝚗 𝚗𝚞𝚎𝚟𝚘 𝚗𝚘𝚖𝚋𝚛𝚎 𝚙𝚊𝚛𝚊 𝚎𝚕 𝚌𝚊𝚗𝚊𝚕.',
@@ -457,12 +457,12 @@ break
 // Modificar la descripción del canal
 case isCommand11:
 if (!isOwner || !isROwner) return await conn.reply(m.chat, `${emoji2} No tienes permiso para usar este comando.`, m)
-if (!text) return await conn.reply(m.chat, `${emoji} Ingrese el ID o enlace de un canal de WhatsApp para que el bot modifique la descripción del canal.\n\n
+if (!text) return await conn.reply(m.chat, `${emoji} أدخل el ID o enlace de un canal de WhatsApp para que el bot modifique la descripción del canal.\n\n
 Parámetros de uso:
 *${usedPrefix + command}* \`id\` \`descripción\` 
 
 Ejemplo de uso:
-*${usedPrefix + command}* 12345@newsletter DescripciónDelcanal\n\n*Puede obtener el ID usando el comando:*\n*${usedPrefix}superinspect* enlace${txtBotAdminCh}`, m)
+*${usedPrefix + command}* 12345@newsletter الوصفDelcanal\n\n*Puede obtener el ID usando el comando:*\n*${usedPrefix}superinspect* enlace${txtBotAdminCh}`, m)
 const [idch, ...descriptionParts] = text.split(' ')
 const description = descriptionParts.join(' ').trim()
 if (text.includes("@newsletter")) {
@@ -505,7 +505,7 @@ n = Math.floor(n / 1000)  // Convertir de milisegundos a segundos
 n = Math.floor(n * 1000)  // Convertir de segundos a milisegundos
 }
 const date = new Date(n)
-if (isNaN(date)) return "Fecha no válida"
+if (isNaN(date)) return "التاريخ غير صالح"
 // Formato de fecha: día/mes/año
 const optionsDate = { day: '2-digit', month: '2-digit', year: 'numeric' }
 const formattedDate = date.toLocaleDateString(locale, optionsDate)
@@ -522,19 +522,19 @@ return `${formattedDate}, ${formattedTime}`
 function formatValue(key, value, preview) {
 switch (key) {
 case "subscribers":
-return value ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "No hay suscriptores"
+return value ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "لا يوجد مشتركون"
 case "creation_time":
 case "nameTime":
 case "descriptionTime":
 return formatDate(value)
 case "description": 
 case "name":
-return value || "No hay información disponible"
+return value || "لا توجد معلومات متاحة"
 case "state":
 switch (value) {
 case "ACTIVE": return "Activo"
-case "GEOSUSPENDED": return "Suspendido por región"
-case "SUSPENDED": return "Suspendido"
+case "GEOSUSPENDED": return "محظور حسب المنطقة"
+case "SUSPENDED": return "محظور"
 default: return "Desconocido"
 }
 case "reaction_codes":
@@ -569,28 +569,28 @@ case "picture":
 if (preview) {
 return getUrlFromDirectPath(preview)
 } else {
-return "No hay imagen disponible"
+return "لا توجد صورة متاحة"
 }
 default:
-return value !== null && value !== undefined ? value.toString() : "No hay información disponible"
+return value !== null && value !== undefined ? value.toString() : "لا توجد معلومات متاحة"
 }}
 
 function newsletterKey(key) {
 return _.startCase(key.replace(/_/g, " "))
 .replace("Id", "🆔 Identificador")
 .replace("State", "📌 Estado")
-.replace("Creation Time", "📅 Fecha de creación")
-.replace("Name Time", "✏️ Fecha de modificación del nombre")
-.replace("Name", "🏷️ Nombre")
-.replace("Description Time", "📝 Fecha de modificación de la descripción")
-.replace("Description", "📜 Descripción")
-.replace("Invite", "📩 Invitación")
+.replace("Creation Time", "📅 التاريخ de creación")
+.replace("Name Time", "✏️ التاريخ de modificación dالاسم")
+.replace("Name", "🏷️ الاسم")
+.replace("Description Time", "📝 التاريخ de modificación de la descripción")
+.replace("Description", "📜 الوصف")
+.replace("Invite", "📩 دعوة")
 .replace("Handle", "👤 Alias")
-.replace("Picture", "🖼️ Imagen")
+.replace("Picture", "🖼️ الصورة")
 .replace("Preview", "👀 Vista previa")
 .replace("Reaction Codes", "😃 Reacciones")
 .replace("Subscribers", "👥 Suscriptores")
-.replace("Verification", "✅ Verificación")
+.replace("Verification", "✅ التحقق")
 .replace("Viewer Metadata", "🔍 Datos avanzados")
 }
 

@@ -49,7 +49,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ≡ ✅ data.status: *${parsed.data.status}*
 ≡ 🎬 type: *${parsed.data.data.type}*
 ≡ 📦 size: *${parsed.data.data.size}*
-≡ 🔗 url: ${parsed.data.data.url ? parsed.data.data.url : 'No disponible'}
+≡ 🔗 url: ${parsed.data.data.url ? parsed.data.data.url : 'غير متاح'}
     `.trim()
 
     await conn.sendMessage(m.chat, { text: infoText }, { quoted: m })
@@ -61,14 +61,14 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           caption: `🌷 Video detectado\n• Tipo: ${parsed.data.data.type}\n• Peso: ${parsed.data.data.size}`
         }, { quoted: m })
       } catch {
-        await conn.sendMessage(m.chat, { text: `⚠️ No pude enviar el video. Aquí tienes el enlace:\n${parsed.data.data.url}` }, { quoted: m })
+        await conn.sendMessage(m.chat, { text: `⚠️ No pude enviar el video. Aquí tienes الرابط:\n${parsed.data.data.url}` }, { quoted: m })
       }
     }
 
   } catch (err) {
     console.error(err)
     await conn.sendMessage(m.chat, {
-      text: `*Error al parsear:*\n${err.message}`
+      text: `*خطأ في parsear:*\n${err.message}`
     }, { quoted: m })
   }
 }

@@ -23,7 +23,7 @@ const fetchBratVid = async (text, attempt = 1) => {
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text && !m.quoted?.text) {
-      return conn.sendMessage(m.chat, { text: `🎋 Ejemplo: *${usedPrefix + command} Hola*` }, { quoted: m })
+      return conn.sendMessage(m.chat, { text: `🎋 Ejemplo: *${usedPrefix + command} أهلاً*` }, { quoted: m })
     }
 
     const inputText = m.quoted?.text || text
@@ -36,14 +36,14 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     let texto2 = packstickers.text2 || global.packsticker2 || 'Bot'
 
     const stiker = await sticker(buffer, false, texto1, texto2, { asSticker: true })
-    if (!stiker) throw new Error('No se pudo generar el sticker animado.')
+    if (!stiker) throw new Error('تعذّر generar الملصق animado.')
 
     await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
     await m.react('✔️')
   } catch (e) {
     await m.react('✖️')
     conn.sendMessage(m.chat, {
-      text: `⚠︎ Ocurrió un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`
+      text: `⚠︎ حدث خطأ.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`
     }, { quoted: m })
   }
 }

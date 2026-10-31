@@ -97,7 +97,7 @@ await m.reply(`☁️ *SOPA DE LETRAS* ☁️
 *Palabra:* \`\`\`"${PALABRA}"\`\`\`
 *Tienes 3 minutos para encontrar la respuesta correcta!!*
 
-*Escriba el número de la fila de la primera letra _"${PALABRA.charAt(0)}"_ de la palabra _"${PALABRA}"_ Tiene _${intentos}_ intentos!!*
+*اكتب el número de la fila de la primera letra _"${PALABRA.charAt(0)}"_ de la palabra _"${PALABRA}"_ Tiene _${intentos}_ intentos!!*
 
 *Ejemplo:*
 ${emoji} \`\`\`${usedPrefix + command} 28\`\`\`
@@ -129,7 +129,7 @@ await conn.reply(m.chat, `*@${m.sender.split("@")[0]} Te queda un minuto!!* 😨
 }
 await new Promise((resolve) => setTimeout(resolve, 3 * 60 * 1000)) // 3 min
 if (intentos !== 0) {
-await conn.reply( m.chat, `*@${m.sender.split("@")[0]} El tiempo se ha acabado!!* 😧\n\n*La palabra _"${sopaPalabra}"_ Se encontraba en la dirección _${sopaDir}_ De la fila _${fila}_ Y Columna _${columna}_*`, m, { mentions: [m.sender] })
+await conn.reply( m.chat, `*@${m.sender.split("@")[0]} الوقت se ha acabado!!* 😧\n\n*La palabra _"${sopaPalabra}"_ Se encontraba en la dirección _${sopaDir}_ De la fila _${fila}_ Y Columna _${columna}_*`, m, { mentions: [m.sender] })
 fila = null, columna = null, sopaNube = null, sopaPalabra = null, sopaDir = null, userSP = null, cambioLetra = null
 intentos = 0
 }

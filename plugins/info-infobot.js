@@ -17,9 +17,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     let subBots = Object.keys(global.conns).length
     
     let info = ` ╭━━━〔 💎 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 〕━━⬣
-┃ ✿ Prefijo: ${usedPrefix}
+┃ ✿ البادئة: ${usedPrefix}
 ┃ ✿ Plugins activos: ${totalf}
-┃ ✿ Comandos usados: ${toNum(totalStats)} (${totalStats})
+┃ ✿ الأوامر usados: ${toNum(totalStats)} (${totalStats})
 ┃ ✿ Subbots conectados: ${subBots}
 ╰━━━━━━━━━━━━━━⬣
 

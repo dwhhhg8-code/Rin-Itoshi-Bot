@@ -5,11 +5,11 @@ const handler = async (m, {conn, participants, groupMetadata, args}) => {
   const owner = groupMetadata.owner || groupAdmins.find((p) => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net';
   const pesan = args.join` `;
   const oi = `» ${pesan}`;
-  const text = `『✦』Admins del grupo:  
+  const text = `『✦』Admins dالمجموعة:  
   
 ${listAdmin}
 
-${emoji} Mensaje: ${oi}
+${emoji} الرسالة: ${oi}
 
 『✦』Evita usar este comando con otras intenciones o seras *eliminado* o *baneado* del Bot.`.trim();
   conn.sendFile(m.chat, pp, 'error.jpg', text, m, false, {mentions: [...groupAdmins.map((v) => v.id), owner]});

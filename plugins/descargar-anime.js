@@ -19,7 +19,7 @@ async function getLangs(episodes) {
 
 let handler = async (m, { command, usedPrefix, conn, text, args }) => {
     if (!text) return m.reply(
-        `🔥 *Ingresa el título de algún anime o la URL.*\n\n` +
+        `🔥 *أدخل el título de algún anime o la URL.*\n\n` +
         `• ${usedPrefix + command} Mushoku Tensei\n` +
         `• ${usedPrefix + command} https://animeav1.com/media/mushoku-tensei`
     );
@@ -41,16 +41,16 @@ let handler = async (m, { command, usedPrefix, conn, text, args }) => {
 乂 \`\`\`ANIME - DOWNLOAD\`\`\`
 
 ≡ 🌷 *Título :* ${title} - ${altTitle}
-≡ 🌾 *Descripción :* ${description}
+≡ 🌾 *الوصف :* ${description}
 ≡ 🌲 *Votos :* ${votes}
 ≡ 🍂 *Rating :* ${rating}
 ≡ 🍃 *Géneros :* ${gen}
 ≡ 🌱 *Episodios totales :* ${total}
-≡ 🌿 *Episodios disponibles :*
+≡ 🌿 *Episodios متاحة :*
 
 ${eps}
 
-> Responde a este mensaje con el número del episodio y el idioma. Ejemplo: *1 sub*, *3 dub*
+> رُدّ a este الرسالة con el número del episodio y el idioma. Ejemplo: *1 sub*, *3 dub*
 `.trim();
 
             let buffer = await (await fetch(cover)).arrayBuffer();
@@ -73,7 +73,7 @@ ${eps}
             m.react("🔍");
             const results = await search(text);
 
-            if (!results.length) return m.reply("❌ No se encontraron resultados.", m);
+            if (!results.length) return m.reply("❌ لا توجد نتائج.", m);
 
             let cap = `乂 *ANIME - SEARCH*\n`;
             results.slice(0, 15).forEach((res, index) => {
@@ -84,8 +84,8 @@ ${eps}
             m.react("🎋");
         }
     } catch (e) {
-        console.error("Error en handler anime:", e);
-        m.reply("⚠️ Error al procesar la solicitud: " + e.message);
+        console.error("خطأ en handler anime:", e);
+        m.reply("⚠️ خطأ في معالجة la solicitud: " + e.message);
     }
 };
 
@@ -94,27 +94,27 @@ handler.before = async (m, { conn }) => {
     const session = conn.anime[m.sender];
     if (!session || !m.quoted || m.quoted.id !== session.key.id) return;
 
-    if (session.downloading) return m.reply("⏳ Ya estás descargando un episodio. Espera a que termine.");
+    if (session.downloading) return m.reply("⏳ Ya estás descargando un episodio. انتظر a que termine.");
 
     let [epStr, langInput] = m.text.trim().split(/\s+/);
     const epi = parseInt(epStr);
     let idioma = langInput?.toLowerCase();
 
-    if (isNaN(epi)) return m.reply("❌ Número de episodio no válido.");
+    if (isNaN(epi)) return m.reply("❌ الرقم de episodio غير صالح.");
 
     const episode = session.episodes.find(e => parseInt(e.ep) === epi);
-    if (!episode) return m.reply(`❌ Episodio ${epi} no encontrado.`);
+    if (!episode) return m.reply(`❌ Episodio ${epi} غير موجود.`);
 
     const inf = await download(episode.link);
     const availableLangs = Object.keys(inf.dl || {});
-    if (!availableLangs.length) return m.reply(`❌ No hay idiomas disponibles para el episodio ${epi}.`);
+    if (!availableLangs.length) return m.reply(`❌ No hay idiomas متاحة para el episodio ${epi}.`);
 
     if (!idioma || !availableLangs.includes(idioma)) {
         idioma = availableLangs[0]; // fallback
     }
 
     const idiomaLabel = idioma === "sub" ? "sub español" : "español latino";
-    await m.reply(`📥 Descargando *${session.title}* - cap ${epi} (${idiomaLabel})`);
+    await m.reply(`📥 جارٍ التنزيل *${session.title}* - cap ${epi} (${idiomaLabel})`);
     m.react("📥");
 
     session.downloading = true;
@@ -132,8 +132,8 @@ handler.before = async (m, { conn }) => {
         );
         m.react("✅");
     } catch (err) {
-        console.error("Error al descargar:", err);
-        m.reply("⚠️ Error al descargar el episodio: " + err.message);
+        console.error("خطأ في تنزيل:", err);
+        m.reply("⚠️ خطأ في تنزيل el episodio: " + err.message);
     }
 
     clearTimeout(session.timeout);

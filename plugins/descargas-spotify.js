@@ -1,24 +1,24 @@
 // - By Shadow-xyz
-// -51919199620
+// -201125166486
 
 import axios from 'axios'
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, `🎋 *Por favor, proporciona el nombre de una canción o artista.*`, m, fake)
+  if (!text) return conn.reply(m.chat, `🎋 *من فضلك، proporciona الاسم de una canción o artista.*`, m, fake)
 
   try {
     let searchUrl = `https://api.delirius.store/search/spotify?q=${encodeURIComponent(text)}&limit=1`
     let search = await axios.get(searchUrl, { timeout: 15000 })
 
     if (!search.data.status || !search.data.data || search.data.data.length === 0) {
-      throw new Error('No se encontró resultado.')
+      throw new Error('لم يتم العثور على resultado.')
     }
 
     let data = search.data.data[0]
     let { title, artist, album, duration, popularity, publish, url: spotifyUrl, image } = data
 
-    let caption = `「✦」Descargando *<${title}>*\n\n` +
+    let caption = `「✦」جارٍ التنزيل *<${title}>*\n\n` +
       `> ꕥ Autor » *${artist}*\n` +
       (album ? `> ❑ Álbum » *${album}*\n` : '') +
       (duration ? `> ⴵ Duración » *${duration}*\n` : '') +
@@ -97,12 +97,12 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       }, { quoted: fkontak })
 
     } else {
-      conn.reply(m.chat, `No se encontró un link de descarga válido para esta canción.`, m)
+      conn.reply(m.chat, `لم يتم العثور على un link de descarga صالح para esta canción.`, m)
     }
 
   } catch (e) {
     console.error(e)
-    conn.reply(m.chat, `❌ Error al buscar o descargar la canción.`, m)
+    conn.reply(m.chat, `❌ خطأ في buscar o descargar الأغنية.`, m)
   }
 }
 

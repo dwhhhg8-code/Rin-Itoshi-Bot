@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   const inputUrl = args[0];
 
   if (!inputUrl || !inputUrl.includes('f-droid.org')) {
-    return m.reply(`❗ *Debes proporcionar un enlace de F-Droid válido:*\n\nEjemplo:\n${usedPrefix + command} https://f-droid.org/packages/com.termux.api/`);
+    return m.reply(`❗ *Debes proporcionar رابط de F-Droid صالح:*\n\nEjemplo:\n${usedPrefix + command} https://f-droid.org/packages/com.termux.api/`);
   }
 
   try {
@@ -13,7 +13,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const res = await axios.get(`https://api.dorratz.com/v3/fdroid-dl?url=${encodeURIComponent(inputUrl)}`);
     const data = res.data;
 
-    if (!data || !data.downloadLink) throw '❌ No se encontró el archivo APK.';
+    if (!data || !data.downloadLink) throw '❌ لم يتم العثور على ملف APK.';
 
     const packageName = inputUrl.split('/').filter(x => x.includes('.')).pop() || 'app';
     const appNameRaw = data.name || data.title || packageName;
@@ -22,7 +22,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const fileName = `${appName}_v${versionName}.apk`;
 
     let texto = `╭━━━⬣ *📦 APP ENCONTRADA*
-┃ 🧩 *Nombre:* ${data.name || 'Desconocido'}
+┃ 🧩 *الاسم:* ${data.name || 'Desconocido'}
 ┃ 📌 *Versión:* ${data.version || 'Desconocido'}
 ┃ 📅 *Agregada:* ${data.addedOn || 'Desconocido'}
 ┃ 📥 *Tamaño:* ${data.apkSize || 'Desconocido'}
@@ -39,7 +39,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   } catch (e) {
     console.error(e);
-    await m.reply('💛 Error al obtener la app. Asegúrate de que el enlace de F-Droid es válido o vuelve a intentarlo.');
+    await m.reply('💛 خطأ في جلب التطبيق. تأكد من الرابط de F-Droid es صالح o vuelve a intentarlo.');
   }
 };
 

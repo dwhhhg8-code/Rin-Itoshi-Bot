@@ -16,17 +16,17 @@ handler.before = async function(m) {
       room.status = 'play';
       room.asal = m.chat;
       clearTimeout(room.waktu);
-      const textplay = `🎮 Games - PVP - Games 🎮\n\n—◉ El juego comienza, laz opciones han sido enviadas a los chats privados de @${room.p.split`@`[0]} y @${room.p2.split`@`[0]}\n\n◉ Seleccionen una opcion en sus chats privados, respectivamente.\n*◉ Elegir opción en wa.me/${conn.user.jid.split`@`[0]}*`;
+      const textplay = `🎮 Games - PVP - Games 🎮\n\n—◉ El juego comienza, laz opciones han sido enviadas a los chats privados de @${room.p.split`@`[0]} y @${room.p2.split`@`[0]}\n\n◉ اخترn una opcion en sus chats privados, respectivamente.\n*◉ Elegir opción en wa.me/${conn.user.jid.split`@`[0]}*`;
       m.reply(textplay, m.chat, {mentions: this.parseMention(textplay)});
-      const comienzop = `${emoji} Por favor, seleccione una de las siguientes opciones:
+      const comienzop = `${emoji} من فضلك، seleccione una de las siguientes opciones:
 piedra
 papel
-tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al mensaje con la opción que desea*
+tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al الرسالة con la opción que desea*
 *ejemplo: papel*`;
-      const comienzop2 = `${emoji} Por favor, seleccione una de las siguientes opciones:
+      const comienzop2 = `${emoji} من فضلك، seleccione una de las siguientes opciones:
 piedra
 papel
-tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al mensaje con la opción que desea*
+tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al الرسالة con la opción que desea*
 *ejemplo: papel*`;
 
       if (!room.pilih) this.sendMessage(room.p, {text: comienzop}, {quoted: m});
@@ -55,13 +55,13 @@ tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al mens
     if (jwb && reg.test(m.text) && !room.pilih && !m.isGroup) {
       room.pilih = reg.exec(m.text.toLowerCase())[0];
       room.text = m.text;
-      m.reply(`${emoji} Has elegido ${m.text}, regresa al grupo y ${room.pilih2 ? `Revisa los resultados` : 'Espera los resultados'}`);
+      m.reply(`${emoji} Has elegido ${m.text}, regresa al grupo y ${room.pilih2 ? `Revisa النتائج` : 'انتظر النتائج'}`);
       if (!room.pilih2) this.reply(room.p2, `${emoji2} El oponente a elegido, es tu turno de elegir!!.`, 0);
     }
     if (jwb2 && reg.test(m.text) && !room.pilih2 && !m.isGroup) {
       room.pilih2 = reg.exec(m.text.toLowerCase())[0];
       room.text2 = m.text;
-      m.reply(`${emoji} Has elegido ${m.text}, regresa al grupo y ${room.pilih ? `Revisa los resultados` : 'Espera los resultados'}`);
+      m.reply(`${emoji} Has elegido ${m.text}, regresa al grupo y ${room.pilih ? `Revisa النتائج` : 'انتظر النتائج'}`);
       if (!room.pilih) this.reply(room.p, `${emoji2} El oponente a elegido, es tu turno de elegir!!.`, 0);
     }
     const stage = room.pilih;
@@ -76,7 +76,7 @@ tijera\nGanador +${room.poin}XP\nPerdedor ${room.poin_lose}XP\n*responda al mens
       else if (k.test(stage) && g.test(stage2)) win = room.p2;
       else if (stage == stage2) tie = true;
       this.reply(room.asal, `
-*👑 Resultados del PVP 👑*${tie ? '\n*—◉ Empate!!*' : ''}
+*👑 النتيجةs del PVP 👑*${tie ? '\n*—◉ Empate!!*' : ''}
 *@${room.p.split`@`[0]} (${room.text})* ${tie ? '' : room.p == win ? ` *Gano 🥳 +${room.poin}XP*` : ` *Perdio 🤡 ${room.poin_lose}XP*`}
 *@${room.p2.split`@`[0]} (${room.text2})* ${tie ? '' : room.p2 == win ? ` *Gano 🥳 +${room.poin}XP*` : ` *Perdio 🤡 ${room.poin_lose}XP*`}
 `.trim(), m, {mentions: [room.p, room.p2]} );

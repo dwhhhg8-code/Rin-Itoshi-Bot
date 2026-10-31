@@ -1,16 +1,16 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) return conn.reply(m.chat, `${emoji} Por favor, ingrese el error que desea reportar.`, m)
+    if (!text) return conn.reply(m.chat, `${emoji} من فضلك أدخل el error que desea reportar.`, m)
     if (text.length < 10) return conn.reply(m.chat, `${emoji} Especifique bien el error, mínimo 10 caracteres.`, m)
     if (text.length > 1000) return conn.reply(m.chat, `${emoji2} *Máximo 1000 caracteres para enviar el error.`, m)
     const teks = `*✖️ \`R E P O R T E\` ✖️*
 
-☁️ Número:
+☁️ الرقم:
 • Wa.me/${m.sender.split`@`[0]}
 
-👤 Usuario: 
+👤 المستخدم: 
 • ${m.pushName || 'Anónimo'}
 
-💬 Mensaje:
+💬 الرسالة:
 • ${text}`
     await conn.reply(`${suittag}@s.whatsapp.net`, m.quoted ? teks + m.quoted.text : teks, m, { mentions: conn.parseMention(teks) })
 

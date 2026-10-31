@@ -1,11 +1,11 @@
 const questions = [
     {
         question: "¿Quién fue el padre de Melquisedec?",
-        options: ["Abraham", "Noé", "Ninguno, Melquisedec no tenía padre"],
+        options: ["Abraham", "Noé", "لا يوجد, Melquisedec no tenía padre"],
         answer: "C"
     },
     {
-        question: "¿Cuál es el nombre del rey que pidió que se escribieran los Salmos?",
+        question: "¿Cuál es الاسم del rey que pidió que se escribieran los Salmos?",
         options: ["David", "Salomón", "Ezequías"],
         answer: "A"
     },
@@ -90,7 +90,7 @@ const questions = [
         answer: "A"
     },
     {
-        question: "¿Cuál es el nombre del profeta que desafió al rey Acab?",
+        question: "¿Cuál es الاسم del profeta que desafió al rey Acab?",
         options: ["Isaías", "Elías", "Ezequiel"],
         answer: "B"
     },
@@ -110,7 +110,7 @@ const questions = [
         answer: "A"
     },
     {
-        question: "¿Cuál fue el nombre del líder de los israelitas que dividió el Mar Rojo?",
+        question: "¿Cuál fue الاسم del líder de los israelitas que dividió el Mar Rojo?",
         options: ["Moisés", "Josué", "Abraham"],
         answer: "A"
     },
@@ -150,7 +150,7 @@ const questions = [
         answer: "A"
     },
     {
-        question: "¿Cuál es el nombre del árbol del que comió Eva?",
+        question: "¿Cuál es الاسم del árbol del que comió Eva?",
         options: ["El árbol de la vida", "El árbol del conocimiento del bien y del mal", "El árbol de la sabiduría"],
         answer: "B"
     },
@@ -165,7 +165,7 @@ const questions = [
         answer: "C"
     },
     {
-        question: "¿Qué molécula lleva la información genética?",
+        question: "¿Qué molécula lleva المعلومات genética?",
         options: ["ADN", "ARN", "Proteínas"],
         answer: "A"
     },
@@ -290,7 +290,7 @@ const questions = [
         answer: "A"
     },
     {
-        question: "¿Qué significa el término 'fisión nuclear'?",
+        question: "¿Qué significa المصطلح 'fisión nuclear'?",
         options: ["La división de un átomo en partículas más pequeñas", "La fusión de dos átomos en uno", "La liberación de energía de los átomos"],
         answer: "A"
     },
@@ -325,7 +325,7 @@ const questions = [
         answer: "C"
     },
     {
-        question: "¿Cuál es el nombre de la primera mujer que ganó un Premio Nobel?",
+        question: "¿Cuál es الاسم de la primera mujer que ganó un Premio Nobel?",
         options: ["Marie Curie", "Dorothy Hodgkin", "Rosalind Franklin"],
         answer: "A"
     },
@@ -480,7 +480,7 @@ const questions = [
         answer: "C"
     },
     {
-        question: "¿Cuál es el nombre del primer planeta del sistema solar?",
+        question: "¿Cuál es الاسم del primer planeta del sistema solar?",
         options: ["Venus", "Mercurio", "Marte"],
         answer: "B"
     },
@@ -895,7 +895,7 @@ let triviaSessions = new Map();
 
 const triviaHandler = async (m, { conn, command, args, usedPrefix }) => {
     if (args.length === 0) {
-        // Seleccionar pregunta aleatoria
+        // اخترr pregunta aleatoria
         let randomIndex = Math.floor(Math.random() * questions.length);
         let questionData = questions[randomIndex];
 
@@ -938,17 +938,17 @@ ${questionData.question}`.trim();
         // Evaluar respuesta
         let session = triviaSessions.get(m.chat);
         if (!session || session.answered) {
-            return conn.reply(m.chat, `⚠️ Primero usa *${usedPrefix}trivia* para obtener una pregunta.`, m);
+            return conn.reply(m.chat, `⚠️ استخدم أولاً *${usedPrefix}trivia* para obtener una pregunta.`, m);
         }
 
         let userAnswer = args[0].toUpperCase();
         let correctAnswer = questions[session.index].answer;
-        let result = userAnswer === correctAnswer ? "🎉 ¡Respuesta correcta!" : `❌ Incorrecto. La respuesta correcta era *${correctAnswer}*`;
+        let result = userAnswer === correctAnswer ? "🎉 ¡الرد correcta!" : `❌ Incorrecto. La respuesta correcta era *${correctAnswer}*`;
 
         const caption = `
 📌 *Tu respuesta:* ${userAnswer}  
 ✅ *Solución:* ${correctAnswer}  
-🧠 *Resultado:* ${result}
+🧠 *النتيجة:* ${result}
 `.trim();
 
         const buttons = [

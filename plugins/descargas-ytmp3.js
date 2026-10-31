@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
     if (!text) {
       return conn.reply(
         m.chat,
-        `🎋 Ingresa el nombre de la canción o un enlace de YouTube.\n\n> Ejemplo: ${usedPrefix + command} DJ Malam Pagi`,
+        `🎋 أدخل الاسم de الأغنية o رابط de YouTube.\n\n> Ejemplo: ${usedPrefix + command} DJ Malam Pagi`,
         m
       )
     }
@@ -16,7 +16,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
 
     const search = await yts(text)
     const video = search.videos[0]
-    if (!video) return conn.reply(m.chat, '☁️ No se encontró ningún resultado.', m)
+    if (!video) return conn.reply(m.chat, '☁️ لم يتم العثور على ningún resultado.', m)
 
     const meta = {
       title: video.title,
@@ -52,7 +52,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
     ]
 
     const { url: downloadUrl, servidor } = await fetchFromApis(apis)
-    if (!downloadUrl) return conn.reply(m.chat, '❌ Ninguna API devolvió el audio.', m)
+    if (!downloadUrl) return conn.reply(m.chat, '❌ لا يوجد API devolvió el audio.', m)
 
     const size = await getSize(downloadUrl)
     const sizeStr = size ? formatSize(size) : 'Desconocido'
@@ -63,13 +63,13 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
 🌸 *Título:* ${meta.title}
 🕒 *Duración:* ${meta.duration}
 💾 *Tamaño:* ${sizeStr}
-🎚 *Calidad:* 128kbps
+🎚 *الجودة:* 128kbps
 📡 *Canal:* ${meta.author}
 👁 *Vistas:* ${meta.views}
 📅 *Publicado:* ${meta.ago}
 🔗 *Enlace:* ${meta.url}
 ────────────────────
-🍀 *Procesando tu canción, espera un momento...*`
+🍀 *جارٍ المعالجة tu canción, انتظر un momento...*`
 
     const thumb = (await conn.getFile(meta.thumbnail)).data
 
@@ -98,13 +98,13 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
       }
     }, { quoted: fkontak })*/
     
-    await m.reply(`> 🌸 *Audio procesado correctamente.*\n> Servidor usado: *${servidor}*\n> Peso: *${sizeStr}*`)
+    await m.reply(`> 🌸 *الصوت procesado بنجاح.*\n> Servidor usado: *${servidor}*\n> Peso: *${sizeStr}*`)
 
     await conn.sendMessage(m.chat, { react: { text: "✔️", key: m.key } })
 
   } catch (e) {
     console.error(e)
-    await conn.reply(m.chat, `Error: ${e.message}`, m)
+    await conn.reply(m.chat, `خطأ: ${e.message}`, m)
   }
 }
 

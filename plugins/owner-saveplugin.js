@@ -2,11 +2,11 @@ import fs from 'fs';
 
 let handler = async (m, { text, usedPrefix, command }) => {
     if (!text) {
-        return m.reply(`${emoji} Por favor, ingrese el nombre del plugin.`);
+        return m.reply(`${emoji} من فضلك أدخل الاسم del plugin.`);
     }
 
     if (!m.quoted || !m.quoted.text) {
-        return m.reply(`${emoji2} Responda al mensaje con el contenido del plugin.`);
+        return m.reply(`${emoji2} Responda al الرسالة con el contenido del plugin.`);
     }
 
     const ruta = `plugins/${text}.js`;
@@ -15,7 +15,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
         await fs.writeFileSync(ruta, m.quoted.text);
         m.reply(`${emoji} Guardando plugin en ${ruta}`);
     } catch (error) {
-        m.reply(`${msm} Ocurrió un error al guardar el plugin: ${error.message}`);
+        m.reply(`${msm} حدث خطأ al guardar el plugin: ${error.message}`);
     }
 };
 

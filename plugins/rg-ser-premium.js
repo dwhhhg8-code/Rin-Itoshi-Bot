@@ -9,7 +9,7 @@ const cSemana = 500
 const cMes = 1000
 
 let handler = async (m, { conn, usedPrefix, command, args }) => {
-let texto = `✐ Opciones disponibles para comprar premium:
+let texto = `✐ Opciones متاحة para comprar premium:
 
 ° *h :* Horas = ${pHora} ${moneda}
 ° *d :* Días = ${pDia} ${moneda}
@@ -28,7 +28,7 @@ if (isNaN(args[0])) return conn.reply(m.chat, `ꕥ Solo se aceptan números.\n> 
 let kk = args[1]?.toLowerCase() || "h"
 let precios = { h: pHora, d: pDia, s: pSemana, m: pMes }
 let comisiones = { h: cHora, d: cDia, s: cSemana, m: cMes }
-if (!precios[kk]) return conn.reply(m.chat, `ꕥ Formato no válido. Opciones: h, d, s, m`, m)
+if (!precios[kk]) return conn.reply(m.chat, `ꕥ Formato غير صالح. Opciones: h, d, s, m`, m)
 let precio = precios[kk]
 let comision = comisiones[kk]
 let total = (precio * args[0]) + (comision * args[0])
@@ -39,13 +39,13 @@ if (now < user.premiumTime) user.premiumTime += tiempoMs
 else user.premiumTime = now + tiempoMs
 user.premium = true
 user.coin -= total
-let tipos = { h: "Hora(s)", d: "Día(s)", s: "Semana(s)", m: "Mes(es)" }
+let tipos = { h: "الوقت(s)", d: "Día(s)", s: "Semana(s)", m: "Mes(es)" }
 let tipo = tipos[kk]
 let cap = `  \`\`\`乂 ¡BUY  -  PREMIUM! 乂\`\`\`
 
-ᰔᩚ Usuario » ${name}
+ᰔᩚ المستخدم » ${name}
 ⴵ Tiempo Premium » ${args[0]} ${tipo}
-✦ Total a pagar » ${total} ${moneda}
+✦ الإجمالي a pagar » ${total} ${moneda}
 ⛁ ${moneda} » ${user.coin}
 ✰ Tenía » ${user.coin + total}
 ✧ Comisión » -${comision * args[0]} (incluida)`

@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
     let user = global.db.data.users[m.sender];
     if (!user) {
-        return conn.reply(m.chat, `${emoji} El usuario no se encuentra en la base de Datos.`, m);
+        return conn.reply(m.chat, `${emoji} المستخدم no se encuentra en la base de Datos.`, m);
     }
     if (user.coin < 50) {
         return conn.reply(m.chat, `💔 Su saldó fue insuficiente para curarte. Necesitas al menos 20.`, m);

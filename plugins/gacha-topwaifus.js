@@ -7,7 +7,7 @@ async function loadCharacters() {
         const data = await fs.readFile(charactersFilePath, 'utf-8');
         return JSON.parse(data);
     } catch (error) {
-        throw new Error('《✧》No se pudo cargar el archivo characters.json.');
+        throw new Error('《✧》تعذّر cargar الملف characters.json.');
     }
 }
 
@@ -35,7 +35,7 @@ let handler = async (m, { conn, args }) => {
 
         await conn.reply(m.chat, message, m);
     } catch (error) {
-        await conn.reply(m.chat, `✘ Error al cargar los personajes: ${error.message}`, m);
+        await conn.reply(m.chat, `✘ خطأ في cargar los personajes: ${error.message}`, m);
     }
 };
 

@@ -1,6 +1,6 @@
 const handler = async (m, { isPrems, conn }) => {
   if (!global.db.data.users[m.sender]) {
-    throw `${emoji4} Usuario no encontrado.`;
+    throw `${emoji4} المستخدم غير موجود.`;
   }
 
   const lastCofreTime = global.db.data.users[m.sender].lastcofre;
@@ -41,7 +41,7 @@ const handler = async (m, { isPrems, conn }) => {
   try {
     await conn.sendFile(m.chat, img, 'yuki.jpg', texto, fkontak);
   } catch (error) {
-    throw `${msm} Ocurrió un error al enviar el cofre.`;
+    throw `${msm} حدث خطأ al enviar el cofre.`;
   }
 };
 
@@ -64,5 +64,5 @@ function msToTime(duration) {
   minutes = (minutes < 10) ? '0' + minutes : minutes;
   seconds = (seconds < 10) ? '0' + seconds : seconds;
 
-  return `${hours} Horas ${minutes} Minutos`;
+  return `${hours} الوقتs ${minutes} Minutos`;
 }

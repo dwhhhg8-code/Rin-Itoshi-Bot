@@ -4,7 +4,7 @@ import baileys from '@whiskeysockets/baileys';
 const { generateWAMessageContent, generateWAMessageFromContent, proto } = baileys;
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
-  if (!text) return m.reply(`*⚙️ Por favor, ingresa el texto que deseas buscar en SoundCloud.*\n> *Ejemplo:* ${usedPrefix + command} Que te parece`);
+  if (!text) return m.reply(`*⚙️ من فضلك أدخل el texto que deseas buscar en SoundCloud.*\n> *Ejemplo:* ${usedPrefix + command} Que te parece`);
   await m.react('🎐');
 
   try {
@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     if (!results || !Array.isArray(results) || results.length === 0) {
       await m.react('✖️');
-      return m.reply('⚠️ No se encontraron resultados para esta búsqueda en SoundCloud.');
+      return m.reply('⚠️ لا توجد نتائج para esta búsqueda en SoundCloud.');
     }
 
     async function createImage(url) {
@@ -32,13 +32,13 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
       const infoHeader = `🎵 𝗦𝗢𝗨𝗡𝗗𝗖𝗟𝗢𝗨𝗗  • 𝗕𝗨𝗦𝗤𝗨𝗘𝗗𝗔`;
       const infoBody = `🎋 *Nro:* ${i + 1}
-🍬 *Título:* ${track.title || 'Sin título'}
+🍬 *Título:* ${track.title || 'بدون عنوان'}
 🍧 *Artista:* ${track.artist || 'Desconocido'}
 👽 *Reproducciones:* ${track.repro || 'N/A'}
 ⚽ *Duración:* ${track.duration || 'N/A'}
-🍏 *Creador:* ${track.creator || 'Desconocido'}
+🍏 *المطوّر:* ${track.creator || 'Desconocido'}
 🎐 *URL:* ${track.url}
-🎃 *Imagen:* ${track.image || 'No disponible'}
+🎃 *الصورة:* ${track.image || 'غير متاح'}
 `;
 
       cards.push({
@@ -70,7 +70,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
               name: 'cta_url',
               buttonParamsJson: JSON.stringify({
                 display_text: "🕸️ 𝘊𝘢𝘯𝘢𝘭 𝘰𝘧𝘧𝘪𝘤𝘪𝘢𝘭",
-                url: "https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U"
+                url: "https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v"
               })
             }
           ]
@@ -103,7 +103,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   } catch (error) {
     console.error(error);
     await m.react('✖️');
-    await m.reply('❌ Hubo un error al procesar la búsqueda en SoundCloud.');
+    await m.reply('❌ حدث خطأ al procesar la búsqueda en SoundCloud.');
   }
 }
 

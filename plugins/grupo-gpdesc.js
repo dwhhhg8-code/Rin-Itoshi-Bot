@@ -1,6 +1,6 @@
 const handler = async (m, {conn, args}) => {
   await conn.groupUpdateDescription(m.chat, `${args.join(' ')}`);
-  m.reply(`${emoji} La descripción del grupo se modifico correctamente.`);
+  m.reply(`${emoji} La descripción dالمجموعة se modifico بنجاح.`);
 };
 handler.help = ['groupdesc <text>'];
 handler.tags = ['grupo'];

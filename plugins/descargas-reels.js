@@ -4,10 +4,10 @@ import baileys from "@whiskeysockets/baileys";
 const { proto, generateWAMessageFromContent, generateWAMessageContent } = baileys;
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`🎋 Ingresa un nombre para buscar *Reels de Instagram*`);
+  if (!text) return m.reply(`🎋 أدخل un nombre para buscar *Reels de Instagram*`);
 
   await m.react("⏳");
-  await conn.sendMessage(m.chat, { text: "*🔎 Buscando Reels de Instagram...* 🗿" }, { quoted: fkontak });
+  await conn.sendMessage(m.chat, { text: "*🔎 جارٍ البحث Reels de Instagram...* 🗿" }, { quoted: fkontak });
 
   try {
     let res = await fetch(
@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!json.status || !json.result?.search_data?.length) {
       await m.react("❌");
-      return m.reply("No se encontraron resultados.");
+      return m.reply("لا توجد نتائج.");
     }
 
     let reels = json.result.search_data.slice(0, 6);
@@ -33,7 +33,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
-          text: `🌱 Usuario: @${r.profile?.username || "desconocido"}\n🍏 ${r.caption || "Sin descripción"}\n❤️ ${r.statistics?.like_count || 0} | 🌾 ${r.statistics?.comment_count || 0} | 🌿 ${r.statistics?.play_count || 0}`,
+          text: `🌱 Usuario: @${r.profile?.username || "desconocido"}\n🍏 ${r.caption || "لا يوجد وصف"}\n❤️ ${r.statistics?.like_count || 0} | 🌾 ${r.statistics?.comment_count || 0} | 🌿 ${r.statistics?.play_count || 0}`,
         }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
           text: "⚽ Instagram Reels",
@@ -49,8 +49,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
               name: "cta_url",
               buttonParamsJson: JSON.stringify({
                 display_text: "📢 Canal oficial",
-                url: "https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U",
-                merchant_url: "https://whatsapp.com/channel/0029VbAtbPA84OmJSLiHis2U",
+                url: "https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v",
+                merchant_url: "https://whatsapp.com/channel/0029Vb8QIpSJ3juu0VHRyU0v",
               }),
             },
             {
@@ -81,7 +81,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
           message: {
             interactiveMessage: proto.Message.InteractiveMessage.fromObject({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: "✨ Resultados encontrados:",
+                text: "✨ النتيجةs encontrados:",
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
                 text: "⚽ Instagram Reels Downloader",
@@ -101,7 +101,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (e) {
     console.error(e);
     await m.react("❌");
-    m.reply("Error al obtener los Reels.");
+    m.reply("خطأ في جلب los Reels.");
   }
 };
 

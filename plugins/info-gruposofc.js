@@ -4,7 +4,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
   let saludos = [
     "¡Hey! Únete a los grupos oficiales del Bot y comparte con la comunidad...",
-    "¡Hola! Ven y forma parte de nuestros grupos oficiales, la comunidad te espera...",
+    "¡أهلاً! Ven y forma parte de nuestros grupos oficiales, la comunidad te انتظر...",
     "¡Saludos! No te pierdas los grupos oficiales del Bot, interactúa con todos..."
   ]
   let separadores = [

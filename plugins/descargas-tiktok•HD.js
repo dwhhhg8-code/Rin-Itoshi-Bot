@@ -4,7 +4,7 @@ const MAX_MB = 10;
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   if (!text || !text.includes('tiktok')) {
-    return conn.reply(m.chat, '❤️ *Ingresa un enlace válido de TikTok*', m);
+    return conn.reply(m.chat, '❤️ *أدخل رابط صالح de TikTok*', m);
   }
 
   try {
@@ -13,14 +13,14 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
     let videoUrl = await getTiktokHDPrimary(text);
     if (!videoUrl) videoUrl = await getTiktokHDBackup(text);
 
-    if (!videoUrl) throw new Error('No se pudo obtener el video HD.');
+    if (!videoUrl) throw new Error('تعذّر obtener el video HD.');
 
     const head = await axios.head(videoUrl);
     const contentLength = head.headers['content-length'];
     const fileSizeMB = parseInt(contentLength) / (1024 * 1024);
 
     if (fileSizeMB > MAX_MB) {
-      return conn.reply(m.chat, `❌ El video pesa *${fileSizeMB.toFixed(2)} MB* y excede el límite de ${MAX_MB}MB.\n\n💡 Puedes descargarlo manualmente:\n${videoUrl}`, m);
+      return conn.reply(m.chat, `❌ الفيديو pesa *${fileSizeMB.toFixed(2)} MB* y excede el límite de ${MAX_MB}MB.\n\n💡 Puedes descargarlo manualmente:\n${videoUrl}`, m);
     }
 
     await conn.sendMessage(m.chat, {
@@ -32,7 +32,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   } catch (e) {
     console.error(e);
     await m.react('❌');
-    conn.reply(m.chat, '*Ocurrió un error al procesar el video 😢*', m);
+    conn.reply(m.chat, '*حدث خطأ al procesar el video 😢*', m);
   }
 };
 
@@ -58,7 +58,7 @@ async function getTiktokHDPrimary(url) {
 
     return result.hdplay || result.play_2 || result.play;
   } catch (e) {
-    console.error('Error API primaria:', e);
+    console.error('خطأ API primaria:', e);
     return null;
   }
 }
@@ -70,7 +70,7 @@ async function getTiktokHDBackup(url) {
 
     return video || null;
   } catch (e) {
-    console.error('Error API backup:', e);
+    console.error('خطأ API backup:', e);
     return null;
   }
 }

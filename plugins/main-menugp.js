@@ -34,7 +34,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 ┃ 💥 ${usedPrefix}listadv
 ┃ 💥 ${usedPrefix}promote
 ┃ 💥 ${usedPrefix}revoke
-┃ 💥 ${usedPrefix}todos *<mensaje>*
+┃ 💥 ${usedPrefix}todos *<الرسالة>*
 ┃ 💥 ${usedPrefix}bot
 ┃ 💥 ${usedPrefix}ruletaban
 ╰━━━━━━━━━━━━⬣
@@ -60,8 +60,6 @@ let handler = async (m, { conn, usedPrefix }) => {
 ┃ 🌱 ${usedPrefix}soloadmin
 ┃ 🌱 ${usedPrefix}reaction
 ┃ 🌱 ${usedPrefix}reaccion
-┃ 🌱 ${usedPrefix}nsfw
-┃ 🌱 ${usedPrefix}modohorny
 ┃ 🌱 ${usedPrefix}antiSpam
 ┃ 🌱 ${usedPrefix}antispam
 ┃ 🌱 ${usedPrefix}jadibotmd
@@ -79,12 +77,12 @@ let handler = async (m, { conn, usedPrefix }) => {
 ┃ 🌱 ${usedPrefix}antivirtuales
 ╰━━━━━━━━━━━━⬣
 
-🍂⭐ 𝐑𝐢𝐧 𝐈𝐭𝐨𝐬𝐡𝐢 𝐁𝐨𝐭 ⭐🍂
+🍂⭐ 𝙁𝙇𝘼𝙎𝙃 𝘽𝙊𝙏 ⭐🍂
 `.trim()
 
     let imgs = [
       'https://files.catbox.moe/ceotf9.jpg',
-      'https://files.catbox.moe/fft2hr.jpg',
+      'https://i.pinimg.com/originals/9d/6c/4e/9d6c4eeb7898079652b7f2c2e5c65632.jpg',
       'https://files.catbox.moe/i97oje.jpg'
     ]
     let img = imgs[Math.floor(Math.random() * imgs.length)]
@@ -100,7 +98,7 @@ let handler = async (m, { conn, usedPrefix }) => {
           itemCount: -999999, 
           status: 1, 
           surface: 1, 
-          message: "🍧 Rin Itoshi Bot 💖", 
+          message: "🍧 FLASH BOT 💖", 
           orderTitle: 'Bang', 
           thumbnail: thumb,
           sellerJid: '0@s.whatsapp.net'
@@ -116,7 +114,7 @@ let handler = async (m, { conn, usedPrefix }) => {
           title: "🌷 Panel de Administración 🌷",
           body: "🍂 Gestiona tu grupo fácilmente 🍂",
           thumbnailUrl: img,
-          sourceUrl: "https://github.com/Yuji-XDev/Rin-Itoshi-Bot",
+          sourceUrl: "https://github.com/dwhhhg8-code/flash-bot",
           mediaType: 1,
           renderLargerThumbnail: true
         }

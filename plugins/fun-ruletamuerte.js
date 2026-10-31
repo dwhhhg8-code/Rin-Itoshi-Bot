@@ -7,7 +7,7 @@ const handler = async (m, { conn }) => {
     const senderId = m.sender;
 
     if (salasRuleta[chatId]) 
-        return conn.reply(m.chat, '✧ Ya se encuentra una sala activa en este grupo, espera a que termine.', m);
+        return conn.reply(m.chat, '✧ Ya se encuentra una sala activa en este grupo, انتظر a que termine.', m);
 
     salasRuleta[chatId] = { jugadores: [senderId], estado: 'esperando' };
 
@@ -52,7 +52,7 @@ handler.before = async (m, { conn }) => {
         });
 
         await conn.sendMessage(m.chat, { 
-            text: '✦ *Ruleta de la Muerte* ✦\n\n❀ ¡La sala está completa!\n\n> ✧ Seleccionando al perdedor...' 
+            text: '✦ *Ruleta de la Muerte* ✦\n\n❀ ¡La sala está completa!\n\n> ✧ اخترndo al perdedor...' 
         });
 
         const loadingMessages = [
@@ -60,7 +60,7 @@ handler.before = async (m, { conn }) => {
             "《 ████▒▒▒▒▒▒▒▒》30%\n- El destino está echado...",
             "《 ███████▒▒▒▒▒》50%\n- La suerte está decidida...",
             "《 ██████████▒▒》80%\n- ¡Pronto conoceremos al perdedor!",
-            "《 ████████████》100%\n- ¡Resultado final!"
+            "《 ████████████》100%\n- ¡النتيجة final!"
         ];
 
         let { key } = await conn.sendMessage(m.chat, { text: "✧ ¡Calculando resultado!" }, { quoted: m });

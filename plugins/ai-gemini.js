@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const handler = async (m, { conn, text, command }) => {
-  if (!text) return m.reply("🌿 Ingrese una petición.")
+  if (!text) return m.reply("🌿 أدخل طلباً.")
 
   try {
     await m.react('🕒')
@@ -13,7 +13,7 @@ const handler = async (m, { conn, text, command }) => {
     }
 
     const endpoint = apiMap[command]
-    if (!endpoint) throw new Error("ꕥ Comando no reconocido.")
+    if (!endpoint) throw new Error("ꕥ الأمر no reconocido.")
 
     const prompt = `Eres rin itoshi y tu idioma es Español ${text}`
     const url = `https://api.zenzxz.my.id/ai/${endpoint}?text=${encodeURIComponent(prompt)}`
@@ -21,7 +21,7 @@ const handler = async (m, { conn, text, command }) => {
     const res = await axios.get(url, { timeout: 15000 })
     const output = res.data?.response || res.data?.assistant
 
-    if (!res.data?.status || !output) throw new Error("ꕥ Respuesta inválida de la IA.")
+    if (!res.data?.status || !output) throw new Error("ꕥ رد غير صالح من الذكاء الاصطناعي.")
 
     await conn.sendMessage(m.chat, { text: output }, { quoted: m })
     await m.react('✔️')
